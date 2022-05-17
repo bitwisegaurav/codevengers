@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="html.css">
+    <title>Codevengers</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="index.html">
+                    <img src="logo.png" alt="">
+                </a>
+            </li>
+            <li class="comname">
+                <a href="index.html">Codevengers</a>
+            </li>
+            <li class="btn">
+                <a href="css.html">CSS</a>
+                <a href="js.html">JAVASCRIPT</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section>
+        <aside>
+            <h1>HTML</h1>
+            <ul>
+                <li class="topic">
+                    <a href="html/introduction.html" target="sidesec">Introduction</a>
+                </li>
+                <li class="topic">
+                    <a href="hamburger.html" target="sidesec">Elements and Attributes</a>
+                </li>
+                <li class="topic">
+                    <a href="hamburger.html" target="sidesec">Headings</a>
+                </li>
+                <li class="topic">
+                    <a href="hamburger.html" target="sidesec">Paragraphs</a>
+                </li>
+            </ul>
+        </aside>
+
+        <section id="side">
+            <iframe src="html/introduction.html" frameborder="0" name="sidesec"></iframe>
+        </section>
+    </section>
+</body>
+<script>
+    document.getElementById('hamburger').addEventListener("click", event => {
+
+        if (document.getElementById('hamburger').classList.contains('activebtn')) {
+            document.getElementById('hamburger').classList.remove('activebtn');
+            document.querySelector('aside').style.display = "none";
+        }
+        else {
+            document.getElementById('hamburger').classList.add('activebtn');
+            document.querySelector('aside').style.display = "block";
+        }
+    })
+
+    let topics = document.querySelectorAll('.topic');
+
+    topics.addEventListener("click", e => {
+        // topic.classList.remove('activetop');
+        // topic.classList.add('activetop');
+        for (const topic of topics) {
+            topics.classList.remove('activetop');
+            topics.classList.add('activetop');
+        }
+    })
+</script>
+
+</html>
