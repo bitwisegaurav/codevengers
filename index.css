@@ -16,7 +16,7 @@ nav{
     width: 100%;
     /* padding: 10px 0; */
     z-index: 1;
-    position: fixed;
+    position: sticky;
     top: 0;
 }
 nav ul{
@@ -52,7 +52,7 @@ nav ul li img{
 .container{
     position: relative;
     /* border: 2px solid red; */
-    height: 100vh;
+    height: 90vh;
     display: flex;
     color: rgb(255, 255, 255);
     align-items: center;
