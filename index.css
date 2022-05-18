@@ -276,7 +276,9 @@ section{
         font-size: 1.3rem;
         padding: 0.4rem 0.9rem;
     }
-    
+    .box{
+        background: rgba(43, 11, 158, 0.1);
+    }
     .aboutlang{
         display: flex;
         flex-wrap: wrap;
