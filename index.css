@@ -66,7 +66,7 @@ nav ul li img{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: translateX(-20%);
+    transform: translateX(-10%);
     /* margin-right: 10rem; */
 }
 .container .maincont p{
@@ -85,21 +85,22 @@ nav ul li img{
     left: 0;
     z-index: -1;
     width: 100%;
-    height: 100vh;
-    background: rgba(29, 15, 71, 0.705) url("codingLogo.png") no-repeat;
-    opacity: 0.9;
+    height: 100%;
+    background: url("codingLogo.png") no-repeat;
+    opacity: 0.7;
     background-size: contain;
+    background-position: left top;
 }
 .container::after{
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: -2;
     width: 100%;
-    height: 100vh;
-    background: rgba(22, 8, 56, 0.705);
-    opacity: 0.3;
+    height: 100%;
+    background: rgba(29, 15, 71, 0.705);
+    opacity: 0.9;
     background-size: cover;
 }
 section{
@@ -240,16 +241,101 @@ section{
     border-bottom-right-radius: 3rem;
 }
 
-
+/* Media Queries */
 @media screen and (max-width: 768px) {
+    nav{
+        position: sticky;
+    }
+    .comname a{
+        font-size: 1.3rem;
+    }
+    .container{
+        height: 500px;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .container::before{
+        height: 60%;
+        background-position: center top;
+    }
     .container .maincont{
-        transform: translateX(0%) translateY(10%);
+        transform: none;
         padding: 1.5rem;
     }
     .container .maincont .name{
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
     .container .maincont p{
+        line-height: 1.2rem;
+        font-size: 0.9rem;
+    }
+    .buttons span{
+        cursor: pointer;
+        height: 100%;
+        margin: 0;
+        font-size: 1.3rem;
+        padding: 0.4rem 0.9rem;
+    }
+    
+    .aboutlang{
+        display: flex;
+        flex-wrap: wrap;
+        letter-spacing: 0.5px;
+        line-height: 1.4rem;
+        font-size: 0.8rem;
+        margin-top: 0.6rem;
+    }
+}
+@media screen and (max-width: 400px){
+    nav ul li img{
+        width: 40px;
+        height: 40px;
+        margin-left: 1.5rem;
+    }
+    .comname a{
         font-size: 1rem;
+    }
+    .language{
+        display: flex;
+        position: relative;
+        width: 40rem;
+        height: 30rem;
+        margin: 0 1.5rem;
+        margin-top: 2rem;
+        box-shadow: 0 8px 15px 8px rgba(0, 0, 0, 0.2); 
+        overflow: hidden;
+    }
+}
+@media screen and (max-width: 350px) {
+    nav ul li img{
+        width: 30px;
+        height: 30px;
+        margin-left: 1.3rem;
+    }
+    .container .maincont .name{
+        font-size: 1.7rem;
+    }
+    .container .maincont p{
+        line-height: 1rem;
+        font-size: 0.8rem;
+    }
+    .buttons{
+        flex-wrap: wrap;
+    }
+    .buttons span{
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        cursor: pointer;
+        height: 100%;
+        margin: 0;
+        font-size: 1rem;
+        padding: 0.4rem 0.9rem;
+        border-radius: 0;
+    }
+    .buttons span:last-child{
+        width: 100%;
+        border-top: 1px solid gray;
+        border-left: none;
     }
 }

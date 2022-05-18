@@ -23,6 +23,7 @@ nav{
 }
 nav ul{
     display: flex;
+    flex-wrap: wrap;
     /* border: 2px solid red; */
     align-items: center;
     justify-content: space-between;
@@ -179,5 +180,92 @@ section{
         display: none;
         position: fixed;
         background: rgb(226, 226, 238);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav ul li img{
+        width: 35px;
+        height: 35px;
+        margin-left: 1.5rem;
+    }
+    .hamburger{
+        width: 30px;
+        height: 25px;
+    }
+    .comname a{
+        font-size: 1.3rem;
+    }
+    .btn a{
+        margin: 0 0.3rem;
+        padding: 0.2rem 1.7vw;
+        font-size: 0.9rem;
+        border: 1px solid white;
+    }
+}
+@media screen and (max-width: 520px){
+    nav ul li{
+        justify-content: center;
+    }
+    nav ul li img{
+        /* border: 2px solid red; */
+        transform: translateX(-30%);
+    }
+    .comname a{
+        margin-top: 0;
+        font-size: 1.6rem;
+    }
+    .btn{
+        width: 100%;
+        margin-bottom: 1rem;
+        transform: translateX(-5%);
+    }
+    #logoimg{
+        display: flex;
+    }
+}
+@media screen and (max-width: 400px){
+    nav ul li img{
+        width: 30px;
+        height: 30px;
+        margin-left: 1.5rem;
+    }
+    .hamburger{
+        width: 10px;
+        height: 10px;
+    }
+    .comname a{
+        font-size: 1.3rem;
+    }
+    .btn a{
+        font-size: 0.7rem;
+    }
+    aside h1{
+        font-size: 1.4rem;
+    }
+    aside ul li a{
+        padding: 0.4rem 1rem;
+        cursor: pointer;
+        font-size: smaller;
+    }
+}
+@media screen and (max-width: 350px) {
+    nav ul li img{
+        width: 30px;
+        height: 30px;
+        margin-left: 1.3rem;
+    }
+    .hamburger{
+        width: 6px;
+        height: 6px;
+    }
+    aside h1{
+        font-size: 1.1rem;
+        padding: 0.4rem 1rem;
+    }
+    aside ul li a{
+        cursor: pointer;
+        padding: 0.4rem 1rem;
+        font-size: 0.7rem;
     }
 }
