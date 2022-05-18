@@ -47,7 +47,7 @@ li {
 
 @media screen and (max-width: 700px) {
     body{
-        padding: 1rem 2rem;
+        padding: 1rem 2.5rem;
     }
     h1 {
         font-size: 1.7rem;
@@ -56,17 +56,18 @@ li {
     h3{
         margin-top: 1.4rem;
     }
-    
+    p{
+        margin: 1rem 0;
+    }
     p, li {
         font-size: 0.9rem;
-        margin: 1rem 0;
         letter-spacing: 0.35px;
         line-height: 1.1rem;
     }
 }
 @media screen and (max-width: 520px) {
     body{
-        padding: 1rem 1rem;
+        padding: 1rem 2rem;
     }
 
     h1 {
@@ -76,10 +77,11 @@ li {
     h3{
         margin-top: 1rem;
     }
-    
+    p{
+        margin: 1rem 0;
+    }
     p, li {
         font-size: 0.8rem;
-        margin: 1rem 0;
         letter-spacing: 0.3px;
         line-height: 1rem;
     }
