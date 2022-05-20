@@ -21,6 +21,7 @@
         </ul>
     </nav>
 
+    <!-- Container Section -->
     <div class="container">
         <div class="maincont">
             <div class="name">Codevengers</div>
@@ -28,13 +29,13 @@
         </div>
     </div>
     
-    <!-- Center section -->
+    <!-- Center Section -->
     <section>
         <div class="change">
             <div class="buttons">
                 <span id="htmlbtn"  class="active htmlactive">HTML</span>
                 <span id="cssbtn">CSS</span>
-                <span id="jsbtn">JAVASCRIPT</span>
+                <span id="jsbtn" class="jsactive">JAVASCRIPT</span>
             </div>
         </div>
         <dvi class="boxes">
@@ -82,7 +83,6 @@
         document.getElementById('css').style.left = "100%";
         document.getElementById('js').style.left = "200%";
         document.getElementById('htmlbtn').classList.add('active');
-        document.getElementById('htmlbtn').classList.add('htmlactive');
         document.getElementById('cssbtn').classList.remove('active');
         document.getElementById('jsbtn').classList.remove('active');
     }
@@ -101,7 +101,6 @@
         document.getElementById('css').style.left = "-100%";
         document.getElementById('js').style.left = "0%";
         document.getElementById('jsbtn').classList.add('active');
-        document.getElementById('jsbtn').classList.add('jsactive');
         document.getElementById('htmlbtn').classList.remove('active');
         document.getElementById('cssbtn').classList.remove('active');
     }

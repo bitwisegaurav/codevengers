@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="html.css">
+    <link rel="stylesheet" href="common_files/outer.css">
     <title>Codevengers</title>
 </head>
 
@@ -60,29 +60,6 @@
         </section>
     </section>
 </body>
-<script>
-    document.getElementById('hamburger').addEventListener("click", event => {
-
-        if (document.getElementById('hamburger').classList.contains('activebtn')) {
-            document.getElementById('hamburger').classList.remove('activebtn');
-            document.querySelector('aside').style.display = "none";
-        }
-        else {
-            document.getElementById('hamburger').classList.add('activebtn');
-            document.querySelector('aside').style.display = "block";
-        }
-    })
-
-    let topics = document.querySelectorAll('.topic');
-
-    topics.addEventListener("click", e => {
-        // topic.classList.remove('activetop');
-        // topic.classList.add('activetop');
-        for (const topic of topics) {
-            topics.classList.remove('activetop');
-            topics.classList.add('activetop');
-        }
-    })
-</script>
+<script src="common_files/jsfiles.js"></script>
 
 </html>
