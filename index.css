@@ -294,6 +294,9 @@ section{
         height: 40px;
         margin-left: 1.5rem;
     }
+    .box{
+        background: rgba(43, 11, 158, 0.06);
+    }
     .comname a{
         font-size: 1.2rem;
     }
