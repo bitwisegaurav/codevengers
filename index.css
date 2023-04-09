@@ -108,7 +108,6 @@ section{
 }
 .boxes{
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     /* border: 2px solid red; */
@@ -120,29 +119,40 @@ section{
     height: 25rem;
     margin: 0 1.5rem;
     margin-top: 2rem;
-    box-shadow: 0 8px 15px 8px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 8px 15px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
 }
-.box{
+#outer-box{
+    display: flex;
+    width: 160rem;
     position: absolute;
     left: 0;
+    height: 100%;
+    transition: left 0.5s;
+    /* border: 2px solid red; */
+}
+.box{
+    /* position: absolute; */
+    /* left: 0; */
     display: flex;
     /* flex-wrap: wrap; */
     /* border: 2px solid red; */
     flex-direction: column;
     align-items: center;
     /* justify-content: center; */
-    width: 100%;
+    width: 40rem;
     height: 100%;
     padding: 1rem 2rem;
     background: rgba(43, 11, 158, 0.13);
-    transition: left 0.5s;
 }
 #css{
-    left: 100%;
+    /* left: 100%; */
 }
 #js{
-    left: 200%;
+    /* left: 200%; */
+}
+#mysql{
+    /* left: 300%; */
 }
 .langname{
     display: flex;
@@ -170,7 +180,7 @@ section{
 .buttons{
     border: 2px solid gray;
     display: flex;
-    border-radius: 3rem;
+    border-radius: 0.5rem;
     overflow: hidden;
 }
 .buttons span{
@@ -216,7 +226,7 @@ section{
 .buttons span:nth-child(1){
     border-right: 2px solid gray;
 }
-.buttons span:nth-child(3){
+.buttons span:nth-child(4), span:nth-child(3){
     border-left: 2px solid gray;
 }
 .buttons span:hover{
@@ -227,18 +237,10 @@ section{
 .active{
     background-color: rgba(69, 61, 114, 0.795);
     color: white;
-    box-shadow: inset 0 1px 3px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0 1px 4px 2px rgba(0, 0, 0, 0.25);
 }
 .active:hover{
     background: transparent;
-}
-.htmlactive{
-    border-top-left-radius: 3rem;
-    border-bottom-left-radius: 3rem;
-}
-.jsactive{
-    border-top-right-radius: 3rem;
-    border-bottom-right-radius: 3rem;
 }
 
 /* Media Queries */

@@ -33,39 +33,51 @@
     <section>
         <div class="change">
             <div class="buttons">
-                <span id="htmlbtn"  class="active htmlactive">HTML</span>
-                <span id="cssbtn">CSS</span>
-                <span id="jsbtn" class="jsactive">JAVASCRIPT</span>
+                <span id="htmlbtn"  class="active htmlactive btn">HTML</span>
+                <span id="cssbtn" class="btn">CSS</span>
+                <span id="jsbtn" class="jsactive btn">JAVASCRIPT</span>
+                <span id="mybtn" class="btn">MySQL</span>
             </div>
         </div>
         <dvi class="boxes">
             <div class="language">
-                <div class="box" id="html">
-                    <div class="langname">HTML</div>
-                    <p class="aboutlang">HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation (CSS) or functionality/behavior (JavaScript).</p>
-                    <span id="startbtn">
-                        <a href="html.html">Get Started
-                            <span class="bodbot"></span>
-                        </a>
-                    </span>
-                </div>
-                <div class="box" id="css">
-                    <div class="langname">CSS</div>
-                    <p class="aboutlang">Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>
-                    <span id="startbtn">
-                        <a href="css.html">Get Started
-                            <span class="bodbot"></span>
-                        </a>
-                    </span>
-                </div>
-                <div class="box" id="js">
-                    <div class="langname">JAVASCRIPT</div>
-                    <p class="aboutlang">JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions.  JavaScript is a prototype-based, multi-paradigm, single-threaded, dynamic language, supporting object-oriented, imperative, and declarative (e.g. functional programming) styles. Read more about JavaScript.</p>
-                    <span id="startbtn">
-                        <a href="js.html">Get Started
-                            <span class="bodbot"></span>
-                        </a>
-                    </span>
+                <div id="outer-box">
+                    <div class="box" id="html">
+                        <div class="langname">HTML</div>
+                        <p class="aboutlang">HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation (CSS) or functionality/behavior (JavaScript).</p>
+                        <span id="startbtn">
+                            <a href="html.html">Get Started
+                                <span class="bodbot"></span>
+                            </a>
+                        </span>
+                    </div>
+                    <div class="box" id="css">
+                        <div class="langname">CSS</div>
+                        <p class="aboutlang">Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>
+                        <span id="startbtn">
+                            <a href="css.html">Get Started
+                                <span class="bodbot"></span>
+                            </a>
+                        </span>
+                    </div>
+                    <div class="box" id="js">
+                        <div class="langname">JAVASCRIPT</div>
+                        <p class="aboutlang">JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions.  JavaScript is a prototype-based, multi-paradigm, single-threaded, dynamic language, supporting object-oriented, imperative, and declarative (e.g. functional programming) styles. Read more about JavaScript.</p>
+                        <span id="startbtn">
+                            <a href="js.html">Get Started
+                                <span class="bodbot"></span>
+                            </a>
+                        </span>
+                    </div>
+                    <div class="box" id="mysql">
+                        <div class="langname">MySQL</div>
+                        <p class="aboutlang">JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions.  JavaScript is a prototype-based, multi-paradigm, single-threaded, dynamic language, supporting object-oriented, imperative, and declarative (e.g. functional programming) styles. Read more about JavaScript.</p>
+                        <span id="startbtn">
+                            <a href="js.html">Get Started
+                                <span class="bodbot"></span>
+                            </a>
+                        </span>
+                    </div>
                 </div>
             </div>
         </dvi>
@@ -74,35 +86,19 @@
 
 <script>
 
-    document.getElementById('htmlbtn').addEventListener("click", html);
-    document.getElementById('cssbtn').addEventListener("click", css);
-    document.getElementById('jsbtn').addEventListener("click", js);
+    document.getElementById('htmlbtn').addEventListener("click", () => move(0,0));
+    document.getElementById('cssbtn').addEventListener("click", () => move(-100,1));
+    document.getElementById('jsbtn').addEventListener("click", () => move(-200,2));
+    document.getElementById('mybtn').addEventListener("click", () => move(-300,3));
 
-    function html() {
-        document.getElementById('html').style.left = "0%";
-        document.getElementById('css').style.left = "100%";
-        document.getElementById('js').style.left = "200%";
-        document.getElementById('htmlbtn').classList.add('active');
-        document.getElementById('cssbtn').classList.remove('active');
-        document.getElementById('jsbtn').classList.remove('active');
-    }
+    const divs = document.getElementsByClassName('btn');
 
-    function css() {
-        document.getElementById('html').style.left = "-100%";
-        document.getElementById('css').style.left = "0%";
-        document.getElementById('js').style.left = "100%";
-        document.getElementById('cssbtn').classList.add('active');
-        document.getElementById('htmlbtn').classList.remove('active');
-        document.getElementById('jsbtn').classList.remove('active');
-    }
-
-    function js() {
-        document.getElementById('html').style.left = "-200%";
-        document.getElementById('css').style.left = "-100%";
-        document.getElementById('js').style.left = "0%";
-        document.getElementById('jsbtn').classList.add('active');
-        document.getElementById('htmlbtn').classList.remove('active');
-        document.getElementById('cssbtn').classList.remove('active');
+    function move(pos,btn) {
+        for (let i = 0; i < divs.length; i++) {
+            divs[i].classList.remove('active');
+        }
+        divs[btn].classList.add('active');
+        document.getElementById('outer-box').style.left = `${pos}%`;
     }
 </script>
 </html>
