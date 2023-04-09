@@ -50,19 +50,6 @@ nav ul li img{
     text-decoration: none;
     color: white;
 }
-.btn a{
-    text-decoration: none;
-    color: white;
-    margin: 0 0.4rem;
-    padding: 0.3rem 2vw;
-    font-size: 1rem;
-    border: 1px solid white;
-}
-.btn a:hover {
-    background-color: white;
-    color: rgb(14, 14, 73);
-    transition: 0.4s;
-}
 
 .hamburger{
     position: relative;
@@ -114,6 +101,7 @@ aside{
     min-width: 250px;
     background-color: rgba(0, 0, 0, 0.11);
     transition: 0.2s;
+    overflow-y: auto;
 }
 aside h1{
     /* border: 2px solid red; */
@@ -139,6 +127,27 @@ aside ul li a:hover{
     /* background-color: rgb(51, 51, 126); */
     background: rgba(0, 0, 0, 0.1);
     color: black;
+}
+#langs{
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+}
+#langs a{
+    display: block;
+    text-decoration: none;
+    color: rgb(12, 31, 94);
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(51, 51, 126);
+}
+#langs a:first-child{
+    border-top: 1px solid rgb(51, 51, 126);
+}
+#langs a:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: rgb(14, 14, 73);
+    transition: 0.2s;
 }
 .activetop{
     background-color: rgb(51, 51, 126);

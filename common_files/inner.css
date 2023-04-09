@@ -13,12 +13,13 @@ body::-webkit-scrollbar {
     width: 0px;
 }
 
-h1 {
+h1{
     margin-bottom: 2rem;
     color: rgb(12, 31, 94);
 }
 
-h3{
+h3,h2{
+    color: rgb(12, 31, 94);
     margin-top: 2rem;
 }
 
