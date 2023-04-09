@@ -37,6 +37,7 @@
                 <span id="cssbtn" class="btn">CSS</span>
                 <span id="jsbtn" class="jsactive btn">JAVASCRIPT</span>
                 <span id="mybtn" class="btn">MySQL</span>
+                <span id="plbtn" class="btn">PL/SQL</span>
             </div>
         </div>
         <dvi class="boxes">
@@ -71,7 +72,16 @@
                     </div>
                     <div class="box" id="mysql">
                         <div class="langname">MySQL</div>
-                        <p class="aboutlang">JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions.  JavaScript is a prototype-based, multi-paradigm, single-threaded, dynamic language, supporting object-oriented, imperative, and declarative (e.g. functional programming) styles. Read more about JavaScript.</p>
+                        <p class="aboutlang">MySQL is a powerful and popular open-source relational database management system (RDBMS) used for storing and retrieving data in a structured manner. It is used by a wide range of organizations and individuals for various purposes, including data warehousing, e-commerce, and content management.</p>
+                        <span id="startbtn">
+                            <a href="js.html">Get Started
+                                <span class="bodbot"></span>
+                            </a>
+                        </span>
+                    </div>
+                    <div class="box" id="plsql">
+                        <div class="langname">PL/SQL</div>
+                        <p class="aboutlang">PL/SQL is a procedural extension of SQL, which stands for Structured Query Language. It is a programming language used in Oracle Database management systems to create and manage database-centric applications. PL/SQL is used to write stored procedures, functions, and triggers that are stored in the database and executed when needed. This makes it an essential tool for building efficient, reliable, and scalable database applications.</p>
                         <span id="startbtn">
                             <a href="js.html">Get Started
                                 <span class="bodbot"></span>
@@ -90,6 +100,7 @@
     document.getElementById('cssbtn').addEventListener("click", () => move(-100,1));
     document.getElementById('jsbtn').addEventListener("click", () => move(-200,2));
     document.getElementById('mybtn').addEventListener("click", () => move(-300,3));
+    document.getElementById('plbtn').addEventListener("click", () => move(-400,4));
 
     const divs = document.getElementsByClassName('btn');
 
