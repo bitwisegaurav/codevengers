@@ -38,6 +38,7 @@ nav ul li{
 }
 .comname{
     /* border: 2px solid red; */
+    width: 52.9vw;
     transform: translateX(0%);
 }
 nav ul li img{
@@ -49,6 +50,7 @@ nav ul li img{
 .comname a{
     text-decoration: none;
     color: white;
+    /* border: 2px solid green; */
 }
 
 .hamburger{
@@ -102,6 +104,9 @@ aside{
     background-color: rgba(0, 0, 0, 0.11);
     transition: 0.2s;
     overflow-y: auto;
+}
+aside::-webkit-scrollbar{
+    display: none;
 }
 aside h1{
     /* border: 2px solid red; */
