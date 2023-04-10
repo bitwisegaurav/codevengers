@@ -5,49 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../common_files/inner.css">
-    <title>Database</title>
+    <title>table</title>
 </head>
 <body>
-    <h1>Database</h1>
+    <h1>Tables</h1>
 
-    <h3>Create Database</h3>
+    <h3>Create table</h3>
     <p>Syntax :</p>
     <div class="code">
-        mysql> create database database_name;
+        mysql> create table table_name (column_name datatype constraints... );
     </div>
     <p>Example :</p>
     <div id="structimg">
-        <img src="../examples/mysql/database/create_database.PNG" alt="create database" class="hori">
+        <img src="../examples/mysql/table/create_table.PNG" alt="create table" class="hori">
     </div>
     
-    <h3>Show Database</h3>
+    <h3>Show table</h3>
     <p>Syntax :</p>
     <div class="code">
-        mysql> show databases;
+        mysql> show tables;
     </div>
     <p>Example :</p>
     <div id="structimg">
-        <img src="../examples/mysql/database/show_database.PNG" alt="create database" class="vert">
+        <img src="../examples/mysql/table/show_tables.PNG" alt="create table" class="box">
     </div>
 
-    <h3>Drop Database</h3>
+    <h3>Describe table</h3>
     <p>Syntax :</p>
     <div class="code">
-        mysql> drop database databases_name;
+        mysql> desc table_name;
     </div>
     <p>Example :</p>
     <div id="structimg">
-        <img src="../examples/mysql/database/drop_database.PNG" alt="create database" class="vert">
+        <img src="../examples/mysql/table/desc_table.PNG" alt="create table" class="box">
     </div>
 
-    <h3>Change Database</h3>
+    <h3>Drop table</h3>
     <p>Syntax :</p>
     <div class="code">
-        mysql> use databases_name;
+        mysql> drop table table_name;
     </div>
     <p>Example :</p>
     <div id="structimg">
-        <img src="../examples/mysql/database/use_database.PNG" alt="create database" class="hori">
+        <img src="../examples/mysql/table/drop_table.PNG" alt="create table" class="box">
     </div>
+
 </body>
 </html>

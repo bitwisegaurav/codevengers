@@ -33,15 +33,32 @@ p {
     background-color: rgba(0, 0, 0, 0.164);
     padding: 1rem;
     border-radius: 5px;
+    line-height: 2rem;
 }
 
 #structimg{
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    /* border: 2px solid; */
+    margin-bottom: 4rem;
+}
+#structimg:last-child{
+    margin-bottom: 0;
 }
 #structimg img{
-    width: 100%;
+    /* width: ; */
     max-width: 600px;
+}
+#structimg .hori{
+    min-height: 70px;
+    height: 100%;
+}
+#structimg .vert{
+    max-width: 350px;
+    width: 100%;
+}
+#structimg .box{
+    height: 200px;
 }
 
 span {
