@@ -10,9 +10,12 @@
         li {
             margin-bottom: 1rem;
         }
-
-        #structimg img {
+        #structimg{
             margin-bottom: 3rem;
+        }
+        #structimg img {
+            margin-top: 0;
+            margin-bottom: 0rem;
         }
     </style>
 </head>
@@ -37,29 +40,59 @@
             FROM table1
             INNER JOIN table2
             ON table1.column_name = table2.column_name;</div>
+            <p>Example:</p>
+            <div id="structimg" class="pl">
+                <img src="../examples/mysql/Joins/inner_join.PNG" alt="procedure"
+                class="hori">
+            </div>
+
         <li>LEFT JOIN :</li>
         <div class="code">
             SELECT column_name(s)
             FROM table1
             LEFT JOIN table2
             ON table1.column_name = table2.column_name;</div>
+            <p>Example:</p>
+            <div id="structimg" class="pl">
+                <img src="../examples/mysql/Joins/left_join.PNG" alt="procedure"
+                class="hori">
+            </div>
+
         <li>RIGHT JOIN :</li>
         <div class="code">
             SELECT column_name(s)
             FROM table1
             RIGHT JOIN table2
             ON table1.column_name = table2.column_name;</div>
+            <p>Example:</p>
+            <div id="structimg" class="pl">
+                <img src="../examples/mysql/Joins/right_join.PNG" alt="procedure"
+                class="hori">
+            </div>
+
         <li>FULL OUTER JOIN :</li>
         <div class="code">
             SELECT column_name(s)
             FROM table1
             FULL OUTER JOIN table2
             ON table1.column_name = table2.column_name;</div>
+            <p>Example:</p>
+            <div id="structimg" class="pl">
+                <img src="../examples/mysql/Joins/full_outer_join.PNG" alt="procedure"
+                class="hori">
+            </div>
+
         <li>CROSS JOIN :</li>
         <div class="code">
             SELECT column_name(s)
             FROM table1
             CROSS JOIN table2;</div>
+            <p>Example:</p>
+            <div id="structimg" class="pl">
+                <img src="../examples/mysql/Joins/cross_join.PNG" alt="procedure"
+                class="hori">
+            </div>
+
         <li>SELF JOIN :</li>
         <div class="code">
             SELECT column_name(s)
