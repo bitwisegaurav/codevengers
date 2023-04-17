@@ -124,7 +124,7 @@ section{
 }
 #outer-box{
     display: flex;
-    width: 200rem;
+    width: 200%;
     position: absolute;
     left: 0;
     height: 100%;
@@ -144,15 +144,6 @@ section{
     height: 100%;
     padding: 1rem 2rem;
     background: rgba(43, 11, 158, 0.13);
-}
-#css{
-    /* left: 100%; */
-}
-#js{
-    /* left: 200%; */
-}
-#mysql{
-    /* left: 300%; */
 }
 .langname{
     display: flex;
@@ -287,6 +278,9 @@ section{
         font-size: 0.8rem;
         margin-top: 0.6rem;
     }
+    .language{
+        height: 30rem;
+    }
 }
 @media screen and (max-width: 400px){
     nav ul li img{
@@ -299,16 +293,6 @@ section{
     }
     .comname a{
         font-size: 1.2rem;
-    }
-    .language{
-        display: flex;
-        position: relative;
-        width: 40rem;
-        height: 30rem;
-        margin: 0 1.5rem;
-        margin-top: 2rem;
-        box-shadow: 0 8px 15px 8px rgba(0, 0, 0, 0.2); 
-        overflow: hidden;
     }
 }
 @media screen and (max-width: 350px) {
@@ -337,10 +321,5 @@ section{
         font-size: 1rem;
         padding: 0.4rem 0.9rem;
         border-radius: 0;
-    }
-    .buttons span:last-child{
-        width: 100%;
-        border-top: 1px solid gray;
-        border-left: none;
     }
 }
