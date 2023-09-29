@@ -109,8 +109,7 @@ main .container .maincont p{
     line-height: 1.5rem;
 }
 main .container .maincont .name{
-    /* 4 rem */
-    font-size: 250%; 
+    font-size: 4rem; 
     font-family: 'JetBrains Mono', monospace;
     margin-bottom: 2rem;
 }
@@ -134,6 +133,7 @@ section .courseCont #courses{
     border: 2px solid rgb(48, 28, 119);
     text-align: center;
     padding: 1rem;
+    margin-bottom: 2rem;
 }
 section .courseCont .boxes{
     display: flex;
@@ -153,7 +153,7 @@ section .courseCont .boxes .box{
     height: 30rem;
     padding: 1rem 2rem;
     background: rgba(255, 255, 255, 0.5);
-    /* border: 2px solid rgb(48, 28, 119); */
+    border: 2px solid rgb(48, 28, 119, 0.4);
     box-shadow: 0 0 10px rgba(43, 11, 158, 0.5);
     transition: scale 0.3s ease-in-out;
     cursor: pointer;
@@ -212,6 +212,71 @@ section .courseCont .boxes .box #startbtn a:hover .bodbot{
     to{
         width: 100%;
     }
+}
+
+/* Footer Section */
+footer{
+    width: 100%;
+    height: 14rem;
+    /* background: rgba(13, 33, 97); */
+    background: rgb(4, 1, 32);
+    color: white;
+    display: grid;
+    place-items: center;
+}
+footer .foot{
+    width: 85%;
+    height: 4rem;
+    border: 2px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+footer .foot .left{
+    /* width: 30%; */
+    height: 100%;
+    border: 2px solid green;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+footer .foot .left .logo{
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+footer .foot .left .logo img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+footer .foot .left .name{
+    font-size: 200%;
+    font-family: 'JetBrains Mono', monospace;
+}
+footer .foot .socials{
+    height: 60%;
+    width: 30%;
+    border: 2px solid green;
+    display: flex;
+    flex-direction: row-reverse;
+}
+footer .foot .socials a{
+    height: 100%;
+    aspect-ratio: 1;
+    /* border: 2px solid gold; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+}
+footer .foot .socials #github{
+    background-color: white;
+}
+footer .foot .socials a img{
+    height: 80%;
+    aspect-ratio: 1;
 }
 
 /* Media Queries */

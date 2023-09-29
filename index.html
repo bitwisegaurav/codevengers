@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
     <title>Codevengers</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
@@ -18,7 +18,7 @@
         <ul>
           <li>
             <a id="logo" href="index.html">
-              <img src="logo.png" alt="logo" />
+              <img src="images/logo.png" alt="logo" />
             </a>
           </li>
           <li class="comname"><a href="index.html">Codevengers</a></li>
@@ -30,7 +30,7 @@
     <main>
       <div class="container">
         <div id="image">
-          <img src="codingLogo.png" alt="Image" />
+          <img src="images/codingLogo.png" alt="Image" />
         </div>
         <div class="maincont">
           <div class="name">Codevengers</div>
@@ -109,24 +109,22 @@
         </dvi>
       </div>
     </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="foot">
+            <div class="left">
+                <a class="logo">
+                    <img src="images/logo.png" alt="logo" />
+                </a>
+                <span class="name">Codevengers</span>
+            </div>
+            <div class="socials">
+                <a id="github" href="github.com/BitwiseGaurav">
+                    <img src="images/github.png" alt="github">
+                </a>
+            </div>
+        </div>
+    </footer>
   </body>
-
-  <script>
-    document
-      .getElementById("mybtn")
-      .addEventListener("click", () => move(0, 0));
-    document
-      .getElementById("plbtn")
-      .addEventListener("click", () => move(-100, 1));
-
-    const divs = document.getElementsByClassName("btn");
-
-    function move(pos, btn) {
-      for (let i = 0; i < divs.length; i++) {
-        divs[i].classList.remove("active");
-      }
-      divs[btn].classList.add("active");
-      document.getElementById("outer-box").style.left = `${pos}%`;
-    }
-  </script>
 </html>
