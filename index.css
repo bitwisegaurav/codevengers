@@ -11,7 +11,7 @@ body::-webkit-scrollbar {
 /* Navbar */
 header{
     /* border: 2px solid red; */
-    background: rgba(13, 33, 97);
+    background: rgb(27, 21, 81);
     color: white;
     width: 100%;
     z-index: 1;
@@ -55,6 +55,7 @@ nav ul li #logo img{
     height: 50px;
     border-radius: 50%;
     margin: 10px;
+    filter: hue-rotate(15deg);
 }
 .comname{
     /* border: 2px solid green; */
@@ -78,7 +79,7 @@ main{
 }
 main .container{
     width: 85%;
-    height: 100%;
+    height: 85%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -87,7 +88,8 @@ main .container{
 }
 main .container #image{
     width: 45%;
-    aspect-ratio: 1;
+    height: 100%;
+    /* aspect-ratio: 1; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,6 +98,7 @@ main .container #image{
 main .container #image img{
     width: 120%;
     aspect-ratio: 1;
+    filter: hue-rotate(-15deg);
 }
 main .container .maincont{
     width: 45%;
@@ -134,6 +137,7 @@ section .courseCont #courses{
     text-align: center;
     padding: 1rem;
     margin-bottom: 2rem;
+    border-radius: 5px;
 }
 section .courseCont .boxes{
     display: flex;
@@ -149,7 +153,8 @@ section .courseCont .boxes .box{
     display: flex; 
     flex-direction: column;
     align-items: center;
-    width: 30rem;
+    max-width: 30rem;
+    width: 90%;
     height: 30rem;
     padding: 1rem 2rem;
     background: rgba(255, 255, 255, 0.5);
@@ -157,27 +162,29 @@ section .courseCont .boxes .box{
     box-shadow: 0 0 10px rgba(43, 11, 158, 0.5);
     transition: scale 0.3s ease-in-out;
     cursor: pointer;
+    border-radius: 5px;
 }
 section .courseCont .boxes .box:hover{
-    /* position: absolute; */
     scale: 1.05;
 }
 section .courseCont .boxes .box .langname{
     display: flex;
     flex-wrap: wrap;
-    margin: 1rem 0 ;
+    margin: 1rem 0;
     color: rgb(48, 28, 119);
     font-size: 1.5rem;
 }
 section .courseCont .boxes .box .aboutlang{
     display: flex;
-    flex-wrap: wrap;
     letter-spacing: 0.5px;
     line-height: 1.5rem;
     font-size: 1rem;
     text-align: justify;
     margin-top: 1rem;
     margin-bottom: 3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* border: 2px solid red; */
 }
 section .courseCont .boxes .box #startbtn{
     height: 1.8rem;
@@ -217,9 +224,9 @@ section .courseCont .boxes .box #startbtn a:hover .bodbot{
 /* Footer Section */
 footer{
     width: 100%;
-    height: 14rem;
+    height: 10rem;
     /* background: rgba(13, 33, 97); */
-    background: rgb(4, 1, 32);
+    background: rgb(10, 7, 31);
     color: white;
     display: grid;
     place-items: center;
@@ -250,6 +257,7 @@ footer .foot .left .logo img{
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    filter: hue-rotate(15deg);
 }
 footer .foot .left .name{
     font-size: 200%;
@@ -288,28 +296,37 @@ footer .foot .socials a img{
 }
 
 /* Media Queries */
-@media screen and (max-width: 768px) {
-    nav{
-        position: sticky;
+@media screen and (max-width: 900px){
+    .container .maincont{
+        width: 50% !important;
     }
+    .container .maincont .name{
+        font-size: 2.4rem !important;
+    }
+    .container .maincont p{
+        line-height: 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
     .comname a{
         font-size: 1.3rem;
     }
-    .container{
-        height: 500px;
-        align-items: flex-end;
+    main .container{
+        flex-direction: column;
         justify-content: center;
+        /* background-color: green; */
     }
-    .container::before{
-        height: 60%;
-        background-position: center top;
+    .container #image{
+        width: 80% !important;
+        height: 70% !important;
     }
     .container .maincont{
-        transform: none;
-        padding: 1.5rem;
+        width: 100% !important;
     }
     .container .maincont .name{
-        font-size: 2.5rem;
+        font-size: 2rem !important;
     }
     .container .maincont p{
         line-height: 1.2rem;
@@ -325,6 +342,11 @@ footer .foot .socials a img{
     .box{
         background: rgba(43, 11, 158, 0.1);
     }
+    section .courseCont #courses{
+        font-size: 1.5rem;
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
     .aboutlang{
         display: flex;
         flex-wrap: wrap;
@@ -333,10 +355,35 @@ footer .foot .socials a img{
         font-size: 0.8rem;
         margin-top: 0.6rem;
     }
-    .language{
-        height: 30rem;
+    section .courseCont .boxes .box .langname{
+        font-size: 1.4rem;
+    }
+    footer {
+        height: 14rem;
+    }
+    footer .foot{
+        flex-direction: column;
+        gap: 1rem;
+        height: 60%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    footer .foot .left{
+        height: 4rem;
+        justify-content: center;
+    }
+    footer .foot .socials{
+        width: 30%;
+        height: 1.7rem;
     }
 }
+@media screen and (max-width: 600px){
+    section .courseCont .boxes .box .aboutlang{
+        line-height: 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
 @media screen and (max-width: 400px){
     nav ul li img{
         width: 40px;
@@ -348,6 +395,17 @@ footer .foot .socials a img{
     }
     .comname a{
         font-size: 1.2rem;
+    }
+    section .courseCont .boxes .box .aboutlang{
+        letter-spacing: 0.3px;
+        line-height: 1.2rem;
+        font-size: 0.8rem;
+    }
+    section .courseCont .boxes .box .langname{
+        font-size: 1.3rem;
+    }
+    footer .foot .left .name{
+        font-size: 150%;
     }
 }
 @media screen and (max-width: 350px) {
