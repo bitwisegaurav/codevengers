@@ -1,82 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
     <title>Codevengers</title>
-    <style>@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');</style>
-</head>
-<body>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+    </style>
+  </head>
+  <body>
     <!-- Navbar -->
-    <nav>
+    <header>
+      <nav>
         <ul>
-            <li>
-                <a href="index.html">
-                    <img src="logo.png" alt="">
-                </a>
-            </li>
-            <li class="comname"><a href="index.html">Codevengers</a></li>
+          <li>
+            <a id="logo" href="index.html">
+              <img src="logo.png" alt="logo" />
+            </a>
+          </li>
+          <li class="comname"><a href="index.html">Codevengers</a></li>
         </ul>
-    </nav>
+      </nav>
+    </header>
 
     <!-- Container Section -->
-    <div class="container">
-        <div class="maincont">
-            <div class="name">Codevengers</div>
-            <p>Read about the basics of web development, the process of creating a website, and additional resources for those who want to learn more.</p>
+    <main>
+      <div class="container">
+        <div id="image">
+          <img src="codingLogo.png" alt="Image" />
         </div>
-    </div>
-    
+        <div class="maincont">
+          <div class="name">Codevengers</div>
+          <p>
+            Read about the basics of web development, the process of creating a
+            website, and additional resources for those who want to learn more.
+          </p>
+        </div>
+      </div>
+    </main>
+
     <!-- Center Section -->
     <section>
-        <div class="change">
-            <div class="buttons">
-                <span id="mybtn" class="active btn">MySQL</span>
-                <span id="plbtn" class="btn">PL/SQL</span>
-            </div>
-        </div>
+      <div class="courseCont">
+        <div id="courses">Courses</div>
         <dvi class="boxes">
-            <div class="language">
-                <div id="outer-box">
-                    <div class="box" id="mysql">
-                        <div class="langname">MySQL</div>
-                        <p class="aboutlang">MySQL is a powerful and popular open-source relational database management system (RDBMS) used for storing and retrieving data in a structured manner. It is used by a wide range of organizations and individuals for various purposes, including data warehousing, e-commerce, and content management.</p>
-                        <span id="startbtn">
-                            <a href="mysql.html">Get Started
-                                <span class="bodbot"></span>
-                            </a>
-                        </span>
-                    </div>
-                    <div class="box" id="plsql">
-                        <div class="langname">PL/SQL</div>
-                        <p class="aboutlang">PL/SQL is a procedural extension of SQL, which stands for Structured Query Language. It is a programming language used in Oracle Database management systems to create and manage database-centric applications. PL/SQL is used to write stored procedures, functions, and triggers that are stored in the database and executed when needed. This makes it an essential tool for building efficient, reliable, and scalable database applications.</p>
-                        <span id="startbtn">
-                            <a href="plsql.html">Get Started
-                                <span class="bodbot"></span>
-                            </a>
-                        </span>
-                    </div>
-                </div>
-            </div>
+          <div class="box" id="mysql">
+            <div class="langname">MySQL</div>
+            <p class="aboutlang">
+              MySQL is a powerful and popular open-source relational database
+              management system (RDBMS) used for storing and retrieving data in
+              a structured manner. It is used by a wide range of organizations
+              and individuals for various purposes, including data warehousing,
+              e-commerce, and content management.
+            </p>
+            <span id="startbtn">
+              <a href="mysql.html"
+                >Get Started
+                <span class="bodbot"></span>
+              </a>
+            </span>
+          </div>
+          <div class="box" id="plsql">
+            <div class="langname">PL/SQL</div>
+            <p class="aboutlang">
+              PL/SQL is a procedural extension of SQL, which stands for
+              Structured Query Language. It is a programming language used in
+              Oracle Database management systems to create and manage
+              database-centric applications. PL/SQL is used to write stored
+              procedures, functions, and triggers that are stored in the
+              database and executed when needed. This makes it an essential tool
+              for building efficient, reliable, and scalable database
+              applications.
+            </p>
+            <span id="startbtn">
+              <a href="plsql.html"
+                >Get Started
+                <span class="bodbot"></span>
+              </a>
+            </span>
+          </div>
+          <div class="box" id="plsql">
+            <div class="langname">Java</div>
+            <p class="aboutlang">
+                Java is a versatile and widely-used programming language renowned for its platform independence and robustness. Its object-oriented nature and extensive library support make it a popular choice for building a wide range of applications, from web and mobile to enterprise-level software. Java's strong community and continuous updates ensure its relevance in the ever-evolving world of software development.
+            </p>
+            <span id="startbtn">
+              <a href="plsql.html"
+                >Get Started
+                <span class="bodbot"></span>
+              </a>
+            </span>
+          </div>
+          <div class="box" id="plsql">
+            <div class="langname">Java Programs</div>
+            <p class="aboutlang">
+                A dedicated section housing Java programs offers a practical resource for developers and learners. It provides a structured environment to showcase Java's versatility, from basic "Hello World" examples to complex algorithms and applications. Such a section not only facilitates hands-on practice but also serves as a reference point for programmers seeking solutions and insights into Java's capabilities.
+            </p>
+            <span id="startbtn">
+              <a href="plsql.html"
+                >Get Started
+                <span class="bodbot"></span>
+              </a>
+            </span>
+          </div>
         </dvi>
+      </div>
     </section>
-</body>
+  </body>
 
-<script>
-    document.getElementById('mybtn').addEventListener("click", () => move(0,0));
-    document.getElementById('plbtn').addEventListener("click", () => move(-100,1));
+  <script>
+    document
+      .getElementById("mybtn")
+      .addEventListener("click", () => move(0, 0));
+    document
+      .getElementById("plbtn")
+      .addEventListener("click", () => move(-100, 1));
 
-    const divs = document.getElementsByClassName('btn');
+    const divs = document.getElementsByClassName("btn");
 
-    function move(pos,btn) {
-        for (let i = 0; i < divs.length; i++) {
-            divs[i].classList.remove('active');
-        }
-        divs[btn].classList.add('active');
-        document.getElementById('outer-box').style.left = `${pos}%`;
+    function move(pos, btn) {
+      for (let i = 0; i < divs.length; i++) {
+        divs[i].classList.remove("active");
+      }
+      divs[btn].classList.add("active");
+      document.getElementById("outer-box").style.left = `${pos}%`;
     }
-</script>
+  </script>
 </html>
