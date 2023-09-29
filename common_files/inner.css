@@ -13,36 +13,72 @@ body::-webkit-scrollbar {
     width: 0px;
 }
 
-h1 {
+h1{
     margin-bottom: 2rem;
-    color: rgb(12, 31, 94);
+    color: rgb(27, 21, 81);
 }
 
-h3{
+h3,h2{
+    color: rgb(27, 21, 81);
     margin-top: 2rem;
+}
+
+ul{
+    margin: 1rem 0;
 }
 
 p {
     margin: 1rem 0;
     letter-spacing: 0.4px;
-    line-height: 1.2rem;
+    line-height: 1.5rem;
 }
+
+.code{
+    background-color: rgba(0, 0, 0, 0.164);
+    padding: 1rem;
+    border-radius: 5px;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+}
+
 #structimg{
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    /* border: 2px solid; */
+    margin-bottom: 4rem;
+}
+#structimg:last-child{
+    margin-bottom: 0;
 }
 #structimg img{
+    max-width: 700px;
+}
+.pl img{
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+#structimg .hori{
+    min-height: 70px;
+    height: 100%;
+}
+#structimg .vert{
+    max-width: 350px;
     width: 100%;
-    max-width: 600px;
+}
+#structimg .box{
+    height: 200px;
 }
 
 span {
     font-weight: bold;
-    color: rgb(12, 31, 94);
+    color: rgb(27, 21, 81);
 }
 
 li {
     margin-left: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.5rem;
 }
 
 @media screen and (max-width: 700px) {
