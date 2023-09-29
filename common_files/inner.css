@@ -15,11 +15,11 @@ body::-webkit-scrollbar {
 
 h1{
     margin-bottom: 2rem;
-    color: rgb(12, 31, 94);
+    color: rgb(27, 21, 81);
 }
 
 h3,h2{
-    color: rgb(12, 31, 94);
+    color: rgb(27, 21, 81);
     margin-top: 2rem;
 }
 
@@ -72,7 +72,7 @@ p {
 
 span {
     font-weight: bold;
-    color: rgb(12, 31, 94);
+    color: rgb(27, 21, 81);
 }
 
 li {
