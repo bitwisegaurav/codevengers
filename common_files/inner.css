@@ -23,8 +23,14 @@ h3,h2{
     margin-top: 2rem;
 }
 
-ul{
+ul, ol{
     margin: 1rem 0;
+}
+
+li {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.5rem;
 }
 
 p {
@@ -33,13 +39,44 @@ p {
     line-height: 1.5rem;
 }
 
+strong{
+    color: rgb(16, 12, 47);
+}
+
 .code{
+    position: relative;
     background-color: rgba(0, 0, 0, 0.164);
     padding: 1rem;
     word-wrap: break-word;
     border-radius: 5px;
     line-height: 2rem;
     margin-bottom: 1rem;
+}
+
+.code:hover{
+    cursor: pointer;
+}
+
+.code .copybtn{
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: display 0.2s ease-in-out;
+}
+
+.code .copybtn:hover{
+    background: #f1f1f1;
+}
+
+.code:hover .copybtn{
+    display: block;
 }
 
 #structimg{
@@ -76,12 +113,6 @@ span {
     color: rgb(27, 21, 81);
 }
 
-li {
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-    line-height: 1.5rem;
-}
-
 @media screen and (max-width: 700px) {
     body{
         padding: 1rem 2.5rem;
@@ -102,6 +133,7 @@ li {
         line-height: 1.1rem;
     }
 }
+
 @media screen and (max-width: 520px) {
     body{
         padding: 1rem 2rem;
@@ -129,6 +161,7 @@ li {
         height: auto;
     }
 }
+
 @media screen and (max-width: 400px) {
     body{
         padding-bottom: 6rem;

@@ -39,23 +39,46 @@
     <!-- Main Section -->
     <main>
       <section class="content1">
-        <h1 class="title">1. Write a Java program to print 'Hello World!' on screen</h1>
+        <h1 class="title">118. Write a Java program to print Fibonacci series of n terms where n is input by user using loop</h1>
         <div class="codeblock">
           <p class="codetitle">Code :</p>
           <div class="code">
             <!-- <button type="button" class="copybtn">Copy</button> -->
             <pre>
-class one{
-    public static void main(String args[])
-    {
-        System.out.println("Hello World!");
+class oneHundredEighteen {
+    public static void main(String[] args) throws java.io.IOException {
+        int num = 0, first = 0, second = 1, next = 0;
+        java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        System.out.print("Enter a number: ");
+
+        try {
+            num = java.lang.Integer.parseInt(reader.readLine());
+            System.out.println("Fibonnaci series of " + num + " terms is ");
+
+            for (int i = 1; i <= num; i++) {
+                if(i==1) System.out.print(first + " ");
+                else if(i==2) System.out.print(second + " ");
+                else{
+                    next = first + second;
+                    System.out.print(next + " ");
+                    first = second;
+                    second = next;
+                }
+            }
+
+            System.out.println();
+
+        } catch (java.lang.NumberFormatException e) {
+            System.out.println("Invalid input. Please enter a valid number.");
+        }
     }
 }</pre>
           </div>
         </div>
         <div class="output">
           <p class="codetitle">Output :</p>
-          <img src="../examples/javaPrograms/1.png" alt="output" />
+          <img src="../examples/javaPrograms/118.png" alt="output" />
         </div>
       </section>
     </main>

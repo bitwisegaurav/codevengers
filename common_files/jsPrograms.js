@@ -50,7 +50,7 @@ searchButton.addEventListener("click", () => {
 
 // Clear the search input and show all links when clicking outside the input
 document.addEventListener("click", (event) => {
-  if (event.target !== searchInput && event.target !== searchButton) {
+  if (event.target !== searchInput && event.target !== searchButton && event.target.className !== "program") {
     searchInput.value = "";
     programLinks.forEach((link) => {
       link.style.display = "flex";
