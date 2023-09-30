@@ -116,7 +116,7 @@ main{
     border: 2px solid black;
 }
 .cont{
-    width: 85%;
+    width: 90%;
     height: calc(100%);
     display: flex;
     flex-direction: column;
@@ -133,7 +133,7 @@ h1{
 /* Search bar */
 .search{
     position: relative;
-    width: 100%;
+    width: 95%;
     max-width: 50rem;
     height: 4rem;
     display: flex;
@@ -171,14 +171,16 @@ h1{
 /* Content Section */
 .content{
     width: 100%;
-    height: calc(100vh - 17rem);
+    max-height: calc(100vh - 17rem);
     padding-bottom: 2rem;
     /* border: 2px solid gold; */
-    overflow-x: visible;
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .content .programs{
-    width: 100%;
+    width: 95%;
     /* height: 100%; */
     display: flex;
     flex-direction: column;
@@ -201,9 +203,11 @@ h1{
     line-height: 2rem;
     color: rgb(27, 21, 81);
     transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 .content .programs .program:hover{
-    transform: scale(1.01);
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 .content .programs .program:hover::after{
     content: '';
@@ -212,7 +216,7 @@ h1{
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Media Queries */
@@ -224,7 +228,7 @@ h1{
         padding: 0 1rem;
     }
     main{
-        height: calc(100vh - 60px);
+        height: calc(100vh - 80px);
     }
     .comname a{
         padding: 0 1rem;
