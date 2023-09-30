@@ -300,6 +300,10 @@ footer .foot .socials a{
     align-items: center;
     justify-content: center;
     border-radius: 4px;
+    transition: transform 0.2s ease-in-out;
+}
+footer .foot .socials a:hover{
+    transform: scale(1.1);
 }
 footer .foot .socials #github{
     background-color: white;
