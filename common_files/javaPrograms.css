@@ -65,8 +65,9 @@ nav ul .languages .options{
     /* border: 2px solid red; */
     list-style: none;
     background-color: #f1f1f1;
-    transform: translateY(2rem);
+    transform: translateY(3.7rem) scale(1.5);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
 }
 nav ul .languages:hover .options, nav ul .languages:focus-within .options, nav ul .languages:active .options, .languages .courses:hover + .options, .languages .courses:focus-within + .options, .languages .courses:active + .options{
     display: flex;
@@ -74,16 +75,17 @@ nav ul .languages:hover .options, nav ul .languages:focus-within .options, nav u
 nav ul .languages .options a {
     width: 100%;
     display: block;
-    font-size: small;
-    padding: 5px 0;
+    font-size: 0.6rem;
     text-decoration: none;
     color: rgb(27, 21, 81);
-    transition: color 0.3s;
-    padding: 5px 10px;
-    border-top: 1px solid rgb(27, 21, 81);
+    transition: all 0.2s;
+    padding: 0.7rem 1.3rem;
+    border-top: 1px solid rgba(27, 21, 81, 0.2);
 }
 nav ul .languages .options a:hover {
-    background-color: #cacaca;
+    /* background-color: #cacaca; */
+    background-color: rgba(27, 21, 81, 0.7);
+    color: white;
 }
 .comname{
     /* border: 2px solid red; */

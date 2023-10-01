@@ -5,6 +5,9 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     scroll-behavior: smooth;
 }
+html{
+    scroll-padding-top: 4rem;
+}
 body::-webkit-scrollbar {
     width: 0px;
 }

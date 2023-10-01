@@ -4,7 +4,15 @@ const searchInput = document.querySelector(".search input");
 const programLinks = document.querySelectorAll(".program");
 
 // Add an event listener to the search button
-searchButton.addEventListener("click", () => {
+searchButton.addEventListener("click", search);
+searchInput.addEventListener("keyup", (event) => {
+  if (event.key === "Enter") {
+    search();
+  }
+});
+
+// Function to search for a program
+function search() {
   // Get the user's search query
   const searchQuery = searchInput.value.toLowerCase().trim();
 
@@ -46,7 +54,7 @@ searchButton.addEventListener("click", () => {
   //       link.style.display = 'none';
   //     }
   //   });
-});
+}
 
 // Clear the search input and show all links when clicking outside the input
 document.addEventListener("click", (event) => {
