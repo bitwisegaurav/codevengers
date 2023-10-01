@@ -120,6 +120,7 @@ nav ul li img{
     background-color: rgb(183, 179, 218);
     /* border: 2px solid red; */
     box-shadow: 0 4px 12px 8px rgba(0, 0, 0, 0.16);
+    cursor: pointer;
 }
 .hamburger span{
     height: 3px;

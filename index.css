@@ -132,7 +132,7 @@ main .container .maincont #coursebtn{
     transition: all 0.1s ease-in-out;
 }
 main .container .maincont #coursebtn:hover{
-   scale: 1.1;
+   transform: scale(1.1);
 }
 main .container .maincont .name{
     font-size: 4rem; 
