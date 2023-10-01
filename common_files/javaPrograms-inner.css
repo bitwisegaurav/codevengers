@@ -1,18 +1,30 @@
 main{
-    /* border: 2px solid red; */
     align-items: start;
+    overflow-y: scroll;
+    padding: 1rem 0;
+    /* border: 2px solid red; */
 }
-.content{
+.content1{
     /* border: 2px solid green; */
+    width: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
-    gap: 3rem;
+    gap: 2rem;
+}
+.title{
+    width: 85%;
+    text-align:start;
+    margin: 1rem 0 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* border: 2px solid blue; */
 }
 .codetitle{
-    width: 85%;
+    width: 100%;
     padding: 1rem 0rem;
+    font-weight: bold;
+    /* border: 2px solid red; */
 }
 .codeblock{
     display: inline-block;
@@ -23,8 +35,9 @@ main{
 .code{
     position: relative;
     width: 100%;
+    cursor: pointer;
 }
-.code #copybtn{
+.code .copybtn{
     display: none;
     position: absolute;
     top: 10px;
@@ -37,10 +50,10 @@ main{
     border-radius: 3px;
     transition: display 0.2s ease-in-out;
 }
-.code #copybtn:hover{
+.code .copybtn:hover{
     background: #f1f1f1;
 }
-.code:hover #copybtn{
+.code:hover .copybtn{
     display: block;
 }
 .code pre{
@@ -50,6 +63,8 @@ main{
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.164);
     font-family: 'JetBrains Mono', monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 .output{
     width: 85%;
