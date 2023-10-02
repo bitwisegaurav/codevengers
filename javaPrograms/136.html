@@ -40,23 +40,34 @@
     <!-- Main Section -->
     <main>
       <section class="content1">
-        <h1 class="title">1. Write a Java program to print 'Hello World!' on screen</h1>
+        <h1 class="title">136. Write a Java program to round up the result of integer division</h1>
         <div class="codeblock">
           <p class="codetitle">Code :</p>
           <div class="code">
-            <!-- <button type="button" class="copybtn">Copy</button> -->
             <pre>
-class one{
-    public static void main(String args[])
-    {
-        System.out.println("Hello World!");
+class oneHundredThirtySix{
+    public static void main(String arg[])throws java.io.IOException{
+        int a, b;
+        java.io.BufferedReader input = new java.io.BufferedReader (new java.io.InputStreamReader(System.in));
+
+        try{
+            System.out.print("Enter dividend : ");
+            a = Integer.parseInt(input.readLine());
+            System.out.print("Enter divisor : ");
+            b = Integer.parseInt(input.readLine());
+            
+            System.out.println("The round-up division of the given numbers is "+((a+b-1)/b));
+            
+        } catch(java.lang.NumberFormatException e){
+            System.out.println("Invalid input. Please enter a valid number.");
+        }
     }
-}</pre>
+}</pre>                
           </div>
         </div>
         <div class="output">
           <p class="codetitle">Output :</p>
-          <img src="../examples/javaPrograms/1.png" alt="output" />
+          <img src="../examples/javaPrograms/136.png" alt="output" />
         </div>
       </section>
     </main>

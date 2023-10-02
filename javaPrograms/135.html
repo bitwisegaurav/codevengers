@@ -40,23 +40,33 @@
     <!-- Main Section -->
     <main>
       <section class="content1">
-        <h1 class="title">1. Write a Java program to print 'Hello World!' on screen</h1>
+        <h1 class="title">135. Write a Java program to test if a double number is an integer</h1>
         <div class="codeblock">
           <p class="codetitle">Code :</p>
           <div class="code">
-            <!-- <button type="button" class="copybtn">Copy</button> -->
             <pre>
-class one{
-    public static void main(String args[])
-    {
-        System.out.println("Hello World!");
+class oneHundredThirtyFive{
+    public static void main(String arg[])throws java.io.IOException{
+        double a;
+        int b;
+        java.io.BufferedReader input = new java.io.BufferedReader (new java.io.InputStreamReader(System.in));
+        System.out.print("Enter a number ");
+
+        try{
+            a = Double.parseDouble(input.readLine());
+            b = (int)a;
+            if(a != b) System.out.println(a + " is not an integer");
+            else System.out.println(a + " is a integer");
+        } catch(java.lang.NumberFormatException e){
+            System.out.println("Invalid input. Please enter a valid number.");
+        }
     }
-}</pre>
+}</pre>                
           </div>
         </div>
         <div class="output">
           <p class="codetitle">Output :</p>
-          <img src="../examples/javaPrograms/1.png" alt="output" />
+          <img src="../examples/javaPrograms/135.png" alt="output" />
         </div>
       </section>
     </main>

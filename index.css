@@ -132,7 +132,7 @@ main .container .maincont #coursebtn{
     transition: all 0.1s ease-in-out;
 }
 main .container .maincont #coursebtn:hover{
-   scale: 1.1;
+   transform: scale(1.1);
 }
 main .container .maincont .name{
     font-size: 4rem; 
@@ -151,9 +151,14 @@ section{
 section .courseCont{
     width: 85%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     /* border: 2px solid red; */
 }
 section .courseCont #courses{
+    display: block;
+    width: 100%;
     font-size: 2rem;
     color: rgb(48, 28, 119);
     border: 2px solid rgb(48, 28, 119);
@@ -161,6 +166,9 @@ section .courseCont #courses{
     padding: 1rem;
     margin-bottom: 2rem;
     border-radius: 5px;
+}
+section .courseCont .carousel{
+    width: 100%;
 }
 section .courseCont .boxes{
     display: flex;
@@ -190,7 +198,71 @@ section .courseCont .boxes .box:hover{
     transform: scale(1.05);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
 }
-section .courseCont .boxes .box .langname{
+
+/* .carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid ;
+    width: 50rem;
+    max-width: 100%;
+    height: 35rem;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+}
+
+.boxes {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.box {
+    position: relative;
+    width: 30rem;
+    height: 95%;
+    padding: 20px;
+    margin: 0 10rem;
+    background-color: #fff; 
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    text-align: center; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.box:hover {
+    transform: scale(1.05); 
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgb(27, 21, 81);
+    color: #fff; 
+    border: none;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+} */
+
+section .courseCont .carousel .boxes .box .langname{
     display: flex;
     flex-wrap: wrap;
     margin: 1rem 0;
@@ -366,9 +438,9 @@ footer .foot .socials a img{
         font-size: 1.3rem;
         padding: 0.4rem 0.9rem;
     }
-    .box{
+    /* .box{
         background: rgba(43, 11, 158, 0.1);
-    }
+    } */
     section .courseCont #courses{
         font-size: 1.5rem;
         padding: 1rem;

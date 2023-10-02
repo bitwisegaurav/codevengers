@@ -10,14 +10,15 @@ document.getElementById('hamburger').addEventListener("click", event => {
     }
 });
 
-let topic = document.querySelectorAll('.topic');
+window.addEventListener('DOMContentLoaded', () => {
+    const topics = document.querySelectorAll('.topic');
 
-for (let i = 0; i < topic.length; i++) {
-    topic[i].onclick = function () {
-        let j = 0;
-        while (j < topic.length) {
-            topic[j++].classList.remove('activetop');
-        }
-        topic[i].classList.add("activetop");
-    }  
-}
+    for (let i = 0; i < topics.length; i++) {
+        topics[i].addEventListener('click', () => {
+            for (let j = 0; j < topics.length; j++) {
+                topics[j].classList.remove('activetop');
+            }
+            topics[i].classList.add('activetop');
+        });
+    }
+});

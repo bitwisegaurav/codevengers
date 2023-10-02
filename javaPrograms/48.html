@@ -40,23 +40,28 @@
     <!-- Main Section -->
     <main>
       <section class="content1">
-        <h1 class="title">1. Write a Java program to print 'Hello World!' on screen</h1>
+        <h1 class="title">48. Java Program To Calculate Batting Average</h1>
         <div class="codeblock">
           <p class="codetitle">Code :</p>
           <div class="code">
-            <!-- <button type="button" class="copybtn">Copy</button> -->
             <pre>
-class one{
-    public static void main(String args[])
+class fortyEight{
+    public static void main(String arg[]) throws java.io.IOException
     {
-        System.out.println("Hello World!");
+        java.io.BufferedReader input= new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        System.out.print("Enter the total number of hits or runs scored : ");
+        int runs = Integer.parseInt(input.readLine());
+        System.out.print("Enter the number of at-bats(baseball hit attempts) or outs : ");
+        float outs = Integer.parseInt(input.readLine());
+        float ans = runs/outs;
+        System.out.println("The batting average of the player is : "+ans);
     }
 }</pre>
           </div>
         </div>
         <div class="output">
           <p class="codetitle">Output :</p>
-          <img src="../examples/javaPrograms/1.png" alt="output" />
+          <img src="../examples/javaPrograms/48.png" alt="output" />
         </div>
       </section>
     </main>
