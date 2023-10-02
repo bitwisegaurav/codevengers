@@ -79,6 +79,11 @@ strong{
     display: block;
 }
 
+.code pre{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
 #structimg{
     display: flex;
     align-items: center;
@@ -132,6 +137,12 @@ span {
         letter-spacing: 0.35px;
         line-height: 1.1rem;
     }
+    .code{
+        line-height: 1.3rem;
+    }
+    .code pre{
+        font-size: small;
+    }
 }
 
 @media screen and (max-width: 520px) {
@@ -165,5 +176,12 @@ span {
 @media screen and (max-width: 400px) {
     body{
         padding-bottom: 6rem;
+    }
+    .code .copybtn{
+        padding: 3px 5px;
+        font-size: 10px;
+    }
+    .code pre{
+        font-size: x-small;
     }
 }
