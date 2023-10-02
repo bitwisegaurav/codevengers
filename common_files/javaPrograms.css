@@ -115,7 +115,7 @@ main{
     justify-content: center;
     align-items: center;
     padding-top: 2rem;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 .cont{
     width: 90%;
