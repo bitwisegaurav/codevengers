@@ -40,35 +40,31 @@
     <!-- Main Section -->
     <main>
       <section class="content1">
-        <h1 class="title">4. Write a Java program to print the sum, multiply, subtract, divide and remainder of two numbers</h1>
+        <h1 class="title">6. Write a Java program to swap two variables</h1>
         <div class="codeblock">
           <p class="codetitle">Code :</p>
           <div class="code">
             <pre>
-class four {
+class six {
     public static void main(String[] args) throws java.io.IOException {
-
         java.io.BufferedReader input = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
-        int x, y;
+        double a, b;
 
-        try {
-            System.out.print("Enter the first number : ");
-            x = Integer.parseInt(input.readLine());
-            System.out.print("Enter the second number : ");
-            y = Integer.parseInt(input.readLine());
+        try{
+            System.out.print("Enter first number : ");
+            a = Double.parseDouble(input.readLine());
+            System.out.print("Enter first number : ");
+            b = Double.parseDouble(input.readLine());
 
-            System.out.println("Sum of x and y is " + (x+y));
-            System.out.println("Subtraction of x and y is " + (x-y));
-            System.out.println("Product of x and y is " + (x*y));
-            System.out.println("Division of x and y is " + (x/y));
-            System.out.println("Modulo of x and y is " + (x%y));
-
-        } catch (java.lang.NumberFormatException e) {
-            System.out.println("Invalid input");
-            return;
-        } catch (Exception e){
-            System.out.println("Something went wrong");
-            return;
+            System.out.println("Before swapping: a = " + a + ", b = " + b);
+            double temp = a;
+            a = b;
+            b = temp;
+            System.out.println("After swapping: a = " + a + ", b = " + b);
+        } catch(java.lang.NumberFormatException e){
+            System.out.println("Invalid input, pls enter a valid number");
+        } catch(Exception e){
+            System.out.println("Something is wrong");
         }
     }
 }</pre>
@@ -76,7 +72,7 @@ class four {
         </div>
         <div class="output">
           <p class="codetitle">Output :</p>
-          <img src="../examples/javaPrograms/4.png" alt="output" />
+          <img src="../examples/javaPrograms/6.png" alt="output" />
         </div>
       </section>
     </main>

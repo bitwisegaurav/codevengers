@@ -40,28 +40,28 @@
     <!-- Main Section -->
     <main>
       <section class="content1">
-        <h1 class="title">4. Write a Java program to print the sum, multiply, subtract, divide and remainder of two numbers</h1>
+        <h1 class="title">5. Write a Java program that takes five numbers as input to calculate and print the average of the numbers</h1>
         <div class="codeblock">
           <p class="codetitle">Code :</p>
           <div class="code">
             <pre>
-class four {
+class five {
     public static void main(String[] args) throws java.io.IOException {
-
         java.io.BufferedReader input = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
-        int x, y;
+        double avg = 0, num = 0;
+        String msg = "th";
 
         try {
-            System.out.print("Enter the first number : ");
-            x = Integer.parseInt(input.readLine());
-            System.out.print("Enter the second number : ");
-            y = Integer.parseInt(input.readLine());
-
-            System.out.println("Sum of x and y is " + (x+y));
-            System.out.println("Subtraction of x and y is " + (x-y));
-            System.out.println("Product of x and y is " + (x*y));
-            System.out.println("Division of x and y is " + (x/y));
-            System.out.println("Modulo of x and y is " + (x%y));
+            for (int i = 0; i < 5; i++) {
+                if(i==0) msg = "st";
+                else if(i==1) msg = "nd";
+                else if(i==2) msg = "rd";
+                else msg = "th";
+                System.out.print("Enter the " + (i+1) + msg + " number : ");
+                num = Double.parseDouble(input.readLine());
+                avg += num/5;
+            }
+            System.out.println("Average of 5 numbers are " + avg);
 
         } catch (java.lang.NumberFormatException e) {
             System.out.println("Invalid input");
@@ -76,7 +76,7 @@ class four {
         </div>
         <div class="output">
           <p class="codetitle">Output :</p>
-          <img src="../examples/javaPrograms/4.png" alt="output" />
+          <img src="../examples/javaPrograms/5.png" alt="output" />
         </div>
       </section>
     </main>
