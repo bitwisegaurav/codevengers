@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common_files/inner.css">
+    <title>Control Structures in PHP</title>
+</head>
+<body>
+    <h1>Control Structures in PHP</h1>
+
+    <h2>Conditional Statements</h2>
+    <p>
+        Conditional statements in PHP allow you to make decisions in your code based on certain conditions. PHP supports several conditional statements:
+    </p>
+    <ul>
+        <li><strong>If else Statement:</strong> Executes code if a specified condition is true otherwise else will be executed. Only if can be used. Example:</li>
+        <div class="code">
+            <pre>
+if ($age &lt; 30) {
+    echo "You are under 30.";
+} else if ($age &lt; 18) {
+    echo "You are under 18.";
+} else {
+    echo "You are 18 or older.";
+}</pre>
+        </div>
+
+        <li><strong>Switch Statement:</strong> Evaluates a value against multiple possible cases. Example:</li>
+        <div class="code">
+            <pre>
+$day = "Monday";
+switch ($day) {
+    case "Monday":
+        echo "It's Monday!";
+        break;
+    case "Tuesday":
+        echo "It's Tuesday!";
+        break;
+    // Other cases...
+}</pre>
+        </div>
+    </ul>
+
+    <h2>Looping Statements</h2>
+    <p>
+        Looping statements in PHP allow you to execute a block of code repeatedly. PHP supports several looping statements:
+    </p>
+    <ul>
+        <li><strong>For Loop:</strong> Executes code a specified number of times. Example:</li>
+        <div class="code">
+            <pre>
+for ($i = 0; $i &lt; 5; $i++) {
+    echo "Iteration: $i";
+}</pre>
+        </div>
+
+        <li><strong>While Loop:</strong> Executes code while a specified condition is true. Example:</li>
+        <div class="code">
+            <pre>
+$counter = 0;
+while ($counter &lt; 3) {
+    echo "Iteration: $counter";
+    $counter++;
+}</pre>
+        </div>
+
+        <li><strong>Do-While Loop:</strong> Executes code at least once and continues as long as a specified condition is true. Example:</li>
+        <div class="code">
+            <pre>
+$counter = 0;
+do {
+    echo "Iteration: $counter";
+    $counter++;
+} while ($counter &lt; 3);</pre>
+        </div>
+
+        <li><strong>Foreach Loop:</strong> Iterates over elements in an array or other iterable objects. Example:</li>
+        <div class="code">
+            <pre>
+$colors = array("red", "green", "blue");
+foreach ($colors as $color) {
+    echo "Color: $color";
+}</pre>
+        </div>
+    </ul>
+
+    <h2>File Inclusion Statements</h2>
+    <p>
+        File inclusion statements in PHP allow you to include external PHP files into your current script. This can be useful for modularizing code and reusing functions and variables.
+    </p>
+    <ul>
+        <li><strong>Include Statement:</strong> Includes a file and continues execution even if the file is not found. Example:</li>
+        <div class="code">
+            <pre>
+include("header.php");
+include("footer.php");</pre>
+        </div>
+
+        <li><strong>Require Statement:</strong> Includes a file and terminates execution if the file is not found. Example:</li>
+        <div class="code">
+            <pre>
+require("config.php");
+require("functions.php");</pre>
+        </div>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+        Control structures are essential elements of PHP programming that allow you to make decisions, repeat tasks, and include external code. By mastering conditional statements, looping statements, and file inclusion statements, you gain the ability to create dynamic and interactive web applications. Understanding when and how to use these control structures is a fundamental skill for PHP developers.
+    </p>
+
+</body>
+<script src="../common_files/jsPrograms-inner.js"></script>
+</html>
