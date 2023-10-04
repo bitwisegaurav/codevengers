@@ -49,14 +49,15 @@ nav ul li{
 nav ul li #logo{
     /* border: 2px solid red; */
     /* margin-left: 2rem; */
-    height: 100%;
+    height: 70%;
+    aspect-ratio: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 nav ul li #logo img{
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     margin: 10px;
     filter: hue-rotate(15deg);
@@ -362,6 +363,7 @@ footer .foot .left .name{
 footer .foot .socials{
     height: 50%;
     width: 15%;
+    min-width: max-content;
     /* border: 2px solid green; */
     display: flex;
     flex-direction: row-reverse;
@@ -396,10 +398,25 @@ footer .foot .socials a img{
 }
 
 /* Media Queries */
-@media screen and (max-width: 900px){
-    .container .maincont{
-        width: 50% !important;
+@media screen and (max-width: 950px) {
+    main .container{
+        flex-direction: column;
+        justify-content: center;
+        /* background-color: green; */
     }
+    .container .maincont{
+        width: 100% !important;
+    }
+    .container #image{
+        width: 80% !important;
+        height: 70% !important;
+    }
+    main .container #image img{
+        height: 100%;
+        aspect-ratio: 1;
+    }
+}
+@media screen and (max-width: 900px){
     .container .maincont .name{
         font-size: 2.4rem !important;
     }
@@ -412,18 +429,6 @@ footer .foot .socials a img{
 @media screen and (max-width: 768px) {
     .comname a{
         font-size: 1.3rem;
-    }
-    main .container{
-        flex-direction: column;
-        justify-content: center;
-        /* background-color: green; */
-    }
-    .container #image{
-        width: 80% !important;
-        height: 70% !important;
-    }
-    .container .maincont{
-        width: 100% !important;
     }
     .container .maincont .name{
         font-size: 2rem !important;
@@ -485,16 +490,27 @@ footer .foot .socials a img{
 }
 
 @media screen and (max-width: 400px){
-    nav ul li img{
-        width: 40px;
-        height: 40px;
-        margin-left: 1.5rem;
+    header{
+        height: 3rem;
+    }
+    main .container .maincont p{
+        font-size: x-small;
+        line-height: 1rem;
+    }
+    main .container .maincont #coursebtn{
+        padding: 5px 10px;
+        font-size: small;
+        margin-top: 1.2rem;
+        border-radius: 7px;
+    }
+    main .container .maincont .name{
+        font-size: 1.7rem !important;
     }
     .box{
         background: rgba(43, 11, 158, 0.06);
     }
     .comname a{
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     section .courseCont .boxes .box .aboutlang{
         letter-spacing: 0.3px;
@@ -504,16 +520,25 @@ footer .foot .socials a img{
     section .courseCont .boxes .box .langname{
         font-size: 1.3rem;
     }
+    footer {
+        height: 8rem;
+    }
+    footer .foot{
+        height: 70%;
+    }
+    footer .foot .left{
+        height: 3rem;
+        gap: 1rem;
+    }
     footer .foot .left .name{
         font-size: 150%;
     }
+    footer .foot .socials{
+        height: 1.3rem;
+    }
 }
 @media screen and (max-width: 350px) {
-    nav ul li img{
-        width: 30px;
-        height: 30px;
-        margin-left: 1.3rem;
-    }
+    
     .container .maincont .name{
         font-size: 1.7rem;
     }

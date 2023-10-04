@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="../common_files/inner.css"> -->
+    <link rel="stylesheet" href="../common_files/javaPrograms.css" />
+    <link rel="stylesheet" href="../common_files/javaPrograms-inner.css" />
+    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
+    <title>Java Programs</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <ul>
+        <li>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <a href="../index.html" id="logoimg">
+            <img src="../images/logo.png" alt="logo" />
+          </a>
+        </li>
+        <li class="comname">
+          <a href="../index.html">Codevengers</a>
+        </li>
+        <li class="languages">
+          <p class="courses">Courses ↓</p>
+          <div class="options">
+            <a href="../languages/mysql.html">MySQL</a>
+            <a href="../languages/plsql.html">PL/SQL</a>
+            <a href="../languages/java.html">Java</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Section -->
+    <main>
+      <section class="content1">
+        <h1 class="title">6. Write a Java program to swap two variables</h1>
+        <div class="codeblock">
+          <p class="codetitle">Code :</p>
+          <div class="code">
+            <pre>
+class six {
+    public static void main(String[] args) throws java.io.IOException {
+        java.io.BufferedReader input = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+        double a, b;
+
+        try{
+            System.out.print("Enter first number : ");
+            a = Double.parseDouble(input.readLine());
+            System.out.print("Enter first number : ");
+            b = Double.parseDouble(input.readLine());
+
+            System.out.println("Before swapping: a = " + a + ", b = " + b);
+            double temp = a;
+            a = b;
+            b = temp;
+            System.out.println("After swapping: a = " + a + ", b = " + b);
+        } catch(java.lang.NumberFormatException e){
+            System.out.println("Invalid input, pls enter a valid number");
+        } catch(Exception e){
+            System.out.println("Something is wrong");
+        }
+    }
+}</pre>
+          </div>
+        </div>
+        <div class="output">
+          <p class="codetitle">Output :</p>
+          <img src="../examples/javaPrograms/6.png" alt="output" />
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="../common_files/jsPrograms-inner.js"></script>
+</html>
