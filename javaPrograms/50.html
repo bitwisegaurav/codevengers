@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="../common_files/inner.css"> -->
+    <link rel="stylesheet" href="../common_files/javaPrograms.css" />
+    <link rel="stylesheet" href="../common_files/javaPrograms-inner.css" />
+    <link rel="shortcut icon" href="../images/icon1.png" type="image/x-icon">
+    <title>Java Programs - Codevengers</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <ul>
+        <li>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <a href="../index.html" id="logoimg">
+            <img src="../images/logo.png" alt="logo" />
+          </a>
+        </li>
+        <li class="comname">
+          <a href="../index.html">Codevengers</a>
+        </li>
+        <li class="languages">
+          <p class="courses">Courses ↓</p>
+          <div class="options">
+            <a href="../languages/mysql.html">MySQL</a>
+            <a href="../languages/plsql.html">PL/SQL</a>
+            <a href="../languages/java.html">Java</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Section -->
+    <main>
+      <section class="content1">
+        <h1 class="title">50.	Java Pogram To Find Distance Between Two Points</h1>
+        <div class="codeblock">
+          <p class="codetitle">Code :</p>
+          <div class="code">
+            <pre>
+class fifty {
+    public static void main(String[] args) throws java.io.IOException {
+        java.io.BufferedReader input = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        try {
+            System.out.print("Enter the x-coordinate of point A: ");
+            double x1 = Double.parseDouble(input.readLine());
+            System.out.print("Enter the y-coordinate of point A: ");
+            double y1 = Double.parseDouble(input.readLine());
+            System.out.print("Enter the x-coordinate of point B: ");
+            double x2 = Double.parseDouble(input.readLine());
+            System.out.print("Enter the y-coordinate of point B: ");
+            double y2 = Double.parseDouble(input.readLine());
+
+            double distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+            System.out.println("Distance between points A and B: " + distance);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Please enter valid numeric values.");
+        } catch (Exception e) {
+            System.out.println("Something went wrong.");
+        }
+    }
+}
+</pre>
+          </div>
+        </div>
+        <div class="output">
+          <p class="codetitle">Output :</p>
+          <img src="../examples/javaPrograms/50.png" alt="output" />
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="../common_files/jsPrograms-inner.js"></script>
+</html>

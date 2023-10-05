@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="../common_files/inner.css"> -->
+    <link rel="stylesheet" href="../common_files/javaPrograms.css" />
+    <link rel="stylesheet" href="../common_files/javaPrograms-inner.css" />
+    <link rel="shortcut icon" href="../images/icon1.png" type="image/x-icon">
+    <title>Java Programs - Codevengers</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <ul>
+        <li>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <a href="../index.html" id="logoimg">
+            <img src="../images/logo.png" alt="logo" />
+          </a>
+        </li>
+        <li class="comname">
+          <a href="../index.html">Codevengers</a>
+        </li>
+        <li class="languages">
+          <p class="courses">Courses ↓</p>
+          <div class="options">
+            <a href="../languages/mysql.html">MySQL</a>
+            <a href="../languages/plsql.html">PL/SQL</a>
+            <a href="../languages/java.html">Java</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Section -->
+    <main>
+      <section class="content1">
+        <h1 class="title">45.	Java Program to calculate electricity bill</h1>
+        <div class="codeblock">
+          <p class="codetitle">Code :</p>
+          <div class="code">
+            <pre>
+class fortyfive {
+    public static void main(String[] args) throws java.io.IOException {
+        java.io.BufferedReader input = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        try {
+            System.out.print("Enter the units of electricity consumed: ");
+            double units = Double.parseDouble(input.readLine());
+
+            if (units < 0) {
+                System.out.println("Please enter a non-negative value for units.");
+            } else {
+                double totalBill;
+
+                if (units <= 100) {
+                    totalBill = units * 1.20;
+                } else if (units <= 300) {
+                    totalBill = 100 * 1.20 + (units - 100) * 2.00;
+                } else {
+                    totalBill = 100 * 1.20 + 200 * 2.00 + (units - 300) * 3.00;
+                }
+
+                System.out.println("Electricity bill: $" + totalBill);
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Please enter valid numeric values.");
+        } catch (Exception e) {
+            System.out.println("Something went wrong.");
+        }
+    }
+}
+</pre>
+          </div>
+        </div>
+        <div class="output">
+          <p class="codetitle">Output :</p>
+          <img src="../examples/javaPrograms/45.png" alt="output" />
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="../common_files/jsPrograms-inner.js"></script>
+</html>
