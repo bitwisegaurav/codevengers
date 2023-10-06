@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="../common_files/inner.css"> -->
+    <link rel="stylesheet" href="../common_files/javaPrograms.css" />
+    <link rel="stylesheet" href="../common_files/javaPrograms-inner.css" />
+    <link rel="shortcut icon" href="../images/icon1.png" type="image/x-icon">
+    <title>Java Programs - Codevengers</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <ul>
+        <li>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <a href="../index.html" id="logoimg">
+            <img src="../images/logo.png" alt="logo" />
+          </a>
+        </li>
+        <li class="comname">
+          <a href="../index.html">Codevengers</a>
+        </li>
+        <li class="languages">
+          <p class="courses">Courses ↓</p>
+          <div class="options">
+            <a href="../languages/mysql.html">MySQL</a>
+            <a href="../languages/plsql.html">PL/SQL</a>
+            <a href="../languages/java.html">Java</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Section -->
+    <main>
+      <section class="content1">
+        <h1 class="title">66.	Write a java program that accepts three numbers from the user and check if numbers are in “increasing” or “decreasing” order</h1>
+        <div class="codeblock">
+          <p class="codetitle">Code :</p>
+          <div class="code">
+            <pre>
+class sixtySix {
+  public static void main(String[] args) throws java.io.IOException {
+      java.io.BufferedReader input = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+      try {
+          System.out.print("Enter the first number: ");
+          double num1 = Double.parseDouble(input.readLine());
+          System.out.print("Enter the second number: ");
+          double num2 = Double.parseDouble(input.readLine());
+          System.out.print("Enter the third number: ");
+          double num3 = Double.parseDouble(input.readLine());
+
+          if ((num1 < num2) && (num2 < num3)) {
+              System.out.println("Numbers are in increasing order.");
+          } else if ((num1 > num2) && (num2 > num3)) {
+              System.out.println("Numbers are in decreasing order.");
+          } else {
+              System.out.println("Numbers are neither in increasing nor in decreasing order.");
+          }
+      } catch (java.lang.NumberFormatException e) {
+          System.out.println("Invalid input. Please enter valid numeric values.");
+      } catch (Exception e) {
+          System.out.println("Something went wrong.");
+      }
+  }
+}
+</pre>
+          </div>
+        </div>
+        <div class="output">
+          <p class="codetitle">Output :</p>
+          <img src="../examples/javaPrograms/66.png" alt="output" />
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="../common_files/jsPrograms-inner.js"></script>
+</html>
