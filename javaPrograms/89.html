@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="../common_files/inner.css"> -->
+    <link rel="stylesheet" href="../common_files/javaPrograms.css" />
+    <link rel="stylesheet" href="../common_files/javaPrograms-inner.css" />
+    <link rel="shortcut icon" href="../images/icon1.png" type="image/x-icon">
+    <title>Java Programs - Codevengers</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <ul>
+        <li>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <a href="../index.html" id="logoimg">
+            <img src="../images/logo.png" alt="logo" />
+          </a>
+        </li>
+        <li class="comname">
+          <a href="../index.html">Codevengers</a>
+        </li>
+        <li class="languages">
+          <p class="courses">Courses ↓</p>
+          <div class="options">
+            <a href="../languages/mysql.html">MySQL</a>
+            <a href="../languages/plsql.html">PL/SQL</a>
+            <a href="../languages/java.html">Java</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Section -->
+    <main>
+      <section class="content1">
+        <h1 class="title">89.	Write a Java program to find the common elements between two arrays</h1>
+        <div class="codeblock">
+          <p class="codetitle">Code :</p>
+          <div class="code">
+            <pre>
+class eightyNine {
+    public static void main(String[] args) {
+        int[] array1 = {1, 2, 3, 4, 5};
+        int[] array2 = {3, 4, 5, 6, 7};
+
+        System.out.println("Array 1: " + java.util.Arrays.toString(array1));
+        System.out.println("Array 2: " + java.util.Arrays.toString(array2));
+
+        java.util.HashSet&lt;Integer&gt; commonElements = new java.util.HashSet<>();
+
+        for (int element : array1) {
+            if (java.util.Arrays.binarySearch(array2, element) >= 0) {
+                commonElements.add(element);
+            }
+        }
+
+        System.out.println("Common elements: " + commonElements);
+    }
+}
+</pre>
+          </div>
+        </div>
+        <div class="output">
+          <p class="codetitle">Output :</p>
+          <img src="../examples/javaPrograms/89.png" alt="output" />
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="../common_files/jsPrograms-inner.js"></script>
+</html>
