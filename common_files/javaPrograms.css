@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    scroll-behavior: smooth;
 }
 
 /* Navbar */
@@ -128,7 +129,7 @@ main{
 h1{
     margin-bottom: 1rem;
     /* border: 2px solid green; */
-    font-family: 'JetBrains Mono', monospace;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     color: rgb(27, 21, 81);
 }
@@ -154,6 +155,9 @@ h1{
     padding: 0 1rem;
     /* font-size: 1rem; */
     font-weight: lighter;
+}
+.search input:active, .search input:focus{
+    border: 2px solid rgb(77, 60, 231);
 }
 .search button{
     /* width: 4rem; */
@@ -279,6 +283,9 @@ h1{
     }
     .comname a{
         margin-top: 0;
+    }
+    .search input{
+        font-weight: bold;
     }
 }
 @media screen and (max-width: 400px){
