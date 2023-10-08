@@ -54,6 +54,7 @@ nav ul .languages .courses{
     color: rgb(27, 21, 81);
     cursor: pointer;
     padding: 0 2rem;
+    border-radius: 10px;
 }
 nav ul .languages .options{
     position: absolute;
@@ -69,6 +70,8 @@ nav ul .languages .options{
     transform: translateY(3.7rem) scale(1.5);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;
 }
 nav ul .languages:hover .options, nav ul .languages:focus-within .options, nav ul .languages:active .options, .languages .courses:hover + .options, .languages .courses:focus-within + .options, .languages .courses:active + .options{
     display: flex;

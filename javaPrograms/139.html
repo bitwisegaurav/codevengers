@@ -40,52 +40,43 @@
     <!-- Main Section -->
     <main>
       <section class="content1">
-        <h1 class="title">136. Write a Java program to round up the result of integer division</h1>
+        <h1 class="title">139. Write a Java program to accept a float value of number and return a rounded float value</h1>
         <div class="codeblock">
           <p class="codetitle">Code :</p>
           <div class="code">
             <pre>
-class oneHundredThirtySix {
+class oneHundredThirtyNine {
     public static void main(String[] args) throws java.io.IOException {
         java.io.BufferedReader input = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
 
         try {
-            System.out.print("Enter the numerator: ");
-            int numerator = Integer.parseInt(input.readLine());
+            System.out.print("Enter a float value: ");
+            float floatValue = Float.parseFloat(input.readLine());
 
-            System.out.print("Enter the denominator: ");
-            int denominator = Integer.parseInt(input.readLine());
+            System.out.print("Enter the number of decimals to round to: ");
+            int decimals = Integer.parseInt(input.readLine());
 
-            int result = roundUpIntegerDivision(numerator, denominator);
+            float roundedValue = roundFloatValue(floatValue, decimals);
 
-            System.out.println("Rounded up result of integer division: " + result);
+            System.out.println("Rounded float value: " + roundedValue);
         } catch (java.lang.NumberFormatException e) {
-            System.out.println("Invalid input. Please enter valid integers.");
-        } catch(java.lang.ArithmeticException e){
-            System.out.println("Division by zero is not allowed.");
+            System.out.println("Invalid input. Please enter valid numbers.");
         } catch (Exception e) {
             System.out.println("Something went wrong.");
         }
     }
 
-    public static int roundUpIntegerDivision(int numerator, int denominator) {
-        if (denominator == 0) 
-            throw new java.lang.ArithmeticException();
-
-        int result = numerator / denominator;
-        int remainder = numerator % denominator;
-
-        if (remainder != 0) 
-            result++;
-        
-        return result;
+    public static float roundFloatValue(float value, int decimals) {
+        double powerOfTen = Math.pow(10, decimals);
+        return (float) Math.round(value * powerOfTen) / (float) powerOfTen;
     }
-}</pre>                
+}
+</pre>
           </div>
         </div>
         <div class="output">
           <p class="codetitle">Output :</p>
-          <img src="../examples/javaPrograms/136.png" alt="output" />
+          <img src="../examples/javaPrograms/139.png" alt="output" />
         </div>
       </section>
     </main>

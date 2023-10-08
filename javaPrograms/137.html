@@ -40,52 +40,65 @@
     <!-- Main Section -->
     <main>
       <section class="content1">
-        <h1 class="title">136. Write a Java program to round up the result of integer division</h1>
+        <h1 class="title">137. Write a Java program to convert Roman number to an integer number</h1>
         <div class="codeblock">
           <p class="codetitle">Code :</p>
           <div class="code">
             <pre>
-class oneHundredThirtySix {
+class oneHundredThirtySeven {
     public static void main(String[] args) throws java.io.IOException {
         java.io.BufferedReader input = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
 
         try {
-            System.out.print("Enter the numerator: ");
-            int numerator = Integer.parseInt(input.readLine());
+            System.out.print("Enter a Roman numeral: ");
+            String romanNumeral = input.readLine();
 
-            System.out.print("Enter the denominator: ");
-            int denominator = Integer.parseInt(input.readLine());
+            int result = romanToInteger(romanNumeral);
 
-            int result = roundUpIntegerDivision(numerator, denominator);
-
-            System.out.println("Rounded up result of integer division: " + result);
-        } catch (java.lang.NumberFormatException e) {
-            System.out.println("Invalid input. Please enter valid integers.");
-        } catch(java.lang.ArithmeticException e){
-            System.out.println("Division by zero is not allowed.");
+            System.out.println("Integer value of Roman numeral: " + result);
         } catch (Exception e) {
             System.out.println("Something went wrong.");
         }
     }
 
-    public static int roundUpIntegerDivision(int numerator, int denominator) {
-        if (denominator == 0) 
-            throw new java.lang.ArithmeticException();
+    public static int romanToInteger(String romanNumeral) {
+        int result = 0;
 
-        int result = numerator / denominator;
-        int remainder = numerator % denominator;
+        if (romanNumeral == null || romanNumeral.isEmpty()) {
+            return result;
+        }
 
-        if (remainder != 0) 
-            result++;
-        
+        java.util.Map&lt;Character, Integer&gt; romanValues = new java.util.HashMap<>();
+        romanValues.put('I', 1);
+        romanValues.put('V', 5);
+        romanValues.put('X', 10);
+        romanValues.put('L', 50);
+        romanValues.put('C', 100);
+        romanValues.put('D', 500);
+        romanValues.put('M', 1000);
+
+        int prevValue = 0;
+
+        for (int i = romanNumeral.length() - 1; i >= 0; i--) {
+            char currentChar = romanNumeral.charAt(i);
+            int currentValue = romanValues.get(currentChar);
+
+            if (currentValue < prevValue) {
+                result -= currentValue;
+            } else {
+                result += currentValue;
+            }
+            prevValue = currentValue;
+        }
         return result;
     }
-}</pre>                
+}
+</pre>
           </div>
         </div>
         <div class="output">
           <p class="codetitle">Output :</p>
-          <img src="../examples/javaPrograms/136.png" alt="output" />
+          <img src="../examples/javaPrograms/137.png" alt="output" />
         </div>
       </section>
     </main>
