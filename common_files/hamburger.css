@@ -30,6 +30,7 @@ main{
     gap: 1rem;
 }
 .about{
+    height: max-content;
     margin-bottom: 2rem;
     /* border: 2px solid gold; */
     display: flex;
@@ -39,7 +40,7 @@ main{
 }
 
 main .about h1 {
-    font-size: 250%;
+    font-size: 350%;
     color: #f1f1f1;
 }
 
@@ -57,8 +58,8 @@ main .about hr{
 
 main .logo {
     /* border: 2px solid red; */
-    width: 100%;
-    max-height: 80%;
+    max-width: 80%;
+    max-height: 70%;
     padding: 20px;
 }
 main .logo img{
