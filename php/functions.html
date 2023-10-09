@@ -58,7 +58,7 @@ greet(); // $result will be "Hello, Guest!"</pre>
     <div class="code">
         <pre>
 $functionName = "greet";
-$functionName("Alice"); // Calls the greet function</pre>
+$functionName("Gaurav"); // Calls the greet function</pre>
     </div>
 
     <h2>Call by Value and Reference</h2>
@@ -74,8 +74,13 @@ function incrementByReference(&$num) {
     $num++;
 }
 $value = 5;
+echo "Value before function calling = $value &lt;br>";
+
 increment($value); // $value remains 5
-incrementByReference($value); // $value becomes 6</pre>
+echo "Value after call by value = $value &lt;br>";
+
+incrementByReference($value); // $value becomes 6
+echo "Value after call by reference = $value &lt;br>";</pre>
     </div>
 
     <h2>Function and Variable Scope</h2>
@@ -102,7 +107,8 @@ function factorial($n) {
     if ($n === 0) { return 1; } 
     else { return $n * factorial($n - 1); }
 }
-$fact = factorial(5); // $fact will be 120</pre>
+$fact = factorial(5);
+echo $fact;</pre>
     </div>
 
     <h2>Library Functions</h2>
@@ -111,7 +117,8 @@ $fact = factorial(5); // $fact will be 120</pre>
     </p>
     <div class="code">
         <pre>
-$length = strlen("Hello, PHP!"); // $length will be 11</pre>
+$length = strlen("Hello, PHP!");
+echo $length;</pre>
     </div>
 
     <h2>Conclusion</h2>

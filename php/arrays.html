@@ -64,7 +64,7 @@ foreach ($fruits as $fruit) {
         <div class="code">
             <pre>
 $fruits = array("apple", "banana", "cherry");
-echo current($fruits); // "apple"
+echo current($fruits) . "&lt;br>"; // "apple"
 next($fruits); // Move pointer to the next element
 echo current($fruits); // "banana"</pre>
         </div>
@@ -88,7 +88,8 @@ $hasKey = array_key_exists("banana", $fruits); // true</pre>
     <div class="code">
         <pre>
 $fruits = array("apple", "banana", "cherry");
-unset($fruits[1]); // Removes "banana"</pre>
+unset($fruits[1]);
+print_r($fruits);</pre>
     </div>
 
     <h2>Conclusion</h2>

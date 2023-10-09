@@ -17,10 +17,11 @@
         <li><strong>If else Statement:</strong> Executes code if a specified condition is true otherwise else will be executed. Only if can be used. Example:</li>
         <div class="code">
             <pre>
-if ($age &lt; 30) {
-    echo "You are under 30.";
-} else if ($age &lt; 18) {
+$age = 22;
+if ($age &lt; 18) {
     echo "You are under 18.";
+} else if ($age &lt; 30) {
+    echo "You are under 30.";
 } else {
     echo "You are 18 or older.";
 }</pre>
@@ -51,7 +52,7 @@ switch ($day) {
         <div class="code">
             <pre>
 for ($i = 0; $i &lt; 5; $i++) {
-    echo "Iteration: $i";
+    echo "Iteration: $i &lt;br>";
 }</pre>
         </div>
 
@@ -60,7 +61,7 @@ for ($i = 0; $i &lt; 5; $i++) {
             <pre>
 $counter = 0;
 while ($counter &lt; 3) {
-    echo "Iteration: $counter";
+    echo "Iteration: $counter &lt;br>";
     $counter++;
 }</pre>
         </div>
@@ -70,9 +71,9 @@ while ($counter &lt; 3) {
             <pre>
 $counter = 0;
 do {
-    echo "Iteration: $counter";
+    echo "Iteration: $counter &lt;br>";
     $counter++;
-} while ($counter &lt; 3);</pre>
+} while ($counter &lt; 6);</pre>
         </div>
 
         <li><strong>Foreach Loop:</strong> Iterates over elements in an array or other iterable objects. Example:</li>
@@ -80,7 +81,7 @@ do {
             <pre>
 $colors = array("red", "green", "blue");
 foreach ($colors as $color) {
-    echo "Color: $color";
+    echo "Color: $color &lt;br>";
 }</pre>
         </div>
     </ul>

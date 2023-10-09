@@ -18,7 +18,8 @@
 $singleQuoted = 'This is a single-quoted string';
 $doubleQuoted = "This is a double-quoted string";
 
-$character = $doubleQuoted[0]; // Access the first character</pre>
+$character = $doubleQuoted[0];
+echo "character is $character";</pre>
     </div>
 
     <h2>Interpolation with Curly Braces</h2>
@@ -28,7 +29,8 @@ $character = $doubleQuoted[0]; // Access the first character</pre>
     <div class="code">
         <pre>
 $name = "Alice";
-$greeting = "Hello, {$name}!";</pre>
+$greeting = "Hello, {$name}!";
+echo $greeting;</pre>
     </div>
 
     <h2>Characters and String Indexes</h2>
@@ -38,7 +40,8 @@ $greeting = "Hello, {$name}!";</pre>
     <div class="code">
         <pre>
 $str = "PHP";
-$firstChar = $str[0]; // 'P'</pre>
+$firstChar = $str[0]; // 'P'
+echo "first character is $firstChar";</pre>
     </div>
 
     <h2>String Operators</h2>
@@ -53,7 +56,8 @@ $firstChar = $str[0]; // 'P'</pre>
             <pre>
 $str1 = "Hello";
 $str2 = "World";
-$combined = $str1 . " " . $str2; // "Hello World"</pre>
+$combined = $str1 . " " . $str2;
+echo $combined;</pre>
         </div>
         <li><span>Concatenation assignment : </span>
             <span>+=</span> and <span>.=</span> are used for concatenation assignment.
@@ -62,7 +66,8 @@ $combined = $str1 . " " . $str2; // "Hello World"</pre>
             <pre>
 $str1 = "Hello";
 $str2 = "World";
-$str1 .= " " . $str2; // $str1 is now "Hello World"</pre>
+$str1 .= " " . $str2;
+echo $str1;</pre>
         </div>
     </ul>
 
@@ -74,9 +79,10 @@ $str1 .= " " . $str2; // $str1 is now "Hello World"</pre>
         <pre>
 $variable = "PHP";
 $heredocString = &lt;&lt;&lt;EOT
-This is a Heredoc string.
+This is a Heredoc string. &lt;br>
 It supports multiple lines and variables: {$variable}
-EOT;</pre>
+EOT;
+echo $heredocString;</pre>
     </div>
 
     <h2>String Functions</h2>
@@ -110,7 +116,8 @@ $uppercase = strtoupper("Hello, PHP!"); // "HELLO, PHP!"</pre>
         <pre>
 $name = "Alice";
 $age = 25;
-$message = sprintf("Name: %s, Age: %d", $name, $age); // "Name: Alice, Age: 25"</pre>
+$message = sprintf("Name: %s, Age: %d", $name, $age);
+echo $message;</pre>
     </div>
 
     <h2>Comparing and Searching Strings</h2>
@@ -121,7 +128,8 @@ $message = sprintf("Name: %s, Age: %d", $name, $age); // "Name: Alice, Age: 25"<
         <pre>
 $haystack = "Hello, PHP!";
 $needle = "PHP";
-$position = strpos($haystack, $needle); // 7</pre>
+$position = strpos($haystack, $needle);
+echo "Position = $position";</pre>
     </div>
 
     <h2>Conclusion</h2>
