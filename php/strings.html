@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../common_files/inner.css">
+    <link rel="stylesheet" href="../common_files/php.css">
     <title>String Handling in PHP</title>
 </head>
 <body>
@@ -21,6 +22,10 @@ $doubleQuoted = "This is a double-quoted string";
 $character = $doubleQuoted[0];
 echo "character is $character";</pre>
     </div>
+    <p>Output :</p>
+    <div class="output">
+        <img src="../examples/php/string-create.png" alt="">
+    </div>
 
     <h2>Interpolation with Curly Braces</h2>
     <p>
@@ -31,6 +36,10 @@ echo "character is $character";</pre>
 $name = "Alice";
 $greeting = "Hello, {$name}!";
 echo $greeting;</pre>
+    </div>
+    <p>Output :</p>
+    <div class="output">
+        <img src="../examples/php/string-curly.png" alt="">
     </div>
 
     <h2>Characters and String Indexes</h2>
@@ -43,6 +52,10 @@ $str = "PHP";
 $firstChar = $str[0]; // 'P'
 echo "first character is $firstChar";</pre>
     </div>
+    <p>Output :</p>
+    <div class="output">
+        <img src="../examples/php/string-index.png" alt="">
+    </div>
 
     <h2>String Operators</h2>
     <p>
@@ -51,24 +64,32 @@ echo "first character is $firstChar";</pre>
     <ul>
         <li><span>Concatenation : </span> 
             <span>+</span> and <span>.</span> are used for concatenation.
-        </li>
-        <div class="code">
-            <pre>
+            <div class="code">
+                <pre>
 $str1 = "Hello";
 $str2 = "World";
 $combined = $str1 . " " . $str2;
 echo $combined;</pre>
-        </div>
+            </div>
+            <p>Output :</p>
+            <div class="output">
+                <img src="../examples/php/string-concat.png" alt="">
+            </div>
+        </li>
         <li><span>Concatenation assignment : </span>
             <span>+=</span> and <span>.=</span> are used for concatenation assignment.
-        </li>
-        <div class="code">
-            <pre>
+            <div class="code">
+                <pre>
 $str1 = "Hello";
 $str2 = "World";
 $str1 .= " " . $str2;
 echo $str1;</pre>
-        </div>
+            </div>
+            <p>Output :</p>
+            <div class="output">
+                <img src="../examples/php/string-concatassign.png" alt="">
+            </div>
+        </li>
     </ul>
 
     <h2>Heredoc</h2>
@@ -83,6 +104,10 @@ This is a Heredoc string. &lt;br>
 It supports multiple lines and variables: {$variable}
 EOT;
 echo $heredocString;</pre>
+    </div>
+    <p>Output :</p>
+    <div class="output">
+        <img src="../examples/php/string-heredoc.png" alt="">
     </div>
 
     <h2>String Functions</h2>
@@ -119,6 +144,10 @@ $age = 25;
 $message = sprintf("Name: %s, Age: %d", $name, $age);
 echo $message;</pre>
     </div>
+    <p>Output :</p>
+    <div class="output">
+        <img src="../examples/php/string-format.png" alt="">
+    </div>
 
     <h2>Comparing and Searching Strings</h2>
     <p>
@@ -130,6 +159,10 @@ $haystack = "Hello, PHP!";
 $needle = "PHP";
 $position = strpos($haystack, $needle);
 echo "Position = $position";</pre>
+    </div>
+    <p>Output :</p>
+    <div class="output">
+        <img src="../examples/php/string-compare.png" alt="">
     </div>
 
     <h2>Conclusion</h2>
