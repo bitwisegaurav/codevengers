@@ -188,6 +188,16 @@ h1{
     flex-direction: column;
     align-items: center;
 }
+.content::-webkit-scrollbar{
+    width: 10px;
+    background: rgba(21, 42, 81, 0.1);
+    border-radius: 1rem;
+}
+.content::-webkit-scrollbar-thumb{
+    border-radius: 1rem;
+    background: rgb(27, 21, 81);
+    outline: 1px solid rgb(27, 21, 81);
+}
 .content .programs{
     width: 95%;
     /* height: 100%; */
