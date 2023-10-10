@@ -40,18 +40,53 @@
     <!-- Main Section -->
     <main>
       <section class="content1">
-        <h1 class="title"></h1>
+        <h1 class="title">129. Write a Java method to check numbers is palindrome number or not</h1>
         <div class="codeblock">
           <p class="codetitle">Code :</p>
           <div class="code">
             <pre>
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
+class oneHundredTwentyNine {
+    public static void main(String[] args) throws java.io.IOException {
+        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+
+        try {
+            System.out.print("Enter a positive number: ");
+            int num = Integer.parseInt(input.readLine());
+
+            if (num < 0) {
+                System.out.println("Please enter a positive number.");
+            } else {
+                int originalNum = num;
+                int reversedNum = 0;
+
+                while (num != 0) {
+                    int digit = num % 10;
+                    reversedNum = reversedNum * 10 + digit;
+                    num /= 10;
+                }
+
+                if (originalNum == reversedNum) {
+                    System.out.println(originalNum + " is a palindrome.");
+                } else {
+                    System.out.println(originalNum + " is not a palindrome.");
+                }
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input, please enter valid numbers.");
+        } catch (Exception e) {
+            System.out.println("Something went wrong.");
+        }
+    }
+}
 </pre>
           </div>
         </div>
         <div class="output">
           <p class="codetitle">Output :</p>
-          <img src="../examples/javaPrograms" alt="output" />
+          <img src="../examples/javaPrograms/129.png" alt="output" />
         </div>
       </section>
     </main>
