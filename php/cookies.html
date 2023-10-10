@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../common_files/inner.css">
+    <link rel="stylesheet" href="../common_files/php.css">
     <title>Cookies in PHP</title>
 </head>
 <body>
@@ -40,6 +41,15 @@ if (isset($_COOKIE["username"])) {
     echo "Welcome, guest!";
 }</pre>
     </div>
+    <p>Output :</p>
+    <p>if cookie is not set then,</p>
+    <div class="output">
+        <img src="../examples/php/cookieNotSet.png" alt="">
+    </div>
+    <p>if cookie is set then,</p>
+    <div class="output">
+        <img src="../examples/php/cookieSet.png" alt="">
+    </div>
 
     <h2>Managing Cookies</h2>
     <p>
@@ -52,6 +62,10 @@ setcookie("username", "new_value", time() + 7 * 24 * 3600, "/");
 
 // Delete a cookie by setting an expiration time in the past
 setcookie("username", "", time() - 3600, "/");</pre>
+    </div>
+    <p>Output for cookie updation :</p>
+    <div class="output">
+        <img src="../examples/php/cookieUpdate.png" alt="">
     </div>
 
     <h2>Example: User Authentication</h2>

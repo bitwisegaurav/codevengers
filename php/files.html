@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../common_files/inner.css" />
+    <link rel="stylesheet" href="../common_files/php.css" />
     <title>Working with File System in PHP</title>
 </head>
 
@@ -35,13 +36,18 @@ chmod("file.txt", 0644);</pre>
             To open and read a file in PHP, you can use the
             <span>fopen()</span> function to open the file and
             <span>fread()</span> function to read its contents. Here's an example:
-        </li>
-        <div class="code">
-            <pre>
+            <div class="code">
+                <pre>
 $file = fopen("example.txt", "r");
 $content = fread($file, filesize("example.txt"));
+echo $content;
 fclose($file);</pre>
-        </div>
+                </div>
+                <p>Output :</p>
+                <div class="output">
+                    <img src="../examples/php/fileRead.png" alt="">
+                </div>
+            </li>
 
         <li>
             <span>Writing to a File : </span>
@@ -50,13 +56,21 @@ fclose($file);</pre>
             <span>fopen()</span> function with the "w" mode to open the file for
             writing and the <span>fwrite()</span> function to write data. Here's an
             example:
-        </li>
-        <div class="code">
-            <pre>
+            <div class="code">
+                <pre>
 $file = fopen("output.txt", "w");
 fwrite($file, "Hello, PHP!");
 fclose($file);</pre>
-        </div>
+            </div>
+            <p>Output :</p>
+            <div class="output">
+                <img src="../examples/php/fileWritten.png" alt="">
+            </div>
+            <p>data in the file :</p>    
+            <div class="output">
+                <img src="../examples/php/fileWrittenData.png" alt="">
+            </div>
+        </li>
 
         <li>
             <span>Copying Files : </span>
@@ -64,33 +78,41 @@ fclose($file);</pre>
             You can copy files in PHP using the <span>copy()</span> function. It
             takes the source file path and the destination file path as arguments.
             Here's an example:
+            <div class="code">
+                <pre>copy("source.txt", "destination.txt");</pre>
+            </div>
+            <p>Data in the file :</p>
+            <div class="output">
+                <img src="../examples/php/fileCopy.png" alt="">
+            </div>
         </li>
-        <div class="code">
-            <pre>
-copy("source.txt", "destination.txt");</pre>
-        </div>
 
         <li>
             <span>Renaming Files : </span>
             To rename a file in PHP, you can use the <span>rename()</span> function.
             It takes the current file name and the new file name as arguments.
             Here's an example:
+            <div class="code">
+                <pre>rename("old_file.txt", "new_file.txt");</pre>
+            </div>
         </li>
-        <div class="code">
-            <pre>
-rename("old_file.txt", "new_file.txt");</pre>
-        </div>
 
         <li>
             <span>Deleting a File : </span>
 
             To delete a file in PHP, you can use the <span>unlink()</span> function.
             It takes the file path as an argument. Here's an example:
+            <div class="code">
+                <pre>
+if(unlink("file_to_delete.txt")){
+    echo "File deleted successfully";
+}</pre>
+            </div>
+            <p>Output :</p>
+            <div class="output">
+                <img src="../examples/php/fileDelete.png" alt="">
+            </div>
         </li>
-        <div class="code">
-            <pre>
-unlink("file_to_delete.txt");</pre>
-        </div>
     </ul>
 
     <h2>File System Functions</h2>
@@ -105,6 +127,10 @@ unlink("file_to_delete.txt");</pre>
 if (file_exists("file.txt")) {
     echo "File exists.";
 }</pre>
+    </div>
+    <p>Output :</p>
+    <div class="output">
+        <img src="../examples/php/fileExists.png" alt="">
     </div>
 
     <h2>Working with Directories</h2>
@@ -123,6 +149,12 @@ foreach ($files as $file) {
     echo $file . "&lt;br&gt;";
 }</pre>
     </div>
+    <p>Output :</p>
+    <div class="output">
+        <img src="../examples/php/fileDirCreated.png" alt="">
+    </div>
+    <p>files in the directory :</p>
+    <div class="output"><img src="../examples/php/fileDirData.png" alt=""></div>
 
     <h2>Conclusion</h2>
     <p>
