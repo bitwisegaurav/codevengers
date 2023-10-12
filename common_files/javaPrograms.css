@@ -54,7 +54,7 @@ nav ul .languages .courses{
     color: rgb(27, 21, 81);
     cursor: pointer;
     padding: 0 2rem;
-    border-radius: 10px;
+    border-radius: 7px;
 }
 nav ul .languages .options{
     position: absolute;
@@ -70,7 +70,7 @@ nav ul .languages .options{
     transform: translateY(3.7rem) scale(1.5);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 3px;
     overflow: hidden;
 }
 nav ul .languages:hover .options, nav ul .languages:focus-within .options, nav ul .languages:active .options, .languages .courses:hover + .options, .languages .courses:focus-within + .options, .languages .courses:active + .options{
@@ -82,13 +82,12 @@ nav ul .languages .options a {
     font-size: 0.6rem;
     text-decoration: none;
     color: rgb(27, 21, 81);
-    transition: all 0.2s;
     padding: 0.7rem 1.3rem;
     border-top: 1px solid rgba(27, 21, 81, 0.2);
 }
 nav ul .languages .options a:hover {
     /* background-color: #cacaca; */
-    background-color: rgba(27, 21, 81, 0.7);
+    background-color: rgb(65 76 140);
     color: white;
 }
 .comname{
