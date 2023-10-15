@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../common_files/inner.css">
+    <link rel="stylesheet" href="../common_files/php.css">
     <title>Functions in PHP</title>
 </head>
 <body>
@@ -25,6 +26,10 @@ function greet($name) {
 }
 greet("John");</pre>
     </div>
+    <p>Output :</p>
+    <div class="output">
+        <img src="../examples/php/function-args.png" alt="">
+    </div>
     <p>So in this example, <span>John</span> is actual paramerter and <span>$name</span> is formal parameter</p>
 
     <h2>Return Value</h2>
@@ -38,6 +43,10 @@ function add($a, $b) {
 }
 $result = add(5, 3); // $result will be 8</pre>
     </div>
+    <p>Output :</p>
+    <div class="output">
+        <img src="../examples/php/function-return.png" alt="">
+    </div>
 
     <h2>Default Values</h2>
     <p>
@@ -50,6 +59,10 @@ function greet($name = "Guest") {
 }
 greet(); // $result will be "Hello, Guest!"</pre>
     </div>
+    <p>Output :</p>
+    <div class="output">
+        <img src="../examples/php/function-default.png" alt="">
+    </div>
 
     <h2>Dynamic Function Calling</h2>
     <p>
@@ -58,7 +71,11 @@ greet(); // $result will be "Hello, Guest!"</pre>
     <div class="code">
         <pre>
 $functionName = "greet";
-$functionName("Alice"); // Calls the greet function</pre>
+$functionName("Gaurav"); // Calls the greet function</pre>
+    </div>
+    <p>Output :</p>
+    <div class="output">
+        <img src="../examples/php/function-dfc.png" alt="">
     </div>
 
     <h2>Call by Value and Reference</h2>
@@ -74,8 +91,17 @@ function incrementByReference(&$num) {
     $num++;
 }
 $value = 5;
+echo "Value before function calling = $value &lt;br>";
+
 increment($value); // $value remains 5
-incrementByReference($value); // $value becomes 6</pre>
+echo "Value after call by value = $value &lt;br>";
+
+incrementByReference($value); // $value becomes 6
+echo "Value after call by reference = $value &lt;br>";</pre>
+    </div>
+    <p>Output :</p>
+    <div class="output">
+        <img src="../examples/php/function-callby.png" alt="">
     </div>
 
     <h2>Function and Variable Scope</h2>
@@ -91,6 +117,10 @@ function myFunction() {
 echo $globalVar; // Accessible
 echo $localVar; // Not accessible (undefined)</pre>
     </div>
+    <p>Output :</p>
+    <div class="output">
+        <img src="../examples/php/function-scope.png" alt="">
+    </div>
 
     <h2>Recursion</h2>
     <p>
@@ -102,7 +132,12 @@ function factorial($n) {
     if ($n === 0) { return 1; } 
     else { return $n * factorial($n - 1); }
 }
-$fact = factorial(5); // $fact will be 120</pre>
+$fact = factorial(5);
+echo $fact;</pre>
+    </div>
+    <p>Output :</p>
+    <div class="output">
+        <img src="../examples/php/function-recursion.png" alt="">
     </div>
 
     <h2>Library Functions</h2>
@@ -111,7 +146,12 @@ $fact = factorial(5); // $fact will be 120</pre>
     </p>
     <div class="code">
         <pre>
-$length = strlen("Hello, PHP!"); // $length will be 11</pre>
+$length = strlen("Hello, PHP!");
+echo $length;</pre>
+    </div>
+    <p>Output :</p>
+    <div class="output">
+        <img src="../examples/php/function-library.png" alt="">
     </div>
 
     <h2>Conclusion</h2>

@@ -18,6 +18,7 @@ main{
     text-align:start;
     margin: 1rem 0 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* color: #2a323b; */
     /* border: 2px solid blue; */
 }
 .codetitle{
@@ -60,7 +61,12 @@ main{
     width: 100%;
     padding: 1rem;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.164);
+    line-height: 200%;
+    font-size: smaller;
+    /* background-color: rgba(0, 0, 0, 0.164); */
+    /* background-color: rgb(69, 68, 85); */
+    background-color: #282c34;
+    color: #f1f1f1;
     font-family: 'JetBrains Mono', monospace;
     white-space: pre-wrap;
     word-wrap: break-word;

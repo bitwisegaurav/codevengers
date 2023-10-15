@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -45,11 +46,12 @@ strong{
 
 .code{
     position: relative;
-    background-color: rgba(0, 0, 0, 0.164);
+    /* background-color: rgba(0, 0, 0, 0.164); */
+    background-color: #282c34;
+    color: #f1f1f1;
     padding: 1rem;
     word-wrap: break-word;
     border-radius: 5px;
-    line-height: 2rem;
     margin-bottom: 1rem;
 }
 
@@ -80,8 +82,11 @@ strong{
 }
 
 .code pre{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: smaller;
     white-space: pre-wrap;
     word-wrap: break-word;
+    line-height: 200%;
 }
 
 #structimg{

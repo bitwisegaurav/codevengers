@@ -357,6 +357,8 @@ footer .foot .left .logo img{
     filter: hue-rotate(15deg);
 }
 footer .foot .left .name{
+    text-decoration: none;
+    color: #f1f1f1;
     font-size: 200%;
     font-family: 'JetBrains Mono', monospace;
 }

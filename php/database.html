@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../common_files/inner.css">
+    <link rel="stylesheet" href="../common_files/php.css">
     <title>Integrating PHP and Databases</title>
 </head>
 <body>
@@ -75,6 +76,10 @@ if($conn) {
     echo "Error: " . mysqli_connect_error();
 }</pre>
     </div>
+    <p>Output :</p>
+    <div class="output">
+        <img src="../examples/php/database-connecting.png" alt="">
+    </div>
 
     <h2>Creating a Database and Table</h2>
     <p>
@@ -106,6 +111,10 @@ if(mysqli_query($conn, $query)){
 } else {
     echo "Error: " . mysqli_error($conn);
 }</pre>
+    </div>
+    <p>Output :</p>
+    <div class="output">
+        <img src="../examples/php/database-query.png" alt="">
     </div>
 
     <h2>Fetching Data Sets</h2>
@@ -185,8 +194,8 @@ if (mysqli_query($conn, $sql)) {
 if (isset($_POST['username']) && isset($_POST['email'])) {
     
     // Get form data
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $username =  $_POST['username'];
+    $email = $_POST['email'];
 
     // Insert query
     $sql = "INSERT INTO users (username, email) VALUES ('$username', '$email')";
@@ -204,6 +213,12 @@ if (isset($_POST['username']) && isset($_POST['email'])) {
 mysqli_close($conn);
 
 ?&gt;</pre>
+    </div>
+    <p>Output :</p>
+    <div class="output">
+        <img src="../examples/php/database-integrating.png" alt="">
+        <img src="../examples/php/database-integrating2.png" alt="">
+        <img src="../examples/php/database-integrating3.png" alt="">
     </div>
 
     <h2>Conclusion</h2>

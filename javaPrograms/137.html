@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="../common_files/inner.css"> -->
+    <link rel="stylesheet" href="../common_files/javaPrograms.css" />
+    <link rel="stylesheet" href="../common_files/javaPrograms-inner.css" />
+    <link rel="shortcut icon" href="../images/icon1.png" type="image/x-icon">
+    <title>Java Programs - Codevengers</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <ul>
+        <li>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <a href="../index.html" id="logoimg">
+            <img src="../images/logo.png" alt="logo" />
+          </a>
+        </li>
+        <li class="comname">
+          <a href="../index.html">Codevengers</a>
+        </li>
+        <li class="languages">
+          <p class="courses">Courses ↓</p>
+          <div class="options">
+            <a href="../languages/mysql.html">MySQL</a>
+            <a href="../languages/plsql.html">PL/SQL</a>
+            <a href="../languages/java.html">Java</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Section -->
+    <main>
+      <section class="content1">
+        <h1 class="title">137. Write a Java program to convert Roman number to an integer number</h1>
+        <div class="codeblock">
+          <p class="codetitle">Code :</p>
+          <div class="code">
+            <pre>
+class oneHundredThirtySeven {
+    public static void main(String[] args) throws java.io.IOException {
+        java.io.BufferedReader input = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
+
+        try {
+            System.out.print("Enter a Roman numeral: ");
+            String romanNumeral = input.readLine();
+
+            int result = romanToInteger(romanNumeral);
+
+            System.out.println("Integer value of Roman numeral: " + result);
+        } catch (Exception e) {
+            System.out.println("Something went wrong.");
+        }
+    }
+
+    public static int romanToInteger(String romanNumeral) {
+        int result = 0;
+
+        if (romanNumeral == null || romanNumeral.isEmpty()) {
+            return result;
+        }
+
+        java.util.Map&lt;Character, Integer&gt; romanValues = new java.util.HashMap<>();
+        romanValues.put('I', 1);
+        romanValues.put('V', 5);
+        romanValues.put('X', 10);
+        romanValues.put('L', 50);
+        romanValues.put('C', 100);
+        romanValues.put('D', 500);
+        romanValues.put('M', 1000);
+
+        int prevValue = 0;
+
+        for (int i = romanNumeral.length() - 1; i >= 0; i--) {
+            char currentChar = romanNumeral.charAt(i);
+            int currentValue = romanValues.get(currentChar);
+
+            if (currentValue < prevValue) {
+                result -= currentValue;
+            } else {
+                result += currentValue;
+            }
+            prevValue = currentValue;
+        }
+        return result;
+    }
+}
+</pre>
+          </div>
+        </div>
+        <div class="output">
+          <p class="codetitle">Output :</p>
+          <img src="../examples/javaPrograms/137.png" alt="output" />
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="../common_files/jsPrograms-inner.js"></script>
+</html>

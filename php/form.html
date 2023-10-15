@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../common_files/inner.css">
+    <link rel="stylesheet" href="../common_files/php.css">
     <title>Forms in PHP</title>
 </head>
 
@@ -28,31 +29,38 @@
     &lt;input type="submit" value="Submit">
 &lt;/form></pre>
     </div>
+    <p>Output :</p>
+    <div class="output">
+        <img src="../examples/php/form-controls.png" alt="">
+    </div>
 
     <h2>Super Global Variables and Arrays</h2>
     <p>
         PHP uses super global arrays to access form data and other server variables. Common super global arrays include:
     </p>
     <ul>
-        <li><strong>$_GET:</strong> Contains data sent via HTTP GET method.</li>
-        <div class="code">
-            <pre>
+        <li><strong>$_GET:</strong> Contains data sent via HTTP GET method.
+            <div class="code">
+                <pre>
 // URL: example.com/index.php?name=John
 $name = $_GET["name"]; // "John"</pre>
-        </div>
+            </div>
+        </li>
 
-        <li><strong>$_POST:</strong> Contains data sent via HTTP POST method.</li>
-        <div class="code">
-            <pre>
+        <li><strong>$_POST:</strong> Contains data sent via HTTP POST method.
+            <div class="code">
+                <pre>
 // Form: &lt;input type="text" name="name">
 $name = $_POST["name"]; // User input</pre>
-        </div>
+            </div>
+        </li>
 
-        <li><strong>$_REQUEST:</strong> Contains data from both GET and POST methods.</li>
-        <div class="code">
-            <pre>
+        <li><strong>$_REQUEST:</strong> Contains data from both GET and POST methods.
+            <div class="code">
+                <pre>
 $name = $_REQUEST["name"]; // User input from GET or POST</pre>
-        </div>
+            </div>
+        </li>
     </ul>
     <p>
         You can use array functions like <code>isset()</code> and <code>empty()</code> to check if elements exist in
