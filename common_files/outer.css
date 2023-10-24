@@ -164,6 +164,7 @@ aside{
     background-color: rgba(0, 0, 0, 0.11);
     transition: 0.2s;
     overflow-y: auto;
+    padding-bottom: 4rem;
 }
 aside::-webkit-scrollbar{
     display: none;
