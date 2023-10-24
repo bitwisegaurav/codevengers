@@ -34,6 +34,10 @@ li {
     line-height: 1.5rem;
 }
 
+li .code{
+    margin-top: 1rem;
+}
+
 p {
     margin: 1rem 0;
     letter-spacing: 0.4px;
