@@ -67,7 +67,11 @@ while (resultSet.next()) {
     // Process data
 }
 resultSet.close();</pre>
-    </div>    
+    </div>
+
+    <h2>Navigate Funciton</h2>
+    <p>By default, the resultset is forward only. So, we can use a navigation function for moving the cursor to that row from where we want to fetch the value.</p>
+    <p>Every navigation function returns a boolean datatype, which tells that row exists or not. If row exits then it returns true otherwise false.</p>
 
     <h2>Statement vs PreparedStatement</h2>
     <p>
