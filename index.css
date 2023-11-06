@@ -35,7 +35,7 @@ nav ul{
     /* border: 2px solid red; */
     justify-content: space-between;
     align-items: center;
-    width: 50%;
+    /* width: 50%; */
     height: 100%;
 }
 nav ul li{
@@ -47,8 +47,6 @@ nav ul li{
     height: 100%;
 }
 nav ul li #logo{
-    /* border: 2px solid red; */
-    /* margin-left: 2rem; */
     height: 70%;
     display: flex;
     align-items: center;
@@ -61,9 +59,29 @@ nav ul li #logo img{
     margin: 10px;
     filter: hue-rotate(15deg);
 }
+nav ul .navigation{
+    display: flex;
+    gap: 3rem;
+}
+nav ul .navigation a{
+    display: inline-block;
+    padding: 5px 20px;
+    font-size: 1rem;
+    border: none;
+    color: rgb(48, 28, 119);
+    background-color: #f1f1f1;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+nav ul .navigation a:hover{
+    transform: scale(1.1);
+
+}
 .comname{
     /* border: 2px solid green; */
-    transform: translateX(50%);
     cursor: pointer;
 }
 .comname a{
@@ -149,7 +167,7 @@ section{
     place-items: center;
     background-color: #f1f1f1;
 }
-section .courseCont{
+#courseSection .courseCont{
     width: 85%;
     height: 100%;
     display: flex;
@@ -157,7 +175,7 @@ section .courseCont{
     align-items: center;
     /* border: 2px solid red; */
 }
-section .courseCont #courses{
+#courseSection .courseCont #courses{
     display: block;
     width: 100%;
     font-size: 2rem;
@@ -168,121 +186,67 @@ section .courseCont #courses{
     margin-bottom: 2rem;
     border-radius: 5px;
 }
-section .courseCont .carousel{
+#courseSection .courseCont .carousel{
     width: 100%;
 }
-section .courseCont .boxes{
+#courseSection .courseCont .boxes{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     /* border: 2px solid red; */
-    padding: 2rem 0;
-    gap: 4rem;
+    padding: 4rem 0;
+    gap: 2rem;
 }
-section .courseCont .boxes .box{
+#courseSection .courseCont .boxes .box{
     position: relative;
     display: flex; 
     flex-direction: column;
     align-items: center;
-    max-width: 30rem;
-    width: 90%;
-    height: 30rem;
-    padding: 1rem 2rem;
+    max-width: 15rem;
+    width: 100%;
+    /* height: 30rem; */
+    padding: 1rem;
     background: #f1f1f1;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     border-radius: 5px;
+    text-decoration: none;
 }
-section .courseCont .boxes .box:hover{
+#courseSection .courseCont .boxes .box:hover{
     transform: scale(1.05);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgb(48, 28, 119);
 }
 
-/* .carousel {
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    border: 2px solid ;
-    width: 50rem;
-    max-width: 100%;
-    height: 35rem;
-    background-color: #ecf0f1;
-    border-radius: 10px;
-}
-
-.boxes {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    transition: transform 0.5s ease-in-out;
-}
-
-.box {
-    position: relative;
-    width: 30rem;
-    height: 95%;
-    padding: 20px;
-    margin: 0 10rem;
-    background-color: #fff; 
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; 
-    text-align: center; 
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.box:hover {
-    transform: scale(1.05); 
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.4);
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgb(27, 21, 81);
-    color: #fff; 
-    border: none;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
-    font-size: 24px;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-}
-
-.prev-btn {
-    left: 10px;
-}
-
-.next-btn {
-    right: 10px;
-} */
-
-section .courseCont .carousel .boxes .box .langname{
+#courseSection .courseCont .carousel .boxes .box .langname{
     display: flex;
     flex-wrap: wrap;
     margin: 1rem 0;
     color: rgb(48, 28, 119);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
-section .courseCont .boxes .box .aboutlang{
-    display: flex;
-    letter-spacing: 0.5px;
-    line-height: 1.5rem;
-    font-size: 1rem;
-    text-align: justify;
-    margin-top: 1rem;
-    margin-bottom: 3rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
+#courseSection .courseCont .boxes .box .langlogo{
+    width: 100%;
+    height: 7rem;
     /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-section .courseCont .boxes .box #startbtn{
+#courseSection .courseCont .boxes .box .langlogo img{
+    height: 100%;
+    max-width: 100%;
+}
+#java .langlogo img, #javaPrograms .langlogo img, #cpp .langlogo img,  #css .langlogo img
+{
+    height: 80%;
+}
+#html .langlogo img,  #js .langlogo img{
+    height: 70%;
+}
+#courseSection .courseCont .boxes .box #startbtn{
     height: 1.8rem;
     width: 8rem;
     display: grid;
@@ -294,12 +258,12 @@ section .courseCont .boxes .box #startbtn{
     position: absolute;
     bottom: 5%;
 }
-section .courseCont .boxes .box #startbtn a{
+#courseSection .courseCont .boxes .box #startbtn a{
     position: relative;
     color: white;
     text-decoration: none;
 }
-section .courseCont .boxes .box #startbtn a:hover .bodbot{
+#courseSection .courseCont .boxes .box #startbtn a:hover .bodbot{
     position: absolute;
     bottom: 0;
     left: 0;
@@ -308,13 +272,145 @@ section .courseCont .boxes .box #startbtn a:hover .bodbot{
     animation: motion 0.5s ease-in-out 1;
     background-color: white;
 }
-@keyframes motion{
-    from{
-        width: 0%;
-    }
-    to{
-        width: 100%;
-    }
+
+/* About Section */
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    min-height: calc(100vh - 4.5rem);
+    background-color: rgba(44, 27, 90, 0.953);
+}
+  
+#about .innerAbout {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 1.2rem;
+    height: 100%;
+}
+#about .innerAbout #aboutTitle {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    color: #eee;
+    display: block;
+    border: 2px solid #aaa;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+}
+
+#about .innerAbout #aboutCont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    gap: 2rem;
+}
+
+#about .innerAbout #aboutCont .aboutImg {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#about .innerAbout #aboutCont .aboutImg img {
+    width: 100%; 
+    border-radius: 5px;
+}
+
+#about .innerAbout #aboutCont .aboutText {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    text-align: justify;
+    line-height: 2rem;
+    color: #aaa;
+    background-color: #301b5a;
+    padding: 2rem;
+    border-radius: 5px;
+    height: max-content;
+}
+
+/* Contact Section */
+#contact .innerContact{
+    padding: 0 2rem;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+#contact #contactTitle{
+    display: block;
+    width: 100%;
+    font-size: 2rem;
+    color: rgb(48, 28, 119);
+    border: 2px solid rgb(48, 28, 119);
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+}
+
+#contact form {
+    width: 100%;
+    max-width: 50rem;
+    display: flex;
+    flex-direction: column;
+    color: rgb(27, 21, 81);
+}
+
+#contact form label {
+    font-family: Arial, sans-serif;
+    margin-bottom: 1rem;
+}
+  
+#contact form input, #contact form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+#contact form input:focus, #contact form textarea:focus,
+#contact form input:active, #contact form textarea:active 
+{
+    border: 2px solid rgb(48, 28, 119);
+    outline: none;
+}
+
+
+#contact form textarea{
+    height: 10rem;
+    resize: none;
+}
+
+#contact form input[type="submit"] {
+    background-color: rgba(35, 13, 98, 0.853);
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+  
+#contact form input[type="submit"]:hover {
+    background-color: rgba(41, 0, 154, 0.853);
+}
+
+
+#contact p{
+    opacity: 0.7;
 }
 
 /* Footer Section */
@@ -416,6 +512,17 @@ footer .foot .socials a img{
         height: 100%;
         aspect-ratio: 1;
     }
+    #about .innerAbout #aboutCont{
+        padding: 1rem 0;
+        flex-direction: column;
+        align-items: center;
+    }
+    #about .innerAbout #aboutCont .aboutImg{
+        width: 55%;
+    }
+    #contact .innerContact{
+        width: 95%;
+    }
 }
 @media screen and (max-width: 900px){
     .container .maincont .name{
@@ -424,6 +531,10 @@ footer .foot .socials a img{
     .container .maincont p{
         line-height: 1.2rem;
         font-size: 0.9rem;
+    }
+    nav ul .navigation{
+        display: flex;
+        gap: 1rem;
     }
 }
 
@@ -464,6 +575,10 @@ footer .foot .socials a img{
     section .courseCont .boxes .box .langname{
         font-size: 1.4rem;
     }
+    nav ul .navigation a{
+        padding: 5px 15px;
+        font-size: 0.8rem;
+    }
     footer {
         height: 14rem;
     }
@@ -487,6 +602,12 @@ footer .foot .socials a img{
     section .courseCont .boxes .box .aboutlang{
         line-height: 1.2rem;
         font-size: 0.9rem;
+    }
+    nav ul .navigation {
+        display: none;
+    }
+    #about .innerAbout{
+        font-size: 1rem;
     }
 }
 
