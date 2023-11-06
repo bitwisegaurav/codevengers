@@ -310,6 +310,7 @@ section{
     align-items: center;
     height: 100%;
     gap: 2rem;
+    padding: 3rem 0;
 }
 
 #about .innerAbout #aboutCont .aboutImg {
@@ -320,7 +321,7 @@ section{
 }
 
 #about .innerAbout #aboutCont .aboutImg img {
-    width: 100%; 
+    width: 85%; 
     border-radius: 5px;
 }
 
@@ -516,6 +517,9 @@ footer .foot .socials a img{
         padding: 1rem 0;
         flex-direction: column;
         align-items: center;
+    }
+    #about .innerAbout #aboutCont .aboutImg img {
+        width: 100%;
     }
     #about .innerAbout #aboutCont .aboutImg{
         width: 55%;
