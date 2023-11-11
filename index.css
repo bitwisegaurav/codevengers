@@ -279,9 +279,8 @@ section{
 
 /* About Section */
 #about {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
     gap: 2rem;
     min-height: calc(100vh - 4.5rem);
     background-color: rgba(44, 27, 90, 0.953);
@@ -349,6 +348,7 @@ section{
 #contact .innerContact{
     padding: 0 2rem;
     width: 85%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
