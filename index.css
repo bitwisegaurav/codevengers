@@ -227,6 +227,7 @@ section{
 #courseSection .courseCont .carousel .boxes .box .langname{
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
     margin: 1rem 0;
     color: rgb(48, 28, 119);
     font-size: 1.3rem;
@@ -243,12 +244,16 @@ section{
     height: 100%;
     max-width: 100%;
 }
-#java .langlogo img, #javaPrograms .langlogo img, #cpp .langlogo img,  #css .langlogo img
+#java .langlogo img, #cpp .langlogo img,  #css .langlogo img,  #discrete .langlogo img
 {
-    height: 80%;
+    height: 80% !important;
 }
 #html .langlogo img,  #js .langlogo img{
-    height: 70%;
+    height: 70% !important;
+}
+
+#discrete .langname, #cn .langname {
+    font-size: 1.1rem !important;
 }
 #courseSection .courseCont .boxes .box #startbtn{
     height: 1.8rem;
