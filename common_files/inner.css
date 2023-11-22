@@ -93,17 +93,19 @@ strong{
     line-height: 200%;
 }
 
-#structimg{
+.structimg{
     display: flex;
     align-items: center;
     /* border: 2px solid; */
-    margin-bottom: 4rem;
+    margin: 0 auto;
+    margin-bottom: 4rem !important;
+    max-width: 700px;
 }
-#structimg:last-child{
+.structimg:last-child{
     margin-bottom: 0;
 }
-#structimg img{
-    max-width: 700px;
+.structimg img{
+    max-width: 100%;
 }
 .pl img{
     border: 1px solid gray;
@@ -125,6 +127,90 @@ strong{
 span {
     font-weight: bold;
     color: rgb(27, 21, 81);
+}
+
+.img-center{
+    justify-content: center;
+}
+
+.img-large img{
+    width: 100%;
+}
+
+.mt-2{
+    margin-top: 2rem !important;
+}
+
+.mb-2 {
+    margin-bottom: 2rem !important;
+}
+
+.note {
+    position: relative;
+    padding: 2rem 1rem 1rem;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.note::before{
+    content: '*Note*';
+    font-size: x-small;
+    /* font-family: 'JetBrains Mono'; */
+    font-family: sans-serif;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    opacity: 0.6;
+}
+
+.note::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    opacity: 0.5;
+}
+
+.note-normal {
+    background-color: rgba(27, 21, 81, 0.1);
+    color: rgba(27, 21, 81);
+}
+
+.note-normal::before{
+    color:rgb(24, 16, 98);
+}
+
+.note-normal::after{
+    background-color:rgb(24, 16, 98);
+}
+
+.note-imp {
+    background-color: rgba(255, 122, 5, 0.3);
+    color: rgb(85, 43, 7);
+}
+
+.note-imp::before{
+    color:rgb(130, 81, 2);
+}
+
+.note-imp::after{
+    background-color:rgb(187, 97, 0);
+}
+
+.note-mostimp {
+    background-color: rgba(255, 0, 0, 0.2);
+    color: rgb(132, 0, 0);
+}
+
+.note-mostimp::before{
+    color:rgb(132, 0, 0);
+}
+
+.note-mostimp::after{
+    background-color:rgb(176, 0, 0);
 }
 
 @media screen and (max-width: 700px) {
