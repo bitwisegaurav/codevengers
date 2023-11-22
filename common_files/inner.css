@@ -97,7 +97,6 @@ strong{
     display: flex;
     align-items: center;
     /* border: 2px solid; */
-    margin: 0 auto;
     margin-bottom: 4rem !important;
     max-width: 700px;
 }
@@ -112,15 +111,15 @@ strong{
     border-radius: 5px;
     margin-top: 1rem;
 }
-#structimg .hori{
+.structimg .hori{
     min-height: 70px;
     height: 100%;
 }
-#structimg .vert{
+.structimg .vert{
     max-width: 350px;
     width: 100%;
 }
-#structimg .box{
+.structimg .box{
     height: 200px;
 }
 
@@ -130,7 +129,13 @@ span {
 }
 
 .img-center{
+    margin: 0 auto;
     justify-content: center;
+}
+
+.img-small img {
+    max-height: 30rem;
+    max-width: 30rem;
 }
 
 .img-large img{
