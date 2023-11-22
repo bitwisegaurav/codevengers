@@ -66,6 +66,7 @@ nav ul .languages .options{
     top: 0;
     left: 0;
     width: 100%;
+    max-height: 15rem;
     z-index: 1;
     display: none;
     flex-direction: column;
@@ -76,8 +77,29 @@ nav ul .languages .options{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     cursor: pointer;
     border-radius: 3px;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
+
+nav ul .languages .options::-webkit-scrollbar{
+    width: 5px;
+    background: transparent;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* Thumb */
+nav ul .languages .options::-webkit-scrollbar-thumb {
+    background-color: #06007b8a;
+    border-radius: 5px;
+}
+
+nav ul .languages .options::-webkit-scrollbar-thumb:hover {
+    background-color: #06007bac;
+}
+
 nav ul .languages:hover .options, nav ul .languages:focus-within .options, nav ul .languages:active .options, .languages .courses:hover + .options, .languages .courses:focus-within + .options, .languages .courses:active + .options{
     display: flex;
 }
