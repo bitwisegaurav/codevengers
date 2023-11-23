@@ -219,6 +219,33 @@ span {
     background-color:rgb(176, 0, 0);
 }
 
+/* table */
+table {
+    width: 100%;
+    max-width: 80rem;
+    border-collapse:collapse;
+    margin-top: 2rem;
+    background-color: #fff;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+td span{
+    color: #444;
+}
+
+th {
+    background-color: rgb(27, 21, 81); 
+    color: #eee;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
 @media screen and (max-width: 700px) {
     body{
         padding: 1rem 2.5rem;
