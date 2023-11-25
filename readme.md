@@ -30,7 +30,7 @@ To embark on your journey with Codevengers, visit our [website](https://bitwiseg
 
 ## 🤝 Contributing
 
-We believe in the power of community and welcome contributions! If you're interested in contributing to Codevengers, we'd love to hear from you! We're always looking for talented writers and developers to help us create new content and improve our existing resources. To get started, simply [contact us](mailto:bitwisegaurav@gmail.com) and let us know how you'd like to contribute.
+We believe in the power of community and welcome contributions! If you're interested in contributing to Codevengers, we'd love to hear from you! We're always looking for talented writers and developers to help us create new content and improve our existing resources. To get started, simply [contact us](mailto:bitwisegaurav@gmail.com) and let us known how you'd like to contribute.
 
 ## 🔮 Future Plans
 

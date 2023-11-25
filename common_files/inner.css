@@ -156,6 +156,7 @@ span {
     padding: 2rem 1rem 1rem;
     border-radius: 5px;
     overflow: hidden;
+    font-size: small;
 }
 
 .note::before{
@@ -177,7 +178,11 @@ span {
     left: 0;
     height: 100%;
     width: 5px;
-    opacity: 0.5;
+    opacity: 0.6;
+}
+
+.note span, .note strong {
+    color: inherit;
 }
 
 .note-normal {
@@ -298,6 +303,9 @@ tbody tr:nth-child(even) {
         max-width: 700px;
         width: 100%;
         height: auto;
+    }
+    .note {
+        font-size: x-small;
     }
 }
 
