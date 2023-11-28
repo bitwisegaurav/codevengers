@@ -14,8 +14,9 @@
     <h2>Functions of the Data-link Layer</h2>
     <h3>Framing</h3>
     <p>
-        The packet received from the Network layer is known as a frame in the Data link layer.
+        The packet received from the Network layer is known as a <span>frame</span> in the Data link layer.
     </p>
+    <div class="structimg img-center mt-2"><img src="../examples/networks/data-link-layer/frame.png" alt="Frame"></div>
     <ul>
         <li><span>Process:</span> The packet received from the Network layer is encapsulated into a frame. This frame typically includes additional information such as frame synchronization bits, address information, and error-checking bits.</li>
         <li><span>Purpose:</span> Ensures proper delineation of frames on the communication channel. Provides a way to distinguish the beginning and end of each frame. Enables error detection by using frame check sequences.</li>
@@ -42,6 +43,8 @@
     <p>
         In the realm of computer networking, addressing plays a pivotal role in facilitating communication between devices within a network. Addressing involves the assignment of unique identifiers to network elements to ensure seamless and efficient data exchange. There are two primary types of addressing:
     </p>
+
+    <div class="structimg img-center mt-2"><img src="../examples/networks/data-link-layer/addressing.jpeg" alt="Addressing"></div>
 
     <!-- Types of Addressing -->
     <ul>
@@ -93,9 +96,15 @@
     <p>
         <span>Error Detection:</span> The data link layer employs error detection techniques to identify whether transmitted data has been corrupted. Common methods include the following:
         <ul>
-            <li><span>Checksums:</span> A sum or hash of data is calculated and transmitted along with the data. The receiver recalculates the checksum and compares it with the transmitted value to detect errors.</li>
-            <li><span>Parity Bits:</span> One additional bit is added to each byte to make the total number of set bits (either 0 or 1) even or odd. Discrepancies indicate errors.</li>
-            <li><span>Cyclic Redundancy Checks (CRC):</span> A polynomial function is applied to the data, producing a remainder that is transmitted along with the data. The receiver performs the same calculation and checks for discrepancies.</li>
+            <li><span>Checksums:</span> A sum or hash of data is calculated and transmitted along with the data. The receiver recalculates the checksum and compares it with the transmitted value to detect errors.
+            <div class="structimg img-center mt-2"><img src="../examples/networks/data-link-layer/checksum.jpeg" alt="Checksum"></div>
+            </li>
+            <li><span>Parity Bits:</span> One additional bit is added to each byte to make the total number of set bits (either 0 or 1) even or odd. Discrepancies indicate errors.
+            <div class="structimg img-center mt-2 green-purple"><img src="../examples/networks/data-link-layer/partiy-bit.png" alt="Parity Bits"></div>
+            </li>
+            <li><span>Cyclic Redundancy Checks (CRC):</span> A polynomial function is applied to the data, producing a remainder that is transmitted along with the data. The receiver performs the same calculation and checks for discrepancies.
+            <div class="structimg img-center mt-2 green-purple"><img src="../examples/networks/data-link-layer/crc.jpeg" alt="CRC"></div>
+            </li>
         </ul>
     </p>
 
@@ -112,12 +121,15 @@
     <p>
         <span>Automatic Repeat reQuest (ARQ) Protocols:</span> ARQ protocols enhance data reliability by retransmitting lost or corrupted packets. Each protocol has specific advantages in different network scenarios:
         <ul>
-            <li><span>Stop-and-Wait:</span> The sender waits for an acknowledgment from the receiver before sending the next packet.</li>
-            <li><span>Go-Back-N:</span> The sender can have multiple unacknowledged packets in transit. If an acknowledgment is not received, the sender retransmits all unacknowledged packets.</li>
-            <li><span>Selective Repeat:</span> The sender can have multiple unacknowledged packets, but only the corrupted ones are retransmitted.</li>
+            <li><span>Stop-and-Wait:</span> The sender waits for an acknowledgment from the receiver before sending the next packet.
+            </li>
+            <li><span>Go-Back-N:</span> The sender can have multiple unacknowledged packets in transit. If an acknowledgment is not received, the sender retransmits all unacknowledged packets.
+            </li>
+            <li><span>Selective Repeat:</span> The sender can have multiple unacknowledged packets, but only the corrupted ones are retransmitted.
+            </li>
         </ul>
     </p>
-
+    
     <!-- Forward Error Correction (FEC) -->
     <p>
         <span>Forward Error Correction (FEC):</span> FEC is another approach to error correction, where redundant information is added to transmitted data to allow the receiver to correct errors without the need for retransmission. Reed-Solomon codes are an example of FEC.
@@ -127,28 +139,33 @@
     <p>
         Flow control is a crucial aspect of data communication in computer networks. It involves mechanisms to manage the rate of data transmission between sender and receiver, preventing issues such as buffer overflow and data loss when there is a significant difference in processing speeds.
     </p>
-
+    
     <!-- Need for Flow Control -->
     <p>
         <span>Need for Flow Control:</span> Flow control becomes necessary when the sender's sending speed exceeds the receiver's receiving speed. Without adequate flow control, the receiver's buffer may overflow, leading to the loss of frames and potential data corruption.
     </p>
-
+    
     <!-- Types of Flow Control -->
     <p>
         <span>Types of Flow Control:</span> There are two primary types of flow control: <span>Stop-and-Wait</span> and <span>Sliding Window.</span>
     </p>
-
+    
     <!-- Stop-and-Wait Flow Control -->
     <p>
         <span>Stop-and-Wait Flow Control:</span> In this approach, the sender sends a single frame and waits for an acknowledgment from the receiver before sending the next frame. While simple, it can result in lower efficiency, especially in high-latency networks.
+        <div class="structimg img-center mt-2 img-large"><img src="../examples/networks/data-link-layer/stop-and-wait.png" alt="Stop and wait"></div>
     </p>
-
+    
     <!-- Sliding Window Flow Control -->
     <p>
         <span>Sliding Window Flow Control:</span> Sliding Window is a more advanced flow control mechanism that allows the sender to transmit multiple frames before receiving acknowledgments. It includes two main types: <span>Go-Back-N</span> and <span>Selective Repeat.</span>
         <ul>
-            <li><span>Go-Back-N:</span> The sender can have multiple unacknowledged frames in transit. If an acknowledgment is not received, the sender retransmits all unacknowledged frames.</li>
-            <li><span>Selective Repeat:</span> The sender can have multiple unacknowledged frames, but only the corrupted or lost ones are retransmitted.</li>
+            <li><span>Go-Back-N:</span> The sender can have multiple unacknowledged frames in transit. If an acknowledgment is not received, the sender retransmits all unacknowledged frames.
+                <div class="structimg img-center mt-2 img-large"><img src="../examples/networks/data-link-layer/go-back-n.jpeg" alt="Go back N"></div>
+            </li>
+            <li><span>Selective Repeat:</span> The sender can have multiple unacknowledged frames, but only the corrupted or lost ones are retransmitted.
+                <div class="structimg img-center mt-2 img-large"><img src="../examples/networks/data-link-layer/selective-repeat.jpeg" alt="Selective Repeat"></div>
+            </li>
         </ul>
     </p>
 
@@ -205,11 +222,13 @@
     <!-- Token Passing Protocol -->
     <p>
         <span>Token Passing Protocol:</span> Token passing is an example of a centralized access control protocol. In a token passing network, a token circulates among devices, granting the device holding the token the right to transmit data. This ensures controlled and orderly access to the channel.
+        <div class="structimg img-center"><img src="../examples/networks/data-link-layer/token-passing.gif" alt=""></div>
     </p>
 
     <!-- CSMA/CD Protocol -->
     <p>
         <span>Carrier Sense Multiple Access with Collision Detection (CSMA/CD):</span> CSMA/CD is an example of a distributed access control protocol. Devices using CSMA/CD listen to the channel before transmitting. If a collision is detected, a backoff mechanism is employed before attempting retransmission.
+        <div class="structimg img-center mt-2 img-large img-75"><img src="../examples/networks/data-link-layer/csma-cd.png" alt=""></div>
     </p>    
     <h2>Sub-Layers of the Data Link Layer</h2>
 
