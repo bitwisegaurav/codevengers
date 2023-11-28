@@ -6,6 +6,15 @@
     scroll-behavior: smooth;
     transition: color 0.2s ease-in-out, background-color 0.3s ease-in-out;
 }
+:root {
+    --a: rgb(81, 70, 178);
+    --b: rgb(30 27 66);
+    --c: #2e2b52;
+    --d: rgba(44, 27, 90, 0.953);
+    --e: rgb(10, 7, 31);
+    --f: rgb(81, 65, 226);
+    --g: rgba(35, 13, 98, 0.855);
+}
 html{
     scroll-padding-top: 4rem;
 }
@@ -31,7 +40,7 @@ header{
 
 .dark header{
     /* background: rgb(27, 21, 81); */
-    background: rgb(30 27 66);
+    background: rgb(30, 27, 66);
     color: white;
 }
 
@@ -80,7 +89,7 @@ nav ul .navigation a{
     font-size: 1rem;
     border: none;
     color: white;
-    background-color: rgb(81, 65, 226);
+    background-color: var(--d);
     text-align: center;
     text-decoration: none;
     border-radius: 7px;
@@ -92,7 +101,7 @@ nav ul .navigation button{
     padding: 5px 10px;
     font-size: 1rem;
     border: none;
-    background-color: rgb(81, 65, 226);
+    background-color: var(--d);
     border-radius: 7px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -139,7 +148,7 @@ main{
     background-size: cover;
 }
 .dark main{
-    background-color: rgba(43, 0, 98, 0.8);
+    background-color: rgba(35, 13, 98, 0.853);
 }
 
 main .container{

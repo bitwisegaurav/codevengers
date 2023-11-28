@@ -5,10 +5,23 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     scroll-behavior: smooth;
 }
-
+:root {
+    --a: rgb(81, 70, 178);
+    --b: rgb(30 27 66);
+    --c: #2e2b52;
+    --d: rgba(44, 27, 90, 0.953);
+    --e: rgb(10, 7, 31);
+    --f: rgb(81, 65, 226);
+    --g: rgba(35, 13, 98, 0.855);
+    --i: #eee;
+}
 body {
     padding: 1rem 3rem;
     color: #222;
+}
+.dark {
+    color: #ccc;
+    background-color: var(--c);
 }
 
 body::-webkit-scrollbar {
@@ -17,12 +30,15 @@ body::-webkit-scrollbar {
 
 h1{
     margin-bottom: 2rem;
-    color: rgb(27, 21, 81);
+    color: var(--g);
 }
 
 h3,h2,h3,h4,h5,h6{
-    color: rgb(27, 21, 81);
+    color: var(--d);
     margin-top: 2rem;
+}
+.dark h1,h2,h3,h4,h5,h6{
+    color: var(--i);
 }
 
 ul, ol{
@@ -43,10 +59,6 @@ p {
     margin: 1rem 0;
     letter-spacing: 0.4px;
     line-height: 1.5rem;
-}
-
-strong{
-    color: rgb(16, 12, 47);
 }
 
 .code{
@@ -125,9 +137,13 @@ strong{
     height: 200px;
 }
 
-span {
+span, strong {
     font-weight: bold;
-    color: rgb(27, 21, 81);
+    color: var(--b);
+}
+
+.dark span, .dark strong {
+    color: var(--i);
 }
 
 .img-center{

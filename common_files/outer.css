@@ -4,6 +4,15 @@
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+:root {
+    --a: rgb(81, 70, 178);
+    --b: rgb(30, 27, 66);
+    --c: #2e2b52;
+    --d: rgba(44, 27, 90, 0.953);
+    --e: rgb(10, 7, 31);
+    --f: rgb(81, 65, 226);
+    --g: rgba(35, 13, 98, 0.855);
+}
 body{
     overflow-y: hidden;
 }
@@ -11,7 +20,7 @@ body{
 /* Navbar */
 nav{
     /* border: 2px solid red; */
-    background: rgb(27, 21, 81);
+    background: var(--a);
     color: white;
     width: 100%;
     /* padding: 10px 0; */
@@ -22,6 +31,9 @@ nav{
     align-items: center;
     justify-content: center;
     /* overflow: hidden; */
+}
+.dark nav{
+    background: var(--b);
 }
 nav ul{
     display: flex;
@@ -38,7 +50,18 @@ nav ul li{
     display: flex;
     align-items: center;
     font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: max(5vw, 2rem);
     /* border: 2px solid red; */
+}
+nav ul li button {
+    padding: 5px 10px;
+    border-radius: 7px;
+    outline: none;
+    border: none;
+    background-color: var(--g);
+    cursor: pointer;
 }
 nav ul .languages{
     position: relative;
@@ -55,11 +78,15 @@ nav ul .languages .courses{
     display: grid;
     place-items: center;
     font-size: 1rem;
-    background-color: #fff;
-    color: rgb(27, 21, 81);
     cursor: pointer;
+    background-color: var(--g);
     padding: 0 2rem;
     border-radius: 7px;
+}
+.dark nav ul .languages .courses, .dark nav ul li button {
+    background-color: #fff;
+    color: var(--b);
+
 }
 nav ul .languages .options{
     position: absolute;
@@ -113,7 +140,7 @@ nav ul .languages .options a {
     border-top: 1px solid rgba(27, 21, 81, 0.2);
 }
 nav ul .languages .options a:hover {
-    background-color: rgb(65 76 140);
+    background-color: var(--a);
     color: white;
 }
 .comname{
@@ -153,7 +180,7 @@ nav ul li img{
     height: 3px;
     position: absolute;
     width: 70%;
-    background-color: rgb(27, 21, 81);
+    background-color: var(--e);
     transition: 0.4s;
     /* border: 2px solid red; */
 }
@@ -176,7 +203,6 @@ nav ul li img{
     width: 65%;
     transform: rotate(-45deg);
 }
-
 /* Aside Section */
 aside{
     position: relative;
@@ -196,9 +222,12 @@ aside::-webkit-scrollbar{
 aside h1{
     /* border: 2px solid red; */
     padding: 0.5rem 1.5rem;
-    color: rgb(27, 21, 81);
+    color: var(--g);
     font-size: 1.5rem;
     pointer-events: none;
+}
+.dark aside h1{
+    color: var(--b);
 }
 aside ul li a{
     display: block;
@@ -219,7 +248,10 @@ aside ul li a:hover{
     color: black;
 }
 .activetop{
-    background-color: rgb(27, 21, 81);
+    background-color: var(--a);
+}
+.dark .activetop{
+    background-color: var(--c);
 }
 .activetop a{
     color: white;
