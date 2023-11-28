@@ -160,6 +160,14 @@ span {
     filter: hue-rotate(130deg);
 }
 
+.blue-purple {
+    filter: hue-rotate(80deg);
+}
+
+.pink-purple {
+    filter: hue-rotate(-80deg);
+}
+
 .mt-2{
     margin-top: 2rem !important;
 }
