@@ -747,7 +747,7 @@ footer .foot .socials a img{
         line-height: 1.2rem;
         font-size: 0.9rem;
     }
-    nav ul .navigation {
+    nav ul .navigation .navigatebtn {
         display: none;
     }
     #about .innerAbout{
@@ -758,6 +758,9 @@ footer .foot .socials a img{
 @media screen and (max-width: 400px){
     header{
         height: 3rem;
+    }
+    #theme {
+        font-size: x-small;
     }
     main .container .maincont p{
         font-size: x-small;
