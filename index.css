@@ -15,11 +15,7 @@ body::-webkit-scrollbar {
 
 /* Navbar */
 header{
-    /* border: 2px solid red; */
-    /* background: #d9daf7; */
-    background: rgb(81, 70, 178);
-    /* color: rgb(27, 21, 81); */
-    /* color: white; */
+    background: rgb(148, 126, 194);
     width: 100%;
     z-index: 1;
     position: sticky;
@@ -80,7 +76,7 @@ nav ul .navigation a{
     font-size: 1rem;
     border: none;
     color: white;
-    background-color: rgb(81, 65, 226);
+    background-color: rgb(109 82 158);
     text-align: center;
     text-decoration: none;
     border-radius: 7px;
@@ -90,9 +86,8 @@ nav ul .navigation a{
 
 nav ul .navigation button{
     padding: 5px 10px;
-    font-size: 1rem;
     border: none;
-    background-color: rgb(81, 65, 226);
+    background-color: rgb(109 82 158);
     border-radius: 7px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -128,18 +123,33 @@ nav ul .navigation a:hover{
 
 /* Name Section */
 main{
+    position: relative;
     width: 100%;
     height: calc(100vh - 4.5rem);
     display: flex;
     align-items: center;
     justify-content: center;
     /* background: rgba(29, 15, 71, 0.705); */
-    background-color: rgba(66, 0, 246, 0.725);
+    background-color: rgba(66, 0, 246, 0.225);
+    
+}
+main::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1029%26quot%3b)' fill='none'%3e%3cpath d='M302.41 423.92 a136.09 136.09 0 1 0 272.18 0 a136.09 136.09 0 1 0 -272.18 0z' fill='rgba(50%2c 17%2c 105%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1172.729238039418 132.1901143285109L1057.2590719018822 167.49288690988448 1208.0320106207917 247.66028046604671z' fill='rgba(50%2c 17%2c 105%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M735.96 190.64 a135.53 135.53 0 1 0 271.06 0 a135.53 135.53 0 1 0 -271.06 0z' fill='rgba(50%2c 17%2c 105%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M920.845%2c455.892C951.304%2c453.282%2c974.448%2c430.855%2c988.764%2c403.843C1002.06%2c378.757%2c1003.962%2c349.411%2c990.539%2c324.392C976.327%2c297.904%2c950.86%2c278.902%2c920.845%2c277.252C887.739%2c275.432%2c854.611%2c288.162%2c836.482%2c315.923C816.588%2c346.388%2c810.472%2c386.349%2c829.254%2c417.511C847.569%2c447.898%2c885.495%2c458.921%2c920.845%2c455.892' fill='rgba(50%2c 17%2c 105%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M316.38 512.37 a157.07 157.07 0 1 0 314.14 0 a157.07 157.07 0 1 0 -314.14 0z' fill='rgba(50%2c 17%2c 105%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1206.3284059888408 270.90712329808025L1274.8518346477117 179.97346213664997 1183.9181734862814 111.45003347777907 1115.3947448274105 202.38369463920935z' fill='rgba(50%2c 17%2c 105%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M118.36801715098754 241.00002639877L134.13290124572666 353.1730053633726 246.3058802103293 337.4081212686335 230.5409961155902 225.2351423040309z' fill='rgba(50%2c 17%2c 105%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M988.5974846891813 434.86585522804205L894.3411500241915 346.9704011888988 806.4456959850481 441.2267358538886 900.7020306500381 529.1221898930319z' fill='rgba(50%2c 17%2c 105%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M567.315%2c425.931C604.715%2c425.643%2c629.787%2c391.423%2c647.279%2c358.365C663.391%2c327.915%2c669.946%2c292.689%2c653.965%2c262.17C636.82%2c229.428%2c604.208%2c207.877%2c567.315%2c205.661C526.009%2c203.18%2c480.021%2c214.044%2c460.545%2c250.554C441.744%2c285.798%2c464.42%2c325.492%2c485.192%2c359.611C504.803%2c391.823%2c529.604%2c426.221%2c567.315%2c425.931' fill='rgba(50%2c 17%2c 105%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1213.1994321923182 167.21671377453364L1325.904299787267 317.0780648691245 1392.5745865503723 167.33414907245054z' fill='rgba(50%2c 17%2c 105%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1422.8360772374008 207.88996966611455L1359.69466327329 142.50512145067853 1294.309815057854 205.6465354147894 1357.4512290219648 271.03138363022543z' fill='rgba(50%2c 17%2c 105%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1057.8631818134777 529.2142289181619L1139.4510799429522 501.1212626819196 1029.7702155772354 447.62633078868737z' fill='rgba(50%2c 17%2c 105%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1114.0579622949886 492.11264529027153L1244.456437414965 561.6062314744214 1242.2021836462593 432.4601195592815z' fill='rgba(50%2c 17%2c 105%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1029'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
     background-size: cover;
+    z-index: -1;
+    opacity: 0.5;
 }
 .dark main{
     background-color: rgba(43, 0, 98, 0.8);
+}
+.dark main::before{
+    opacity: 1;
 }
 
 main .container{
@@ -149,6 +159,9 @@ main .container{
     align-items: center;
     justify-content: space-between;
     /* border: 2px solid red; */
+    color: #47336a;
+}
+.dark main .container {
     color: white;
 }
 main .container #image{
@@ -181,14 +194,18 @@ main .container .maincont #coursebtn{
     padding: 10px 20px;
     font-size: 16px;
     border: none;
-    color: rgb(48, 28, 119);
-    background-color: #f1f1f1;
+    background-color: #6d529e;
+    color: #f1f1f1;
     text-align: center;
     text-decoration: none;
     margin-top: 2rem;
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
+}
+.dark main .container .maincont #coursebtn {
+    color: rgb(48, 28, 119);
+    background-color: #f1f1f1;
 }
 main .container .maincont #coursebtn:hover{
    transform: scale(1.1);
@@ -224,8 +241,8 @@ section{
     display: block;
     width: 100%;
     font-size: 2rem;
-    color: rgb(48, 28, 119);
-    border: 2px solid rgb(48, 28, 119);
+    color: rgb(109 82 158);
+    border: 2px solid rgb(109 82 158);
     text-align: center;
     padding: 1rem;
     margin-bottom: 2rem;
@@ -309,8 +326,10 @@ section{
     height: 70% !important;
 }
 
-#mysql .langlogo img {
-    background-color: #f1f1f1;
+.dark #mysql .langlogo img {
+    /* background-color: #f1f1f1; */
+    filter: brightness(1.4) hue-rotate(-10deg) saturate(5);
+    /* filter: ; */
 }
 
 #discrete .langname, #cn .langname {
@@ -349,7 +368,7 @@ section{
     place-items: center;
     gap: 2rem;
     min-height: calc(100vh - 4.5rem);
-    background-color: rgba(66, 0, 246, 0.725);
+    background-color: rgb(213 198 253);
 }
 
 .dark #about {
@@ -373,8 +392,8 @@ section{
     padding: 1rem;
     margin-bottom: 2rem;
     border-radius: 5px;
-    color: #eee;
-    border: 2px solid #eee;
+    color: #41396e;
+    border: 2px solid #6d529e;
 }
 .dark #about .innerAbout #aboutTitle {
     color: #eee;
@@ -415,12 +434,14 @@ section{
     border-radius: 5px;
     height: max-content;
     color: rgb(27, 21, 81);
-    background-color: rgb(224, 218, 255);
+    background-color: rgb(250 250 250 / 91%);
+    box-shadow: -5px 5px 20px rgba(0,0,0,0.2);
 }
 
 .dark #about .innerAbout #aboutCont .aboutText {
     color: #aaa;
     background-color: #301b5a;
+    box-shadow: none;
 }
 
 /* Contact Section */
@@ -438,8 +459,8 @@ section{
     display: block;
     width: 100%;
     font-size: 2rem;
-    color: rgb(48, 28, 119);
-    border: 2px solid rgb(48, 28, 119);
+    color: rgb(109 82 158);
+    border: 2px solid rgb(109 82 158);
     text-align: center;
     padding: 1rem;
     margin-bottom: 2rem;
@@ -456,7 +477,7 @@ section{
     max-width: 50rem;
     display: flex;
     flex-direction: column;
-    color: rgb(27, 21, 81);
+    color: rgb(109 82 158);
 }
 .dark #contact form {
     color: #ddd;
@@ -469,7 +490,7 @@ section{
   
 #contact form input, #contact form textarea {
     padding: 10px;
-    border: 1px solid rgba(255,255,255,0.3);
+    border: 1px solid rgba(109,82,158,0.5);
     border-radius: 5px;
     margin-bottom: 2rem;
     transition: none;
@@ -478,12 +499,13 @@ section{
 .dark #contact form input, .dark #contact form textarea {
     background: rgba(255,255,255,0.1);
     color: #eee;
+    border: 1px solid rgba(255,255,255,0.2);
 }
 
 #contact form input:focus, #contact form textarea:focus,
 #contact form input:active, #contact form textarea:active 
 {
-    border: 2px solid rgb(48, 28, 119);
+    border: 2px solid rgba(109,82,158,1);
     outline: none;
 }
 .dark #contact form input:focus, .dark #contact form textarea:focus,
@@ -499,7 +521,7 @@ section{
 }
 
 #contact form input[type="submit"] {
-    background-color: rgba(35, 13, 98, 0.853);
+    background-color: rgb(109 82 158);
     color: #fff;
     cursor: pointer;
     border: none;
@@ -508,7 +530,7 @@ section{
 }
   
 #contact form input[type="submit"]:hover {
-    background-color: rgba(41, 0, 154, 0.853);
+    background-color: rgb(148 126 194);
 }
 .dark #contact form input[type="submit"]{
     background-color: rgba(255,255,255,1);
@@ -528,8 +550,8 @@ footer{
     width: 100%;
     height: 10rem;
     /* background: rgba(13, 33, 97); */
-    background: rgba(27, 21, 81, 0.2);
-    color: rgb(27, 21, 81);
+    background: rgb(213 198 253);
+    color: rgb(109 82 158);
     display: grid;
     place-items: center;
 }
