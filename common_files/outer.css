@@ -6,12 +6,14 @@
 }
 body{
     overflow-y: hidden;
+    color: #41396e;
 }
 
 /* Navbar */
 nav{
     /* border: 2px solid red; */
-    background: rgb(27, 21, 81);
+    background: rgb(148, 126, 194);
+    /* background: rgb(109 82 158); */
     color: white;
     width: 100%;
     /* padding: 10px 0; */
@@ -22,6 +24,9 @@ nav{
     align-items: center;
     justify-content: center;
     /* overflow: hidden; */
+}
+.dark nav{
+    background-color: rgb(30 27 66);
 }
 nav ul{
     display: flex;
@@ -80,7 +85,9 @@ nav ul .languages .options{
     overflow-x: hidden;
     overflow-y: scroll;
 }
-
+.dark nav ul .languages .options {
+    background-color: #d6ceff;
+}
 nav ul .languages .options::-webkit-scrollbar{
     width: 5px;
     background: transparent;
@@ -113,8 +120,12 @@ nav ul .languages .options a {
     border-top: 1px solid rgba(27, 21, 81, 0.2);
 }
 nav ul .languages .options a:hover {
-    background-color: rgb(65 76 140);
-    color: white;
+    /* background-color: rgb(65 76 140); */
+    background-color: rgb(213 198 253);
+}
+.dark nav ul .languages .options a:hover {
+    background-color: #4c4782;
+    color: #ddd;
 }
 .comname{
     /* border: 2px solid red; */
@@ -185,10 +196,13 @@ aside{
     height: calc(100vh - 70px);
     width: 20vw;
     min-width: 250px;
-    background-color: rgba(0, 0, 0, 0.11);
+    background-color: rgba(27, 21, 81, 0.1);
     transition: 0.2s;
     overflow-y: auto;
     padding-bottom: 4rem;
+}
+.dark aside {
+    background: #4c4782;
 }
 aside::-webkit-scrollbar{
     display: none;
@@ -196,9 +210,12 @@ aside::-webkit-scrollbar{
 aside h1{
     /* border: 2px solid red; */
     padding: 0.5rem 1.5rem;
-    color: rgb(27, 21, 81);
+    color: #41396e;
     font-size: 1.5rem;
     pointer-events: none;
+}
+.dark aside h1{
+    color: #ddd;
 }
 aside ul li a{
     display: block;
@@ -211,22 +228,40 @@ aside ul li a{
     list-style: none;
     transition: 0.1s;
     text-decoration: none;
-    color: black;
+    color: #41396e;
+}
+.dark aside ul li a {
+    color: rgba(255, 255, 255, 0.6);
 }
 aside ul li a:hover{
     /* background-color: rgb(51, 51, 126); */
-    background: rgba(0, 0, 0, 0.1);
-    color: black;
+    background: rgba(157, 115, 255, 0.2);
+    color: #41396e;
+}
+.dark aside ul li a:hover{
+    background: rgba(0, 0, 0, 0.2);
+    color: #ccc;
 }
 .activetop{
-    background-color: rgb(27, 21, 81);
+    /* background-color: rgb(213 198 253); */
+    background: rgb(148, 126, 194);
+}
+.dark .activetop {
+    background-color: rgb(30 27 66);
 }
 .activetop a{
-    color: white;
+    color: #eee;
+}
+.dark .activetop a{
+    color: #eee;
 }
 .activetop:hover a{
     background-color: transparent;
-    color: white;
+    color: #eee;
+}
+.dark .activetop:hover a{
+    background-color: transparent;
+    color: #eee;
 }
 section{
     display: flex;
