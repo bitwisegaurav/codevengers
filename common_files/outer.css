@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: color 0.2s ease-in-out, background-color 0.3s ease-in-out;
 }
 :root {
     --a: rgb(81, 70, 178);
@@ -54,7 +55,7 @@ nav ul li{
     font-size: 1.5rem;
     display: flex;
     align-items: center;
-    gap: max(5vw, 2rem);
+    gap: 3rem;
     /* border: 2px solid red; */
 }
 nav ul li button {
@@ -62,7 +63,7 @@ nav ul li button {
     border-radius: 7px;
     outline: none;
     border: none;
-    background-color: var(--g);
+    background-color: rgb(109 82 158);
     cursor: pointer;
 }
 nav ul .languages{
@@ -81,7 +82,7 @@ nav ul .languages .courses{
     place-items: center;
     font-size: 1rem;
     cursor: pointer;
-    background-color: var(--g);
+    background-color: rgb(109 82 158);
     padding: 0 2rem;
     border-radius: 7px;
 }

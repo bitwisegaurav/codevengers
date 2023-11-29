@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     scroll-behavior: smooth;
+    transition: color 0.2s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 body {
@@ -17,7 +18,7 @@ body::-webkit-scrollbar {
 
 .dark{
     background-color: #2e2b52;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.6);
 }
 .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6{
     color: #eee;
