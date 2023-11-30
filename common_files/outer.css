@@ -310,6 +310,9 @@ section{
     nav ul li img{
         margin-left: 2rem;
     }
+    nav ul li:last-child{
+        gap: 1rem;
+    }
     nav ul .languages .courses{
         padding: 0 1rem;
     }
@@ -358,7 +361,8 @@ section{
         font-size: 1rem;
     }
     .languages .courses{
-        font-size: 0.8rem !important;
+        font-size: x-small !important;
+        padding: 0 8px !important;
     }
     .comname a{
         margin-top: 0;
