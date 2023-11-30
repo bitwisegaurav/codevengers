@@ -291,12 +291,8 @@ th, td {
     border-color: rgba(255,255,255,0.3);
 }
 
-td span{
-    color: #444;
-}
-
 th {
-    background-color: rgb(27, 21, 81); 
+    background-color: #41396e; 
     color: #eee;
 }
 
