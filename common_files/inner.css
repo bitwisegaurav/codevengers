@@ -119,6 +119,7 @@ strong{
 }
 .structimg img{
     max-width: 100%;
+    background: white;
 }
 .pl img{
     border: 1px solid gray;
@@ -275,11 +276,19 @@ table {
     margin-top: 2rem;
     background-color: #fff;
 }
+.dark table{
+    background: #ffffff14;
+    color: rgba(255,255,255,0.7);
+}
 
 th, td {
     border: 1px solid #ddd;
     padding: 12px;
     word-wrap: break-word;
+}
+
+.dark th, .dark td {
+    border-color: rgba(255,255,255,0.3);
 }
 
 td span{
@@ -291,8 +300,17 @@ th {
     color: #eee;
 }
 
+.dark th {
+    background-color: rgb(30 29 67);
+    color: #eee;
+}
+
 tbody tr:nth-child(even) {
     background-color: #f9f9f9;
+}
+
+.dark tbody tr:nth-child(even) {
+    background-color: rgba(255,255,255,0.1);
 }
 
 @media screen and (max-width: 700px) {
