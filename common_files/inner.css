@@ -201,7 +201,7 @@ span {
     font-size: small;
     border-left: 5px solid;
 }
-.note::after{
+.dark .note::after{
     content: '';
     position: absolute;
     inset: 0;
@@ -209,7 +209,7 @@ span {
     height: 100%;
     background-color: white;
     z-index: -1;
-    opacity: 0.3;
+    opacity: 0.7;
 }
 .note::before{
     content: '*Note*';
