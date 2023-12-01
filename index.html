@@ -123,6 +123,12 @@
               </div>
               <div class="langname">Computer Networks</div>
             </a>
+            <a href="comingsoon.html" class="box" id="cn">
+              <div class="langlogo">
+                <img src="images/computerNetwoks.png" alt="">
+              </div>
+              <div class="langname">Computer Networks</div>
+            </a>
           </div>
           <!-- <button id="prevBtn" class="carousel-btn prev-btn">←</button>
   <button id="nextBtn" class="carousel-btn next-btn">→</button> -->
@@ -193,40 +199,5 @@
     </footer>
   </body>
   <!-- <script src="common_files/index.js"></script> -->
-  <script>
-    const themeBtn = document.querySelector('#theme');
-    let theme = localStorage.getItem("theme");
-
-    function toggleTheme() {
-      if(!theme){
-        theme = "dark";
-        document.body.classList.remove("light")
-      } else {
-        if(theme === "light"){
-          theme = "dark";
-          document.body.classList.remove("light")
-        } else {
-          theme = "light";
-          document.body.classList.remove("dark");
-        }
-        localStorage.setItem("theme", theme);
-        document.body.classList.add(theme);
-        themeBtn.innerHTML = theme === "light" ? "🌙" : "☀️";
-      }
-    }
-
-    window.addEventListener("DOMContentLoaded", ()=>{
-      theme = localStorage.getItem("theme");
-      if(!theme){
-        theme = "dark";
-        localStorage.setItem("theme", theme);
-        document.body.classList.remove("light")
-      } 
-      if(theme === "light") document.body.classList.remove("dark");
-      document.body.classList.add(theme);
-      themeBtn.innerHTML = theme === "light" ? "🌙" : "☀️";
-    });
-
-    themeBtn.addEventListener("click", toggleTheme);
-  </script>
+  <script src="index.js"></script>
 </html>
