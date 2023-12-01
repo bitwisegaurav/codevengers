@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common_files/inner.css">
+    <title>Network Layer - Codevengers</title>
+</head>
+
+<body>
+    <!-- 
+        Topics :- 
+        Network Layer intro
+        Functions
+        Design issue
+        virtual circut approach
+        datagram apporach
+        difference b/w both
+        ipv4 addressing (format, classful and classless addressing, subnetting, subnet mask)
+        limitations of ipv4
+        ipv6 addressing 
+        routing algos (static and dynamic)
+        flooding
+        flow based routing
+        dynamic routing algos -> distance vector, split horizon, link state
+        igmp,rpf,rpb,rpm
+        broadcacsting and types
+        congestion (leaky and token bucket)
+        connecting devices (passive hub, repeater, bridge, rotuer, gateways)
+        firewalls
+     -->
+    <h1>Network Layer</h1>
+    <p>Network layer is responsible for the source to desitnation delivery of a packet across multiple networks.</p>
+
+    <div class="structimg img-center mt-2"><img src="../examples/networks/network-layer/network.png"
+            alt="Networking on network layer image"></div>
+
+    <h2>Functions of Network Layer</h2>
+    <ol>
+        <li><span>Internetworking : </span>It provides logical connection between deifferent networks.</li>
+        <li><span>Logical Addressing : </span>In order to identify each device uniquely and universally, network layer
+            defines an addressing scheme.</li>
+        <li><span>Routing : </span>The network layer protocols determine which route or path is best from source to
+            destination.
+            <p class="note note-normal">Routing is process/method to design a routing table. Switching is a method to
+                send the data to the destination/next router.</p>
+        </li>
+        <li><span>Packetizing : </span>the process in which network layer creates its own packets by encapsulating the
+            data from the upper layer.</li>
+        <li><span>Fragmentation : </span>Framgmentation means dividing the larger packets into small fragments to make
+            it transportable for the physical medium.</li>
+    </ol>
+
+    <h2>Design Issues in Network Layer</h2>
+    <p>The design of the network layer involves addressing several critical issues to ensure effective communication and
+        data delivery. Some key design issues include:</p>
+    <h3>Virtual Circuit Approach</h3>
+    <p>This approach involves establishing a logical connection or circuit between the source and destination before
+        data transmission. It ensures a reliable and ordered delivery of packets.</p>
+    <h3>Datagram Approach</h3>
+    <p>The datagram approach, on the other hand, focuses on the independent forwarding of each packet. It does not
+        require a pre-established connection and is more adaptable to dynamic network conditions.</p>
+
+    <h2>IPv4 Addressing</h2>
+    <p>Each host and router on the Internet is assigned a unique 32-bit logical address known as <span>IP
+            address</span>.</p>
+    <div class="structimg img-center mt-2"><img src="../examples/networks/network-layer/ipv4.png" alt=""></div>
+    <ul>
+        <li><span>VER : </span>It stores the version number in bits (4 or 6).</li>
+        <li><span>HLEN : </span>It stores the length of the header upto to 15 bytes. To get the actual header length, we
+            need to multiply the hlen by 4.</li>
+        <li><span>Service : </span>
+            <ul>
+                <li><span>Precedence : </span>It is used to prioritize the packets.</li>
+                <li><span>Delay : </span>It is used to minimize the delay.</li>
+                <li><span>Throughput : </span>It is used to maximize the throughput.</li>
+                <li><span>Reliability : </span>It is used to maximize the reliability.</li>
+                <li><span>Cost : </span>It is used to minimize the cost.</li>
+            </ul>
+        </li>
+        <li><span>Total Length : </span>It stores the total length of the packet.</li>
+        <li><span>Identification : </span>It is used to identify the packet and to detect the duplication of the packet.
+        </li>
+        <li><span>Flags : </span>
+            <ul>
+                <li><span>Reserved : </span>It is used to store the flags.</li>
+                <li><span>Don't Fragment : </span>It is used to indicate that the packet can't be fragmented.</li>
+                <li><span>More Fragments : </span>It is used to indicate that the packet has more fragments.</li>
+            </ul>
+        </li>
+        <li><span>Fragment Offset : </span>It is used to indicate the offset of the fragment.</li>
+        <li><span>Time to Live : </span>It is used to indicate the number of routers that the packet can traverse.</li>
+        <li><span>Protocol : </span>It is used to identify the protocol used in the packet.</li>
+        <li><span>Header Checksum : </span>It is used to verify the integrity of the header.</li>
+        <li><span>Source Address : </span>It is used to store the source IP address.</li>
+        <li><span>Destination Address : </span>It is used to store the destination IP address.</li>
+        <li><span>Options or padding : </span>It is used to store the options or to manage the length in the form of
+            2<sup>p</sup>. It can be used for end of option, record route, timestamp, etc.</li>
+    </ul>
+    <p>IPv4 addresses are fundamental for identifying devices in a network. Key aspects include:</p>
+    <ul>
+        <li><span>Address Format : </span>IPv4 addresses are 32-bit numerical labels divided into four octets, typically
+            represented in dotted-decimal format.</li>
+        <li><span>Classful and Classless Addressing : </span>IPv4 addressing can follow classful or classless schemes,
+            impacting address assignment strategies.</li>
+        <li><span>Subnetting : </span>Subnetting involves dividing an IP network into sub-networks for better resource
+            management and security.</li>
+        <li><span>Subnet Mask : </span>A subnet mask is used in conjunction with an IP address to define the network and
+            host portions.</li>
+    </ul>
+
+    <h2>Classful addressing</h2>
+    <p>IP addressing supports five different address classes : A, B, C, D and E. Only classes A, B and C are available
+        for commercial use.</p>
+    <div class="structimg img-center mt-2 green-purple"><img src="../examples/networks/network-layer/classful.png"
+            alt="Classful addresing"></div>
+
+    <h2>Subnetting</h2>
+    <p>Subnetting is a process of dividing an IP network into smaller networks. Each of these subnets has its own
+        specific address.</p>
+    <p>Subnetting works by dividing an IP address into two parts: the network address and the host address. The network
+        address identifies the network itself, while the host address identifies a specific device (or “host”) within
+        that network.
+    </p>
+    <p>
+        Subnetting further divides the host portion of the IP address into smaller units, which can then be assigned to
+        various devices within the network. This is done using a technique called the subnet mask.
+    </p>
+    <p>
+        The subnet mask is a 32-bit number that separates the network address from the host address. In the subnet mask,
+        bits that correspond to the network address are set to 1, and bits that correspond to the host address are set
+        to 0.</p>
+    <p>A subnet adderss is created by borrowing bits from the host field and designating them as subnet field.</p>
+    <div class="structimg img-center mt-2"><img src="../examples/networks/network-layer/subnetting.webp"
+            alt="Subnetting image"></div>
+    <p><span>Advantages : </span>It improves the security and the maintenance and administration is easy.</p>
+    <p><span>Limitations : </span>Identification of station is difficult and not possible to directed broadcast from
+        outside network.</p>
+
+    <h2>Subnet Mask</h2>
+    <p>Subnet masking is the process of using a subnet mask to divide a large network into smaller networks, called
+        subnets. The subnet mask is a 32-bit number that is used to identify the network and host portions of an IP
+        address. </p>
+    <p>
+        The subnet mask is a bitmask that is used to extract the network and host portions of an IP address. The first n
+        bits of the subnet mask are set to 1, where n is the number of bits used for the
+        network portion of the address. The remaining bits are set to 0.</p>
+    <p></p>
+    For example, a subnet mask of 255.255.255.0 has 24 bits set to 1, which means that the first 24
+    bits of the IP address are used for the network portion and the last 8 bits are used for the host
+    portion.</p>
+    <p></p>
+    The subnet mask is used by routers to determine which network a packet belongs to. When a
+    router receives a packet, it compares the destination IP address of the packet to the subnet masks
+    of all of the networks that it is connected to. If the destination IP address matches the subnet mask
+    of one of the networks, the router forwards the packet to that network. If the destination IP address
+    does not match any of the subnet masks, the router drops the packet.</p>
+    <p>
+        Subnet masking is a fundamental concept in IP networking. It is used to improve the efficiency of
+        IP addressing, to improve network security, and to make it easier to manage networks.</p>
+
+    <h2>Limitations of IPv4</h2>
+    <ul>
+        <li><span>Getting scarce</span></li>
+        <li><span>Security related issues</span></li>
+        <li><span>There is a need for simpler configuration</span></li>
+        <li><span>Quality of Service</span></li>
+        <li><span>Flat routing infrastructure</span></li>
+        <li><span>Prioritized delivery</span></li>
+        <li><span>Mobility</span></li>
+    </ul>
+
+    <h2>Classless Addressing</h2>
+    <p>To overcome the problem of address depletion and give more organization acccess to internet, classless addressing
+        was designed and implemented.</p>
+    <p class="note note-mostimp">Remaining part coming soon.</p>
+
+
+    <h2>IPv6 Addressing</h2>
+    <p>IPv6 addresses aim to overcome the limitations of IPv4. Key features include:</p>
+    <ul>
+        <li><span>128-bit Address : </span>IPv6 employs a 128-bit address format, vastly expanding the available address
+            space.</li>
+        <li><span>Hexadecimal Representation : </span>IPv6 addresses are often represented in hexadecimal format for
+            conciseness.</li>
+        <li><span>Packet Format : </span>
+            IPv6 uses a 128-bit header format, which is similar to IPv4's 32-bit header format.
+            </li>
+    </ul>
+    <p class="note note-mostimp">Remaining part coming soon.</p>
+
+    <h2>Routing Algorithms</h2>
+    <p>Routing algorithms are essential for determining the most efficient paths for data transmission. Two primary
+        types include:</p>
+    <ul>
+        <li><span>Static Routing : </span>In static routing, predetermined paths are configured manually. While simple,
+            it lacks adaptability to dynamic network changes.</li>
+        <li><span>Dynamic Routing : </span>Dynamic routing employs algorithms that adjust to changing network
+            conditions, optimizing data flow dynamically.</li>
+    </ul>
+    <p class="note note-mostimp">Remaining part coming soon.</p>
+
+    <h2>Additional Routing Concepts</h2>
+    <ul>
+        <li><span>Flooding : </span>Flooding is a routing technique where a router sends a copy of a received packet to
+            all of its neighbors except the source.</li>
+        <li><span>Flow-Based Routing : </span>This routing approach considers the characteristics of data flows,
+            allowing for more intelligent routing decisions.</li>
+    </ul>
+
+    <h2>Dynamic Routing Algorithms</h2>
+    <p>Dynamic routing involves the use of algorithms like:</p>
+    <ul>
+        <li><span>Distance Vector : </span>This algorithm calculates the distance or cost to reach each destination and
+            makes routing decisions accordingly.</li>
+        <li><span>Link State : </span>Link-state routing algorithms build a comprehensive map of the network and use
+            this information to determine optimal routes.</li>
+        <!-- Add more details on each algorithm as needed -->
+    </ul>
+    <p class="note note-mostimp">Remaining part coming soon.</p>
+
+    <h2>IGMP, RPF, RPB, RPM</h2>
+    <p>These acronyms correspond to various protocols and mechanisms within the network layer. Understanding their
+        functions is crucial for effective network management.</p>
+    <p class="note note-mostimp">Remaining part coming soon.</p>
+
+    <h2>Broadcasting and Types</h2>
+    <p>Broadcasting plays a vital role in network communication. Different types of broadcasting include:</p>
+    <ul>
+        <li><span>Unicast : </span>Communication from one source to one destination.</li>
+        <li><span>Broadcast : </span>Communication from one source to all destinations in the network.
+            <p class="note note-mostimp">Remaining part coming soon.</p>
+        </li>
+        <li><span>Multicast : </span>Communication from one source to multiple specific destinations.</li>
+    </ul>
+
+    <h2>Congestion Control</h2>
+    <p>Congestion control is crucial to prevent network congestion and ensure smooth data flow. Techniques such as leaky
+        bucket and token bucket are commonly used for this purpose.</p>
+    <p class="note note-mostimp">Remaining part coming soon.</p>
+
+    <h2>Connecting Devices</h2>
+    <p>Various connecting devices play distinct roles in network architecture:</p>
+    <ul>
+        <li><span>Passive Hub : </span>A device that connects multiple devices but does not amplify or regenerate
+            signals.</li>
+        <li><span>Repeater : </span>Amplifies and retransmits signals, extending the network's reach.</li>
+        <li><span>Bridge : </span>Connects two network segments and operates at the data link layer.</li>
+        <li><span>Router : </span>Facilitates communication between different networks by forwarding data packets.</li>
+        <li><span>Gateways : </span>Act as interfaces between different networks, translating protocols if needed.</li>
+    </ul>
+
+    <h2>Firewalls</h2>
+    <p>Firewalls are crucial for network security. They regulate incoming and outgoing network traffic based on
+        predetermined security rules.</p>
+    <p class="note note-mostimp">Remaining part coming soon.</p>
+
+</body>
+<script src="../common_files/innerTheme.js"></script>
+
+</html>

@@ -1,4 +1,6 @@
 let theme = localStorage.getItem("theme");
+
+setTheme(theme);
 window.addEventListener("message", (event) => {
   if (event.data.msg === "toggleTheme") {
     console.log("pohoch rha h");
@@ -20,7 +22,6 @@ function setTheme(themevalue) {
   document.body.classList.add(themevalue);
 }
 
-window.addEventListener("DOMContentLoaded", ()=>{
-  theme = localStorage.getItem("theme");
-  setTheme(theme);
-});
+// window.addEventListener("DOMContentLoaded", ()=>{
+//   theme = localStorage.getItem("theme");
+// });
