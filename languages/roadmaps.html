@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java is a versatile and widely-used programming language known for its platform independence and robustness developed by Sun Microsystems (now owned by Oracle).">
+    <meta name="keywords" content="java, codevengers, programming languages, coding, bitwisegaurav, oracle, jdbc, awt, applets">
+    <link rel="stylesheet" href="../common_files/roadmaps.css">
+    <link rel="shortcut icon" href="../images/icon1.png" type="image/x-icon">
+    <title>Computer Networks - Codevengers</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li>
+                <a href="../index.html">
+                    <img src="../images/logo.png" alt="logo">
+                </a>
+            </li>
+            <li class="comname">
+                <a href="../index.html">Codevengers</a>
+            </li>
+            <li>
+                <div class="languages">
+                    <p class="courses">Courses ↓</p>
+                    <div class="options">
+                        <a href="../comingsoon.html">HTML</a>
+                        <a href="../comingsoon.html">CSS</a>
+                        <a href="../comingsoon.html">JavaScript</a>
+                        <a href="mysql.html">MySQL</a>
+                        <a href="plsql.html">PL/SQL</a>
+                        <a href="java.html">Java</a>
+                        <a href="http://javaprograms.great-site.net/">Java Programs</a>
+                        <a href="php.html">Php</a>
+                        <a href="../comingsoon.html">C++</a>
+                        <a href="discrete.html">Discrete Mathematics</a>
+                    </div>
+                </div>
+                <button type="button" class="themeBtn" id="theme">☀️</button>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Roadmaps</h1>
+        <article id="outer-container">
+            <!-- <section class="courses">
+                <div class="topic">Courses</div>
+                <section id="roadmapsContainer">
+                    <a href="../comingsoon.html" class="box" id="web">
+                        <div class="logo">
+                            <img src="../images/c++.png" alt="Web Development logo">
+                        </div>
+                        <p class="title">Web Development</p>
+                    </a>
+                </section>
+            </section> -->
+        </article>
+    </main>
+</body>
+<script src="../index.js"></script>
+<script>
+    const outerContainer = document.querySelector("#outer-container");
+
+    const data = [
+            {
+                name: "Courses",
+                containers: [
+                    {
+                        title: "Web development",
+                        category: "web",
+                        file: "../comingsoon.html"
+                    },
+                    {
+                        title: "App development",
+                        category: "app",
+                        file: "../comingsoon.html"
+                    },
+                    {
+                        title: "Software development",
+                        category: "software",
+                        file: "../comingsoon.html"
+                    },
+                    {
+                        title: "Frontend Development",
+                        category: "frontend",
+                        file: "../comingsoon.html"
+                    },
+                    {
+                        title: "Backend Development",
+                        category: "backend",
+                        file: "../comingsoon.html"
+                    },
+                ]
+            },
+            {
+                name: "Langugaes",
+                containers: [
+                    {
+                        title: "HTML",
+                        category: "web",
+                        file: "../comingsoon.html"
+                    },
+                    {
+                        title: "CSS",
+                        category: "web",
+                        file: "../comingsoon.html"
+                    },
+                    {
+                        title: "JavaScript",
+                        category: "web",
+                        file: "../comingsoon.html"
+                    },
+                    {
+                        title: "React",
+                        category: "web",
+                        file: "../comingsoon.html"
+                    },
+                    {
+                        title: "Next Js",
+                        category: "web",
+                        file: "../comingsoon.html"
+                    },
+                    {
+                        title: "Angular",
+                        category: "web",
+                        file: "../comingsoon.html"
+                    },
+                    {
+                        title: "Vue",
+                        category: "web",
+                        file: "../comingsoon.html"
+                    },
+                    {
+                        title: "Node Js",
+                        category: "web",
+                        file: "../comingsoon.html"
+                    },
+                    {
+                        title: "Php",
+                        category: "web",
+                        file: "../comingsoon.html"
+                    },
+                ]
+            },
+        ]
+
+    function getData(){
+        let outerBox = '';
+        outerContainer.innerHTML = "chal rha h";
+        data.forEach(topic => {
+            // const container = `<a href="${topic.file}" class="box" id="${topic.category}">
+            //     <div class="logo">
+            //         <img src="../images/c++.png" alt="${topic.title} logo">
+            //     </div>
+            //     <p class="title">${topic.title}</p>
+            // </a>`;
+            // containers += container;
+            let boxes = '';
+            topic.containers.forEach(container => {
+                const box = `<a href="${container.file}" class="box" id="${container.category}">
+                    <div class="logo">
+                        <img src="../images/c++.png" alt="${container.title} logo">
+                    </div>
+                    <p class="title">${container.title}</p>
+                </a>`;
+                boxes += box;
+            })
+            outerBox += `<section class="courses">
+                <div class="topic">${topic.name}</div>
+                <section id="roadmapsContainer">
+                    ${boxes}
+                </section>
+            </section>`;
+        });
+        // roadmapsContainer.innerHTML = containers;
+        outerContainer.innerHTML = outerBox;
+    }
+
+    window.addEventListener("DOMContentLoaded", getData);
+    
+</script>
+</html>
