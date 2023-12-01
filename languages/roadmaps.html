@@ -72,27 +72,32 @@
                     {
                         title: "Web development",
                         category: "web",
-                        file: "../comingsoon.html"
+                        file: "../comingsoon.html",
+                        image: "c++.png",
                     },
                     {
                         title: "App development",
                         category: "app",
-                        file: "../comingsoon.html"
+                        file: "../comingsoon.html",
+                        image: "c++.png",
                     },
                     {
                         title: "Software development",
                         category: "software",
-                        file: "../comingsoon.html"
+                        file: "../comingsoon.html",
+                        image: "c++.png",
                     },
                     {
                         title: "Frontend Development",
                         category: "frontend",
-                        file: "../comingsoon.html"
+                        file: "../comingsoon.html",
+                        image: "c++.png",
                     },
                     {
                         title: "Backend Development",
                         category: "backend",
-                        file: "../comingsoon.html"
+                        file: "../comingsoon.html",
+                        image: "c++.png",
                     },
                 ]
             },
@@ -102,47 +107,68 @@
                     {
                         title: "HTML",
                         category: "web",
-                        file: "../comingsoon.html"
+                        file: "../comingsoon.html",
+                        image: "html.png",
                     },
                     {
                         title: "CSS",
                         category: "web",
-                        file: "../comingsoon.html"
+                        file: "../comingsoon.html",
+                        image: "css.png",
                     },
                     {
                         title: "JavaScript",
                         category: "web",
-                        file: "../comingsoon.html"
+                        file: "../comingsoon.html",
+                        image: "js.png",
                     },
                     {
                         title: "React",
                         category: "web",
-                        file: "../comingsoon.html"
+                        file: "../comingsoon.html",
+                        image: "c++.png",
                     },
                     {
                         title: "Next Js",
                         category: "web",
-                        file: "../comingsoon.html"
+                        file: "../comingsoon.html",
+                        image: "c++.png",
                     },
                     {
                         title: "Angular",
                         category: "web",
-                        file: "../comingsoon.html"
+                        file: "../comingsoon.html",
+                        image: "c++.png",
                     },
                     {
                         title: "Vue",
                         category: "web",
-                        file: "../comingsoon.html"
+                        file: "../comingsoon.html",
+                        image: "c++.png",
                     },
                     {
                         title: "Node Js",
                         category: "web",
-                        file: "../comingsoon.html"
+                        file: "../comingsoon.html",
+                        image: "c++.png",
                     },
                     {
                         title: "Php",
                         category: "web",
-                        file: "../comingsoon.html"
+                        file: "../comingsoon.html",
+                        image: "php.png",
+                    },
+                    {
+                        title: "C++",
+                        category: "software",
+                        file: "../comingsoon.html",
+                        image: "c++.png",
+                    },
+                    {
+                        title: "Java",
+                        category: "software",
+                        file: "../comingsoon.html",
+                        image: "java.png",
                     },
                 ]
             },
@@ -161,9 +187,10 @@
             // containers += container;
             let boxes = '';
             topic.containers.forEach(container => {
+                if(!container.image) container.image = `c++.png`;
                 const box = `<a href="${container.file}" class="box" id="${container.category}">
                     <div class="logo">
-                        <img src="../images/c++.png" alt="${container.title} logo">
+                        <img src="../images/${container.image}" alt="${container.title} logo">
                     </div>
                     <p class="title">${container.title}</p>
                 </a>`;
