@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Recursion and Recurrence Relations</h1>
+<p>Recursion is a method where the solution to a problem depends on solutions to smaller instances of the same problem. A recurrence relation is an equation that recursively defines a sequence where the next term is a function of the previous terms.</p>
+
+<h2>Types of Recurrence Relations</h2>
+<ul>
+    <li>
+        <h3>First Order Recurrence Relation</h3>
+        <p>A recurrence relation of the form: an = can-1 + f(n) for n>=1 where c is a constant and f(n) is a known function is called linear recurrence relation of first order with constant coefficient. If f(n) = 0, the relation is homogeneous otherwise non-homogeneous. For example: x n = 2x n-1 – 1, a n = na n-1 + 1, etc[^1^][1].</p>
+    </li>
+    <li>
+        <h3>Second Order Linear Homogeneous Recurrence Relation</h3>
+        <p>A recurrence relation of the form cnan + cn-1an-1 + cn-2an-2 = 0 for n>=2 where c n, c n-1 and c n-2 are real constants with c n != 0 is called a second order linear homogeneous recurrence relation with constant coefficients[^1^][1].</p>
+    </li>
+</ul>
+
+<h2>Solving Recurrence Relations</h2>
+<p>There are different methods to solve recurrence relations, including generating functions[^1^][1]. The solutions depend on the roots of the characteristic equation associated with the relation:</p>
+<ul>
+    <li>If the roots are real and distinct, we take an = A (k1)n + B (k2)n as the general solution[^1^][1].</li>
+    <li>If the roots are real and equal, we take an = (A + Bn)kn as the general solution[^1^][1].</li>
+    <li>If the roots are complex, we take an = rn(Acosnθ + Bsinnθ) as the general solution[^1^][1].</li>
+</ul>
+
+</body>
+</html>

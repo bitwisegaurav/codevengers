@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common_files/inner.css">
+    <title>Document</title>
+</head>
+<body class="dark">
+    <h1>Electronic Mail</h1>
+    <p>Electronic mail is a method of communication that uses the Internet to send messages. <span>Sender</span> sends the mail to the <span>recipient</span> with informations like receivers address, message, etc.</p>
+
+    <h2>Services of Email</h2>
+    <ol>
+        <li><span>Composition : </span>Process of creating messages and answers.</li>
+        <li><span>Transfer : </span>Moving/Seding message.</li>
+        <li><span>Reporting : </span>Confirmation of delivey of message.</li>
+        <li><span>Displaying : </span>Presenting the message in user readable form.</li>
+        <li><span>Disposition : </span>What the receipent does with the message.</li>
+    </ol>
+
+    <h2>Components of Email</h2>
+    <ol>
+        <!-- user agent, mta, mail box, spool file -->
+        <li><span>User Agent : </span>The software that is used to send and receive messages. It is sometimes called a mail reader.</li>
+        <li><span>MTA : </span>Mail Transfer Agent. It is the software that transfers messages from one mail server to another.</li>
+        <li><span>Mail Box : </span>A storage area for messages.</li>
+        <li><span>Spool File : </span>A temporary file that stores messages before they are sent.</li>
+    </ol>
+    <p class="note note-normal">
+        Imagine you're sending an email. You open your email software, also known as the User Agent. It's like a magical tool that helps you send and receive messages.<br><br>
+        When you compose your email, the User Agent prepares it for sending. It's like packaging your message with the recipient's address and the content.<br><br>
+        Now, your email is ready to embark on a journey. The Mail Transfer Agent (MTA) takes over, acting as a messenger. It transfers your email from your email server to the recipient's email server. It's like a magical courier navigating through the internet.<br><br>
+        Finally, your email arrives at the recipient's email server, where it's stored in their Mailbox. It's like reaching the gates of a castle, waiting to be retrieved.<br><br>
+        When the recipient opens their email software, their User Agent connects to their email server and retrieves the message from their Mailbox. It's like opening a treasure chest to reveal your email.<br><br>
+        And that's how the components of an email work together. The User Agent helps you compose and send messages, the MTA transports them, and the Mailbox stores and retrieves them. It's like a magical journey connecting people through digital messages.
+    </p>
+    <div class="structimg img-center mt-2"><img src="../examples/networks/electronic-mail/architecture.png" alt="architecture of email"></div>
+    
+    <h2>Email Addresses</h2>
+    <p>Email addresses are used to identify the sender and the recipient of a message.</p>
+    <p>The format of e-mail address is : </p>
+    <div class="code">
+        <pre>User @ domain-name</pre>
+    </div>
+    <ol>
+        <li><span>User</span> part identfies the mail box of the user in the domain. The user part is unique within the domain.</li>
+        <li><span>Domain-name</span> part identifies the organization or host machine and it is unique globally.</li>
+    </ol>
+
+    <h2>Mail Format</h2>
+    <p>The mail format is a set of rules that defines how the message is composed and sent.</p>
+    <p>The mail format is composed of the following parts:</p>
+    <ol>
+        <li><span>Header</span>: The header contains:
+            <ul>
+                <li><span>To</span>: The recipient(s) of the email.</li>
+                <li><span>CC</span>: Additional recipients who receive a copy of the email.</li>
+                <li><span>BCC</span>: Blind Carbon Copy, recipients who receive a copy without others knowing.</li>
+                <li><span>From</span>: The sender of the email.</li>
+                <li><span>Sender</span>: The actual sender of the email, if different from the "From" field.</li>
+                <li><span>Received</span>: Information about the servers that handled the email during transmission.</li>
+                <li><span>Return Path</span>: The email address to which bounced or undeliverable emails are sent.</li>
+            </ul>
+        </li>
+    </ol>
+
+</body>
+<!-- <script src="../common_files/innerTheme.js"></script> -->
+</html>

@@ -5,6 +5,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     scroll-behavior: smooth;
     transition: color 0.2s ease-in-out, background-color 0.3s ease-in-out;
+    box-sizing: border-box;
 }
 
 body {
@@ -271,12 +272,21 @@ span {
     color:rgb(132, 0, 0);
 }
 
+.imp{
+    position: relative;
+}
+.imp::before{
+    content: '*';
+    color: rgb(255, 48, 48);
+    /* border: 2px solid red; */
+}
+
 /* table */
 table {
     width: 100%;
     max-width: 80rem;
     border-collapse:collapse;
-    margin-top: 2rem;
+    margin: 2rem auto 0;
     background-color: #fff;
 }
 .dark table{
