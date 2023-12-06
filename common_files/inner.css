@@ -185,6 +185,10 @@ span {
     filter: hue-rotate(-80deg);
 }
 
+.orange-purple {
+    filter: hue-rotate(240deg);
+}
+
 .mt-2{
     margin-top: 2rem !important;
 }
