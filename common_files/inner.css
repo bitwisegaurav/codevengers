@@ -46,7 +46,7 @@ main {
     right: 0;
     overflow-x: hidden;
     height: max-content;
-    min-height: 50rem;
+    /* min-height: 50rem; */
 }
 
 .top{

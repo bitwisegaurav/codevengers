@@ -243,15 +243,20 @@ aside h1{
     color: #41396e;
     font-size: 1.5rem;
     pointer-events: none;
+    margin-bottom: 1rem;
 }
 .dark aside h1{
     color: #ddd;
+}
+aside ul li {
+    padding: 0 5px;
 }
 aside ul li a{
     display: block;
     /* border: 2px solid red; */
     width: 100%;
-    padding: 0.4rem 1.5rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
     cursor: pointer;
     /* border-bottom: 1px solid rgba(0, 0, 0, 0.8); */
     font-size: small;
@@ -272,11 +277,11 @@ aside ul li a:hover{
     background: rgba(0, 0, 0, 0.2);
     color: #ccc;
 }
-.activetop{
+.activetop a{
     /* background-color: rgb(213 198 253); */
     background: rgb(148, 126, 194);
 }
-.dark .activetop {
+.dark .activetop a{
     background-color: rgb(30 27 66);
 }
 .activetop a{
