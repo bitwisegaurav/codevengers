@@ -273,6 +273,11 @@ main .courses section .box .logo img{
 #HTML .logo img,  #JavaScript .logo img{
     height: 70% !important;
 }
+.dark #MySQL .logo img {
+    /* background-color: #f1f1f1; */
+    filter: brightness(1.4) hue-rotate(-10deg) saturate(5);
+    /* filter: ; */
+}
 
 main .courses section .title {
     display: flex;
