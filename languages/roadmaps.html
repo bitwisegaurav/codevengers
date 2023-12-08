@@ -188,7 +188,7 @@
             let boxes = '';
             topic.containers.forEach(container => {
                 if(!container.image) container.image = `c++.png`;
-                const box = `<a href="${container.file}" class="box" id="${container.category}">
+                const box = `<a href="${container.file}" class="box" id="${container.title}">
                     <div class="logo">
                         <img src="../images/${container.image}" alt="${container.title} logo">
                     </div>
