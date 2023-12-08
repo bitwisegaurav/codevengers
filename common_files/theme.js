@@ -30,7 +30,7 @@ function themeTest () {
 // })
 window.addEventListener("DOMContentLoaded", ()=>{
   theme = localStorage.getItem("theme");
-  console.log(theme);
+  // console.log(theme);
   if(!theme){
     theme = "dark";
     localStorage.setItem("theme", theme);

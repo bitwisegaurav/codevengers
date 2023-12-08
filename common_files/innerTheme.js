@@ -1,7 +1,7 @@
 let theme = localStorage.getItem("theme");
 window.addEventListener("message", (event) => {
   if (event.data.msg === "toggleTheme") {
-    console.log("pohoch rha h");
+    // console.log("pohoch rha h");
     setTheme(event.data.theme);
   }
 });
@@ -21,9 +21,9 @@ window.addEventListener("message", (event) => {
 // }
 // addPreLoader();
 function setTheme(themevalue) {
-  console.log("called");
+  // console.log("called");
   // theme = localStorage.getItem("theme");
-  console.log(themevalue);
+  // console.log(themevalue);
   if (!themevalue) {
     themevalue = "dark";
     document.body.classList.remove("light");
@@ -38,8 +38,6 @@ window.addEventListener("DOMContentLoaded", ()=>{
   wrapContent();
   theme = localStorage.getItem("theme");
   setTheme(theme);
-  // const preLoader = document.getElementById("preloader");
-  // preLoader.style.display = "none";
   // test();
 });
 
