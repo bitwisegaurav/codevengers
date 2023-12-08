@@ -19,6 +19,10 @@ body{
     color: #41396e;
 }
 
+.dark {
+    background-color: #2e2b52;
+}
+
 /* Navbar */
 nav{
     /* border: 2px solid red; */
