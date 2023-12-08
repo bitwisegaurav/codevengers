@@ -140,7 +140,6 @@ main{
     justify-content: center;
     /* background: rgba(29, 15, 71, 0.705); */
     background-color: rgba(66, 0, 246, 0.225);
-    
 }
 main::before{
     content: '';
@@ -159,6 +158,7 @@ main::before{
 }
 .dark main::before{
     opacity: 1;
+    filter: hue-rotate(50deg);
 }
 
 main .container{
