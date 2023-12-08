@@ -291,11 +291,11 @@ aside ul li a:hover{
     color: #eee;
 }
 .activetop:hover a{
-    background-color: transparent;
+    background: rgb(148, 126, 194);
     color: #eee;
 }
 .dark .activetop:hover a{
-    background-color: transparent;
+    background-color: rgb(30 27 66);
     color: #eee;
 }
 section{
