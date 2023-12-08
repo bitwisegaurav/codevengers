@@ -75,7 +75,7 @@ main {
     border-radius: 7px;
     /* box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2); */
     overflow: scroll;
-    padding: 2px;
+    padding: 5px;
 }
 
 .dark #topics {
