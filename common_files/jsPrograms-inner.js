@@ -1,4 +1,4 @@
-window.addEventListener("click", () => {
+window.addEventListener("DOMContentLoaded", () => {
 
   const codeBlocks = document.querySelectorAll(".code");
   
