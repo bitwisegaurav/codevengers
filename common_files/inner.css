@@ -351,7 +351,9 @@ tbody tr:nth-child(even) {
     p, li {
         font-size: 0.9rem;
         letter-spacing: 0.35px;
-        /* line-height: 1.1rem; */
+    }
+    li {
+        line-height: 1.1rem;
     }
     .code{
         line-height: 1.3rem;
@@ -380,7 +382,9 @@ tbody tr:nth-child(even) {
     p, li {
         font-size: 0.8rem;
         letter-spacing: 0.3px;
-        /* line-height: 1rem; */
+    }
+    li {
+        line-height: 1rem;
     }
     #structimg img{
         max-width: 700px;
