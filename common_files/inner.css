@@ -69,7 +69,7 @@ main {
 
 #topics {
     /* border: 2px solid rgba(22, 16, 16, 0.1); */
-    /* height: 39rem; */
+    max-height: calc(100vh - 10rem);
     display: flex;
     flex-direction: column;
     background-color: rgba(27, 21, 81, 0.1);
