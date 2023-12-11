@@ -79,7 +79,7 @@
 
     <!-- Subnetting -->
     <p>
-        <span>Subnetting:</span> Subnetting involves dividing a larger network into smaller, manageable sub-networks. It enhances network performance, security, and management. Subnetting is often used in conjunction with IP addressing to optimize network architecture.
+        <span>Subnetting : </span> Subnetting involves dividing a larger network into smaller, manageable sub-networks. It enhances network performance, security, and management. Subnetting is often used in conjunction with IP addressing to optimize network architecture.
     </p>
 
     <h3>Error Control</h3>
@@ -240,6 +240,20 @@
     <p>
         The Media Access Control (MAC) sublayer is another essential sublayer within the Data Link layer. Its primary functions include managing the interaction of devices in a network, addressing frames to facilitate proper delivery, and controlling access to the physical communication media. The MAC sublayer plays a key role in coordinating the use of shared communication channels and preventing data collisions.
     </p>
+
+    <h2>Design issues in Data Link Layer</h2>
+    <ul>
+        <li><span>Addressing:</span> One of the design issues in the data link layer is addressing. It involves assigning unique addresses to devices in a network to enable proper routing and communication.</li>
+        <li><span>Flow Control:</span> Flow control is essential in managing the pace of data transmission between devices. The data link layer needs to ensure that the sender doesn't overwhelm the receiver with too much data.</li>
+        <li><span>Error Detection and Correction:</span> Detecting and correcting errors in the transmitted data is a critical aspect of the data link layer's design. Various techniques, such as checksums and parity bits, are used for this purpose.</li>
+        <li><span>Media Access Control (MAC):</span> MAC is responsible for controlling access to the shared communication channel when multiple devices are connected. Protocols like Ethernet use MAC to manage access efficiently.</li>
+        <li><span>Reliability:</span> Ensuring reliable communication is a key design consideration. The data link layer employs mechanisms to guarantee the accurate delivery of data, including acknowledgments and retransmission of lost or corrupted frames.</li>
+        <li><span>Frame Synchronization:</span> Frame synchronization is crucial for proper interpretation of data. The data link layer includes synchronization patterns in frames to facilitate the correct extraction of data at the receiver's end.</li>
+        <li><span>Protocols:</span> The design of protocols for communication between devices is a significant concern. Protocols define the rules and conventions for data exchange, framing, error handling, and other essential aspects.</li>
+        <li><span>Duplexing:</span> The data link layer needs to support either half-duplex or full-duplex communication, depending on the requirements of the network. Half-duplex allows communication in one direction at a time, while full-duplex enables bidirectional communication simultaneously.</li>
+        <li><span>Error Recovery:</span> In addition to error detection and correction, the data link layer should have mechanisms for error recovery. Automatic Repeat reQuest (ARQ) protocols are commonly used for this purpose.</li>
+        <li><span>Link Management:</span> Managing the link between connected devices involves establishing, maintaining, and terminating connections. Link management protocols handle these tasks efficiently.</li>
+    </ul>
 </body>
 <script src="../common_files/innerTheme.js"></script>
 </html>

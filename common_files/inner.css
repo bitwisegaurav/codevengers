@@ -5,6 +5,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     scroll-behavior: smooth;
     transition: color 0.2s ease-in-out, background-color 0.3s ease-in-out;
+    box-sizing: border-box;
 }
 html{
     scroll-padding-top: 2rem;
@@ -204,6 +205,9 @@ strong{
     max-width: 100%;
     background: white;
 }
+.dark .structimg img {
+    filter:contrast(0.6);
+}
 .pl img{
     border: 1px solid gray;
     border-radius: 5px;
@@ -264,6 +268,10 @@ span {
     filter: hue-rotate(-80deg);
 }
 
+.orange-purple {
+    filter: hue-rotate(240deg);
+}
+
 .mt-2{
     margin-top: 2rem !important;
 }
@@ -274,6 +282,10 @@ span {
 
 .mb-2 {
     margin-bottom: 2rem !important;
+}
+
+.text-center{
+    text-align: center;
 }
 
 .note {
@@ -351,12 +363,21 @@ span {
     color:rgb(132, 0, 0);
 }
 
+.imp{
+    position: relative;
+}
+.imp::before{
+    content: '*';
+    color: rgb(255, 48, 48);
+    /* border: 2px solid red; */
+}
+
 /* table */
 table {
     width: 100%;
     max-width: 80rem;
     border-collapse:collapse;
-    margin-top: 2rem;
+    margin: 2rem auto 0;
     background-color: #fff;
 }
 .dark table{
@@ -415,6 +436,8 @@ tbody tr:nth-child(even) {
     p, li {
         font-size: 0.9rem;
         letter-spacing: 0.35px;
+    }
+    li {
         line-height: 1.1rem;
     }
     .code{
@@ -444,6 +467,8 @@ tbody tr:nth-child(even) {
     p, li {
         font-size: 0.8rem;
         letter-spacing: 0.3px;
+    }
+    li {
         line-height: 1rem;
     }
     #structimg img{

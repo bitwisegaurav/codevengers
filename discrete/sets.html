@@ -62,7 +62,7 @@
         <li><span>Intersection of Sets : </span>The intersection of two sets A and B is the set of elements which are in both A and B. It is denoted by A ∩ B.
             <div class="structimg img-center img-50 mt-2"><img src="../examples/discrete/sets/intersection.jpeg" alt="Intersection of sets"></div>
         </li>
-        <li><span>Difference of Sets : </span>The difference of the set B from the set A is the set of all elements that are in A but not in B. It is denoted by A - B.
+        <li><span>Difference of Sets : </span>The difference of the set B from the set A is the set of all elements that are in A but not in B. It is denoted by A - B or A\B.
             <div class="structimg img-center img-50 mt-2 blue-purple"><img src="../examples/discrete/sets/difference.png" alt="Difference of sets"></div>
         </li>
         <li><span>Complement of a Set : </span>The complement of a set A refers to elements not in A. It is denoted by A' or A̅.
@@ -117,6 +117,21 @@
             <td><p>A ∩ A' = &phi;</p><p> A ∪ A' = U</p></td>
         </tr>
     </table>
+
+    <h2>Inclusion - Exclusion Principle</h2>
+    <p>Number of elements of a finite set A is denoted by n(A).</p>
+    <p>Following results of number of elements should be kept in mind for doing problems : </p>
+    <ol>
+        <li>n(A &Union; B) = n(A) + n(B) - n(A &Intersection; B)</li>
+        <li>n(A &Union; B) = n(A) + n(B) if A, B are disjoint sets.</li>
+        <li>n(A &Union; B) = n(A-B) + n(B-A) - n(A &Intersection; B)</li>
+        <li>n(A) = n(A-B) + n(A &Intersection; B)</li>
+        <li>n(B) = n(B-A) + n(A &Intersection; B)</li>
+        <li>n(A &Union; B &Union; C) = n(A) + n(B) + n(C) - n(A &Intersection; B) - n(A &Intersection; C) - n(B &Intersection; C) + n(A &Intersection; B &Intersection; C)</li>
+        <li>n(A' &Union; B') = n((A &Intersection; B)') = n(U) - n(A &Intersection; B)</li>
+        <li>n(A' &Intersection; B') = n((A &Union; B)') = n(U) - n(A &Union; B)</li>
+        <li>n(A &Intersection; B' &Intersection; C') = n(A) - n(A &Intersection; B) - n(A &Intersection; C) + n(A &Intersection; B &Intersection; C)</li>
+    </ol>
 
     <h2>Cartesian Product of Sets</h2>
     <p>The Cartesian product of two sets A and B, denoted by A x B, is the set of all ordered pairs (a, b) where a is in A and b is in B.</p>
