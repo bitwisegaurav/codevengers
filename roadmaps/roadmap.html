@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
+    <link rel="stylesheet" href="../common_files/comingsoon.css">
+    <link rel="stylesheet" href="../common_files/inner.css">
+    <title>Roadmaps - Codevengers</title>
+    <style>
+        body{
+            text-align: initial;
+        }
+        iframe, #frame {
+            width: 100%;
+            /* height: 100vh; */
+            /* overflow: scroll; */
+
+        }
+        #frame {
+            width: 100%;
+            /* height: max(100%, 50vh); */
+            /* height: 50vh; */
+            /* background-color: red; */
+        }
+    </style>
+</head>
+<body>
+    <!-- <iframe src="webdev.md" frameborder="0" name="roadmap" title="Roadmap frame"></iframe> -->
+    <h1 id="title"></h1>
+    <section id="frame"></section>
+</body>
+<script>
+    const frame = document.querySelector('#frame');
+    const title = document.querySelector('#title');
+    const roadmapData = {
+        webdevelopment : {
+            name : "Web Development",
+            markdown: "webdev",
+            image: null,
+        }
+    }
+
+    const path = new URLSearchParams(window.location.search);
+    
+    function loadData(){
+        const roadmap = path.get('roadmap');
+        if(roadmap){
+            const data = roadmapData[roadmap];
+            if(data){
+                title.innerHTML = data.name + " Roadmap";
+                getData(data.markdown);
+            }
+        }
+    }
+
+    window.addEventListener("load", async () => {
+        // try {
+        //         // Replace 'your-html-file-path' with the actual path or URL of the HTML file
+        //         const response = await fetch('../comingsoon.html');
+
+        //         if (!response.ok) {
+        //             throw new Error(`HTTP error! Status: ${response.status}`);
+        //         }
+
+        //         const htmlContent = await response.text();
+        //         const parser = new DOMParser();
+        //         const doc = parser.parseFromString(htmlContent, 'text/html');
+
+        //         // Replace 'your-element-id' with the ID of the element you want to fetch
+        //         const specificElement = doc.querySelector('nav');
+
+        //         if (specificElement) {
+        //             // insert the specificElement before the title
+        //             document.getElementById('main').insertAdjacentElement('beforebegin', specificElement);
+        //         } else {
+        //             console.error('Element not found');
+        //         }
+        //     } catch (error) {
+        //         console.error('Error fetching element:', error.message);
+        //     }
+            loadData()
+    });
+
+    function getData(markdown){
+        fetch(`${markdown}.md`).then(res => {
+            return res.text();
+        }).then(res => {
+            const data = res;
+            frame.innerHTML = marked(data);
+            // console.log(data);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
+</script>
+<script src="../index.js"></script>
+</html>
