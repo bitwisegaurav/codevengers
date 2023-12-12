@@ -167,11 +167,23 @@
         <li><span>Mobility</span></li>
     </ul>
     <h2>Classless Addressing</h2>
-    <p>To overcome the problem of address depletion and give more organization acccess to internet, classless addressing
-        was designed and implemented.</p>
-    <p class="note note-mostimp">Remaining part coming soon.</p>
+    <p>To overcome the problem of address depletion and give more organization acccess to internet, classless addressing was designed and implemented.</p>
+    <p>When an entity, small or large, needs to be connevted to Internet, it is granted a block or range of addresses. The size of the block (the number of addresses) varies based on the nature and size of the entity. For e.g. a household may be given only 2 addresses, a large organization may be given thousands of addresses.</p>
+    <p>To simplify the handling of addresses, the Internet authorities impose three restrictions on classless address block : </p>
+    <ol>
+        <li>The addresses in a block must be contiguous, one after the other.</li>
+        <li>The number of addresses in a block must be a power of 2.</li>
+        <li>The first address mst be evenly divisible by the number of address.</li>
+    </ol>
+    <div class="structimg img-center mt-2 img-75 img-large"><img src="../examples/networks/network-layer/classless.png" alt="Classless Addressing"></div>
+
     <h2>IPv6 Addressing</h2>
-    <p>IPv6 addresses aim to overcome the limitations of IPv4. Key features include:</p>
+    <p>IPv6 addresses aim to overcome the limitations of IPv4.</p>
+    <p>IPV6 is also known as IPng (Internetworking Protocol, next generation).</p>
+    <div class="structimg img-center mt-2 img-large img-75"><img src="../examples/networks/network-layer/ipv6.avif" alt="IPV6 header"></div>
+    <div class="structimg img-center mt-2 img-large img-50"><img src="../examples/networks/network-layer/ipv6-addressing.png" alt="IPV6"></div>
+    
+    <p>Key features include : </p>
     <ul>
         <li><span>128-bit Address : </span>IPv6 employs a 128-bit address format, vastly expanding the available address
             space.</li>
@@ -181,27 +193,48 @@
             IPv6 uses a 128-bit header format, which is similar to IPv4's 32-bit header format.
         </li>
     </ul>
-    <p class="note note-mostimp">Remaining part coming soon.</p>
     <h2>Routing Algorithms</h2>
-    <p>Routing algorithms are essential for determining the most efficient paths for data transmission. Two primary
-        types include:</p>
+    <p>Routing algorithms are essential for determining the most efficient paths for data transmission.</p>
+    <p>A routing alogrithm should possess some desirable properties like <span>correctness, simplicity, robustness, stability, fairness and optimality</span>.</p>
+
+    <h3>Types of Routing Algorithm</h3>
+    <h4>On the basis of working</h4>
     <ul>
-        <li><span>Static Routing : </span>In static routing, predetermined paths are configured manually. While simple,
-            it lacks adaptability to dynamic network changes.</li>
-        <li><span>Dynamic Routing : </span>Dynamic routing employs algorithms that adjust to changing network
-            conditions, optimizing data flow dynamically.</li>
+        <li>
+            <span>Non-Adaptive/Static Routing Algorithms : </span>
+                The route from source to destination is calculated in advance and is downloaded to the routers, when the network is initialized.
+        </li>
+        <li>
+            <span>Adaptive/Dynamic Routing Algorithms : </span>
+                The adaptive algorithms continuously update their information about the network and base their routing decisions on the current state of the network.
+        </li>
     </ul>
-    <p class="note note-mostimp">Remaining part coming soon.</p>
-    <h2>Additional Routing Concepts</h2>
-    <ul>
-        <li><span>Flooding : </span>Flooding is a routing technique where a router sends a copy of a received packet to
-            all of its neighbors except the source.</li>
-        <li><span>Flow-Based Routing : </span>This routing approach considers the characteristics of data flows,
-            allowing for more intelligent routing decisions.</li>
-    </ul>
-    <h2>Dynamic Routing Algorithms</h2>
-    <p>Dynamic routing involves the use of algorithms like:</p>
-    <ul>
+
+    <h4>On the basis of transmission technique</h4>
+    <ol>
+        <li>
+            <span>Unicast Routing Algorithms : </span>
+            The packets are routed to a single destination which means the communication is one to one.
+        </li>
+        <li>
+            <span>Multicast Routing Algorithms : </span>
+            The packets are routed to multiple destinations which means the communication is one to many.
+        </li>
+    </ol>
+
+    <h3>Optimality Principle</h3>
+    <h4>Static Routing</h4>
+    <p>In static routing, predetermined paths are configured manually. While simple, it lacks adaptability to dynamic network changes.</p>
+    <ol>
+        <li><span>Shortest Path Routing : </span>
+            The shortest path routing algorithm is the most simple and widely used routing algorithm. It is based on the idea that the shortest path between two nodes is the fastest path.
+        </li>
+        <li><span>Flooding : </span>Flooding is a routing technique where a router sends a copy of a received packet to all of its neighbors except the source.</li>
+        <li><span>Flow-Based Routing : </span>This routing approach considers the characteristics of data flows, allowing for more intelligent routing decisions.</li>
+    </ol>
+    <h4>Dynamic Routing</h4>
+    <p>Dynamic routing employs algorithms that adjust to changing network conditions, optimizing data flow dynamically.</p>
+    <ol>
         <li><span>Distance Vector : </span>This algorithm calculates the distance or cost to reach each destination and makes routing decisions accordingly. In this method, routers tells the their neighbours what they know about the internet means they share their information about internet to their neighbours periodically or on triggering. RIP is the exact implementation of this method.
             <div class="structimg img-center mt-2"><img src="../examples/networks/network-layer/distance-vector.png" alt="Distance vector image"></div>
         </li>
@@ -210,7 +243,7 @@
             <div class="structimg img-center mt-2"><img src="../examples/networks/network-layer/link-state-procedure.png" alt="Link state procedure image"></div>
             <div class="structimg img-center mt-2"><img src="../examples/networks/network-layer/link-state.png" alt="Link state image"></div>
         </li>
-    </ul>
+    </ol>
     <table>
         <thead>
             <tr>
@@ -243,16 +276,48 @@
         </tbody>
     </table>
     
-    <h2>IGMP, RPF, RPB, RPM</h2>
-    <p>These acronyms correspond to various protocols and mechanisms within the network layer. Understanding their
-        functions is crucial for effective network management.</p>
-    <p class="note note-mostimp">Remaining part coming soon.</p>
+    <h2>IGMP</h2>
+    <p>IGMP is a group management protocol that mainly manages the group membership in a multicast network.</p>
+    <p>The multicast routers which are used to route packets to all the members of a particular group use the information from IFMP to determine which hosts are having membership of which group.</p>
+
+    <p>A multicast router generally receives thousands of multicast packets that have to be transimitted to various groups. If a router has no knowledge about the group membership, it will broadcast packet and this will increase the load on the network.</p>
+
+    <p>In order to save the network from such a problem, a list of groups is maintained when members of the group are present in netwrok. Thus, IGMP helps the multicast router to create and update this list.</p>
+
+    <p>This protocol uses three different messages : query message, membership report and leave report.</p>
+
+    <h2>RPF</h2>
+    <p>RPF is a process for Distance Vector Multicast Routing Protocol (DVMRP) algorithms.</p>
+    <p>In this strategy, the router only forwards those packets that have traveled the shortest path from source to destination. To achieve this, the router pretends that it has a packet to send to the source. In this way, the shortest path to the sender is computed. If the same router is followed by the received packet then it will be forwarded to the next router, otherwise it will be discarded.</p>
+
+    <h2>RPB</h2>
+    <p>RPB is a process for Link State Multicast Routing Protocol (LSMRP) algorithms.</p>
+    <p>RPF guarantees that each network receives a copy of the multicast packet without the formation of loops. However, RPF does not guarantee that each network receives only one copy , a network may receive two or more copies. The reason is that RPF is not based on the destination address (a group address) , and forwarding is based on the source address.</p>
+
+    <p>To solve this problem, RPB is used in which one parent router is defined for each network. The network could accept the mulitcast packets from this parent router only. This router sends packets to those ports for which it is designated as parent. RPB further guarantees that the packet reaches every network and that every network receives only one copy.</p>
+
+    <p>The designated parent router can be a router with the shortest path to the source. Because routers periodically send updating packets to each other (in RIP), they can easily determine which router in the neighborhood has the shortest path to the source (when interpreting the source as the destination). If more than one router qualifies, then the router with the smallest IP address is selected.</p>
+
+    <h2>RPM</h2>
+    <p>RPM is a process for RIP algorithms.</p>
+    <p>RPB does not multicast the packet, it broadcasts it. This is not efficient.</p>
+    <p>To increase the efficiency, the multicast packet must reach only those networks that have active members for that particular group. This is called reverse path multicasting (RPM). To convert the broadcasting to multicasting , the protocol uses two procedures, pruning and grafting. This is a type of multicasting technique</p>
+    <ul>
+        <li><span>Pruning : </span>A router can send a prune message to its upstream router whenever it finds that its network is not interested in a multicast packet. In this way a router prunes (cuts) its network from multicasting.
+            <p>If a router receives prune message from all the downstram routers, it in turn, sends a prune message to its upstream router.</p>
+        </li>
+        <li><span>Grafting : </span>A router can also send a graft message to its upstream router if it finds that its network is again interested in receiving the multicast packet.</li>
+    </ul>
+
     <h2>Broadcasting and Types</h2>
     <p>Broadcasting plays a vital role in network communication. Different types of broadcasting include:</p>
     <ul>
         <li><span>Unicast : </span>Communication from one source to one destination.</li>
         <li><span>Broadcast : </span>Communication from one source to all destinations in the network.
-            <p class="note note-mostimp">Remaining part coming soon.</p>
+            <ul>
+                <li><span>Limited Broadcast : </span>Transmitting data from one source host to all other hosts residing in the same network is called as limited broadcast. Limited Broadcast Address for any network is All 32 bits set to 1.</li>
+                <li><span>Direct Broadcast : </span>Transmitting data from one source host to all other hosts residing in some other network is called as direct broadcast.Direct Broadcast Address for any network is the IP Address where, Network ID is the IP Address of the network where all the destination hosts are present and Host ID bits are all set to 1.</li>
+            </ul>
         </li>
         <li><span>Multicast : </span>Communication from one source to multiple specific destinations.</li>
     </ul>
@@ -314,10 +379,18 @@
         <li><span>Gateways : </span>Act as interfaces between different networks, translating protocols if needed.</li>
     </ul>
     <h2>Firewalls</h2>
-    <p>Firewalls are crucial for network security. They regulate incoming and outgoing network traffic based on
-        predetermined security rules.</p>
-    <p class="note note-mostimp">Remaining part coming soon.</p>
+    <p>To prevent confidential information from leaking out and to prevent the entry of virus and other pests, firewalls are used. Firewalls are designed to filter teh packets before passing the traffic outside and all incoming packets destined for a specific host or a server.</p>
 
+    <p>It consists two components : Two routers (packet filters) and application gateway.</p>
+
+    <h3>Types of Firewalls</h3>
+
+    <h4>Packet-filter Firewall</h4>
+    <p>A packet-filter firewall is a firewall that filters packets based on the destination IP address. It is used to forward or block packets on the basis of nmber of factors such as source and destination IP address, port number, type of protocol.</p>
+    <p>It maintainsa filtering table that decides which packets are to be forwared or discarded. It filters at network or transport layer.</p>
+
+    <h4>Proxy Firewall</h4>
+    <p>Proxy firewall operates at application layer. It is used when we want to filter a message on the basis of information contained in message itself.</p>
 </body>
 <script src="../common_files/innerTheme.js"></script>
 </html>
