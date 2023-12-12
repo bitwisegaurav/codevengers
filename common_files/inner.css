@@ -7,10 +7,15 @@
     transition: color 0.2s ease-in-out, background-color 0.3s ease-in-out;
     box-sizing: border-box;
 }
-
+html{
+    scroll-padding-top: 2rem;
+}
 body {
+    position: relative;
     padding: 1rem 3rem;
     color: #41396ef3;
+    display: flex;
+    gap: 2rem;
 }
 
 body::-webkit-scrollbar {
@@ -21,6 +26,84 @@ body::-webkit-scrollbar {
     background-color: #2e2b52;
     color: rgba(255,255,255,0.6);
 }
+#preloader{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    z-index: 99;
+}
+
+main {
+    width: 100%;
+}
+#sideTopicSection {
+    width: 100%;
+    min-width: 12rem;
+    max-width: 20rem;
+    position: sticky;
+    top: 1rem;
+    right: 0;
+    overflow-x: hidden;
+    height: max-content;
+    /* min-height: 50rem; */
+}
+
+.top{
+    width: 100%;
+    height: 2rem;
+    border-radius: 6px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 1rem;
+    /* background-color: rgb(109 82 158); */
+    background-color: rgb(148, 126, 194);
+    color: #eee; 
+}
+
+.dark .top {
+    color: #403c69;
+    background-color: #c3c1de;
+}
+
+#topics {
+    /* border: 2px solid rgba(22, 16, 16, 0.1); */
+    max-height: calc(100vh - 10rem);
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(27, 21, 81, 0.1);
+    border-radius: 7px;
+    /* box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2); */
+    overflow: scroll;
+    padding: 5px;
+}
+
+.dark #topics {
+    background-color: #403c69;
+}
+
+#sideTopicSection a{
+    width: 100%;
+    padding: 1rem;
+    text-decoration: none;
+    color: #41396ef3;
+    border-radius: 5px;
+    transition: all 0.1s ease-in-out;
+    font-size: small;
+}
+.dark #sideTopicSection a {
+    color: #c3c1de;
+}
+
+#sideTopicSection a:hover{
+    background-color: rgba(148, 126, 194, 0.352);
+}
+.dark #sideTopicSection a:hover {
+    color: #f1f1f1;
+    background-color: #272349;
+}
+
 .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6{
     color: #eee;
 }
@@ -218,7 +301,7 @@ span {
     font-size: small;
     border-left: 5px solid;
 }
-.note::after{
+.dark .note::after{
     content: '';
     position: absolute;
     inset: 0;
@@ -226,7 +309,7 @@ span {
     height: 100%;
     background-color: white;
     z-index: -1;
-    opacity: 0.6;
+    opacity: 0.7;
 }
 .note::before{
     content: '*Note*';
@@ -317,12 +400,8 @@ th, td {
     border-color: rgba(255,255,255,0.3);
 }
 
-td span{
-    color: #444;
-}
-
 th {
-    background-color: rgb(27, 21, 81); 
+    background-color: #41396e; 
     color: #eee;
 }
 
@@ -337,6 +416,12 @@ tbody tr:nth-child(even) {
 
 .dark tbody tr:nth-child(even) {
     background-color: rgba(255,255,255,0.1);
+}
+
+@media screen and (max-width: 768px) {
+    #sideTopicSection {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 700px) {

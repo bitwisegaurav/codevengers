@@ -140,7 +140,6 @@ main{
     justify-content: center;
     /* background: rgba(29, 15, 71, 0.705); */
     background-color: rgba(66, 0, 246, 0.225);
-    
 }
 main::before{
     content: '';
@@ -159,6 +158,7 @@ main::before{
 }
 .dark main::before{
     opacity: 1;
+    filter: hue-rotate(50deg);
 }
 
 main .container{
@@ -327,7 +327,7 @@ section{
     height: 100%;
     max-width: 100%;
 }
-#java .langlogo img, #cpp .langlogo img,  #css .langlogo img,  #discrete .langlogo img
+#java .langlogo img, #cpp .langlogo img,  #css .langlogo img,  #discrete .langlogo img, #roadmaps .langlogo img
 {
     height: 80% !important;
 }
