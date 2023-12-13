@@ -9,19 +9,33 @@
     <title>Roadmaps - Codevengers</title>
     <style>
         body{
-            text-align: initial;
+            /* text-align: initial; */
+            height: max-content;
         }
         iframe, #frame {
-            width: 100%;
-            /* height: 100vh; */
             /* overflow: scroll; */
-
+            text-align: left;
         }
         #frame {
             width: 100%;
+            max-width: 65rem;
+            /* width: 100%; */
             /* height: max(100%, 50vh); */
             /* height: 50vh; */
             /* background-color: red; */
+        }
+        .roadmap {
+            flex-direction: column;
+            gap: 2rem;
+        }
+        h2 {
+            padding: 1rem;
+            border-radius: 15px;
+            border: 1px solid;
+            text-align: center;
+        }
+        .dark h2{
+            border-color: rgba(255,255,255,0.6);
         }
     </style>
 </head>
@@ -37,7 +51,8 @@
         webdevelopment : {
             name : "Web Development",
             markdown: "webdev",
-            image: [],
+            class: "roadmap",
+            image: ['webdev.jpeg'],
         }
     }
 
@@ -49,36 +64,19 @@
             const data = roadmapData[roadmap];
             if(data){
                 title.innerHTML = data.name + " Roadmap";
+                let images = '';
+                data.image.forEach(image => {
+                    images += `<div class="${data.class}"><img src="../examples/roadmaps/${image}" alt="${data.name}"></div>`;
+                });
+                const imagesBox = document.createElement('div');
+                imagesBox.innerHTML = images;
+                title.insertAdjacentElement("afterend", imagesBox);
                 getData(data.markdown);
             }
         }
     }
 
-    window.addEventListener("load", async () => {
-        // try {
-        //         // Replace 'your-html-file-path' with the actual path or URL of the HTML file
-        //         const response = await fetch('../comingsoon.html');
-
-        //         if (!response.ok) {
-        //             throw new Error(`HTTP error! Status: ${response.status}`);
-        //         }
-
-        //         const htmlContent = await response.text();
-        //         const parser = new DOMParser();
-        //         const doc = parser.parseFromString(htmlContent, 'text/html');
-
-        //         // Replace 'your-element-id' with the ID of the element you want to fetch
-        //         const specificElement = doc.querySelector('nav');
-
-        //         if (specificElement) {
-        //             // insert the specificElement before the title
-        //             document.getElementById('main').insertAdjacentElement('beforebegin', specificElement);
-        //         } else {
-        //             console.error('Element not found');
-        //         }
-        //     } catch (error) {
-        //         console.error('Error fetching element:', error.message);
-        //     }
+    window.addEventListener("load", () => {
             loadData()
     });
 
