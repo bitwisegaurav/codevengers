@@ -173,7 +173,80 @@
     <p>802.10 Security Working Group</p>
     <p>802.11 Wireless LAN</p>
 
-    <p class="note note-mostimp">Remaining part coming soon</p>
+    <h2>IEEE 802.3 : Ethernet</h2>
+    <p>
+      Introduced commercially in 1980 and first standardized as IEEE 802.3 in 1983, Ethernet has undergone numerous
+      refinements to support higher bit rates and extended link distances, replacing other LAN technologies like token
+      ring, FDDI, and ARCNET.
+    </p>
+  <p>
+    Initially utilizing coaxial cables as a shared medium, modern Ethernet variations have adopted twisted pair and
+    fiber optic links, coupled with hubs or switches, to facilitate communication and data transfer within LANs and
+    MANs.
+  </p>
+  <p>
+    Over its evolution, Ethernet has boosted data transfer rates from an initial 2.94 Mbit/s to a remarkable 100
+    Gbit/s, offering several wirings and signaling options as part of the OSI physical layer in sync with Ethernet
+    standards.
+  </p>
+
+  <p>Data is segmented into "frames" that carry source and destination addresses along with errorchecking data, facilitating the detection and discarding of damaged frames, and enabling higherlayer protocols to trigger the retransmission of lost frames.</p>
+<p>
+  Wi-Fi, a wireless protocol standardized as IEEE 802.11, serves as a prominent alternative to
+  Ethernet in contemporary Local Area Networks (LANs).
+</p>
+<p>
+  Operates using a Bus topology, connecting all devices to a common communication line;
+  acknowledgments are not inherently used, but can be incorporated as data packets if necessary;
+  utilizes Manchester encoding techniques for data transmission.
+</p>
+<p>Connectionless and Unreliable Service : </p>
+<ul>
+  <li>
+    Each frame sent is independent of the previous or next frame. Ethernet has no connection
+    establishment or connection termination phases.
+  </li>
+<li>
+  Ethernet is also unreliable, if a frame is corrupted during transmission and the receiver finds
+  out about the corruption, the receiver drops the frame silently.
+</li>
+<li>In case of requirement ack can be sent separately at data packets.</li>
+</ul>
+
+<h3>Frame Format</h3>
+<div class="structimg img-center mt-2"><img src="../examples/networks/access-control/ethernet.png" alt=""></div>
+<ul>
+  <li>
+      <p><strong>Preamble</strong>: It is the starting field that provides alert and timing pulse for transmission. In
+          case of classic Ethernet it is an 8 byte field and in case of IEEE 802.3 it is of 7 bytes.</p>
+  </li>
+  <li>
+      <p><strong>Start of Frame Delimiter</strong>: It is a 1 byte field in a IEEE 802.3 frame that contains an
+          alternating pattern of ones and zeros ending with two ones.</p>
+  </li>
+  <li>
+      <p><strong>Destination Address</strong>: It is a 6 byte field containing physical address of destination
+          stations.</p>
+  </li>
+  <li>
+      <p><strong>Source Address</strong>: It is a 6 byte field containing the physical address of the sending station.
+      </p>
+  </li>
+  <li>
+      <p><strong>Length</strong>: It a 7 bytes field that stores the number of bytes in the data field.</p>
+  </li>
+  <li>
+      <p><strong>Data</strong>: This is a variable sized field carries the data from the upper layers. The maximum
+          size of data field is 1500 bytes.</p>
+  </li>
+  <li>
+      <p><strong>Padding</strong>: This is added to the data to bring its length to the minimum requirement of 46
+          bytes.</p>
+  </li>
+  <li>
+      <p><strong>CRC</strong>: CRC stands for cyclic redundancy check. It contains the error detection information.</p>
+  </li>
+</ul>
 
 </body>
 <script src="../common_files/innerTheme.js"></script>
