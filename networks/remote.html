@@ -6,8 +6,7 @@
     <link rel="stylesheet" href="../common_files/inner.css">
     <title>Remote Login and FTP</title>
 </head>
-<body class="dark">
-    <main>
+<body>
         <h1>Remote Login and File Transfer</h1>
         <h2>Remote Login</h2>
         <p>Remote login is a process of loggin on to remote site (computer) and using the services available on the remote computer.</p>
@@ -38,7 +37,7 @@
     <h3>Mechanism of FTP</h3>
     <p>The above figure shows the basic model of the FTP. The FTP client has three components: the user interface, control process, and data transfer process. The server has two components: the server control process and the server data transfer process.</p>
     <p><span>Types of connections in FTP : </span></p>
-    <div class="structimg img-center mt-2"><img src="../examples/networks/remote/ftp-connections.png" alt="FTP connections"></div>
+    <div class="structimg img-center mt-2"><img src="../examples/networks/remote/ftp-connections.png" alt="FTP connectionss"></div>
     <ul>
         <li><strong>Control Connection:</strong> The control connection uses very simple rules for communication. Through control connection, we can transfer a line of command or line of response at a time. The control connection is made between the control processes. The control connection remains connected during the entire interactive FTP session.</li>
         <li><strong>Data Connection:</strong> The Data Connection uses very complex rules as data types may vary. The data connection is made between data transfer processes. The data connection opens when a command comes for transferring the files and closes when the file is transferred.</li>
@@ -51,7 +50,6 @@
         <li>It has a set of commands that we can use to connect to a host, transfer the files between you and your host and close the connection.</li>
         <li>The FTP program is also available as a built-in component in a Web browser. This GUI based FTP client makes the file transfer very easy and also does not require to remember the FTP commands.</li>
     </ul>
-</main>
 </body>
-<!-- <script src="../common_files/innerTheme.js"></script> -->
+<script src="../common_files/innerTheme.js"></script>
 </html>
