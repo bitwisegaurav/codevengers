@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     scroll-behavior: smooth;
-    transition: color 0.2s ease-in-out, background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
     box-sizing: border-box;
 }
 html{
