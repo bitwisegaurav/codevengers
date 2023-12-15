@@ -73,7 +73,7 @@
                     {
                         title: "Web development",
                         category: "web",
-                        file: "../roadmaps/roadmap.html?roadmap=webdevelopment",
+                        file: "../roadmaps/roadmapTemplate.html?roadmap=webdevelopment",
                         image: "web.png",
                     },
                     {
@@ -150,7 +150,7 @@
                     {
                         title: "Node Js",
                         category: "web",
-                        file: "../comingsoon.html",
+                        file: "../roadmaps/roadmapTemplate.html?roadmap=nodejs",
                         image: "node.png",
                     },
                     {
@@ -189,15 +189,7 @@
 
     function getData(){
         let outerBox = '';
-        outerContainer.innerHTML = "chal rha h";
         data.forEach(topic => {
-            // const container = `<a href="${topic.file}" class="box" id="${topic.category}">
-            //     <div class="logo">
-            //         <img src="../images/c++.png" alt="${topic.title} logo">
-            //     </div>
-            //     <p class="title">${topic.title}</p>
-            // </a>`;
-            // containers += container;
             let boxes = '';
             topic.containers.forEach(container => {
                 if(!container.image) container.image = `c++.png`;
