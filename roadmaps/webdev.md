@@ -1,5 +1,3 @@
-# Web Development Roadmap
-
 Welcome to the Web Development Roadmap, a step-by-step guide to mastering web development from scratch. Whether you're new to the world of web development or looking to expand your skills, this roadmap will take you through a structured learning path.
 
 ## **Table of Contents**

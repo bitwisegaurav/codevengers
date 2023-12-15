@@ -10,12 +10,114 @@ const roadmapData = {
         class: "roadmap img-center",
         image: ['webdev.jpeg'],
     },
+    appdevelopment : {
+        name : "App Development",
+        markdown: "appdev",
+        class: "roadmap img-center",
+        image: [],
+    },
+    softwaredevelopment : {
+        name : "Software Development",
+        markdown: "softdev",
+        class: "roadmap img-center",
+        image: [],
+    },
+    frontend : {
+        name : "Frontend Development",
+        markdown: "frontend",
+        class: "roadmap img-center",
+        image: [],
+    },
+    backend : {
+        name : "Backend Development",
+        markdown: "backend",
+        class: "roadmap img-center",
+        image: [],
+    },
+    html : {
+        name : "HTML",
+        markdown: "html",
+        class: "roadmap img-center",
+        image: [],
+    },
+    css : {
+        name : "CSS",
+        markdown: "css",
+        class: "roadmap img-center",
+        image: [],
+    },
+    javascript : {
+        name : "JavaScript",
+        markdown: "js",
+        class: "roadmap img-center",
+        image: [],
+    },
     nodejs : {
         name : "Node Js",
         markdown: "nodejs",
         class: "roadmap img-center",
         image: [],
-    }
+    },
+    mongodb : {
+        name : "Mongo DB",
+        markdown: "mongodb",
+        class: "roadmap img-center",
+        image: [],
+    },
+    react : {
+        name : "React",
+        markdown: "react",
+        class: "roadmap img-center",
+        image: [],
+    },
+    nextjs : {
+        name : "Next JS",
+        markdown: "nextjs",
+        class: "roadmap img-center",
+        image: [],
+    },
+    angular : {
+        name : "Angular",
+        markdown: "angular",
+        class: "roadmap img-center",
+        image: [],
+    },
+    vue : {
+        name : "Vue Js",
+        markdown: "vue",
+        class: "roadmap img-center",
+        image: [],
+    },
+    php : {
+        name : "Php",
+        markdown: "php",
+        class: "roadmap img-center",
+        image: [],
+    },
+    cpp : {
+        name : "C++",
+        markdown: "cpp",
+        class: "roadmap img-center",
+        image: [],
+    },
+    java : {
+        name : "Java",
+        markdown: "java",
+        class: "roadmap img-center",
+        image: [],
+    },
+    plsql : {
+        name : "PL/SQL",
+        markdown: "plsql",
+        class: "roadmap img-center",
+        image: [],
+    },
+    mysql : {
+        name : "MySQL",
+        markdown: "mysql",
+        class: "roadmap img-center",
+        image: [],
+    },
 }
 
 function loadData(){
@@ -70,13 +172,13 @@ window.addEventListener("load", () => {
 
 function getData(markdown){
     fetch(`${markdown}.md`).then(res => {
-        return res.text();
+        if(res.ok) return res.text();
     }).then(res => {
         const data = res;
-        frame.innerHTML = marked(data);
+        if(data) frame.innerHTML = marked(data);
+        else window.location.replace("../comingsoon.html");
         // console.log(data);
-    })
-    .catch(err => {
+    }).catch(err => {
         console.log(err);
     })
 }

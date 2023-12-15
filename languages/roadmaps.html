@@ -74,30 +74,35 @@
                         title: "Web development",
                         category: "web",
                         file: "../roadmaps/roadmapTemplate.html?roadmap=webdevelopment",
+                        roadmap: "webdevelopment",
                         image: "web.png",
                     },
                     {
                         title: "App development",
                         category: "app",
                         file: "../comingsoon.html",
+                        roadmap: "appdevelopment",
                         image: "app.png",
                     },
                     {
                         title: "Software development",
                         category: "software",
                         file: "../comingsoon.html",
+                        roadmap: "softwaredevelopment",
                         image: "software.png",
                     },
                     {
                         title: "Frontend Development",
                         category: "frontend",
                         file: "../comingsoon.html",
+                        roadmap: "frontend",
                         image: "frontend.png",
                     },
                     {
                         title: "Backend Development",
                         category: "backend",
                         file: "../comingsoon.html",
+                        roadmap: "backend",
                         image: "backend.png",
                     },
                 ]
@@ -109,24 +114,28 @@
                         title: "HTML",
                         category: "web",
                         file: "../comingsoon.html",
+                        roadmap: "html",
                         image: "html.png",
                     },
                     {
                         title: "CSS",
                         category: "web",
                         file: "../comingsoon.html",
+                        roadmap: "css",
                         image: "css.png",
                     },
                     {
                         title: "JavaScript",
                         category: "web",
                         file: "../comingsoon.html",
+                        roadmap: "javascript",
                         image: "js.png",
                     },
                     {
                         title: "React",
                         category: "web",
                         file: "../comingsoon.html",
+                        roadmap: "react",
                         image: "react.png",
                     },
                     {
@@ -139,48 +148,63 @@
                         title: "Angular",
                         category: "web",
                         file: "../comingsoon.html",
+                        roadmap: "angular",
                         image: "angular.png",
                     },
                     {
                         title: "Vue",
                         category: "web",
                         file: "../comingsoon.html",
+                        roadmap: "vue",
                         image: "vueJs.png",
                     },
                     {
                         title: "Node Js",
                         category: "web",
                         file: "../roadmaps/roadmapTemplate.html?roadmap=nodejs",
+                        roadmap: "nodejs",
                         image: "node.png",
                     },
                     {
                         title: "Php",
                         category: "web",
                         file: "../comingsoon.html",
+                        roadmap: "php",
                         image: "php.png",
                     },
                     {
                         title: "C++",
                         category: "software",
                         file: "../comingsoon.html",
+                        roadmap: "c++",
                         image: "c++.png",
                     },
                     {
                         title: "Java",
                         category: "software",
                         file: "../comingsoon.html",
+                        roadmap: "java",
                         image: "java.png",
+                    },
+                    {
+                        title: "Mongo DB",
+                        category: "web",
+                        file: "../roadmaps/roadmapTemplate.html?roadmap=mongodb",
+                        roadmap: "mongodb",
+                        image: "mongodb.jpeg",
                     },
                     {
                         title: "PL/SQL",
                         category: "web",
                         file: "../comingsoon.html",
+                        roadmap: "plsql",
                         image: "plsql.svg",
                     },
                     {
                         title: "MySQL",
                         category: "web",
                         file: "../comingsoon.html",
+                        roadmap: "mysql",
                         image: "mysql.png",
                     },
                 ]
@@ -189,11 +213,13 @@
 
     function getData(){
         let outerBox = '';
+        // console.log();
         data.forEach(topic => {
             let boxes = '';
+            console.log(Object.values(topic.containers))
             topic.containers.forEach(container => {
                 if(!container.image) container.image = `c++.png`;
-                const box = `<a href="${container.file}" class="box" id="${container.title}">
+                const box = `<a href="../roadmaps/roadmapTemplate.html?roadmap=${container.roadmap}" class="box" id="${container.title}">
                     <div class="logo">
                         <img src="../images/${container.image}" alt="${container.title} logo">
                     </div>
