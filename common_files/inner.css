@@ -75,8 +75,19 @@ main {
     background-color: rgba(27, 21, 81, 0.1);
     border-radius: 7px;
     /* box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2); */
-    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
     padding: 5px;
+}
+
+#topics::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+}
+
+#topics::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 2.5px;
 }
 
 .dark #topics {
