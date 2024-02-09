@@ -48,7 +48,7 @@ const roadmapData = {
     },
     javascript : {
         name : "JavaScript",
-        markdown: "js",
+        markdown: "javascript",
         class: "roadmap img-center",
         image: [],
     },
@@ -66,7 +66,7 @@ const roadmapData = {
     },
     react : {
         name : "React",
-        markdown: "react",
+        markdown: "reactjs",
         class: "roadmap img-center",
         image: [],
     },
