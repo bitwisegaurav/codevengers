@@ -1,5 +1,3 @@
-# HTML Roadmap
-
 Welcome to the HTML Roadmap. This roadmap is designed to guide you through a structured learning path for HTML and HTML5, covering topics from the basics to the advanced features introduced in HTML5.
 
 ## **Table of Contents**

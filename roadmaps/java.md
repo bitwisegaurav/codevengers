@@ -1,5 +1,3 @@
-# Java Roadmap
-
 Welcome to the Java Roadmap. This roadmap is designed to guide you through a structured learning path for Java, a versatile and widely-used programming language. It covers topics from the basics to advanced Java concepts and includes key technologies and frameworks used in Java development.
 
 ## **Table of Contents**

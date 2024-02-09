@@ -1,5 +1,3 @@
-# MySQL Roadmap
-
 Welcome to the MySQL Roadmap. This roadmap is designed to guide you through a structured learning path for MySQL, covering topics from the basics to more advanced database management concepts.
 
 ## **Table of Contents**

@@ -1,5 +1,3 @@
-# React.js Roadmap
-
 Welcome to the React.js Roadmap. This roadmap is designed to guide you through a structured learning path for React.js, a powerful JavaScript library for building user interfaces. Whether you're new to React or looking to enhance your skills, this roadmap will help you become proficient in React.js.
 
 ## **Table of Contents**

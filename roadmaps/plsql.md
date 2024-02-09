@@ -1,5 +1,3 @@
-# PL/SQL Roadmap
-
 Welcome to the PL/SQL Roadmap. This roadmap is designed to guide you through a structured learning path for PL/SQL, Oracle's procedural language extension for SQL. It covers topics from the basics to more advanced database programming concepts.
 
 ## **Table of Contents**

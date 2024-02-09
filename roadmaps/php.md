@@ -1,5 +1,3 @@
-# PHP Roadmap
-
 Welcome to the PHP Roadmap. This roadmap is designed to guide you through a structured learning path for PHP, a server-side scripting language widely used for web development. It covers topics from the basics to advanced PHP concepts and includes essential web development practices.
 
 ## **Table of Contents**

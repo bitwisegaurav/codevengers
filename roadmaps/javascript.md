@@ -1,5 +1,3 @@
-# JavaScript Roadmap
-
 Welcome to the JavaScript Roadmap. This roadmap is designed to guide you through a structured learning path for JavaScript, covering topics from beginners to advanced. Whether you're new to programming or looking to enhance your skills, this roadmap will help you become proficient in JavaScript.
 
 ## **Table of Contents**

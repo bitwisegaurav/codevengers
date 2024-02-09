@@ -1,5 +1,3 @@
-# C++ Roadmap
-
 Welcome to the C++ Roadmap. This roadmap is designed to guide you through a structured learning path for C++, a powerful and versatile programming language. It covers topics from the basics to advanced C++ concepts and includes essential programming practices.
 
 ## **Table of Contents**

@@ -1,5 +1,3 @@
-# CSS Roadmap with CSS3
-
 Welcome to the CSS Roadmap. This roadmap is designed to guide you through a structured learning path for Cascading Style Sheets (CSS) and its advanced features introduced in CSS3. Whether you're a beginner or looking to enhance your CSS skills, this roadmap will help you become proficient in styling web pages.
 
 ## **Table of Contents**
