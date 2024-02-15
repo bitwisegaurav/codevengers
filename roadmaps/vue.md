@@ -1,5 +1,3 @@
-# Vue.js Roadmap
-
 Welcome to the Vue.js Roadmap. This roadmap is designed to guide you through a structured learning path for Vue.js, a progressive JavaScript framework for building user interfaces. It covers topics from the basics to advanced Vue.js concepts and includes key technologies and tools used in Vue.js development.
 
 ## **Table of Contents**

@@ -1,5 +1,3 @@
-# Angular Roadmap
-
 Welcome to the Angular Roadmap. This roadmap is designed to guide you through a structured learning path for Angular, a popular front-end web framework. It covers topics from the basics to advanced Angular concepts and includes key technologies and tools used in Angular development.
 
 ## **Table of Contents**
