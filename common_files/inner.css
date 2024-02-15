@@ -37,6 +37,8 @@ body::-webkit-scrollbar {
 
 main {
     width: 100%;
+    max-width: calc(100% - 12rem);
+    min-width: calc(100% - 20rem);
 }
 #sideTopicSection {
     width: 100%;
@@ -442,6 +444,9 @@ tbody tr:nth-child(even) {
 }
 
 @media screen and (max-width: 768px) {
+    main {
+        max-width: unset;
+    }
     #sideTopicSection {
         display: none;
     }
