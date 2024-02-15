@@ -182,8 +182,12 @@ strong{
     color: #f1f1f1;
     padding: 1rem;
     word-wrap: break-word;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 1rem;
+}
+
+.dark .code {
+    border: 1px solid #c8b7df;
 }
 
 .code:hover{
