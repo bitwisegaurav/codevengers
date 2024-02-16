@@ -4,6 +4,7 @@ async function getHeader() {
     document.querySelector('nav').innerHTML = header;
 
     setListenersTheme();
+    setHamburgerListeners();
 }
 
 async function getData() {
@@ -44,6 +45,20 @@ function setData(data) {
     document.querySelector('iframe').src = `../${data.folder}/${data.chapters[data.default].file}.html`;
 
     document.title = data.name + " - Codevengers";
+}
+
+function setHamburgerListeners() {
+    document.getElementById('hamburger').addEventListener("click", event => {
+
+        if (document.getElementById('hamburger').classList.contains('activebtn')) {
+            document.getElementById('hamburger').classList.remove('activebtn');
+            document.querySelector('aside').style.display = "none";
+        }
+        else {
+            document.getElementById('hamburger').classList.add('activebtn');
+            document.querySelector('aside').style.display = "block";
+        }
+    });
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
