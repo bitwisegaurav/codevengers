@@ -1,4 +1,4 @@
-const themeBtn = document.querySelector('.themeBtn');
+let themeBtn = document.querySelector('.themeBtn');
 let theme = localStorage.getItem("theme");
 
 function themeTest () {
@@ -25,15 +25,17 @@ function themeTest () {
 function setListenersTheme () {
     let themeBtn = document.querySelector('#theme');
     console.log("setListenersTheme", themeBtn);
-    themeBtn.addEventListener("click", ()=>{
-        themeTest();
-        console.log("clicked");
-        themeBtn.innerHTML = theme === "light" ? "🌙" : "☀️";
-    });
+    if(themeBtn)
+      themeBtn.addEventListener("click", ()=>{
+          themeTest();
+          console.log("clicked");
+          themeBtn.innerHTML = theme === "light" ? "🌙" : "☀️";
+      });
 }
 
 const setTheme = ()=>{
   theme = localStorage.getItem("theme");
+  themeBtn = document.querySelector('.themeBtn');
   // console.log(theme);
   if(!theme){
     theme = "dark";
@@ -44,10 +46,6 @@ const setTheme = ()=>{
     if(theme === "dark") document.body.classList.remove("light");
   }
   document.body.classList.add(theme);
-  themeBtn.innerHTML = theme === "light" ? "🌙" : "☀️";
+  if(themeBtn)
+    themeBtn.innerHTML = theme === "light" ? "🌙" : "☀️";
 }
-
-window.addEventListener("DOMContentLoaded", ()=>{
-  setTheme();
-  setListenersTheme();
-})

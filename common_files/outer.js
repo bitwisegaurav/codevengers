@@ -1,12 +1,3 @@
-async function getHeader() {
-    const res = await fetch("../components/header.html");
-    const header = await res.text();
-    document.querySelector('nav').innerHTML = header;
-
-    setListenersTheme();
-    setHamburgerListeners();
-}
-
 async function getData() {
     // get language from url by creating url instance
     const url = new URL(window.location.href);
@@ -47,25 +38,13 @@ function setData(data) {
     document.title = data.name + " - Codevengers";
 }
 
-function setHamburgerListeners() {
-    document.getElementById('hamburger').addEventListener("click", event => {
-
-        if (document.getElementById('hamburger').classList.contains('activebtn')) {
-            document.getElementById('hamburger').classList.remove('activebtn');
-            document.querySelector('aside').style.display = "none";
-        }
-        else {
-            document.getElementById('hamburger').classList.add('activebtn');
-            document.querySelector('aside').style.display = "block";
-        }
-    });
-}
-
 window.addEventListener("DOMContentLoaded", async () => {
+    await getHeader();
+
     setTheme();
-    
-    getHeader();
-    
+    setListenersTheme();
+    setHamburgerListeners();
+
     // setTimeout(setListenersTheme, 2000);
 
     const data = await getData();
