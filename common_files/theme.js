@@ -22,13 +22,17 @@ function themeTest () {
     frame.contentWindow.postMessage({msg: "toggleTheme", theme}, "*");
 }
 
-// themeBtns.forEach(themeBtn => {
+function setListenersTheme () {
+    let themeBtn = document.querySelector('#theme');
+    console.log("setListenersTheme", themeBtn);
     themeBtn.addEventListener("click", ()=>{
         themeTest();
+        console.log("clicked");
         themeBtn.innerHTML = theme === "light" ? "🌙" : "☀️";
     });
-// })
-window.addEventListener("DOMContentLoaded", ()=>{
+}
+
+const setTheme = ()=>{
   theme = localStorage.getItem("theme");
   // console.log(theme);
   if(!theme){
@@ -41,4 +45,9 @@ window.addEventListener("DOMContentLoaded", ()=>{
   }
   document.body.classList.add(theme);
   themeBtn.innerHTML = theme === "light" ? "🌙" : "☀️";
+}
+
+window.addEventListener("DOMContentLoaded", ()=>{
+  setTheme();
+  setListenersTheme();
 })
