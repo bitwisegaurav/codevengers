@@ -36,10 +36,28 @@
             "file": "frames"
         },
         {
-            "name": "Meta Tags"
+            "name": "MultiMedia in Html",
+            "file": "multimedia"
         },
         {
-            "name": "Media"
+            "name": "Semantic Tags",
+            "file": "semantic"
+        },
+        {
+            "name": "Meta Tags",
+            "file": "metatags"
+        },
+        {
+            "name": "Html5 Features",
+            "file": "html5"
+        },
+        {
+            "name": "Best Practices",
+            "file": "bestPractices"
+        },
+        {
+            "name": "SEO Best Practices",
+            "file": "seo"
         }
     ]
 }
