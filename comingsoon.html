@@ -10,37 +10,7 @@
     <title>Coming Soon - Codevengers</title>
 </head>
 <body class="dark">
-    <nav>
-        <ul>
-            <li>
-                <a href="index.html">
-                    <img src="images/logo.png" alt="logo">
-                </a>
-            </li>
-            <li class="comname">
-                <a href="index.html">Codevengers</a>
-            </li>
-            <li>
-                <div class="languages">
-                    <p class="courses">Courses ↓</p>
-                    <div class="options">
-                        <a href="#">HTML</a>
-                        <a href="#">CSS</a>
-                        <a href="#">JavaScript</a>
-                        <a href="languages/mysql.html">MySQL</a>
-                        <a href="languages/plsql.html">PL/SQL</a>
-                        <a href="languages/java.html">Java</a>
-                        <a href="http://javaprograms.great-site.net/">Java Programs</a>
-                        <a href="languages/php.html">Php</a>
-                        <a href="#">C++</a>
-                        <a href="languages/discrete.html">Discrete Mathematics</a>
-                        <a href="languages/networks.html">Computer Networks</a>
-                    </div>
-                </div>
-                <button type="button" class="themeBtn" id="theme">☀️</button>
-            </li>
-        </ul>
-    </nav>
+    <nav></nav>
     <main>
         <div class="contain">
             <div class="logo">
@@ -57,5 +27,15 @@
         </div>
     </main>
 </body>
-<script src="index.js"></script>
+<script defer src="common_files/header.js"></script>
+<script defer src="index.js"></script>
+<script>
+    window.addEventListener("DOMContentLoaded", async () => {
+        await getHeader("languages/");
+        setTheme();
+        
+        const themeBtn = document.querySelector("#theme");
+        if(themeBtn) themeBtn.addEventListener("click", toggleTheme);
+    })
+</script>
 </html>

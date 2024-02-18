@@ -135,4 +135,16 @@
   </body>
   <!-- <script src="common_files/index.js"></script> -->
   <script src="index.js"></script>
+  <script>
+      window.addEventListener("DOMContentLoaded", async () => {
+        setTheme();
+
+        const data = await getData();
+        // console.log(data);
+
+        setData(data);
+        const themeBtn = document.querySelector("#theme");
+        if(themeBtn) themeBtn.addEventListener("click", toggleTheme);
+      });
+  </script>
 </html>

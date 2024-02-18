@@ -1,7 +1,7 @@
-const themeBtn = document.querySelector("#theme");
 let theme = localStorage.getItem("theme");
 
 function toggleTheme() {
+  const themeBtn = document.querySelector("#theme");
   if (!theme) {
     theme = "dark";
     document.body.classList.remove("light");
@@ -15,11 +15,12 @@ function toggleTheme() {
     }
     localStorage.setItem("theme", theme);
     document.body.classList.add(theme);
-    themeBtn.innerHTML = theme === "light" ? "🌙" : "☀️";
+    if(themeBtn) themeBtn.innerHTML = theme === "light" ? "🌙" : "☀️";
   }
 }
 
 function setTheme() {
+  const themeBtn = document.querySelector("#theme");
   theme = localStorage.getItem("theme");
   if (!theme) {
     theme = "dark";
@@ -28,7 +29,7 @@ function setTheme() {
   }
   if (theme === "light") document.body.classList.remove("dark");
   document.body.classList.add(theme);
-  themeBtn.innerHTML = theme === "light" ? "🌙" : "☀️";
+  if(themeBtn) themeBtn.innerHTML = theme === "light" ? "🌙" : "☀️";
 }
 
 async function getData() {
@@ -54,14 +55,3 @@ function setData(data){
 
   outerBox.innerHTML = content;
 }
-
-window.addEventListener("DOMContentLoaded", async () => {
-  setTheme();
-
-  const data = await getData();
-  console.log(data);
-
-  setData(data);
-});
-
-themeBtn.addEventListener("click", toggleTheme);
