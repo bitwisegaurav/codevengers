@@ -1,12 +1,12 @@
-async function getHeader(prePath = "") {
-    const res = await fetch("../components/header.html");
+async function getHeader(optionsPrePath = "", prePath = "../") {
+    const res = await fetch(prePath+"components/header.html");
     const header = await res.text();
     document.querySelector('nav').innerHTML = header;
-    setOptions(prePath);
+    setOptions(optionsPrePath, prePath);
 }
 
-async function setOptions(prePath) {
-    const res = await fetch("../courses.json");
+async function setOptions(optionsPrePath, prePath) {
+    const res = await fetch(prePath+"courses.json");
     const data = await res.json();
 
     const options = document.querySelector('.options');
@@ -17,7 +17,7 @@ async function setOptions(prePath) {
         // make the first character bigger
         name = name.charAt(0).toUpperCase() + name.slice(1);
 
-        content += `<a href="${course.url ? course.url : `${prePath}outer.html?lang=${course.name}`}" lang="${course.name}">${course.title ?course.title : name}</a>`
+        content += `<a href="${course.url ? course.url : `${optionsPrePath}outer.html?lang=${course.name}`}" lang="${course.name}">${course.title ?course.title : name}</a>`
     })
     options.innerHTML = content;
 }
