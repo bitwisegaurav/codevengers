@@ -9,6 +9,8 @@ async function setOptions(optionsPrePath, prePath) {
     const res = await fetch(prePath+"courses.json");
     const data = await res.json();
 
+    if(prePath === "") document.querySelector('nav a img').src = "images/logo.png";
+
     const options = document.querySelector('.options');
     let content = "";
 
