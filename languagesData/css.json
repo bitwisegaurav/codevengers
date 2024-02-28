@@ -1,0 +1,58 @@
+{
+    "name": "Html",
+    "folder": "html",
+    "default": 0,
+    "chapters": [
+        {
+            "name": "Introduction",
+            "file": "introduction"
+        },
+        {
+            "name": "Inline, Interanl and External CSS",
+            "file": "methods"
+        },
+        {
+            "name": "Basic Properties and Values",
+            "file": "basic"
+        },
+        {
+            "name": "Box Model"
+        },
+        {
+            "name": "Selectors and Combinators"
+        },
+        {
+            "name": "Positioning of elements"
+        },
+        {
+            "name": "Flexbox"
+        },
+        {
+            "name": "Grid Layout"
+        },
+        {
+            "name": "Typography and text styling"
+        },
+        {
+            "name": "Colors, Background Properties and Gradient"
+        },
+        {
+            "name": "Media Queries"
+        },
+        {
+            "name": "Transitions and Animations"
+        },
+        {
+            "name": "CSS Frameworks"
+        },
+        {
+            "name": "CSS variables and Custom properties"
+        },
+        {
+            "name": "Best Practices"
+        },
+        {
+            "name": "CSS for accessibility"
+        }
+    ]
+}
