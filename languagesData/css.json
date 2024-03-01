@@ -16,43 +16,56 @@
             "file": "basic"
         },
         {
-            "name": "Box Model"
+            "name": "Box Model",
+            "file": "boxmodel"
         },
         {
-            "name": "Selectors and Combinators"
+            "name": "Selectors and Combinators",
+            "file": "selectors&combinator"
         },
         {
-            "name": "Positioning of elements"
+            "name": "Positioning of elements",
+            "file": "position"
         },
         {
-            "name": "Flexbox"
+            "name": "Flexbox",
+            "file": "flexbox"
         },
         {
-            "name": "Grid Layout"
+            "name": "Grid Layout",
+            "file": "grid"
         },
         {
-            "name": "Typography and text styling"
+            "name": "Typography and text styling",
+            "file": "typography"
         },
         {
-            "name": "Colors, Background Properties and Gradient"
+            "name": "Colors, Background Properties and Gradient",
+            "file": "colors"
         },
         {
-            "name": "Media Queries"
+            "name": "Media Queries",
+            "file": "mediaQuery"
         },
         {
-            "name": "Transitions and Animations"
+            "name": "Transitions and Animations",
+            "file": "animation"
         },
         {
-            "name": "CSS Frameworks"
+            "name": "CSS Frameworks",
+            "file": "frameworks"
         },
         {
-            "name": "CSS variables and Custom properties"
+            "name": "CSS variables and Custom properties",
+            "file": "variables"
         },
         {
-            "name": "Best Practices"
+            "name": "Best Practices",
+            "file": "bestPractices"
         },
         {
-            "name": "CSS for accessibility"
+            "name": "CSS for accessibility",
+            "file": "accessibility"
         }
     ]
 }
