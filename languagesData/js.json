@@ -1,0 +1,200 @@
+{
+    "name": "JavaScript",
+    "folder": "javascript",
+    "default": 0,
+    "chapters": [
+        {
+            "name": "Introduction",
+            "file": "introduction"
+        },
+        {
+            "name": "Inline, Internal and External"
+        },
+        {
+            "name": "Variables"
+        },
+        {
+            "name": "Global and local scope of Variables"
+        },
+        {
+            "name": "Datatypes"
+        },
+        {
+            "name": "Hoisting"
+        },
+        {
+            "name": "Datatypes Conversion"
+        },
+        {
+            "name": "Stack and Heap memory"
+        },
+        {
+            "name": "Operators"
+        },
+        {
+            "name": "Coniditional Statements"
+        },
+        {
+            "name": "Loops"
+        },
+        {
+            "name": "Break and Continue"
+        },
+        {
+            "name": "Functions"
+        },
+        {
+            "name": "Immediately Invoked Functions"
+        },
+        {
+            "name": "Strings"
+        },
+        {
+            "name": "Some Strings Methods"
+        },
+        {
+            "name": "Arrays"
+        },
+        {
+            "name": "Map, Filter and Reduce"
+        },
+        {
+            "name": "Some Arrays Methods"
+        },
+        {
+            "name": "Array Prototype"
+        },
+        {
+            "name": "Math, Date and Number classes"
+        },
+        {
+            "name": "Objects"
+        },
+        {
+            "name": "Alert, Prompt and Confirm"
+        },
+        {
+            "name": "Console methods"
+        },
+        {
+            "name": "Introduction to DOM, BOM and Window Object"
+        },
+        {
+            "name": "DOM"
+        },
+        {
+            "name": "Getting DOM Elements"
+        },
+        {
+            "name": "Children, Parent and Siblings of an element"
+        },
+        {
+            "name": "matches, closet and contains"
+        },
+        {
+            "name": "DOM Elements Properties"
+        },
+        {
+            "name": "DOM Elements Attributes"
+        },
+        {
+            "name": "Creation, Insertion, Edition and Deletion of DOM Elements"
+        },
+        {
+            "name": "setTimeout and setInterval"
+        },
+        {
+            "name": "BOM"
+        },
+        {
+            "name": "Browser Events"
+        },
+        {
+            "name": "Callbacks"
+        },
+        {
+            "name": "Callback Hell and Pyramid of Doom"
+        },
+        {
+            "name": "Promises"
+        },
+        {
+            "name": "Async and Await"
+        },
+        {
+            "name": "API Request and V8 Engine"
+        },
+        {
+            "name": "Fetch API"
+        },
+        {
+            "name": "Error Handling"
+        },
+        {
+            "name": "Closures"
+        },
+        {
+            "name": "Currying"
+        },
+        {
+            "name": "Debouncing and Throttling"
+        },
+        {
+            "name": "Event Delegation"
+        },
+        {
+            "name": "Local Storage"
+        },
+        {
+            "name": "Cookies"
+        },
+        {
+            "name": "Web Workers"
+        },
+        {
+            "name": "Service Workers"
+        },
+        {
+            "name": "Regular Expressions"
+        },
+        {
+            "name": "Modules"
+        },
+        {
+            "name": "OOPS"
+        },
+        {
+            "name": "Classes"
+        },
+        {
+            "name": "Getter and Setter"
+        },
+        {
+            "name": "Inheritance"
+        },
+        {
+            "name": "Prototype"
+        },
+        {
+            "name": "This keyword"
+        },
+        {
+            "name": "ES6+ Features"
+        },
+        {
+            "name": "Memory managemenet and Performance Optimization"
+        },
+        {
+            "name": "Debugging Tools"
+        },
+        {
+            "name": "Unit Testing"
+        },
+        {
+            "name": "Framework and library"
+        },
+        {
+            "name": "Javscript Frameworks and Libraries"
+        }
+    ]
+}
