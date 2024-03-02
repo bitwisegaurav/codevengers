@@ -311,6 +311,7 @@ section{
     margin: 1rem 0;
     color: rgb(48, 28, 119);
     font-size: 1.3rem;
+    text-transform: capitalize;
 }
 .dark #courseSection .courseCont .carousel .boxes .box .langname{
     color: #ddd;
