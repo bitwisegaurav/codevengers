@@ -48,28 +48,36 @@
             "file": "loops"
         },
         {
-            "name": "Break and Continue"
+            "name": "Break and Continue",
+            "file": "break_continue"
         },
         {
-            "name": "Functions"
+            "name": "Functions",
+            "file": "functions"
         },
         {
-            "name": "Immediately Invoked Functions"
+            "name": "Immediately Invoked Functions",
+            "file": "iife"
         },
         {
-            "name": "Strings"
+            "name": "Strings",
+            "file": "strings"
         },
         {
-            "name": "Some Strings Methods"
+            "name": "Some Strings Methods",
+            "file": "stringsMethods"
         },
         {
-            "name": "Arrays"
+            "name": "Arrays",
+            "file": "arrays"
         },
         {
-            "name": "Map, Filter and Reduce"
+            "name": "Map, Filter and Reduce",
+            "file": "highOrderLoops"
         },
         {
-            "name": "Some Arrays Methods"
+            "name": "Some Arrays Methods",
+            "file": "arraysMethods"
         },
         {
             "name": "Array Prototype"
