@@ -8,34 +8,44 @@
             "file": "introduction"
         },
         {
-            "name": "Inline, Internal and External"
+            "name": "Inline, Internal and External",
+            "file": "methods"
         },
         {
-            "name": "Variables"
+            "name": "Variables",
+            "file": "variables"
         },
         {
-            "name": "Global and local scope of Variables"
+            "name": "Global and local scope of Variables",
+            "file": "scope"
         },
         {
-            "name": "Datatypes"
+            "name": "Datatypes",
+            "file": "datatypes"
         },
         {
-            "name": "Hoisting"
+            "name": "Hoisting",
+            "file": "hoisting"
         },
         {
-            "name": "Datatypes Conversion"
+            "name": "Datatypes Conversion",
+            "file": "conversion"
         },
         {
-            "name": "Stack and Heap memory"
+            "name": "Stack and Heap memory",
+            "file": "memory"
         },
         {
-            "name": "Operators"
+            "name": "Operators",
+            "file": "operators"
         },
         {
-            "name": "Coniditional Statements"
+            "name": "Coniditional Statements",
+            "file": "conditions"
         },
         {
-            "name": "Loops"
+            "name": "Loops",
+            "file": "loops"
         },
         {
             "name": "Break and Continue"
