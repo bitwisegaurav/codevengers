@@ -49,7 +49,7 @@ function setData(data){
     <div class="langlogo">
       <img src="images/${course.image}" alt="${course.name} logo">
     </div>
-    <div class="langname">${course.name}</div>
+    <div class="langname">${course.title ? course.title : course.name}</div>
   </a>`
   })
 
