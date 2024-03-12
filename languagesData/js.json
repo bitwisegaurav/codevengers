@@ -80,13 +80,15 @@
             "file": "arraysMethods"
         },
         {
-            "name": "Array Prototype"
-        },
-        {
-            "name": "Math, Date and Number classes"
-        },
-        {
             "name": "Objects"
+        },
+        {
+            "name": "Some Important Objects",
+            "file": "someObjects"
+        },
+        {
+            "name": "Number",
+            "file": "number"
         },
         {
             "name": "Alert, Prompt and Confirm"
