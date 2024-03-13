@@ -233,6 +233,7 @@ strong{
     margin-bottom: 4rem !important;
     max-width: 700px;
     width: 100%;
+    color: #272349;
 }
 .structimg:last-child{
     margin-bottom: 0;
@@ -408,8 +409,11 @@ span {
     position: relative;
 }
 .imp::before{
-    content: '*';
-    color: rgb(255, 48, 48);
+    position: relative;
+    top: 3px;
+    content: '* ';
+    color: rgb(255, 122, 34);
+    font-size: larger;
     /* border: 2px solid red; */
 }
 
@@ -434,6 +438,10 @@ th, td {
 
 .dark th, .dark td {
     border-color: rgba(255,255,255,0.3);
+}
+
+.first-center tr td:nth-child(1) {
+    text-align: center;
 }
 
 th {
