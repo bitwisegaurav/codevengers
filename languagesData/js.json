@@ -65,7 +65,7 @@
         },
         {
             "name": "Some Strings Methods",
-            "file": "stringsMethods"
+            "file": "stringMethods"
         },
         {
             "name": "Arrays",
@@ -91,22 +91,26 @@
             "file": "number"
         },
         {
-            "name": "Alert, Prompt and Confirm"
+            "name": "Alert, Prompt and Confirm",
+            "file": "dialogBox"
         },
         {
-            "name": "Console methods"
+            "name": "Console methods",
+            "file": "console"
         },
         {
             "name": "Introduction to DOM, BOM and Window Object"
         },
         {
-            "name": "DOM"
-        },
-        {
-            "name": "Getting DOM Elements"
+            "name": "DOM",
+            "file": "dom"
         },
         {
             "name": "Children, Parent and Siblings of an element"
+        },
+        {
+            "name": "Events and Event Listeners",
+            "file": "events"
         },
         {
             "name": "matches, closet and contains"
@@ -125,9 +129,6 @@
         },
         {
             "name": "BOM"
-        },
-        {
-            "name": "Browser Events"
         },
         {
             "name": "Callbacks"
