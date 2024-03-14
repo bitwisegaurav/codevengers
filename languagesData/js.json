@@ -109,7 +109,7 @@
         },
         {
             "name": "Children, Parent and Siblings of an element",
-            "file": "elements"
+            "file": "dom_hierarchy"
         },
         {
             "name": "Events and Event Listeners",
@@ -120,13 +120,16 @@
             "file": "dom_query"
         },
         {
-            "name": "DOM Elements Properties"
+            "name": "DOM Elements Properties",
+            "file": "properties"
         },
         {
-            "name": "DOM Elements Attributes"
+            "name": "DOM Elements Attributes",
+            "file": "attributes"
         },
         {
-            "name": "Creation, Insertion, Edition and Deletion of DOM Elements"
+            "name": "Creation, Insertion, Edition and Deletion of DOM Elements",
+            "file": "elements"
         },
         {
             "name": "setTimeout and setInterval"
