@@ -108,14 +108,16 @@
             "file": "dom"
         },
         {
-            "name": "Children, Parent and Siblings of an element"
+            "name": "Children, Parent and Siblings of an element",
+            "file": "elements"
         },
         {
             "name": "Events and Event Listeners",
             "file": "events"
         },
         {
-            "name": "matches, closet and contains"
+            "name": "matches, closet and contains",
+            "file": "dom_query"
         },
         {
             "name": "DOM Elements Properties"
