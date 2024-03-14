@@ -80,7 +80,8 @@
             "file": "arraysMethods"
         },
         {
-            "name": "Objects"
+            "name": "Objects",
+            "file": "objects"
         },
         {
             "name": "Some Important Objects",
@@ -99,7 +100,8 @@
             "file": "console"
         },
         {
-            "name": "Introduction to DOM, BOM and Window Object"
+            "name": "Introduction to DOM, BOM and Window Object",
+            "file": "dom_bom_window"
         },
         {
             "name": "DOM",
