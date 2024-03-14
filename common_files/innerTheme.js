@@ -65,7 +65,7 @@ function wrapContent () {
 }
 
 function getTopics () {
-  const topics = document.querySelectorAll("h2");
+  const topics = document.querySelectorAll("h1,h2");
   const topicBox = document.getElementById("topics");
   let topicData = '';
   // console.log(topics);
