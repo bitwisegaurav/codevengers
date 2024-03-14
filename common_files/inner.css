@@ -177,22 +177,35 @@ strong{
     color: #41396e;
 }
 
-.code{
+.code, .result{
     position: relative;
     /* background-color: rgba(0, 0, 0, 0.164); */
-    background-color: #282c34;
-    color: #f1f1f1;
     padding: 1rem;
     word-wrap: break-word;
     border-radius: 10px;
     margin-bottom: 1rem;
 }
 
+.code {
+    background-color: #282c34;
+    color: #f1f1f1;
+}
+
+.result {
+    background-color: #f1f1f1;
+    color: #41396e;
+}
+
+.dark .result {
+    background-color: rgba(255,255,255,0.6);
+    color: #2d2844;
+}
+
 .dark .code {
     border: 1px solid #c8b7df59;
 }
 
-.code:hover{
+.code:hover, .result:hover{
     cursor: pointer;
 }
 
@@ -218,7 +231,7 @@ strong{
     display: block;
 }
 
-.code pre{
+.code pre, .result pre{
     font-family: 'JetBrains Mono', monospace;
     font-size: smaller;
     white-space: pre-wrap;
