@@ -36,7 +36,7 @@ console.log(result); // Outputs: "105" (string concatenation)
 let numberValue = 42;
 let stringValue = String(numberValue);
 console.log(stringValue); // Outputs: "42"
-    </pre></div>
+</pre></div>
 
     <p class="note note-normal">When you use the <span>String()</span> function to convert a number to a string, the resulting string will have no. of digits as length and will contain only the digits of the number. For example:</p>
 
@@ -44,7 +44,7 @@ console.log(stringValue); // Outputs: "42"
 let numberValue = 123;
 let stringValue = String(numberValue);
 console.log(stringValue.length); // Outputs: 3
-    </pre></div>
+</pre></div>
 
     <h3>Number()</h3>
 
@@ -54,7 +54,7 @@ console.log(stringValue.length); // Outputs: 3
 let stringValue = "3.14";
 let numberValue = Number(stringValue);
 console.log(numberValue); // Outputs: 3.14
-    </pre></div>
+</pre></div>
 
     <p class="note note-normal">The <span>Number()</span> function will return <span>NaN</span> (Not a Number) if the conversion is not possible, such as when converting a non-numeric string:</p>
 
@@ -62,17 +62,17 @@ console.log(numberValue); // Outputs: 3.14
 let stringValue = "hello";
 let numberValue = Number(stringValue);
 console.log(numberValue); // Outputs: NaN
-    </pre></div>
+</pre></div>
 
     <h3>Boolean()</h3>
 
     <p>The <span>Boolean()</span> function can be used to convert a value to a boolean. This is useful when you want to check the "truthiness" or "falsiness" of a value.</p>
 
     <div class="code"><pre>
-    let stringValue = "Hello, world!";
-    let booleanValue = Boolean(stringValue);
-    console.log(booleanValue); // Outputs: true
-    </pre></div>
+let stringValue = "Hello, world!";
+let booleanValue = Boolean(stringValue);
+console.log(booleanValue); // Outputs: true
+</pre></div>
 
     <p class="note note-imp">
         The <span>Boolean()</span> function will return <span>false</span> for <span>:</span> 0, "" (an empty string), null, undefined
