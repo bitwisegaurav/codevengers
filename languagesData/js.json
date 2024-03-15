@@ -132,7 +132,8 @@
             "file": "elements"
         },
         {
-            "name": "setTimeout and setInterval"
+            "name": "setTimeout, setInterval  and setImmediate",
+            "file": "settimeout_interval"
         },
         {
             "name": "BOM"
