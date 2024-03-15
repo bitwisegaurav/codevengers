@@ -66,6 +66,19 @@ function greetPerson(firstName, lastName) {
 greetPerson("Jane", "Doe");
 </pre></div>
 
+    <h2>Working of functions</h2>
+    <p>When a function is called, the JavaScript engine performs the following steps : </p> 
+    <ol>
+        <li>The JavaScript engine pushes the function in the stack.</li>
+        <li>A new execution context is created for the function.</li>
+        <li>The function executes the code inside it.</li>
+        <li>If the function has a return statement, the value is returned to the calling code.</li>
+        <li>Otherwise, undefined is returned.</li>
+        <li>The execution context is removed from the stack.</li>
+    </ol>
+
+    <div class="structimg img-center"><img src="../examples/javascript/env/functon_execution.jpg" alt="Js runtime environment"></div>
+
     <h2>Conclusion</h2>
 
     <p>Functions are the building blocks of JavaScript applications, allowing developers to create modular and reusable codWhether using function declarations, expressions, or arrow functions, mastering the concept of functions is essential for effective and organized programming.</p>
