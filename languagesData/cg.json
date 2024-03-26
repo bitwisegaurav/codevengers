@@ -47,13 +47,15 @@
             "name": "Images"
         },
         {
-            "name": "Audio"
+            "name": "Audio",
+            "file": "audio"
         },
         {
             "name": "Video"
         },
         {
-            "name": "Storage for multimedia"
+            "name": "Storage for multimedia",
+            "file": "storage"
         },
         {
             "name": "Multimedia and Communication"
