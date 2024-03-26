@@ -342,7 +342,7 @@ section{
     /* filter: ; */
 }
 
-#discrete .langname, #cn .langname {
+#discrete .langname, #cn .langname, #networks .langname {
     font-size: 1.1rem !important;
 }
 #courseSection .courseCont .boxes .box #startbtn{
