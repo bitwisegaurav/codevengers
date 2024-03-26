@@ -1,0 +1,65 @@
+{
+    "name": "Computer Graphics",
+    "folder": "cg",
+    "default": 0,
+    "chapters": [
+        {
+            "name": "Introduction to Computer Graphics",
+            "file": "introduction"
+        },
+        {
+            "name": "Survery of Computer Graphics"
+        },
+        {
+            "name": "Overview of Graphics Systems-I"
+        },
+        {
+            "name": "Overview of Graphics Systems-II"
+        },
+        {
+            "name": "Computer Graphics Using Standard graphics packages"
+        },
+        {
+            "name": "Developing Computer Graphics using C"
+        },
+        {
+            "name": "Multimedia"
+        },
+        {
+            "name": "System Components"
+        },
+        {
+            "name": "Multimedia Platforms"
+        },
+        {
+            "name": "Multimedia Development Tools"
+        },
+        {
+            "name": "Images"
+        },
+        {
+            "name": "Audio"
+        },
+        {
+            "name": "Video"
+        },
+        {
+            "name": "Storage for multimedia"
+        },
+        {
+            "name": "Multimedia and Communication"
+        },
+        {
+            "name": "Mutlimedia Applicaitons"
+        },
+        {
+            "name": "Photoshop"
+        },
+        {
+            "name": "Macromedia Detector"
+        },
+        {
+            "name": "File Formats"
+        }
+    ]
+}
