@@ -28,16 +28,20 @@
             "file": "c"
         },
         {
-            "name": "Multimedia"
+            "name": "Multimedia",
+            "file": "multimedia"
         },
         {
-            "name": "System Components"
+            "name": "System Components",
+            "file": "system"
         },
         {
-            "name": "Multimedia Platforms"
+            "name": "Multimedia Platforms",
+            "file": "multimedia_platform"
         },
         {
-            "name": "Multimedia Development Tools"
+            "name": "Multimedia Development Tools",
+            "file": "development_tools"
         },
         {
             "name": "Images"
