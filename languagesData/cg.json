@@ -8,19 +8,24 @@
             "file": "introduction"
         },
         {
-            "name": "Survery of Computer Graphics"
+            "name": "Survey of Computer Graphics",
+            "file": "survey"
         },
         {
-            "name": "Overview of Graphics Systems-I"
+            "name": "Overview of Graphics Systems-I",
+            "file": "overview1"
         },
         {
-            "name": "Overview of Graphics Systems-II"
+            "name": "Overview of Graphics Systems-II",
+            "file": "overview2"
         },
         {
-            "name": "Computer Graphics Using Standard graphics packages"
+            "name": "Computer Graphics Using Standard graphics packages",
+            "file": "autocad"
         },
         {
-            "name": "Developing Computer Graphics using C"
+            "name": "Developing Computer Graphics using C",
+            "file": "c"
         },
         {
             "name": "Multimedia"
