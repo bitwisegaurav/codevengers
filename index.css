@@ -336,6 +336,10 @@ section{
     height: 70% !important;
 }
 
+#cg .langlogo img {
+    transform: scale(1.3);
+}
+
 .dark #mysql .langlogo img {
     /* background-color: #f1f1f1; */
     filter: brightness(1.4) hue-rotate(-10deg) saturate(5);
