@@ -44,33 +44,39 @@
             "file": "development_tools"
         },
         {
-            "name": "Images"
+            "name": "Images",
+            "file": "image"
         },
         {
             "name": "Audio",
             "file": "audio"
         },
         {
-            "name": "Video"
+            "name": "Video",
+            "file": "video"
         },
         {
             "name": "Storage for multimedia",
             "file": "storage"
         },
         {
-            "name": "Multimedia and Communication"
+            "name": "Multimedia and Communication",
+            "file": "communication"
         },
         {
             "name": "Mutlimedia Applicaitons"
         },
         {
-            "name": "Photoshop"
+            "name": "Photoshop",
+            "file": "photoshop"
         },
         {
-            "name": "Macromedia Detector"
+            "name": "Macromedia Detector",
+            "file": "macromedia"
         },
         {
-            "name": "File Formats"
+            "name": "File Formats",
+            "file": "formats"
         }
     ]
 }
