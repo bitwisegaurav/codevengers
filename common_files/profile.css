@@ -1,0 +1,160 @@
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    border: 2px solid blue;
+}
+
+nav {
+    background-color: rgb(148, 126, 194);
+    height: 60px;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    border: 2px solid red;
+    padding: 2rem 7%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+main article {
+    display: flex;
+    width: 100%;
+    gap: 4rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 1rem 3rem;
+}
+
+main article .profile {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* padding: 20px 2rem; */
+}
+
+main article .profile .profile-pic {
+    width: 150px;
+    aspect-ratio: 1/1;
+    border: 2px solid rgb(109 82 158);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+main article .profile .profile-pic img {
+    width: 100%;
+    height: 100%;
+}
+
+main article .profile .profile-username {
+    text-align: center;
+}
+
+main article .profile .profile-username p {
+    font-size: large;
+    color: #666;
+}
+
+main article .profile .btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+main article .profile .btns button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(109 82 158);
+    color: #fff;
+    cursor: pointer;
+}
+
+main article .profile-details {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    padding: 20px;
+}
+
+main article .profile-details .data {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+main article .profile-details label {
+    font-weight: bold;
+    color: rgb(91, 67, 136);
+}
+
+main article .profile-details p {
+    color: rgb(148, 126, 194);
+}
+
+main section {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+main section .top {
+    background-color: #fff;
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+
+main section .top a {
+    flex-grow: 1;
+    text-align: center;
+    padding: 20px 0;
+    text-decoration: none;
+    color: rgb(148, 126, 194);
+}
+
+main section .top .active {
+    color: rgb(109 82 158);
+    border-bottom: 2px solid rgb(109 82 158);
+}
+
+main section .top a:hover {
+    background-color: #f8f9fa;
+}
+
+main section .bottom {
+    height: 100px;
+    width: 100%;
+    /* background-color: green; */
+}
+
+main section .bottom .courses {
+    display: flex;
+    gap: 2rem;
+    height: 100%;
+}
+
+main section .bottom .courses .center{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+main section .bottom .courses .center p {
+    color: rgb(148, 126, 194);
+}
