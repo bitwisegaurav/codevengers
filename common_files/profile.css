@@ -9,7 +9,7 @@
 body {
     background-color: #f8f9fa;
     min-height: 100vh;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
 }
 
 nav {
@@ -20,7 +20,7 @@ nav {
 main {
     height: 100%;
     width: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     padding: 2rem 7%;
     display: flex;
     flex-direction: column;
@@ -132,7 +132,7 @@ main section .top .active {
 }
 
 main section .top a:hover {
-    background-color: #f8f9fa;
+    background-color: rgb(246, 241, 255);
 }
 
 main section .bottom {
@@ -141,13 +141,13 @@ main section .bottom {
     /* background-color: green; */
 }
 
-main section .bottom .courses {
+main section .bottom .content {
     display: flex;
     gap: 2rem;
     height: 100%;
 }
 
-main section .bottom .courses .center{
+main section .bottom .content .center{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -155,6 +155,6 @@ main section .bottom .courses .center{
     height: 100%;
 }
 
-main section .bottom .courses .center p {
+main section .bottom .content .center p {
     color: rgb(148, 126, 194);
 }
