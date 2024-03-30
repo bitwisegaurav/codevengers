@@ -1,4 +1,8 @@
 const maincontentBox = document.querySelector('.maincontent');
+const topBox = maincontentBox.querySelector('section > .top');
+const aTags = topBox.querySelectorAll('a');
+const chatbtn = document.querySelector('#chatbtn');
+const followbtn = document.querySelector('#followbtn');
 const server = "http://127.0.0.1:8000/api/v1";
 const bottomBox = document.querySelector('.bottom');
 
@@ -6,6 +10,18 @@ function extractTextFromHtml(htmlString) {
     const tempElement = document.createElement('div');
     tempElement.innerHTML = htmlString;
     return tempElement.textContent || tempElement.innerText || "";
+}
+
+async function fetchHeader() {
+    fetch("../components/header.html")
+    .then(res => res.text())
+    .then(data => {
+        document.querySelector('nav').innerHTML = data;
+    })
+    .then(() => {
+        document.querySelector('nav ul li .languages').style.display = "none";
+    })
+    .catch(err => console.log(err.message));
 }
 
 async function getData(username) {
@@ -31,7 +47,7 @@ async function getData(username) {
         const data = await fetch(server + api, options)
         .then(res => res.json())
         .then(data => data.data)
-        .then(data => data.user);
+        // .then(data => data.user);
         // console.log(data);
         return data;
     } catch (error) {
@@ -40,18 +56,50 @@ async function getData(username) {
     }
 }
 
+async function followUser({data, username}) {
+    let api = "/follower/follow";
+
+    if(data.isFollowedByAccessingUser) api = "/follower/unfollow";
+
+    if(!username) return;
+
+    const options = {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        credentials: "include",
+        body: JSON.stringify({ username })
+    }
+
+    try {
+        const data = await fetch(server + api, options)
+        .then(res => res.json())
+        // .then(data => data.data);
+        // console.log(data);
+        window.location.reload();
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
+async function chat() {
+    alert("Chat feature is not available right now. \nBut you can use the chat feature in the upcoming version. \nStay tuned!");
+}
+
 function setListeners(data) {
-    const topBox = maincontentBox.querySelector('section > .top');
-    const aTags = topBox.querySelectorAll('a');
     aTags.forEach(a => {
         a.addEventListener('click', (e) => {
             e.preventDefault();
             const activeBox = topBox.querySelector('.active');
             activeBox.classList.remove('active');
             a.classList.add('active');
-            setContentBox(a.id, data);
+            setContentBox(a.id, data.user);
         })
     })
+
+    chatbtn.addEventListener('click', chat);
+    followbtn.addEventListener('click', () => followUser({data, username: data.user?.username}));
 }
 
 function setContentBox(id, data) {
@@ -62,7 +110,7 @@ function setContentBox(id, data) {
         case "articles":
             setArticles(data?.articles);
             break;
-        case "solvedQuestions":
+        case "questions":
             setSolvedQuestion(data?.solvedQuestions);
             break;
         default:
@@ -71,7 +119,8 @@ function setContentBox(id, data) {
     }
 }
 
-function setData({user, username}){
+function setData(data){
+    const user = data.user;
     if(!user) return;
 
     document.querySelector('.coverImage img').src = user.coverImage;
@@ -85,14 +134,22 @@ function setData({user, username}){
     profileDetails.querySelector('#followers').innerHTML = user.followers;
     profileDetails.querySelector('#following').innerHTML = user.following;
 
-    if(!username || username.trim() === "" || user.username === username) {
-        document.querySelector('.btns').style.display = "none";
+    const buttons = document.querySelector('.btns');
+
+    if(data.isBothSame) {
+        // remove buttons from html
+        buttons.parentElement.removeChild(buttons);
+    } else {
+        if(data.isFollowedByAccessingUser) buttons.querySelector('#followbtn').innerHTML = "Unfollow";
+        else if(data.isFollowingAccessingUser) buttons.querySelector('#followbtn').innerHTML = "Follow Back";
+        else buttons.querySelector('#followbtn').innerHTML = "Follow";
     }
 }
 
 function setCourses(courses){
     if(!courses || courses.length < 1) {
         setNoData("No Courses added");
+        return;
     }
 
     let content = '';
@@ -125,6 +182,7 @@ function setCourses(courses){
 function setArticles(articles){
     if(!articles || articles.length < 1) {
         setNoData("No articles added");
+        return;
     }
 
     let content = '';
@@ -180,14 +238,16 @@ window.addEventListener("DOMContentLoaded", async () => {
     const url = new URL(window.location.href);
     const username = url.searchParams.get('username');
 
+    fetchHeader();
+
     const data = await getData(username);
     // const data = null;
 
-    if(!data) {
-        window.location.href = "./login.html";
-    }
+    // if(!data) {
+    //     window.location.href = "./login.html";
+    // }
 
-    setData({user: data, username});
+    setData(data);
     setListeners(data);
-    setContentBox("courses", data)
+    setContentBox("courses", data.user)
 })
