@@ -14,7 +14,7 @@ body {
 
 nav {
     background-color: rgb(148, 126, 194);
-    height: 60px;
+    /* height: 60px; */
 }
 
 main .coverImage {
@@ -111,6 +111,10 @@ main article .right .btns button {
     background-color: rgb(109 82 158);
     color: #fff;
     cursor: pointer;
+}
+
+main article .right .btns button:hover {
+    background-color: rgb(148, 126, 194);
 }
 
 main article .profile-details {
