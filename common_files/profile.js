@@ -18,7 +18,7 @@ async function getData(username) {
 
     if(username && username.trim() !== "") api += "/" + username;
 
-    console.log(server + api);
+    // console.log(server + api);
     
     const options = {
         method: "GET",
@@ -32,10 +32,7 @@ async function getData(username) {
         .then(res => res.json())
         .then(data => data.data)
         .then(data => data.user);
-        // const text = await res.text();
-        // console.log('Server response:', text);
-        // const data = JSON.parse(text);
-        console.log(data);
+        // console.log(data);
         return data;
     } catch (error) {
         console.log(error.message);
@@ -60,13 +57,13 @@ function setListeners(data) {
 function setContentBox(id, data) {
     switch(id) {
         case "courses":
-            setCourses(data.courses);
+            setCourses(data?.courses);
             break;
         case "articles":
-            setArticles(data.articles);
+            setArticles(data?.articles);
             break;
         case "solvedQuestions":
-            setSolvedQuestion(data.solvedQuestions);
+            setSolvedQuestion(data?.solvedQuestions);
             break;
         default:
             setNoData("No data found");
@@ -114,6 +111,15 @@ function setCourses(courses){
     })
 
     bottomBox.innerHTML = `<div class="courses">${content}</div>`;
+
+    const buttons = document.querySelectorAll(".courses .course button")
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            const parent = button.parentElement.getAttribute("_id");
+            console.log(parent);
+        })
+    })
 }
 
 function setArticles(articles){
@@ -143,10 +149,22 @@ function setArticles(articles){
     })
 
     bottomBox.innerHTML = `<div class="articles">${content}</div>`;
+
+    const buttons = document.querySelectorAll(".articles .article .btns button")
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            const parent = button.parentElement.parentElement.getAttribute("_id");
+            console.log(parent);
+        })
+    })
 }
 
 function setSolvedQuestion(questions) {
-    setNoData("No Solved Questions found");
+    if(!questions || questions.length < 1) {
+        setNoData("No Solved Questions found");
+        return;
+    }
 }
 
 function setNoData(message = "No data found") {
@@ -169,6 +187,7 @@ window.addEventListener("DOMContentLoaded", async () => {
         window.location.href = "./login.html";
     }
 
-    setListeners(data);
     setData({user: data, username});
+    setListeners(data);
+    setContentBox("courses", data)
 })
