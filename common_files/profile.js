@@ -84,7 +84,35 @@ async function followUser({data, username}) {
     }
 }
 
-async function chat() {
+async function removeCourse(courseId) {
+    const api = '/course/remove-course-from-user';
+
+    const options = {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({courseId}),
+        credentials: "include"
+    }
+
+    try {
+        const response = await fetch(server + api, options);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        
+        const result = await response.json();
+        return result.data;
+    } catch (error) {
+        console.error('Fetch Error:', error);
+        return null;
+    }
+}
+
+function chat() {
     alert("Chat feature is not available right now. \nBut you can use the chat feature in the upcoming version. \nStay tuned!");
 }
 
@@ -156,9 +184,19 @@ function setCourses(courses){
     let content = '';
 
     courses.forEach(course => {
+        let name = course.title.toLowerCase();
+        let url = null;
+        if(courseUrls[name]) {
+            if(courseUrls[name].url) {
+                url = courseUrls[name].url;
+            } else {
+                name = courseUrls[name].name;
+            }
+        }
+
         content += `
         <div class="course" _id="${course._id}">
-            <a href="#">
+            <a href="${url ? url : `../languages/outer.html?lang=${name}`}">
                 <div class="icon">
                     <img src="${course.image}" alt="${course.title} icon">
                 </div>
@@ -173,8 +211,15 @@ function setCourses(courses){
     const buttons = document.querySelectorAll(".courses .course button")
 
     buttons.forEach(button => {
-        button.addEventListener("click", () => {
-            const parent = button.parentElement.getAttribute("_id");
+        button.addEventListener("click", async () => {
+            const courseId = button.parentElement.getAttribute("_id");
+
+            const data = await removeCourse(courseId);
+
+            if (!data) { return; }
+
+            const parent = button.parentElement;
+            parent.parentElement.removeChild(parent);
             console.log(parent);
         })
     })
@@ -245,9 +290,9 @@ window.addEventListener("DOMContentLoaded", async () => {
     const data = await getData(username);
     // const data = null;
 
-    // if(!data) {
-    //     window.location.href = "./login.html";
-    // }
+    if(!data) {
+        window.location.href = "./login.html";
+    }
 
     setData(data);
     setListeners(data);
