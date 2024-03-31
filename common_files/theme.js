@@ -24,11 +24,11 @@ function themeTest () {
 
 function setListenersTheme () {
     let themeBtn = document.querySelector('#theme');
-    console.log("setListenersTheme", themeBtn);
+    // console.log("setListenersTheme", themeBtn);
     if(themeBtn)
       themeBtn.addEventListener("click", ()=>{
           themeTest();
-          console.log("clicked");
+          // console.log("clicked");
           themeBtn.innerHTML = theme === "light" ? "🌙" : "☀️";
       });
 }
