@@ -135,7 +135,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     const userCourses = await getUserCourses();
 
     if(!userCourses) {
-        window.location.href = "../login.html";
+        window.location.href = "./login.html";
         return;
     }
 
