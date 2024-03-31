@@ -1,7 +1,7 @@
-let themeBtn = document.querySelector('.themeBtn');
 let theme = localStorage.getItem("theme");
 
 function themeTest () {
+  let themeBtn = document.querySelector('.themeBtn');
     theme = localStorage.getItem("theme");
     if (!theme) {
       theme = "dark";
@@ -19,7 +19,7 @@ function themeTest () {
     document.body.classList.add(theme);
     themeBtn.innerHTML = theme === "light" ? "🌙" : "☀️";
     const frame = document.body.querySelector('iframe');
-    frame.contentWindow.postMessage({msg: "toggleTheme", theme}, "*");
+    if(frame) frame.contentWindow.postMessage({msg: "toggleTheme", theme}, "*");
 }
 
 function setListenersTheme () {
@@ -35,7 +35,7 @@ function setListenersTheme () {
 
 const setTheme = ()=>{
   theme = localStorage.getItem("theme");
-  themeBtn = document.querySelector('.themeBtn');
+  let themeBtn = document.querySelector('.themeBtn');
   // console.log(theme);
   if(!theme){
     theme = "dark";
