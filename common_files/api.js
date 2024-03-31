@@ -1,27 +1,26 @@
 const server = "http://127.0.0.1:8000/api/v1";
 
-async function toggleCourse (courseId, isAdd) {
-    const api = "/course/remove-course-from-user";
-
-    if(isAdd) api = "/course/add-course-to-user";
-
+async function apiCall(api, data) {
     const options = {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({courseId}),
+        ...(data && {body: JSON.stringify(data)}),
         credentials: "include"
     }
 
     try {
-        const data = await fetch(server + api, options)
-        .then(res => res.json())
-        .then(data => data.data);
-        // console.log(data);
-        return data;
+        const response = await fetch(server + api, options);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        return result.data;
     } catch (error) {
-        console.log(error.message);
+        console.error('Fetch Error:', error);
         return null;
     }
 }
