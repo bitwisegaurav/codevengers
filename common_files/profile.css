@@ -40,18 +40,26 @@ main {
 }
 
 main .maincontent {
-    height: 100%;
     width: 100%;
-    margin-top: 7rem;
-    /* border: 2px solid red; */
-    padding: 2rem 12%;
-    display: flex;
-    flex-direction: column;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 18rem 1fr;
     gap: 2rem;
-
+    margin-top: 7rem;
+    padding: 2rem 12%;
 }
 
-main article {
+main .maincontent .innercontainer{
+    height: 100%;
+    width: 100%;
+    /* max-width: calc(100vh - 2rem); */
+    /* border: 2px solid red; */
+    display: grid;
+    grid-template-rows: 14rem 1fr;
+    gap: 2rem;
+}
+
+main .maincontent article {
     display: flex;
     width: 100%;
     gap: max(15%, 2rem);
@@ -61,14 +69,14 @@ main article {
     padding: 1rem 5rem;
 }
 
-main article .profile {
+main .maincontent article .profile {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     /* padding: 20px 2rem; */
 }
 
-main article .profile .profile-pic {
+main .maincontent article .profile .profile-pic {
     width: 150px;
     aspect-ratio: 1/1;
     border: 2px solid rgb(242, 235, 255);
@@ -76,33 +84,33 @@ main article .profile .profile-pic {
     overflow: hidden;
 }
 
-main article .profile .profile-pic img {
+main .maincontent article .profile .profile-pic img {
     width: 100%;
     height: 100%;
 }
 
-main article .profile .profile-username {
+main .maincontent article .profile .profile-username {
     text-align: center;
 }
 
-main article .profile .profile-username p {
+main .maincontent article .profile .profile-username p {
     font-size: large;
     color: rgb(107, 80, 158);
 }
 
-main article .right {
+main .maincontent article .right {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 1rem;
 }
 
-main article .right .btns {
+main .maincontent article .right .btns {
     display: flex;
     gap: 1rem;
 }
 
-main article .right .btns button {
+main .maincontent article .right .btns button {
     flex-grow: 1;
     max-width: 12rem;
     padding: 0.5rem 1rem;
@@ -113,11 +121,11 @@ main article .right .btns button {
     cursor: pointer;
 }
 
-main article .right .btns button:hover {
+main .maincontent article .right .btns button:hover {
     background-color: rgb(148, 126, 194);
 }
 
-main article .profile-details {
+main .maincontent article .profile-details {
     flex-grow: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -125,23 +133,23 @@ main article .profile-details {
     padding: 20px;
 }
 
-main article .profile-details .data {
+main .maincontent article .profile-details .data {
     display: flex;
     align-items: center;
     /* flex-direction: column; */
     gap: 0.8rem;
 }
 
-main article .profile-details label {
+main .maincontent article .profile-details label {
     font-weight: bold;
     color: rgb(91, 67, 136);
 }
 
-main article .profile-details p {
+main .maincontent article .profile-details p {
     color: rgb(148, 126, 194);
 }
 
-main section {
+main .maincontent section {
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -149,14 +157,14 @@ main section {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-main section .top {
+main .maincontent section .top {
     background-color: #fff;
     display: flex;
     border-bottom: 1px solid #ddd;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
 }
 
-main section .top a {
+main .maincontent section .top a {
     flex-grow: 1;
     text-align: center;
     padding: 20px 0;
@@ -164,29 +172,29 @@ main section .top a {
     color: rgb(148, 126, 194);
 }
 
-main section .top .active {
+main .maincontent section .top .active {
     color: rgb(109 82 158);
     border-bottom: 2px solid rgb(109 82 158);
 }
 
-main section .top a:hover {
+main .maincontent section .top a:hover {
     background-color: rgb(246, 241, 255);
 }
 
-main section .bottom {
+main .maincontent section .bottom {
     height: calc(100% - 4rem);
     width: 100%;
     overflow: auto;
-    /* background-color: green; */
+    background-color: white;
 }
 
-main section .bottom .content {
+main .maincontent section .bottom .content {
     display: flex;
     gap: 2rem;
     height: calc(100% - 25%);
 }
 
-main section .bottom .content .center{
+main .maincontent section .bottom .content .center{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -194,11 +202,11 @@ main section .bottom .content .center{
     height: 100%;
 }
 
-main section .bottom .content .center p {
+main .maincontent section .bottom .content .center p {
     color: rgb(148, 126, 194);
 }
 
-main section .bottom .courses {
+main .maincontent section .bottom .courses {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
     gap: 2rem;
@@ -206,7 +214,7 @@ main section .bottom .courses {
     justify-content: space-around;
 }
 
-main section .bottom .courses .course {
+main .maincontent section .bottom .courses .course {
     width: 14rem;
     display: flex;
     flex-direction: column;
@@ -218,7 +226,7 @@ main section .bottom .courses .course {
     background-color: #fff;
 }
 
-main section .bottom .courses .course a {
+main .maincontent section .bottom .courses .course a {
     text-decoration: none;
     color: rgb(109 82 158);
     display: flex;
@@ -230,19 +238,19 @@ main section .bottom .courses .course a {
     gap: 1rem;
 }
 
-main section .bottom .courses .course a .icon {
+main .maincontent section .bottom .courses .course a .icon {
     width: 50%;
     aspect-ratio: 1/1;
     border: 2px solid rgb(242, 235, 255);
 }
 
-main section .bottom .courses .course a .icon img {
+main .maincontent section .bottom .courses .course a .icon img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-main section .bottom .courses .course button {
+main .maincontent section .bottom .courses .course button {
     width: 100%;
     padding: 0.5rem;
     border: none;
@@ -252,12 +260,12 @@ main section .bottom .courses .course button {
     color: rgb(255, 0, 0);
 }
 
-main section .bottom .courses .course button:hover {
+main .maincontent section .bottom .courses .course button:hover {
     background-color: rgba(255, 0, 0, 1);
     color: white;
 }
 
-main section .bottom .articles {
+main .maincontent section .bottom .articles {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -265,7 +273,7 @@ main section .bottom .articles {
     padding: 2rem 5%;
 }
 
-main section .bottom .articles .article {
+main .maincontent section .bottom .articles .article {
     display: flex;
     width: 100%;
     height: 6rem;
@@ -276,7 +284,7 @@ main section .bottom .articles .article {
     background-color: #fff;
 }
 
-main section .bottom .articles .article a {
+main .maincontent section .bottom .articles .article a {
     display: flex;
     width: calc(100% - 4rem);
     gap: 1rem;
@@ -284,32 +292,32 @@ main section .bottom .articles .article a {
     color: rgb(109 82 158);
 }
 
-main section .bottom .articles .article a .image  {
+main .maincontent section .bottom .articles .article a .image  {
     height: 100%;
     border: 2px solid rgb(242, 235, 255);
     border-radius: 10px;
     overflow: hidden;
 }
 
-main section .bottom .articles .article a .image img {
+main .maincontent section .bottom .articles .article a .image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-main section .bottom .articles .article a .details {
+main .maincontent section .bottom .articles .article a .details {
     display: flex;
     width: calc(100% - 6rem);
     flex-direction: column;
     justify-content: space-around;
 }
 
-main section .bottom .articles .article a .details h3 {
+main .maincontent section .bottom .articles .article a .details h3 {
     font-size: large;
     color: rgb(107, 80, 158);
 }
 
-main section .bottom .articles .article a .details p {
+main .maincontent section .bottom .articles .article a .details p {
     color: rgb(148, 126, 194);
     width: 100%;
     overflow: hidden;
@@ -317,13 +325,13 @@ main section .bottom .articles .article a .details p {
     white-space: nowrap;
 }
 
-main section .bottom .articles .article .btns {
+main .maincontent section .bottom .articles .article .btns {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-main section .bottom .articles .article .btns button {
+main .maincontent section .bottom .articles .article .btns button {
     width: 100%;
     height: max-content;
     padding: 0.3rem 1rem;
@@ -335,7 +343,7 @@ main section .bottom .articles .article .btns button {
     background-color: transparent;
 }
 
-main section .bottom .articles .article .btns button:hover {
+main .maincontent section .bottom .articles .article .btns button:hover {
     color: white;
     background-color: rgb(255, 0, 0);
 }
