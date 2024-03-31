@@ -44,6 +44,20 @@ function setListeners() {
     });
 }
 
+async function setHeader() {
+    fetch('../components/header.html')
+    .then(response => response.text())
+    .then(data => {
+        document.querySelector('nav').innerHTML = data;
+        const languagesBox = document.querySelector('nav ul li .languages');
+        if (languagesBox) {
+            languagesBox.parentElement.removeChild(languagesBox);
+        }
+        setTheme();
+        setListenersTheme();
+    });
+}
+
 async function getCourses() {
     const api = "/course/get-all-courses";
 
@@ -100,15 +114,16 @@ function setNoData(message = "No data found") {
 
 window.addEventListener("DOMContentLoaded", async () => {
     // setData()
-    const userCourses = await getUserCourses();
+    setHeader();
+    // const userCourses = await getUserCourses();
 
-    if(!userCourses) {
-        console.log("User is not logged in");
-        return;
-    }
+    // if(!userCourses) {
+    //     console.log("User is not logged in");
+    //     return;
+    // }
 
-    const courses = await getCourses(); 
+    // const courses = await getCourses(); 
 
-    setData(courses, userCourses?.courses);
-    setListeners();
+    // setData(courses, userCourses?.courses);
+    // setListeners();
 })
