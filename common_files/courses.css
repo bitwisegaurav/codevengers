@@ -91,6 +91,24 @@ main .container section {
     overflow: auto;
 }
 
+main .container section .content {
+    display: flex;
+    gap: 2rem;
+    height: calc(100% - 5%);
+}
+
+main .container section .content .center p {
+    color: rgb(148, 126, 194);
+}
+
+main .container section .content .center{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
 main .container section .courses {
     width: 100%;
     display: grid;
