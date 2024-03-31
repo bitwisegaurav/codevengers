@@ -20,6 +20,7 @@ async function fetchHeader() {
     })
     .then(() => {
         document.querySelector('nav ul li .languages').style.display = "none";
+        setListenersTheme();
     })
     .catch(err => console.log(err.message));
 }
@@ -47,7 +48,7 @@ async function getData(username) {
         const data = await fetch(server + api, options)
         .then(res => res.json())
         .then(data => data.data)
-        // .then(data => data.user);
+        // .then(data => data?.user);
         // console.log(data);
         return data;
     } catch (error) {
@@ -94,12 +95,12 @@ function setListeners(data) {
             const activeBox = topBox.querySelector('.active');
             activeBox.classList.remove('active');
             a.classList.add('active');
-            setContentBox(a.id, data.user);
+            setContentBox(a.id, data?.user);
         })
     })
 
     chatbtn.addEventListener('click', chat);
-    followbtn.addEventListener('click', () => followUser({data, username: data.user?.username}));
+    followbtn.addEventListener('click', () => followUser({data, username: data?.user?.username}));
 }
 
 function setContentBox(id, data) {
@@ -120,7 +121,7 @@ function setContentBox(id, data) {
 }
 
 function setData(data){
-    const user = data.user;
+    const user = data?.user;
     if(!user) return;
 
     document.querySelector('.coverImage img').src = user.coverImage;
@@ -239,6 +240,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     const username = url.searchParams.get('username');
 
     fetchHeader();
+    setTheme();
 
     const data = await getData(username);
     // const data = null;
@@ -249,5 +251,5 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     setData(data);
     setListeners(data);
-    setContentBox("courses", data.user)
+    setContentBox("courses", data?.user)
 })
