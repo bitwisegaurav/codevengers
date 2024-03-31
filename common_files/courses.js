@@ -42,6 +42,13 @@ function setListeners() {
             }
         });
     });
+
+    const notAvailableBtns = document.querySelectorAll('.notAvailable');
+    notAvailableBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            alert('This feature is not available yet. \nBut we are working on it. \nStay tuned for updates.');
+        });
+    });
 }
 
 async function setHeader() {
@@ -128,7 +135,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     const userCourses = await getUserCourses();
 
     if(!userCourses) {
-        console.log("User is not logged in");
+        window.location.href = "../login.html";
         return;
     }
 
