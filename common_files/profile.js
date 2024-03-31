@@ -129,6 +129,14 @@ function setListeners(data) {
 
     chatbtn.addEventListener('click', chat);
     followbtn.addEventListener('click', () => followUser({data, username: data?.user?.username}));
+
+
+    const notAvailableBtns = document.querySelectorAll('.notAvailable');
+    notAvailableBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            alert('This feature is not available yet. \nBut we are working on it. \nStay tuned for updates.');
+        });
+    });
 }
 
 function setContentBox(id, data) {
