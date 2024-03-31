@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../images/icon1.png" type="image/x-icon">
+    <link rel="stylesheet" href="../common_files/routes.css">
     <link rel="stylesheet" href="../common_files/courses.css">
     <title>Courses - Codevengers</title>
 </head>
@@ -11,34 +12,46 @@
     <nav></nav>
     <main>
         <div class="container">
-            <div class="upper">
-                <div class="searchBox">
-                    <input type="search" name="searchBox" id="searchBox" placeholder="Enter Course Name">
-                    <button type="button">Search</button>
+            <aside>
+              <div class="routes">
+                <a href="../index.html" id="homeroutes">Home</a>
+                <a href="#" id="profileroutes">Profile</a>
+                <a href="courses.html" id="coursesroutes"  class="active">Courses</a>
+                <a href="../languages/roadmaps.html" id="roadmaproutes">Roadmaps</a>
+                <a href="#" id="articlesroutes">Articles</a>
+                <a href="#" id="questionsroutes">Solved Questions</a>
+              </div>
+            </aside>
+            <div class="innercontainer">
+                <div class="upper">
+                    <div class="searchBox">
+                        <input type="search" name="searchBox" id="searchBox" placeholder="Enter Course Name">
+                        <button type="button">Search</button>
+                    </div>
                 </div>
+                <section>
+                    <div class="courses">
+                        <div class="course">
+                            <a href="#">
+                                <div class="image">
+                                    <img src="../images/js.png" alt="js image">
+                                </div>
+                                <div class="title">Javascript</div>
+                            </a>
+                            <button type="button" class="remove">&minus;</button>
+                        </div>
+                        <div class="course">
+                            <a href="#">
+                                <div class="image">
+                                    <img src="../images/js.png" alt="js image">
+                                </div>
+                                <div class="title">Javascript</div>
+                            </a>
+                            <button type="button">+</button>
+                        </div>
+                    </div>
+                </section>
             </div>
-            <section>
-                <div class="courses">
-                    <div class="course">
-                        <a href="#">
-                            <div class="image">
-                                <img src="../images/js.png" alt="js image">
-                            </div>
-                            <div class="title">Javascript</div>
-                        </a>
-                        <button type="button" class="remove">&minus;</button>
-                    </div>
-                    <div class="course">
-                        <a href="#">
-                            <div class="image">
-                                <img src="../images/js.png" alt="js image">
-                            </div>
-                            <div class="title">Javascript</div>
-                        </a>
-                        <button type="button">+</button>
-                    </div>
-                </div>
-            </section>
         </div>
     </main>
 </body>
