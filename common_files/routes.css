@@ -1,0 +1,38 @@
+aside {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+aside .routes {
+    display: flex;
+    height: max-content;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 7px;
+    gap: 1rem;
+    width: 100%;
+}
+
+aside .routes a {
+    width: 100%;
+    padding: 1rem;
+    /* background-color: #eee; */
+    border-radius: 7px;
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(91, 67, 136);
+    transition: none;
+}
+
+aside .routes a:hover {
+    background-color: rgba(137, 74, 255, 0.137);
+    /* color: white; */
+}
+
+aside .routes .active {
+    background-color: rgb(107, 80, 158) !important;
+    color: white !important;
+}
