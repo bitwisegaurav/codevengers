@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+    height: 100vh;
+}
+
+nav{
+    height: 5rem;
+    background-color: rgb(148, 126, 194);
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    height: calc(100% - 5rem);
+}
+
+main .container {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+}
+
+main .container .upper {
+    display: flex;
+    justify-content: center;
+}
+
+main .container .upper .searchBox {
+    display: flex;
+    width: 100%;
+    max-width: 60rem;
+    /* gap: 2rem; */
+    justify-content: center;
+    background-color: white;
+    /* padding: 10px 20px; */
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+main .container .upper .searchBox input[type="search"] {
+    width: 100%;
+    padding: 1rem 2rem;
+    outline: none;
+    /* border: 1px solid rgba(0, 0, 0, 0.411); */
+    border: none;
+    background-color: white;
+    font-size: medium;
+}
+
+main .container .upper .searchBox button {
+    padding: 5px 15px;
+    border: none;
+    /* border-radius: 7px; */
+    background-color: rgb(109 82 158);
+    color: white;
+    cursor: pointer;
+}
+
+main .container .upper .searchBox button:hover{
+    background-color: rgb(111, 35, 182);
+}
+
+main .container section {
+    width: 100%;
+    height: 100%;
+    padding: 2rem 3rem;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+}
+
+main .container section .courses {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    gap: 2rem;
+}
+
+main .container section .courses .course {
+    width: 15rem;
+    border: 2px solid rgba(137, 43, 226, 0.3);
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+main .container section .courses .course:hover{
+    transform: scale(1.01);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+main .container section .courses .course button {
+    width: 100%;
+    font-size: x-large;
+    border: none;
+    border-top: 1px solid rgba(137, 43, 226, 0.2);
+    padding: 5px;
+    background-color: transparent;
+    color: rgb(0, 212, 35);
+    cursor: pointer;
+}
+
+main .container section .courses .course button:hover{
+    background-color: rgb(0, 212, 35);
+    color: white;
+}
+
+main .container section .courses .course .remove{
+    color: rgb(255, 49, 49);
+    font-size: x-large;
+}
+
+main .container section .courses .course .remove:hover{
+    background-color: rgb(255, 49, 49);
+    color: white;
+}
+
+main .container section .courses .course a{
+    text-decoration: none;
+    color: rgb(73, 27, 116);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+main .container section .courses .course a .image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .container section .courses .course a .image img {
+    width: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+main .container section .courses .course a .title {
+    width: 100%;
+    text-align: center;
+}
