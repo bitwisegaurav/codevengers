@@ -1,8 +1,10 @@
 const server = "http://127.0.0.1:8000/api/v1";
 
-async function apiCall(api, data) {
+async function apiCall(api, method = "POST", data) {
+    if(!api) return null;
+
     const options = {
-        method: "POST",
+        method,
         headers: {
             'Content-Type': 'application/json'
         },
@@ -17,6 +19,7 @@ async function apiCall(api, data) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
+        
         const result = await response.json();
         return result.data;
     } catch (error) {
