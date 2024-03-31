@@ -88,9 +88,19 @@ function setData(data, userCourses) {
     const content = courses.map(course => {
         const isEnrolled = userCourses.find(userCourse => userCourse === course._id);
 
+        let name = course.title.toLowerCase();
+        let url = null;
+        if(courseUrls[name]) {
+            if(courseUrls[name].url) {
+                url = courseUrls[name].url;
+            } else {
+                name = courseUrls[name].name;
+            }
+        }
+
         return `
         <div class="course" _id="${course._id}">
-            <a href="#">
+            <a href="${url ? url : `../languages/outer.html?lang=${name}`}">
                 <div class="image">
                     <img src="${course.image}" alt="js image">
                 </div>
@@ -115,15 +125,15 @@ function setNoData(message = "No data found") {
 window.addEventListener("DOMContentLoaded", async () => {
     // setData()
     setHeader();
-    // const userCourses = await getUserCourses();
+    const userCourses = await getUserCourses();
 
-    // if(!userCourses) {
-    //     console.log("User is not logged in");
-    //     return;
-    // }
+    if(!userCourses) {
+        console.log("User is not logged in");
+        return;
+    }
 
-    // const courses = await getCourses(); 
+    const courses = await getCourses(); 
 
-    // setData(courses, userCourses?.courses);
-    // setListeners();
+    setData(courses, userCourses?.courses);
+    setListeners();
 })
