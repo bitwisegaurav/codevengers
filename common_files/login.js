@@ -18,6 +18,17 @@ loginbtn.addEventListener("click", function() {
     section.style.left = "";
 });
 
+function setUserData(user) {
+  const userData = {
+    _id: user._id,
+    username: user.username,
+    name: user.name,
+    avatar: user.avatar,
+  }
+
+  localStorage.setItem('user', JSON.stringify(userData));
+}
+
 signupForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -56,7 +67,8 @@ signupForm.addEventListener('submit', (e) => {
   .then(data => data._doc)
   .then(user => {
       console.log(user);
-      const usename = user?.username;
+      const username = user?.username;
+      setUserData(user);
 
       // Redirect to profile page
       window.location.href = `./profile.html?username=${username}`;
@@ -100,7 +112,7 @@ loginForm.addEventListener('submit', (e) => {
     .then(data => data.responseUser)
     .then(user => {
         const username = user.username;
-        localStorage.setItem('user', JSON.stringify(username));
+        setUserData(user);
         // console.log('Login successful:', user);
         loginerrorbox.innerHTML = "";
         
