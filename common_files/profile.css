@@ -241,7 +241,6 @@ main .maincontent section .bottom .courses .course a {
 main .maincontent section .bottom .courses .course a .icon {
     width: 50%;
     aspect-ratio: 1/1;
-    border: 2px solid rgb(242, 235, 255);
 }
 
 main .maincontent section .bottom .courses .course a .icon img {
