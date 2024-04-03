@@ -82,7 +82,7 @@ main .container section .articles .article {
 main .container section .articles .article a {
     display: flex;
     width: calc(100% - 4rem);
-    gap: 1rem;
+    gap: 2rem;
     text-decoration: none;
     color: rgb(109 82 158);
 }
@@ -102,7 +102,7 @@ main .container section .articles .article a .image img {
 
 main .container section .articles .article a .details {
     display: flex;
-    width: calc(100% - 10rem);
+    width: calc(100% - 11rem);
     flex-direction: column;
     gap: 5px;
     justify-content: space-around;
