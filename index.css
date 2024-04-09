@@ -328,7 +328,7 @@ section{
     height: 100%;
     max-width: 100%;
 }
-#java .langlogo img, #cpp .langlogo img,  #css .langlogo img,  #discrete .langlogo img, #roadmaps .langlogo img
+#java .langlogo img, #cpp .langlogo img,  #css .langlogo img,  #discrete .langlogo img, #roadmaps .langlogo img, #dotnet .langlogo img
 {
     height: 80% !important;
 }
