@@ -61,6 +61,11 @@
         "image": "cg.png"
     },
     {
+        "name": "dotnet",
+        "title": ".NET Framework",
+        "image": "dotnet.png"
+    },
+    {
         "name": "roadmaps",
         "url": "languages/roadmaps.html",
         "image": "roadmaps.png"
