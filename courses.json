@@ -56,6 +56,11 @@
         "image": "e-commerce.png"
     },
     {
+        "name": "cg",
+        "title": "Computer Graphics",
+        "image": "cg.png"
+    },
+    {
         "name": "roadmaps",
         "url": "languages/roadmaps.html",
         "image": "roadmaps.png"
