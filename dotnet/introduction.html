@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common_files/inner.css">
+    <title>Overview of .Net</title>
+</head>
+<body>
+    <h1>Introduction to .NET Framework</h1>
+    <p>The .NET Framework is a software development platform developed by Microsoft. It provides a programming model, a comprehensive set of libraries, and a runtime environment for creating and running applications.</p>
+    <p>With .NET, developers can build a wide range of applications, including web applications, desktop applications, mobile apps, gaming applications, and more.</p>
+    <p>One of the key features of .NET is its language independence. It supports multiple programming languages such as C#, VB.NET, F#, and more, allowing developers to choose the language they are most comfortable with. These languages are called .NET compliant languages.</p>
+    <p>.NET also includes a rich set of libraries and frameworks, such as ASP.NET for web development, Windows Forms and WPF for desktop applications, and Xamarin for cross-platform mobile app development.</p>
+    <p>Overall, .NET provides a powerful and versatile platform for building modern, scalable, and secure applications.</p>
+
+    <h2>Architecture and Components</h2>
+    <p>It is considered an engine for providing runtime services using its components like Common Language Runtime (CLR) and .NET Framework Class Library (FCL).</p>
+    <div class="structimg img-center"><img src="../examples/dotnet/introduction/architecture.png" alt="architecture of .net"></div>
+
+    <p>The main components of .NET Framework are : </p>
+    <ul>
+        <li>CLR</li>
+        <li>FCL</li>
+    </ul>
+
+    <h2>Common Language Runtime (CLR)</h2>
+    <p>CLR is the virtual machine which provides runtime environment for all types of .NET applications.</p>
+    <p>The source code is compiled by that language's compiler into CLR's intermediate language called MSIL (MicroSoft Intermediate Language).</p>
+    <p>CLR also manages memory, threads, exceptions, code exection, code safety, verification and compilation.</p>
+
+    <h3>MSIL (MicroSoft Intermediate Language) or IL (Intermediate Language)</h3>
+    <p>MSIL is a low-level, platform-independent representation of the code that can be executed by the CLR. It is comparable to bytecode in Java.</p>
+
+    <h3>Working of CLR</h3>
+    <ul>
+        <li>When a .NET application is executed, the .NET Language Compiler compiles it to MSIL.</li>
+        <li>Then JIT (Just In Time) compiler component of CLR converts MSIL code into native code of machine.</li>
+    </ul>
+
+    <h3>Components of CLR</h3>
+    <ul>
+        <li>Common Type System (CTS)</li>
+        <li>Common Language Specification (CLS)</li>
+        <li>Garbage Collector (GC)</li>
+        <li>Just in time compiler (JIT)</li>
+        <li>Metadata and Assemblies</li>
+    </ul>
+
+</body>
+<script src="../common_files/innerTheme.js"></script>
+<script src="../common_files/jsPrograms-inner.js"></script>
+</html>
