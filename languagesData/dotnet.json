@@ -1,0 +1,54 @@
+{
+    "name": ".NET",
+    "folder": "dotnet",
+    "default": 0,
+    "chapters": [
+        {
+            "name": "Introduction to .NET",
+            "file": "introduction"
+        },
+        {
+            "name": "Fundamentals of VB.NET"
+        },
+        {
+            "name": "Control Structures",
+            "file": "web"
+        },
+        {
+            "name": "Commonly used controls"
+        },
+        {
+            "name": "Built in Functions"
+        },
+        {
+            "name": "User defined procedures and functions"
+        },
+        {
+            "name": "Arrays"
+        },
+        {
+            "name": "Classes and Exception Handling"
+        },
+        {
+            "name": "Managing Data with MS Access"
+        },
+        {
+            "name": "ADO.NET"
+        },
+        {
+            "name": "Data GridView Control"
+        },
+        {
+            "name": "ASP.NET"
+        },
+        {
+            "name": "ASP.NET Built in Objects and State Management"
+        },
+        {
+            "name": "Validator Controls"
+        },
+        {
+            "name": "Deploying .NET Applications"
+        }
+    ]
+}
