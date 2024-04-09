@@ -346,7 +346,7 @@ section{
     /* filter: ; */
 }
 
-#discrete .langname, #cn .langname, #networks .langname {
+#discrete .langname, #cn .langname, #networks .langname, #cg .langname {
     font-size: 1.1rem !important;
 }
 #courseSection .courseCont .boxes .box #startbtn{
