@@ -40,7 +40,7 @@ main .container {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     padding: 1.5rem 2rem 2rem;
     border-radius: 15px;
-    gap: 3rem;
+    gap: 1.5rem;
 }
 
 .dark main .container {
@@ -86,6 +86,23 @@ main .container .upper button:hover {
 
 .dark main .container .upper button:hover {
     background-color: #eee;
+}
+
+main .container #errorbox {
+    color: red;
+    font-size: large;
+}
+
+main .container #errorbox.success {
+    color: #00b100;
+}
+
+.dark main .container #errorbox {
+    color: #ff7676;
+}
+
+.dark main .container #errorbox.success {
+    color: #00ff00;
 }
 
 main .container form {
