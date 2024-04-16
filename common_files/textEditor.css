@@ -37,7 +37,7 @@ main {
 	background-color: #fff;
 	border-radius: 10px;
 	overflow: hidden;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
 .editorBox {
@@ -52,7 +52,7 @@ main {
 }
 .ql-toolbar.ql-snow{
 	border: none;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #bbb;
 }
 
 #editor {
