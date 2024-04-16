@@ -115,6 +115,33 @@ nav ul .navigation button{
 nav ul .navigation a:hover{
     transform: scale(1.1);
 }
+
+nav ul .navigation #profilebtn {
+    display: none;
+    padding: 0;
+    background-color: transparent;
+}
+
+nav ul .navigation #profilebtn .image{
+    height: 2.5rem;
+    aspect-ratio: 1/1;
+    padding: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+nav ul .navigation #profilebtn .image img{
+    height: 100%;
+}
+
+nav ul .navigation #profilebtn:hover{
+    transform: none;
+}
+
 .comname{
     /* border: 2px solid green; */
     cursor: pointer;

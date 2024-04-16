@@ -27,10 +27,15 @@
           </li>
           <li class="comname"><a href="index.html">Codevengers</a></li>
           <li class="navigation">
+            <button type="button" id="theme">☀️</button>
             <a href="#about" class="navigatebtn">About</a>
             <a href="#contact" class="navigatebtn">Contact</a>
-            <a href="pages/login.html">Login/Sign Up</a>
-            <button type="button" id="theme">☀️</button>
+            <a href="pages/login.html" id="loginbtn">Login/Sign Up</a>
+            <a href="pages/profile.html" id="profilebtn">
+              <div class="image">
+                <img src="https://w7.pngwing.com/pngs/527/663/png-transparent-logo-person-user-person-icon-rectangle-photography-computer-wallpaper.png" alt="image">
+              </div>
+            </a>
           </li>
         </ul>
       </nav>
@@ -136,6 +141,7 @@
   </body>
   <!-- <script src="common_files/index.js"></script> -->
   <script src="index.js"></script>
+  <script src="common_files/api.js"></script>
   <script>
       window.addEventListener("DOMContentLoaded", async () => {
         setTheme();
@@ -144,6 +150,7 @@
         // console.log(data);
 
         setData(data);
+        getUser();
         const themeBtn = document.querySelector("#theme");
         if(themeBtn) themeBtn.addEventListener("click", toggleTheme);
       });

@@ -55,3 +55,20 @@ function setData(data){
 
   outerBox.innerHTML = content;
 }
+
+async function getUser() {
+  const api = '/user/get-user';
+
+  const data = await apiCall(api);
+
+  if (!data) { return; }
+
+  const user = data.data.data;
+
+  const loginbtn = document.getElementById("loginbtn");
+  const profilebtn = document.getElementById("profilebtn");
+
+  loginbtn.style.display = "none";
+  profilebtn.style.display = "block";
+  if(user?.image) profilebtn.querySelector('.image img').src = user.image;
+}
