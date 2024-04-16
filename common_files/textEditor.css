@@ -12,7 +12,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: rgba(109, 82, 158, 0.357);
+	background-color: rgba(109, 82, 158, 0.144);
 }
 
 .dark {
@@ -50,11 +50,19 @@ main {
 .ql-toolbar {
 	background-color: #fff;
 }
+.ql-toolbar.ql-snow{
+	border: none;
+	border-bottom: 1px solid #ccc;
+}
 
 #editor {
 	height: 100%;
 	overflow: auto;
 	background-color: #fff;
+}
+
+.ql-container.ql-snow{
+	border: none;
 }
 
 .articlebtns {
@@ -74,6 +82,10 @@ main {
 	border-radius: 5px;
 	cursor: pointer;
 	transition: all 0.1s ease-in-out;
+}
+
+.articlebtns button:hover {
+	background-color: rgb(74, 57, 106);
 }
 
 .dark .articlebtns button {
