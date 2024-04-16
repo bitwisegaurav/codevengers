@@ -171,11 +171,12 @@ main .container form .data textarea:focus {
 }
 
 main .container form button {
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1rem;
     border: none;
     border-radius: 5px;
     background-color: rgb(109 82 158);
     color: #fff;
+    font-size: 100%;
     cursor: pointer;
     transition: background-color 0.1s ease;
 }
