@@ -36,6 +36,8 @@ async function createArticle(data) {
             errorbox.classList.add('success');
 
             setTimeout(function() {
+                errorbox.classList.remove('success');
+                errorbox.innerHTML = "";
                 window.location.href = `./articles.html`;
             }, 2000)
         }
