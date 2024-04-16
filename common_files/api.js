@@ -1,6 +1,6 @@
 const server = "http://127.0.0.1:8000/api/v1";
 
-async function apiCall(api, method = "POST", data) {
+async function apiCall(api, method = "GET", data) {
     if(!api) return null;
 
     const options = {
