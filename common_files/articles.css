@@ -11,6 +11,10 @@ body {
     height: 100vh;
 }
 
+.dark {
+	background-color: #2e2b52;
+}
+
 nav{
     height: 5rem;
     background-color: rgb(148, 126, 194);
@@ -60,6 +64,11 @@ main .container section {
     overflow: auto;
 }
 
+.dark main .container section {
+    background-color: #403c69;
+    color: #fff;
+}
+
 main .container section .articles {
     width: 100%;
     display: flex;
@@ -79,6 +88,11 @@ main .container section .articles .article {
     border: 1px solid rgba(141, 103, 218, 0.4);
     background-color: #fff;
     transition: all 0.1s ease-in-out;
+}
+
+.dark main .container section .articles .article {
+    border-color: rgba(255, 255, 255, 0.4);
+    background-color: transparent;
 }
 
 main .container section .articles .article a {
@@ -116,12 +130,20 @@ main .container section .articles .article a .details h3 {
     color: rgb(107, 80, 158);
 }
 
+.dark main .container section .articles .article a .details h3 {
+    color: #fff;
+}
+
 main .container section .articles .article a .details p {
     color: rgb(148, 126, 194);
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.dark main .container section .articles .article a .details p {
+    color: rgba(255, 255, 255, 0.5);
 }
 
 main .container section .articles .article a .details .user {
@@ -149,6 +171,10 @@ main .container section .articles .article a .details .user .username {
     display: flex;
     align-items: center;
     width: max-content;
+}
+
+.dark main .container section .articles .article a .details .user .username {
+    color: #fff;
 }
 
 main .container section .articles .article a .details .user .like {
@@ -187,12 +213,24 @@ main .container section .articles .article .btns button {
     background-color: transparent;
 }
 
+.dark main .container section .articles .article .btns button {
+    color: #ff3131;
+}
+
 main .container section .articles .article .btns button:hover {
     color: white;
     background-color: rgb(255, 0, 0);
 }
 
+.dark main .container section .articles .article .btns button:hover {
+    background-color: #ff2727;
+}
+
 main .container section .articles .article:hover {
     transform: scale(1.01);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark main .container section .articles .article:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
