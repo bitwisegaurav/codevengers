@@ -10,6 +10,10 @@ body {
     height: 100vh;
 }
 
+.dark {
+	background-color: #2e2b52;
+}
+
 nav{
     height: 5rem;
     background-color: rgb(148, 126, 194);
@@ -53,12 +57,13 @@ main .container .upper .searchBox {
     max-width: 60rem;
     /* gap: 2rem; */
     justify-content: center;
-    background-color: white;
+    /* background-color: white; */
     /* padding: 10px 20px; */
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
+
 
 main .container .upper .searchBox input[type="search"] {
     width: 100%;
@@ -70,6 +75,15 @@ main .container .upper .searchBox input[type="search"] {
     font-size: medium;
 }
 
+.dark main .container .upper .searchBox input[type="search"]{
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.dark main .container .upper .searchBox input[type="search"]::placeholder {
+    color: #fff;
+}
+
 main .container .upper .searchBox button {
     padding: 5px 15px;
     border: none;
@@ -79,8 +93,18 @@ main .container .upper .searchBox button {
     cursor: pointer;
 }
 
+.dark main .container .upper .searchBox button{
+    background-color: #d5c6fd;
+    color: #2e2b52;
+    transition: all 0.1s ease-in-out;
+}
+
 main .container .upper .searchBox button:hover{
     background-color: rgb(111, 35, 182);
+}
+
+.dark main .container .upper .searchBox button:hover{
+    background-color: #947ec2;
 }
 
 main .container .innercontainer section {
@@ -93,6 +117,11 @@ main .container .innercontainer section {
     overflow: auto;
 }
 
+.dark main .container section {
+    background-color: #403c69;
+    color: #fff;
+}
+
 main .container section .content {
     display: flex;
     gap: 2rem;
@@ -101,6 +130,10 @@ main .container section .content {
 
 main .container section .content .center p {
     color: rgb(148, 126, 194);
+}
+
+.dark main .container section .content .center p {
+    color: #fff;
 }
 
 main .container section .content .center{
@@ -127,9 +160,17 @@ main .container section .courses .course {
     overflow: hidden;
 }
 
+.dark main .container section .courses .course {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
 main .container section .courses .course:hover{
     transform: scale(1.01);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark main .container section .courses .course:hover{
+    background: rgba(255, 255, 255, 0.1);
 }
 
 main .container section .courses .course button {
@@ -141,6 +182,10 @@ main .container section .courses .course button {
     background-color: transparent;
     color: rgb(0, 212, 35);
     cursor: pointer;
+}
+
+.dark main .container section .courses .course button {
+    border-top-color: rgba(255, 255, 255, 0.3);
 }
 
 main .container section .courses .course button:hover{
@@ -166,6 +211,10 @@ main .container section .courses .course a{
     gap: 1rem;
     padding: 1rem;
     height: calc(100% - 2.5rem);
+}
+
+.dark main .container section .courses .course a{
+    color: #fff;
 }
 
 main .container section .courses .course a .image {
