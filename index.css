@@ -224,6 +224,7 @@ main .container .maincont{
 main .container .maincont p{
     text-align: center;
     line-height: 1.5rem;
+    transition: all 0.1s ease-in-out;
 }
 main .container .maincont #coursebtn{
     display: inline-block;
@@ -250,6 +251,7 @@ main .container .maincont .name{
     font-size: 4rem; 
     font-family: 'JetBrains Mono', monospace;
     margin-bottom: 1rem;
+    transition: all 0.1s ease-in-out;
 }
 
 /* Language Section */
