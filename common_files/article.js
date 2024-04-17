@@ -22,7 +22,7 @@ function getId() {
 async function getArticle(id) {
     if(!id) return null;
 
-    const api = `http:127.0.0.1/api/v1/article/get-article?id=${id}`;
+    const api = `/article/get-article?id=${id}`;
 
     const data = await apiCall(api, "GET", null);
 
