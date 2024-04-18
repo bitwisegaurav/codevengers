@@ -50,6 +50,7 @@ input[type="text"] {
 
 button[type="submit"] {
     padding: 1rem 1rem;
+    display: none;
     background-color: blueviolet;
     color: #fff;
     border: none;
@@ -65,11 +66,11 @@ button[type="submit"]:hover {
 main {
     display: flex;
     justify-content: center;
-    height: 100%;
-    overflow: auto;
     background-color: rgb(174, 123, 223);
     padding: 20px;
     border-radius: 10px;
+    height: 100%;
+    overflow: auto;
 }
 
 .search-results {
@@ -77,6 +78,7 @@ main {
     flex-direction: column;
     gap: 20px;
     width: 100%;
+    height: max-content;
     /* border: 2px solid red; */
 }
 
@@ -88,6 +90,8 @@ main {
     display: flex;
     align-items: center;
     gap: 3rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .user img {
@@ -100,4 +104,24 @@ main {
     color: blueviolet;
     font-size: 130%;
     font-weight: bold;
+    width: 100%;
+}
+
+.user button {
+    padding: 0.5rem 1rem;
+    background-color: blueviolet;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+.user button:hover {
+    background-color: rgb(107, 36, 173);
+}
+
+.user:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }

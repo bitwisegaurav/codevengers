@@ -13,23 +13,27 @@
     <div class="container">
         <header>
             <form action="#" method="GET">
-                <input type="text" name="search" placeholder="Search users...">
-                <button type="submit">Search</button>
+                <input type="text" name="search" id="searchbar" placeholder="Search users...">
+                <button type="submit" id="submitbtn">Search</button>
             </form>
         </header>
         <main>
             <div class="search-results">
-                <div class="user">
+                <a href="#" class="user">
                     <img src="http://res.cloudinary.com/dujd69tub/image/upload/v1709444868/sf25kufqpcrur6ccxgqn.jpg" alt="User 1">
-                    <p>User 1</p>
-                </div>
-                <div class="user">
+                    <p class="username">User 1</p>
+                    <button type="button">Follow</button>
+                </a>
+                <a href="#" class="user">
                     <img src="http://res.cloudinary.com/dujd69tub/image/upload/v1709444868/sf25kufqpcrur6ccxgqn.jpg" alt="User 2">
-                    <p>User 2</p>
-                </div>
+                    <p class="username">User 2</p>
+                    <button type="button">Follow</button>
+                </a>
             </div>
         </main>
     </div>
 </body>
-
+<script src="../common_files/theme.js"></script>
+<script src="../common_files/api.js"></script>
+<script src="../common_files/search.js"></script>
 </html>
