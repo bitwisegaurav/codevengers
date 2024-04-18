@@ -64,8 +64,51 @@ main .container .upper {
     gap: 3rem;
 }
 
-main .container .upper h1 {
+main .container .upper .top {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+main .container .upper .top h1 {
     font-size: 250%;
+}
+
+main .container .upper .top .owner {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    /* padding-left: 3rem; */
+    gap: 1rem;
+    text-decoration: none;
+}
+
+main .container .upper .top .owner .owners-image {
+    width: 2rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+main .container .upper .top .owner .owners-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .container .upper .top .owner .username {
+    color: black;
+}
+
+main .container .upper .top .owner .name {
+    color: #947ec2;
+}
+.dark main .container .upper .top .owner .username {
+    color: #d6ceff;
+}
+
+.dark main .container .upper .top .owner .name {
+    color: #ac9bffe0;
 }
 
 main .container .upper .image {
@@ -89,4 +132,17 @@ main .container .lower {
 
 main .container .lower .content {
     line-height: 150%;
+}
+
+main .container .lower .content img {
+    width: 100%;
+    height: auto;
+}
+
+main .container .lower .content a {
+    color: #6f4dc9;
+}
+
+.dark main .container .lower .content a {
+    color: #b99fff;
 }
