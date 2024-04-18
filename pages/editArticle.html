@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../images/icon1.png" type="image/x-icon">
     <link rel="stylesheet" href="../common_files/editArticle.css">
+    <link rel="stylesheet" href="../common_files/header.css">
     <title>Edit Article - Codevengers</title>
 </head>
 <body>
     <nav></nav>
     <main>
         <div class="container">
+            <div id="error"></div>
             <div class="upper">
                 <h1 class="title">Edit Article</h1>
             </div>
@@ -18,12 +20,12 @@
                 <div class="content">
                     <form action="" method="POST">
                         <label for="title">Title</label>
-                        <input type="text" name="title" id="title" placeholder="Enter your title" required>
+                        <input type="text" name="title" id="title" placeholder="Enter your title">
                         <div class="data">
                             <label for="content">Content</label>
                             <a href="textEditor.html" target="_blank">Write Content</a>
                         </div>
-                        <textarea name="content" id="content" cols="30" rows="10" placeholder="Enter your content" required></textarea>
+                        <textarea name="content" id="content" cols="30" rows="10" placeholder="Enter your content"></textarea>
                         <button type="submit">Submit</button>
                     </form>
                 </div>
@@ -31,4 +33,8 @@
         </div>
     </main>
 </body>
+<script src="../common_files/theme.js"></script>
+<script src="../common_files/api.js"></script>
+<script src="../common_files/setHeader.js"></script>
+<script src="../common_files/editArticle.js"></script>
 </html>
