@@ -48,16 +48,16 @@ async function createArticle(data) {
 }
 
 function setListeners() {
-    const form = document.querySelector('form');
-    form.addEventListener('submit', async (e) => {
+    const createArticleform = document.querySelector('form');
+    createArticleform.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const form = new FormData(signupForm);
-        const {title, content, image} = Object.fromEntries(form);
+        const form = new FormData(createArticleform);
+        const {title, body, image} = Object.fromEntries(form);
     
         // Validate form
         if(
-        [title, content].some(field => !field || field === "")
+        [title, body].some(field => !field || field === "")
         ) {
             errorbox.innerHTML = "All fields are required";
             return;
