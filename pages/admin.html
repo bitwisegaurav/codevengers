@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../images/icon1.png" type="image/x-icon">
+    <link rel="stylesheet" href="../common_files/header.css">
     <link rel="stylesheet" href="../common_files/admin.css">
     <title>Admin - Codevengers</title>
 </head>
@@ -13,20 +14,20 @@
         <aside>
             <h1>Admin Panel</h1>
             <ul>
-                <li><a href="#" class="active">Users data</a></li>
-                <li><a href="#">Courses</a></li>
-                <li><a href="#">Articles</a></li>
-                <li><a href="#">Roadmaps</a></li>
-                <li><a href="#">Practice Questions</a></li>
-                <li><a href="#">Interview Questions</a></li>
-                <li><a href="#">PYQs</a></li>
-                <li><a href="#">Solved PYQs</a></li>
-                <li><a href="#">Admins</a></li>
+                <li><a href="#" id="users" class="active">Users</a></li>
+                <li><a href="#" id="courses">Courses</a></li>
+                <li><a href="#" id="articles">Articles</a></li>
+                <li><a href="#" id="roadmaps" class="notAvailable">Roadmaps</a></li>
+                <li><a href="#" id="practiceQuestions" class="notAvailable">Practice Questions</a></li>
+                <li><a href="#" id="interviewQuestions" class="notAvailable">Interview Questions</a></li>
+                <li><a href="#" id="pyqs" class="notAvailable">PYQs</a></li>
+                <li><a href="#" id="solvedPYQs" class="notAvailable">Solved PYQs</a></li>
+                <li><a href="#" id="admins" class="notAvailable">Admins</a></li>
             </ul>
         </aside>
         <main>
-            <div class="nodata">
-                <h1 class="title">No data found</h1>
+            <div id="nodata">
+                <h1 id="title">No data found</h1>
             </div>
             <div class="container">
                 <div class="upper">
@@ -62,7 +63,8 @@
                             <button type="button">+</button>
                         </div>
                     </div>
-                    <!-- <div class="users">
+                    <div id="bottom"></div>
+                    <!-- <div id="bottom" class="users">
                         <div class="user">
                             <div class="image">
                                 <img src="http://res.cloudinary.com/dujd69tub/image/upload/v1709444868/sf25kufqpcrur6ccxgqn.jpg" alt="User 1">
@@ -73,7 +75,7 @@
                             </div>
                         </div>
                     </div> -->
-                    <!-- <div class="courses">
+                    <!-- <div id="bottom" class="courses">
                         <div class="course">
                             <a href="#">
                                 <div class="icon">
@@ -88,7 +90,7 @@
                             </div>
                         </div>
                     </div> -->
-                    <div class="articles">
+                    <!-- <div id="bottom" class="articles">
                         <div class="article">
                             <a href="#">
                                 <div class="image">
@@ -102,12 +104,6 @@
                                             <img src="http://res.cloudinary.com/dujd69tub/image/upload/v1709444868/sf25kufqpcrur6ccxgqn.jpg" alt="">
                                         </div>
                                         <p class="username">bitwisegaurav</p>
-                                        <!-- <div class="like">
-                                            <button type="button">    
-                                                <span class="material-icons-outlined">favorite_border</span>
-                                            </button>
-                                            <p class="likeCount">3</p>
-                                        </div> -->
                                     </div>
                                 </div>
                             </a>
@@ -115,10 +111,13 @@
                                 <button type="button">&Cross;</button>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </main>
     </section>
 </body>
+<script src="../common_files/theme.js"></script>
+<script src="../common_files/api.js"></script>
+<script src="../common_files/admin.js"></script>
 </html>
