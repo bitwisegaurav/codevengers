@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../images/icon1.png" type="image/x-icon">
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="../common_files/admin.css">
     <title>Admin - Codevengers</title>
 </head>
 <body>
     <nav></nav>
     <section>
         <aside>
+            <h1>Admin Panel</h1>
             <ul>
                 <li><a href="#" class="active">Users data</a></li>
                 <li><a href="#">Courses</a></li>
@@ -24,6 +25,9 @@
             </ul>
         </aside>
         <main>
+            <div class="nodata">
+                <h1 class="title">No data found</h1>
+            </div>
             <div class="container">
                 <div class="upper">
                     <!-- <h1 class="title">Users data</h1> -->
@@ -35,6 +39,10 @@
                         <div class="label">No. of users</div>
                     </div> -->
                     <div class="dataBox">
+                        <div class="data">1</div>
+                        <div class="label">No. of articles</div>
+                    </div>
+                    <!-- <div class="dataBox">
                         <div class="data">32</div>
                         <div class="label">Total no. of courses</div>
                     </div>
@@ -45,11 +53,14 @@
                     <div class="dataBox">
                         <div class="data">0</div>
                         <div class="label">Total no. of assignments</div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="lower">
                     <div class="top">
                         <input type="search" id="searchBar" placeholder="Seach user by username">
+                        <div class="btns">
+                            <button type="button">+</button>
+                        </div>
                     </div>
                     <!-- <div class="users">
                         <div class="user">
@@ -62,17 +73,46 @@
                             </div>
                         </div>
                     </div> -->
-                    <div class="courses">
+                    <!-- <div class="courses">
                         <div class="course">
                             <a href="#">
                                 <div class="icon">
                                     <img src="http://res.cloudinary.com/dujd69tub/image/upload/v1710719793/wlzoofbw5e8wl1mbdrjt.png" alt="Javascript icon">
                                 </div>
                                 <p class="title">Javascript</p>
+                                <p class="modules">No. of chapters 12</p>
                             </a>
                             <div class="btns">
                                 <button type="button" class="editbtn">Edit</button>
                                 <button type="button" class="removebtn">Remove</button>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="articles">
+                        <div class="article">
+                            <a href="#">
+                                <div class="image">
+                                    <img src="http://res.cloudinary.com/dujd69tub/image/upload/v1712076172/vylujtys5dr2ujsw3cbe.webp" alt="">
+                                </div>
+                                <div class="details">
+                                    <h3 class="title">Installing Linux on an iMac</h3>
+                                    <p class="description">Many people may like the look and feel of Linux over other Desktop Operating Systems (OS). For this reason someone may want to install Linux on a Mac.</p>
+                                    <div class="user">
+                                        <div class="image">
+                                            <img src="http://res.cloudinary.com/dujd69tub/image/upload/v1709444868/sf25kufqpcrur6ccxgqn.jpg" alt="">
+                                        </div>
+                                        <p class="username">bitwisegaurav</p>
+                                        <!-- <div class="like">
+                                            <button type="button">    
+                                                <span class="material-icons-outlined">favorite_border</span>
+                                            </button>
+                                            <p class="likeCount">3</p>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="btns">
+                                <button type="button">&Cross;</button>
                             </div>
                         </div>
                     </div>
