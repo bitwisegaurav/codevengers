@@ -130,7 +130,6 @@ function setListeners(data) {
     chatbtn.addEventListener('click', chat);
     followbtn.addEventListener('click', () => followUser({data, username: data?.user?.username}));
 
-
     const notAvailableBtns = document.querySelectorAll('.notAvailable');
     notAvailableBtns.forEach((btn) => {
         btn.addEventListener('click', () => {
@@ -255,20 +254,34 @@ function setArticles(articles){
                 </div>
             </a>
             <div class="btns">
-                <button type="button">&Cross;</button>
+                <button type="button" class="edit">&#x270E;</button>
+                <button type="button" class="remove">&Cross;</button>
             </div>
         </div>`;
     })
 
     bottomBox.innerHTML = `<div class="articles">${content}</div>`;
 
-    const buttons = document.querySelectorAll(".articles .article .btns button")
+    const articleBoxes = document.querySelectorAll(".articles .article");
+    articleBoxes.forEach(articleBox => {
+        const editBtn = articleBox.querySelector(".edit");
+        const removeBtn = articleBox.querySelector(".remove");
+        const id = articleBox.getAttribute("_id");
 
-    buttons.forEach(button => {
-        button.addEventListener("click", () => {
-            const parent = button.parentElement.parentElement.getAttribute("_id");
-            console.log(parent);
-        })
+        editBtn.addEventListener("click", () => {
+            window.location.href = `./editArticle.html?id=${id}`;
+        });
+
+        removeBtn.addEventListener("click", async () => {
+            const api = `/article/delete-article/${id}`;
+
+            try {
+                await apiCall(api, 'DELETE', null);
+                articleBox.parentElement.removeChild(articleBox);
+            } catch (error) {
+                console.log(error.message);
+            }
+        });
     })
 }
 
@@ -295,12 +308,58 @@ window.addEventListener("DOMContentLoaded", async () => {
     fetchHeader();
     setTheme();
 
-    const data = await getData(username);
+    // const data = await getData(username);
+    const data = {
+        user: {
+            _id: "60f3b3b3b3b3b3b3b3b3b3",
+            username: "testuser",
+            name: "Test User",
+            avatar: "https://www.w3schools.com/howto/img_avatar.png",
+            coverImage: "https://www.w3schools.com/howto/img_avatar.png",
+            articles: [
+                {
+                    _id: "60f3b3b3b3b3b3b3b3b3b3",
+                    title: "Python",
+                    imageURL: "https://www.python.org/static/img/python-logo.png",
+                    body: "<p>Python is a programming language that lets you work quickly and integrate systems more effectively.</p>",
+                    owner: {
+                        username: "testuser",
+                        avatar: "https://www.w3schools.com/howto/img_avatar.png"
+                    }
+                },
+                {
+                    _id: "60f3b3b3b3b3b3b3b3b3b3",
+                    title: "JavaScript",
+                    imageURL: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+                    body: "<p>JavaScript is a programming language that enables you to interact with web pages.</p>",
+                    owner: {
+                        username: "testuser",
+                        avatar: "https://www.w3schools.com/howto/img_avatar.png"
+                    }
+                }
+            ],
+            followers: 0,
+            following: 0,
+            courses: [
+                {
+                    _id: "60f3b3b3b3b3b3b3b3b3b3",
+                    title: "Python",
+                    image: "https://www.python.org/static/img/python-logo.png"
+                },
+                {
+                    _id: "60f3b3b3b3b3b3b3b3b3b3",
+                    title: "JavaScript",
+                    image: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+                }
+            ],
+            solvedQuestions: []
+        },
+    }
     // const data = null;
 
-    if(!data) {
-        window.location.href = "./login.html";
-    }
+    // if(!data) {
+    //     window.location.href = "./login.html";
+    // }
 
     setData(data);
     setListeners(data);
