@@ -8,22 +8,22 @@ const editimages = document.querySelectorAll(".editimage");
 let userdetails = {};
 
 async function getUserData() {
-    // const api = "/user/get-user";
-    // const user = await apiCall(api);
+    const api = "/user/get-user";
+    const user = await apiCall(api);
 
-    const user = {
-        _id: "1",
-        username: "JohnDoe",
-        name: "John Doe",
-        email: "johndoe@gmail.com",
-        avatar: "https://randomuser.me/api/portraits/men/1.jpg",
-        // coverImage: "https://randomuser.me/api/portraits/men/1.jpg",
-        coverImage: "http://res.cloudinary.com/dujd69tub/image/upload/v1709444869/oy1gqqnuidkbr9v1tmh1.jpg",
-    }
+    // const user = {
+    //     _id: "1",
+    //     username: "JohnDoe",
+    //     name: "John Doe",
+    //     email: "johndoe@gmail.com",
+    //     avatar: "https://randomuser.me/api/portraits/men/1.jpg",
+    //     // coverImage: "https://randomuser.me/api/portraits/men/1.jpg",
+    //     coverImage: "http://res.cloudinary.com/dujd69tub/image/upload/v1709444869/oy1gqqnuidkbr9v1tmh1.jpg",
+    // }
 
-    if(user) { userdetails = {...user}; }
+    if(user) { userdetails = {...user.user}; }
 
-    return user;
+    return user.user;
 }
 
 function setUserData(user) {
@@ -64,15 +64,12 @@ function setListeners() {
         const api = `/user/update-user`;
 
         try {
-            const response = await apiCall(api, "PATCH", data);
+            await apiCall(api, "PATCH", data);
+            alert("User details updated successfully");
         } catch (error) {
             console.log(error);
             alert("Something went wrong");
             return;
-        }
-
-        if(response) {
-            alert("User details updated successfully");
         }
     })
 
@@ -91,7 +88,7 @@ function setListeners() {
             return;
         }
 
-        if(newPassword !== confirmPassword) {
+        if(password !== confirmPassword) {
             alert("Passwords do not match");
             return;
         }
@@ -105,15 +102,12 @@ function setListeners() {
 
         try {
             await apiCall(api, "PATCH", data);
+            userpasswordform.reset();
+            alert("Password updated successfully");
         } catch (error) {
             console.log(error);
             alert("Something went wrong");
             return;
-        }
-
-        if(response) {
-            userpasswordform.reset();
-            alert("Password updated successfully");
         }
     })
 
@@ -150,8 +144,8 @@ function setListeners() {
         e.preventDefault();
 
         const formData = new FormData(imageForm);
-        const file = formData.get('image');
         const type = imageForm.className;
+        const file = formData.get(type);
 
         if(!file) {
             alert("Please select an image");
@@ -161,16 +155,25 @@ function setListeners() {
         const api = `/user/update-` + (type === "avatar" ? "avatar-image" : "cover-image");
 
         try {
-            await apiCall(api, "PATCH", formData);
+            const options = {
+                method: "PATCH",
+                body: formData,
+                credentials: "include"
+            }
+
+            const response = await fetch("http://127.0.0.1:8000/api/v1" + api, options);
+            const data = await response.json();
+
+            if(!response.ok) {
+                throw new Error(data.message);
+            }
+
+            alert("Image updated successfully");
+            window.location.reload();
         } catch (error) {
             console.log(error);
             alert("Something went wrong");
             return;
-        }
-
-        if(response) {
-            alert("Image updated successfully");
-            window.location.reload();
         }
     })
 }
