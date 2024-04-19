@@ -12,6 +12,13 @@ async function setHeader() {
     });
 }
 
+function getTextFromHtml(content) {
+    const div = document.createElement('div');
+    div.innerHTML = content;
+
+    return div.textContent || div.innerText || "";
+}
+
 function setNoData(message = "No data found") {
     document.querySelector('.innercontainer section').innerHTML = `
     <div class="content">
@@ -46,6 +53,7 @@ function setData(data) {
     const content = articles.map(article => {
         const owner = article.owner;
         const link = `article.html?id=` + article._id;
+        const body = getTextFromHtml(article.body);
         return `
         <div class="article" _id="${article._id}">
             <a href="${link}">
@@ -54,7 +62,7 @@ function setData(data) {
                 </div>
                 <div class="details">
                     <h3 class="title">${article.title}</h3>
-                    <p class="description">${article.body}</p>
+                    <p class="description">${body}</p>
                     <div class="user">
                         <div class="image">
                             <img src="${owner.avatar}" alt="${owner.username} avatar">
@@ -88,9 +96,20 @@ function setListeners() {
 
             try {
                 await apiCall(api, 'DELETE', null);
+
+                article.parentElement.removeChild(article);
             } catch (error) {
                 console.log("Error deleting article. Error: ", error);
             }
+        })
+    })
+
+    const notAvailables = document.querySelectorAll('.notAvailable');
+
+    notAvailables.forEach(notAvailable => {
+        notAvailable.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert("This feature is not available yet");
         })
     })
 }
@@ -98,39 +117,41 @@ function setListeners() {
 window.addEventListener("DOMContentLoaded", async () => {
     setHeader();
 
-    let sampledata = [
-        {
-            _id: "1",
-            title: "Understanding Linux filesystems: ext4 and beyond",
-            body: `The majority of modern Linux distributions default to the ext4 filesystem, just as previous Linux distributions defaulted to ext3, ext2, and—if you go back far enough—ext.
-            If you're new to Linux—or to filesystems—you might wonder what ext4 brings to the table that ext3 didn't. You might also wonder whether ext4 is still in active development at all, given the flurries of news coverage of alternate filesystems such as btrfs, xfs, and zfs.
-            Linux is known for its robustness, scalability, and reliability. It supports a wide range of hardware architectures and has a vast collection of software packages available through package managers. Additionally, Linux has a strong community of developers and users who contribute to its development and provide support.
-            <br>
-            With Linux, you have the freedom to choose from different distributions, such as Ubuntu, Fedora, and CentOS, each tailored to specific needs and preferences. These distributions come with various desktop environments, such as GNOME, KDE, and XFCE, allowing users to customize their desktop experience.
-            Linux is also widely used in the cloud computing industry, with many cloud providers offering Linux-based virtual machines and containers. It is highly regarded for its performance, security, and cost-effectiveness in cloud environments.`,
-            imageURL: "http://res.cloudinary.com/dujd69tub/image/upload/v1712076172/vylujtys5dr2ujsw3cbe.webp",
-            owner: {
-                username: "bitwisegaurav",
-                avatar: "http://res.cloudinary.com/dujd69tub/image/upload/v1709444868/sf25kufqpcrur6ccxgqn.jpg"
-            }
-        },
-        {
-            _id: "2",
-            title: "Understanding Linux filesystems: ext4 and beyond",
-            body: `The majority of modern Linux distributions default to the ext4 filesystem, just as previous Linux distributions defaulted to ext3, ext2, and—if you go back far enough—ext.
-            If you're new to Linux—or to filesystems—you might wonder what ext4 brings to the table that ext3 didn't. You might also wonder whether ext4 is still in active development at all, given the flurries of news coverage of alternate filesystems such as btrfs, xfs, and zfs.
-            Linux is known for its robustness, scalability, and reliability. It supports a wide range of hardware architectures and has a vast collection of software packages available through package managers. Additionally, Linux has a strong community of developers and users who contribute to its development and provide support.
-            <br>
-            With Linux, you have the freedom to choose from different distributions, such as Ubuntu, Fedora, and CentOS, each tailored to specific needs and preferences. These distributions come with various desktop environments, such as GNOME, KDE, and XFCE, allowing users to customize their desktop experience.
-            Linux is also widely used in the cloud computing industry, with many cloud providers offering Linux-based virtual machines and containers. It is highly regarded for its performance, security, and cost-effectiveness in cloud environments.`,
-            imageURL: "http://res.cloudinary.com/dujd69tub/image/upload/v1712076172/vylujtys5dr2ujsw3cbe.webp",
-            owner: {
-                username: "admin",
-                avatar: "http://res.cloudinary.com/dujd69tub/image/upload/v1709444868/sf25kufqpcrur6ccxgqn.jpg"
-            }
-        },
-    ]
+    const articles = await getArticles();
 
-    setData(sampledata);
+    // let sampledata = [
+    //     {
+    //         _id: "1",
+    //         title: "Understanding Linux filesystems: ext4 and beyond",
+    //         body: `The majority of modern Linux distributions default to the ext4 filesystem, just as previous Linux distributions defaulted to ext3, ext2, and—if you go back far enough—ext.
+    //         If you're new to Linux—or to filesystems—you might wonder what ext4 brings to the table that ext3 didn't. You might also wonder whether ext4 is still in active development at all, given the flurries of news coverage of alternate filesystems such as btrfs, xfs, and zfs.
+    //         Linux is known for its robustness, scalability, and reliability. It supports a wide range of hardware architectures and has a vast collection of software packages available through package managers. Additionally, Linux has a strong community of developers and users who contribute to its development and provide support.
+    //         <br>
+    //         With Linux, you have the freedom to choose from different distributions, such as Ubuntu, Fedora, and CentOS, each tailored to specific needs and preferences. These distributions come with various desktop environments, such as GNOME, KDE, and XFCE, allowing users to customize their desktop experience.
+    //         Linux is also widely used in the cloud computing industry, with many cloud providers offering Linux-based virtual machines and containers. It is highly regarded for its performance, security, and cost-effectiveness in cloud environments.`,
+    //         imageURL: "http://res.cloudinary.com/dujd69tub/image/upload/v1712076172/vylujtys5dr2ujsw3cbe.webp",
+    //         owner: {
+    //             username: "bitwisegaurav",
+    //             avatar: "http://res.cloudinary.com/dujd69tub/image/upload/v1709444868/sf25kufqpcrur6ccxgqn.jpg"
+    //         }
+    //     },
+    //     {
+    //         _id: "2",
+    //         title: "Understanding Linux filesystems: ext4 and beyond",
+    //         body: `The majority of modern Linux distributions default to the ext4 filesystem, just as previous Linux distributions defaulted to ext3, ext2, and—if you go back far enough—ext.
+    //         If you're new to Linux—or to filesystems—you might wonder what ext4 brings to the table that ext3 didn't. You might also wonder whether ext4 is still in active development at all, given the flurries of news coverage of alternate filesystems such as btrfs, xfs, and zfs.
+    //         Linux is known for its robustness, scalability, and reliability. It supports a wide range of hardware architectures and has a vast collection of software packages available through package managers. Additionally, Linux has a strong community of developers and users who contribute to its development and provide support.
+    //         <br>
+    //         With Linux, you have the freedom to choose from different distributions, such as Ubuntu, Fedora, and CentOS, each tailored to specific needs and preferences. These distributions come with various desktop environments, such as GNOME, KDE, and XFCE, allowing users to customize their desktop experience.
+    //         Linux is also widely used in the cloud computing industry, with many cloud providers offering Linux-based virtual machines and containers. It is highly regarded for its performance, security, and cost-effectiveness in cloud environments.`,
+    //         imageURL: "http://res.cloudinary.com/dujd69tub/image/upload/v1712076172/vylujtys5dr2ujsw3cbe.webp",
+    //         owner: {
+    //             username: "admin",
+    //             avatar: "http://res.cloudinary.com/dujd69tub/image/upload/v1709444868/sf25kufqpcrur6ccxgqn.jpg"
+    //         }
+    //     },
+    // ]
+
+    setData(articles);
     setListeners();
 })
