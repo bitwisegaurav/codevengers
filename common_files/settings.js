@@ -1,0 +1,183 @@
+const userdetailsform = document.getElementById("userdetails");
+const userpasswordform = document.getElementById("userpassword");
+const avatarBox = document.querySelector(".change-avatar .image");
+const coverImageBox = document.querySelector(".change-coverimage .image");
+const imageFormContainer = document.querySelector(".imageFormContainer");
+const imageForm = document.getElementById("imageForm");
+const editimages = document.querySelectorAll(".editimage");
+let userdetails = {};
+
+async function getUserData() {
+    // const api = "/user/get-user";
+    // const user = await apiCall(api);
+
+    const user = {
+        _id: "1",
+        username: "JohnDoe",
+        name: "John Doe",
+        email: "johndoe@gmail.com",
+        avatar: "https://randomuser.me/api/portraits/men/1.jpg",
+        // coverImage: "https://randomuser.me/api/portraits/men/1.jpg",
+        coverImage: "http://res.cloudinary.com/dujd69tub/image/upload/v1709444869/oy1gqqnuidkbr9v1tmh1.jpg",
+    }
+
+    if(user) { userdetails = {...user}; }
+
+    return user;
+}
+
+function setUserData(user) {
+    if(!user) { return; }
+
+    userdetailsform.querySelector("#username").value = user.username;
+    userdetailsform.querySelector("#name").value = user.name;
+    userdetailsform.querySelector("#email").value = user.email;
+    avatarBox.querySelector("img").src = user.avatar;
+    avatarBox.querySelector("img").setAttribute('alt', user.username + " avatar");
+    coverImageBox.querySelector("img").src = user.coverImage;
+    coverImageBox.querySelector("img").setAttribute('alt', user.username + " cover image");
+}
+
+function setListeners() {
+    userdetailsform.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(userdetailsform);
+        const {username, name, email} = Object.fromEntries(formData.entries());
+
+        if(!username.trim() || !name.trim() || !email.trim()) {
+            alert("Please provide all the fields");
+            return;
+        }
+
+        if(username === userdetails.username && name === userdetails.name && email === userdetails.email) {
+            alert("No changes made");
+            return;
+        }
+
+        const data = {
+            ...(username !== userdetails.username && {username}),
+            ...(name !== userdetails.name && {name}),
+            ...(email !== userdetails.email && {email})
+        }
+
+        const api = `/user/update-user`;
+
+        try {
+            const response = await apiCall(api, "PATCH", data);
+        } catch (error) {
+            console.log(error);
+            alert("Something went wrong");
+            return;
+        }
+
+        if(response) {
+            alert("User details updated successfully");
+        }
+    })
+
+    userdetailsform.querySelector("#resetbtn").addEventListener("click", () => {
+        setUserData(userdetails);
+    });
+
+    userpasswordform.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(userpasswordform);
+        const {password, newPassword, confirmPassword} = Object.fromEntries(formData.entries());
+
+        if(!password.trim() || !newPassword.trim() || !confirmPassword.trim()) {
+            alert("Please provide all the fields");
+            return;
+        }
+
+        if(newPassword !== confirmPassword) {
+            alert("Passwords do not match");
+            return;
+        }
+
+        const data = {
+            password,
+            newPassword
+        }
+
+        const api = `/user/update-password`;
+
+        try {
+            await apiCall(api, "PATCH", data);
+        } catch (error) {
+            console.log(error);
+            alert("Something went wrong");
+            return;
+        }
+
+        if(response) {
+            userpasswordform.reset();
+            alert("Password updated successfully");
+        }
+    })
+
+    imageForm.querySelector('#image').addEventListener('change', async (e) => {
+        const file = e.target.files[0];
+
+        const imageBox = imageForm.querySelector('img');
+        imageBox.style.display = "block";
+        imageBox.src = URL.createObjectURL(file);
+    })
+
+    imageFormContainer.addEventListener("click", (e) => {
+        if(e.target.classList.contains("close")) {
+            imageForm.reset();
+            imageForm.querySelector('img').src = "";
+            imageForm.querySelector('img').style.display = "none";
+            imageFormContainer.style.display = "none";
+        }
+    })
+
+    editimages.forEach(editimage => {
+        editimage.addEventListener("click", (e) => {
+            const id = e.target.id;
+            imageForm.querySelector('#image')
+            imageForm.querySelector('#image').setAttribute('name', id);
+            imageForm.className = id;
+            imageForm.querySelector('.file-upload').style.aspectRatio = (id === "avatar" ? "1/1" : "16/9");
+            // imageBox.style.display = "none";
+            imageFormContainer.style.display = "flex";
+        })
+    })
+
+    imageForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(imageForm);
+        const file = formData.get('image');
+        const type = imageForm.className;
+
+        if(!file) {
+            alert("Please select an image");
+            return;
+        }
+
+        const api = `/user/update-` + (type === "avatar" ? "avatar-image" : "cover-image");
+
+        try {
+            await apiCall(api, "PATCH", formData);
+        } catch (error) {
+            console.log(error);
+            alert("Something went wrong");
+            return;
+        }
+
+        if(response) {
+            alert("Image updated successfully");
+            window.location.reload();
+        }
+    })
+}
+
+window.addEventListener("DOMContentLoaded", async () => {
+    const user = await getUserData();
+
+    setUserData(user);
+    setListeners();
+})
