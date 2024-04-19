@@ -113,7 +113,7 @@ async function setUsersData() {
 
     const data = await getUsers();
 
-    const userCount = data.userCount || 0;
+    const userCount = data.users.length || 0;
 
     middleBox.innerHTML = setDataBox([{ data: userCount, label: 'Total Users' }]);
 
@@ -143,13 +143,15 @@ async function setCoursesData() {
 
     const data = await getCourses();
 
+    const totalModulesCount = Object.values(moduleCount).slice(0,-1).reduce((total, num) => total + num)
+
     middleBox.innerHTML = setDataBox([
         {
-            data: data.courseCount || 0, 
+            data: data.length || 0, 
             label: 'Total Courses'
         },
         {
-            data: data.modulesCount || 0, 
+            data: data.modulesCount || totalModulesCount, 
             label: 'Total Modules'
         },
         {
