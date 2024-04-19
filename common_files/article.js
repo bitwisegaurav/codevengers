@@ -69,6 +69,6 @@ window.addEventListener("DOMContentLoaded", async () => {
     // }
 
     const data = await getArticle(id);
-    console.log(data);
+    // console.log(data);
     setData(data);
 })
