@@ -3,13 +3,13 @@ const errorBox = document.getElementById("error");
 let articleDetail = {};
 
 async function getArticle(id) {
-    // const api = `/article/get-article/${id}`;
-    // const article = await apiCall(api);
+    const api = `/article/get-articleById/${id}`;
+    const article = await apiCall(api);
 
-    const article = {
-        title: "Title",
-        body: "<h1>Body</h1>"
-    }
+    // const article = {
+    //     title: "Title",
+    //     body: "<h1>Body</h1>"
+    // }
 
     if(article) {
         articleDetail = article;
@@ -59,7 +59,7 @@ function setListeners(id) {
         const api = `/article/update-article/${id}`;
 
         try {
-            const response = await apiCall(api, "PUT", data);
+            const response = await apiCall(api, "PATCH", data);
     
             if (response) {
                 window.location.href = "./articles.html";
