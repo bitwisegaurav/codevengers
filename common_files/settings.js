@@ -5,25 +5,27 @@ const coverImageBox = document.querySelector(".change-coverimage .image");
 const imageFormContainer = document.querySelector(".imageFormContainer");
 const imageForm = document.getElementById("imageForm");
 const editimages = document.querySelectorAll(".editimage");
+const deletebtn = document.querySelector('#deletebtn');
 let userdetails = {};
 
 async function getUserData() {
     const api = "/user/get-user";
-    const user = await apiCall(api);
+    // const user = await apiCall(api);
 
-    // const user = {
-    //     _id: "1",
-    //     username: "JohnDoe",
-    //     name: "John Doe",
-    //     email: "johndoe@gmail.com",
-    //     avatar: "https://randomuser.me/api/portraits/men/1.jpg",
-    //     // coverImage: "https://randomuser.me/api/portraits/men/1.jpg",
-    //     coverImage: "http://res.cloudinary.com/dujd69tub/image/upload/v1709444869/oy1gqqnuidkbr9v1tmh1.jpg",
-    // }
+    const user = {
+        _id: "1",
+        username: "JohnDoe",
+        name: "John Doe",
+        email: "johndoe@gmail.com",
+        avatar: "https://randomuser.me/api/portraits/men/1.jpg",
+        // coverImage: "https://randomuser.me/api/portraits/men/1.jpg",
+        coverImage: "http://res.cloudinary.com/dujd69tub/image/upload/v1709444869/oy1gqqnuidkbr9v1tmh1.jpg",
+    }
 
-    if(user) { userdetails = {...user.user}; }
+    // if(user) { userdetails = {...user.user}; }
+    if(user) { userdetails = {...user}; }
 
-    return user.user;
+    return user;
 }
 
 function setUserData(user) {
@@ -176,11 +178,28 @@ function setListeners() {
             return;
         }
     })
+
+    deletebtn.addEventListener("click", async () => {
+        const confirmTask = confirm("Are you sure you want to delete your codevengers account");
+
+        console.log(confirmTask);
+
+        if(!confirmTask) return;
+
+        const api = "/user/delete-account";
+
+        try {
+            await apiCall(api, "DELETE", null);
+            window.location.href = "../index.html";
+        } catch (error) {
+            console.log(error);
+        }
+    })
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
     const user = await getUserData();
-
+    // console.log(user)
     setUserData(user);
     setListeners();
 })
