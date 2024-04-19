@@ -193,3 +193,7 @@ main .container form button:hover {
 .dark main .container form button:hover {
     background-color: #eee;
 }
+
+.dark a {
+    color: rgb(217, 179, 252);
+}

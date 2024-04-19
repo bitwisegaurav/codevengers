@@ -197,6 +197,9 @@ function setListeners() {
 
 window.addEventListener("DOMContentLoaded", async () => {
     const user = await getUserData();
+
+    if(!user) window.location.href = "./login.html"
+
     // console.log(user)
     setUserData(user);
     setListeners();

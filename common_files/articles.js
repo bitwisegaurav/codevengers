@@ -119,6 +119,8 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     const articles = await getArticles();
 
+    if(!articles) window.location.href = "./login.html"
+
     // let sampledata = [
     //     {
     //         _id: "1",

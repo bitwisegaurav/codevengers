@@ -36,6 +36,11 @@ async function setData() {
 
 window.addEventListener("DOMContentLoaded", async () => {
   await getHeader();
+
+  const user = localStorage.getItem("user")
+
+  if(!user) window.location.href = "../pages/login.html"
+
   setTheme();
   setListenersTheme();
   setHamburgerListeners();

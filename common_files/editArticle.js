@@ -74,7 +74,11 @@ window.addEventListener("DOMContentLoaded", async () => {
     setHeader();
     const id = getId();
 
+    if(!id) window.location.href = "./articles.html"
+
     const article = await getArticle(id);
+
+    if(!article) window.location.href = "./login.html"
 
     if(article) setData();
    

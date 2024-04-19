@@ -174,12 +174,18 @@ function setData(data){
 
     if(data.isBothSame) {
         // remove buttons from html
-        buttons.parentElement.removeChild(buttons);
+        const followbtn = buttons.querySelector('#followbtn');
+        const chatbtn = buttons.querySelector('#chatbtn');
+
+        buttons.removeChild(followbtn)
+        buttons.removeChild(chatbtn)
     } else {
         if(data.isFollowedByAccessingUser) buttons.querySelector('#followbtn').innerHTML = "Unfollow";
         else if(data.isFollowingAccessingUser) buttons.querySelector('#followbtn').innerHTML = "Follow Back";
         else buttons.querySelector('#followbtn').innerHTML = "Follow";
     }
+    
+    if(user.isAdmin) buttons.querySelector('#adminbtn').style.display = "block";
 }
 
 function setCourses(courses){
@@ -308,59 +314,59 @@ window.addEventListener("DOMContentLoaded", async () => {
     fetchHeader();
     setTheme();
 
-    // const data = await getData(username);
-    const data = {
-        user: {
-            _id: "60f3b3b3b3b3b3b3b3b3b3",
-            username: "testuser",
-            name: "Test User",
-            avatar: "https://www.w3schools.com/howto/img_avatar.png",
-            coverImage: "https://www.w3schools.com/howto/img_avatar.png",
-            articles: [
-                {
-                    _id: "60f3b3b3b3b3b3b3b3b3b3",
-                    title: "Python",
-                    imageURL: "https://www.python.org/static/img/python-logo.png",
-                    body: "<p>Python is a programming language that lets you work quickly and integrate systems more effectively.</p>",
-                    owner: {
-                        username: "testuser",
-                        avatar: "https://www.w3schools.com/howto/img_avatar.png"
-                    }
-                },
-                {
-                    _id: "60f3b3b3b3b3b3b3b3b3b3",
-                    title: "JavaScript",
-                    imageURL: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-                    body: "<p>JavaScript is a programming language that enables you to interact with web pages.</p>",
-                    owner: {
-                        username: "testuser",
-                        avatar: "https://www.w3schools.com/howto/img_avatar.png"
-                    }
-                }
-            ],
-            followers: 0,
-            following: 0,
-            courses: [
-                {
-                    _id: "60f3b3b3b3b3b3b3b3b3b3",
-                    title: "Python",
-                    image: "https://www.python.org/static/img/python-logo.png"
-                },
-                {
-                    _id: "60f3b3b3b3b3b3b3b3b3b3",
-                    title: "JavaScript",
-                    image: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
-                }
-            ],
-            solvedQuestions: []
-        },
-    }
+    const data = await getData(username);
+    // const data = {
+    //     user: {
+    //         _id: "60f3b3b3b3b3b3b3b3b3b3",
+    //         username: "testuser",
+    //         name: "Test User",
+    //         avatar: "https://www.w3schools.com/howto/img_avatar.png",
+    //         coverImage: "https://www.w3schools.com/howto/img_avatar.png",
+    //         articles: [
+    //             {
+    //                 _id: "60f3b3b3b3b3b3b3b3b3b3",
+    //                 title: "Python",
+    //                 imageURL: "https://www.python.org/static/img/python-logo.png",
+    //                 body: "<p>Python is a programming language that lets you work quickly and integrate systems more effectively.</p>",
+    //                 owner: {
+    //                     username: "testuser",
+    //                     avatar: "https://www.w3schools.com/howto/img_avatar.png"
+    //                 }
+    //             },
+    //             {
+    //                 _id: "60f3b3b3b3b3b3b3b3b3b3",
+    //                 title: "JavaScript",
+    //                 imageURL: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+    //                 body: "<p>JavaScript is a programming language that enables you to interact with web pages.</p>",
+    //                 owner: {
+    //                     username: "testuser",
+    //                     avatar: "https://www.w3schools.com/howto/img_avatar.png"
+    //                 }
+    //             }
+    //         ],
+    //         followers: 0,
+    //         following: 0,
+    //         courses: [
+    //             {
+    //                 _id: "60f3b3b3b3b3b3b3b3b3b3",
+    //                 title: "Python",
+    //                 image: "https://www.python.org/static/img/python-logo.png"
+    //             },
+    //             {
+    //                 _id: "60f3b3b3b3b3b3b3b3b3b3",
+    //                 title: "JavaScript",
+    //                 image: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+    //             }
+    //         ],
+    //         solvedQuestions: []
+    //     },
+    // }
     // const data = null;
 
-    // if(!data) {
-    //     window.location.href = "./login.html";
-    // }
-
+    if(!data) {
+        window.location.href = "./login.html";
+    }
+    // console.log(data);
     setData(data);
     setListeners(data);
     setContentBox("courses", data?.user)
