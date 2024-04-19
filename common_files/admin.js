@@ -174,7 +174,7 @@ async function setCoursesData() {
             }
         }
 
-        return `<div class="course">
+        return `<div class="course" _id="${course._id}">
         <a href="${url ? url : `../languages/outer.html?lang=${name}`}">
             <div class="icon">
                 <img src="${course.image}" alt="${course.title} icon">
@@ -194,6 +194,27 @@ async function setCoursesData() {
     // remove other classes from bottomBox
     bottomBox.className = '';
     bottomBox.classList.add('courses');
+
+    const courseBoxes = document.querySelectorAll('.course');
+
+    courseBoxes.forEach(courseBox => {
+        const editbtn = courseBox.querySelector('.editbtn');
+        const removebtn = courseBox.querySelector('.removebtn');
+        const id = courseBox.getAttribute("_id");
+
+        // editbtn.addEventListener("click", )
+        
+        removebtn.addEventListener("click", async () => {
+            const api = `/course/delete-course/${id}`;
+
+            try {
+                await apiCall(api, "DELETE", null);
+                courseBox.parentElement.removeChild(courseBox);
+            } catch (error) {
+                console.log(error);
+            }
+        })
+    })
 }
 
 async function setArticlesData() {
