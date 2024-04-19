@@ -76,6 +76,7 @@ body {
     flex-direction: column;
     gap: 20px;
     width: 85%;
+    padding-bottom: 2rem;
 }
 
 .content section {
@@ -190,7 +191,20 @@ input[type="password"] {
 }
 
 .container button:hover {
-    background-color: #8a2be2;
+    background-color: #6b21b1;
+}
+
+#delete-account {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#delete-account button {
+    background-color: red;
+}
+
+#delete-account button:hover{
+    background-color: rgb(223, 3, 3);
 }
 
 .imageFormContainer {
