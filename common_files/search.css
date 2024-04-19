@@ -64,7 +64,7 @@ button[type="submit"]:hover {
 
 /* Main content styles */
 main {
-    display: flex;
+    display: none;
     justify-content: center;
     background-color: rgb(174, 123, 223);
     padding: 20px;
@@ -89,9 +89,17 @@ main {
     border-radius: 5px;
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 1rem;
     text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user a {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 3rem;
+    text-decoration: none;
 }
 
 .user img {
