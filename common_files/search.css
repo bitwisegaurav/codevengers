@@ -8,7 +8,7 @@
 /* Body styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: rgb(238, 220, 255);
+    background-color: rgb(222, 205, 255);
 }
 
 /* Container styles */
@@ -36,7 +36,7 @@ form {
     justify-content: center;
     align-items: center;
     width: 100%;
-    border: 1px solid blueviolet;
+    border: 1px solid rgb(107, 80, 158);
     border-radius: 15px;
     overflow: hidden;
 }
@@ -51,7 +51,7 @@ input[type="text"] {
 button[type="submit"] {
     padding: 1rem 1rem;
     display: none;
-    background-color: blueviolet;
+    background-color: rgb(107, 80, 158);
     color: #fff;
     border: none;
     cursor: pointer;
@@ -59,14 +59,14 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #8a2be2;
+    background-color: rgb(82, 61, 122);
 }
 
 /* Main content styles */
 main {
     display: none;
     justify-content: center;
-    background-color: rgb(174, 123, 223);
+    background-color: rgb(137, 109, 189);
     padding: 20px;
     border-radius: 10px;
     height: 100%;
@@ -109,7 +109,7 @@ main {
 }
 
 .user p {
-    color: blueviolet;
+    color: rgb(107, 80, 158);
     font-size: 130%;
     font-weight: bold;
     width: 100%;
@@ -117,7 +117,7 @@ main {
 
 .user button {
     padding: 0.5rem 1rem;
-    background-color: blueviolet;
+    background-color: rgb(107, 80, 158);
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -126,7 +126,7 @@ main {
 }
 
 .user button:hover {
-    background-color: rgb(107, 36, 173);
+    background-color: rgb(85, 63, 126);
 }
 
 .user:hover {

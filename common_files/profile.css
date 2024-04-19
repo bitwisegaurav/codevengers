@@ -127,7 +127,7 @@ main .maincontent article .right .btns {
     gap: 1rem;
 }
 
-main .maincontent article .right .btns button {
+main .maincontent article .right .btns button, main .maincontent article .right .btns a {
     flex-grow: 1;
     max-width: 12rem;
     padding: 0.5rem 1rem;
@@ -136,19 +136,23 @@ main .maincontent article .right .btns button {
     background-color: rgb(109 82 158);
     color: #fff;
     cursor: pointer;
+    text-align: center;
     transition: all 0.1s ease-in-out;
+    text-decoration: none;
 }
 
-.dark main .maincontent article .right .btns button {
+.dark main .maincontent article .right .btns button, .dark main .maincontent article .right .btns a {
     background-color: #fff;
     color: #2e2b52;
 }
 
-main .maincontent article .right .btns button:hover {
+main .maincontent article .right .btns button:hover,
+main .maincontent article .right .btns a:hover {
     background-color: rgb(148, 126, 194);
 }
 
-.dark main .maincontent article .right .btns button:hover {
+.dark main .maincontent article .right .btns button:hover,
+.dark main .maincontent article .right .btns a:hover {
     background-color: rgb(202, 184, 238);
 }
 
@@ -220,6 +224,10 @@ main .maincontent section .top a {
 main .maincontent section .top .active {
     color: rgb(109 82 158);
     border-bottom: 2px solid rgb(109 82 158);
+}
+
+main .maincontent section .top #questions {
+    display: none;
 }
 
 .dark main .maincontent section .top .active {

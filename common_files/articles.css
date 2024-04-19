@@ -44,13 +44,63 @@ main .container .innercontainer {
     width: 100%;
     gap: 2rem;
     overflow: auto;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
 }
 
 main .container .innercontainer .upper {
     display: flex;
     justify-content: center;
-    font-size: xx-large;
+    gap: 1rem;
+}
+
+main .container .innercontainer .upper input {
+    width: 100%;
+    padding: 1rem 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 1rem;
+    outline: none;
+}
+
+.dark main .container .innercontainer .upper input {
+    background-color: #403c69;
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+main .container .innercontainer .upper .btns {
+    display: flex;
+    gap: 1rem;
+}
+
+main .container .innercontainer .upper .btns button,
+main .container .innercontainer .upper .btns a{
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    background-color: rgb(107, 80, 158);
+    color: white;
+    text-decoration: none;
+}
+
+main .container .innercontainer .upper .btns a {
+    font-size: x-large;
+}
+
+.dark main .container .innercontainer .upper .btns button,
+.dark main .container .innercontainer .upper .btns a {
+    color: #2e2b52;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+main .container .innercontainer .upper .btns button:hover,
+main .container .innercontainer .upper .btns a:hover {
+    background-color: rgb(84, 63, 122);
+}
+
+.dark main .container .innercontainer .upper .btns button:hover,
+.dark main .container .innercontainer .upper .btns a:hover {
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 main .container section {

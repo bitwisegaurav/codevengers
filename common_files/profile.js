@@ -5,6 +5,10 @@ const chatbtn = document.querySelector('#chatbtn');
 const followbtn = document.querySelector('#followbtn');
 const server = "http://127.0.0.1:8000/api/v1";
 const bottomBox = document.querySelector('.bottom');
+const userDetails = {
+    isBothSame: false,
+    isAdmin: false,
+};
 
 function extractTextFromHtml(htmlString) {
     const tempElement = document.createElement('div');
@@ -50,6 +54,10 @@ async function getData(username) {
         .then(data => data.data)
         // .then(data => data?.user);
         // console.log(data);
+        userDetails.isBothSame = data.isBothSame;
+        let accessinguser = localStorage.getItem('user');
+        accessinguser = JSON.parse(accessinguser);
+        userDetails.isAdmin = accessinguser.isAdmin || false;
         return data;
     } catch (error) {
         console.log(error.message);
@@ -224,17 +232,21 @@ function setCourses(courses){
     const buttons = document.querySelectorAll(".courses .course button")
 
     buttons.forEach(button => {
-        button.addEventListener("click", async () => {
-            const courseId = button.parentElement.getAttribute("_id");
-
-            const data = await removeCourse(courseId);
-
-            if (!data) { return; }
-
-            const parent = button.parentElement;
-            parent.parentElement.removeChild(parent);
-            console.log(parent);
-        })
+        if(userDetails.isAdmin || userDetails.isBothSame) {
+            button.addEventListener("click", async () => {
+                const courseId = button.parentElement.getAttribute("_id");
+                
+                const data = await removeCourse(courseId);
+                
+                if (!data) { return; }
+                
+                const parent = button.parentElement;
+                parent.parentElement.removeChild(parent);
+                console.log(parent);
+            })
+        } else {
+            button.parentElement.removeChild(button);
+        }
     })
 }
 
@@ -274,20 +286,25 @@ function setArticles(articles){
         const removeBtn = articleBox.querySelector(".remove");
         const id = articleBox.getAttribute("_id");
 
-        editBtn.addEventListener("click", () => {
-            window.location.href = `./editArticle.html?id=${id}`;
-        });
+        if(userDetails.isAdmin || userDetails.isBothSame) {    
+            editBtn.addEventListener("click", () => {
+                window.location.href = `./editArticle.html?id=${id}`;
+            });
+        
+            removeBtn.addEventListener("click", async () => {
+                const api = `/article/delete-article/${id}`;
 
-        removeBtn.addEventListener("click", async () => {
-            const api = `/article/delete-article/${id}`;
-
-            try {
-                await apiCall(api, 'DELETE', null);
-                articleBox.parentElement.removeChild(articleBox);
-            } catch (error) {
-                console.log(error.message);
-            }
-        });
+                try {
+                    await apiCall(api, 'DELETE', null);
+                    articleBox.parentElement.removeChild(articleBox);
+                } catch (error) {
+                    console.log(error.message);
+                }
+            });
+        } else {
+            editBtn.parentElement.removeChild(editBtn);
+            removeBtn.parentElement.removeChild(removeBtn);
+        }
     })
 }
 

@@ -25,7 +25,7 @@ async function getUserData() {
     if(user) { userdetails = {...user.user}; }
     // if(user) { userdetails = {...user}; }
 
-    return user;
+    return user.user;
 }
 
 function setUserData(user) {
@@ -200,7 +200,6 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     if(!user) window.location.href = "./login.html"
 
-    // console.log(user)
     setUserData(user);
     setListeners();
 })

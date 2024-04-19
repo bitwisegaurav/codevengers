@@ -1,3 +1,6 @@
+const searchbar = document.querySelector('#searchbar');
+const searchbtn = document.querySelector('#searchbtn');
+
 async function setHeader() {
     fetch('../components/header.html')
     .then(response => response.text())
@@ -78,10 +81,25 @@ function setData(data) {
         `
     }).join("");
 
+    if(!document.querySelector('.articles')) {
+        document.querySelector('.innercontainer section').innerHTML = `
+        <div class="articles"></div>`;
+    }
+
     document.querySelector('.articles').innerHTML = content;
 }
 
-function setListeners() {
+function search (articles) {
+    const input = searchbar.value.trim().toLowerCase();
+    
+    const newArticles = articles.filter(article => {
+        return article.title.includes(input) || article.body.includes(input) || article.owner.username.includes(input);
+    } )
+
+    setData(newArticles);
+}
+
+function setListeners(data) {
     const articles = document.querySelectorAll('.article');
 
     articles.forEach(article => {
@@ -111,6 +129,16 @@ function setListeners() {
             e.preventDefault();
             alert("This feature is not available yet");
         })
+    })
+
+    searchbtn.addEventListener('click', async () => {
+        search(data);
+    })
+
+    searchbar.addEventListener('keyup', async (e) => {
+        if(e.key === "Enter") {
+            search(data);
+        }
     })
 }
 
@@ -155,5 +183,5 @@ window.addEventListener("DOMContentLoaded", async () => {
     // ]
 
     setData(articles);
-    setListeners();
+    setListeners(articles);
 })

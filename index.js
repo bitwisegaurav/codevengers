@@ -63,12 +63,12 @@ async function getUser() {
 
   if (!data) { return; }
 
-  const user = data.data.data;
+  const user = data.user;
 
   const loginbtn = document.getElementById("loginbtn");
   const profilebtn = document.getElementById("profilebtn");
 
   loginbtn.style.display = "none";
   profilebtn.style.display = "block";
-  if(user?.image) profilebtn.querySelector('.image img').src = user.image;
+  if(user?.avatar) profilebtn.querySelector('.image img').src = user.avatar;
 }

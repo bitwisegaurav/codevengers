@@ -24,6 +24,7 @@ function setUserData(user) {
     username: user.username,
     name: user.name,
     avatar: user.avatar,
+    isAdmin: user.isAdmin,
   }
 
   localStorage.setItem('user', JSON.stringify(userData));

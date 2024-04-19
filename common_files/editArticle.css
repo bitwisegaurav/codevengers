@@ -48,6 +48,7 @@ main {
 form {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
 }
 
 label {
@@ -55,10 +56,87 @@ label {
     color: blueviolet;
 }
 
+.left {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.imageBox {
+    display: flex;
+    height: 8rem;
+    aspect-ratio: 3/2;
+}
+
+.file-upload {
+    display: block;
+    position: relative;
+    /* height: calc(100% - 3rem); */
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.file-upload input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-upload .box {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: background-color 0.2s ease;
+}
+
+.file-upload .box p {
+    color: #fff;
+    font-size: small;
+}
+
+.file-upload .box img{
+    /* display: none; */
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.file-upload .box .wrapper {
+    position: absolute;
+    display: none;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.file-upload .box:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.file-upload .box:hover .wrapper {
+    display: grid;
+    place-items: center;
+}
+
 .data {
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
+    gap: 2rem;
 }
 
 .data a {
@@ -67,7 +145,6 @@ label {
     padding: 5px 10px;
     border-radius: 5px;
     background-color: #8a2be2;
-
 }
 
 input[type="text"],
@@ -81,6 +158,7 @@ textarea {
 textarea {
     resize: none;
     overflow: auto;
+    width: 100%;
 }
 
 button[type="submit"] {

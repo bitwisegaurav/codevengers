@@ -3,6 +3,7 @@ const containerBox = document.querySelector('.container');
 const title = containerBox.querySelector('.upper .title');
 const middleBox = containerBox.querySelector('.middle');
 const bottomBox = containerBox.querySelector('#bottom');
+const addbtn = document.querySelector('.lower .top .btns #addbtn');
 const moduleCount = {
     "javascript": 62,
     "css": 16,
@@ -53,18 +54,18 @@ async function setHeader() {
 async function getUsers() {
     const api = "/user/get-all-users";
 
-    // const data = await apiCall(api, "GET", null);
+    const data = await apiCall(api, "GET", null);
 
-    const data = {
-        userCount: 10,
-        users: [
-            {
-                avatar: "http://res.cloudinary.com/dujd69tub/image/upload/v1709444868/sf25kufqpcrur6ccxgqn.jpg",
-                name: "Gaurav Mishra",
-                username: "bitwisegaurav",
-            }
-        ]
-    };
+    // const data = {
+    //     userCount: 10,
+    //     users: [
+    //         {
+    //             avatar: "http://res.cloudinary.com/dujd69tub/image/upload/v1709444868/sf25kufqpcrur6ccxgqn.jpg",
+    //             name: "Gaurav Mishra",
+    //             username: "bitwisegaurav",
+    //         }
+    //     ]
+    // };
 
     return data;
 }
@@ -72,15 +73,15 @@ async function getUsers() {
 async function getCourses() {
     const api = "/course/get-all-courses";
 
-    // const data = await apiCall(api, "GET", null);
+    const data = await apiCall(api, "GET", null);
 
-    const data = [
-        {
-            image: "http://res.cloudinary.com/dujd69tub/image/upload/v1710719793/wlzoofbw5e8wl1mbdrjt.png",
-            title: "JavaScript",
-            modulesCount: "12",
-        },
-    ];
+    // const data = [
+    //     {
+    //         image: "http://res.cloudinary.com/dujd69tub/image/upload/v1710719793/wlzoofbw5e8wl1mbdrjt.png",
+    //         title: "JavaScript",
+    //         modulesCount: "12",
+    //     },
+    // ];
 
     return data;
 }
@@ -88,21 +89,21 @@ async function getCourses() {
 async function getArticles() {
     const api = '/article/get-articles';
 
-    // const data = await apiCall(api, "GET", null);
+    const data = await apiCall(api, "GET", null);
 
-    const data = [
-        {
-            _id: "6230dgd09fg7w0e9rui34j",
-            imageURL: "http://res.cloudinary.com/dujd69tub/image/upload/v1710719793/wlzoofbw5e8wl1mbdrjt.png",
-            title: "Installing Linux on an iMac",
-            body: "Many people may like the look and feel of Linux over other Desktop Operating Systems (OS). For this reason someone may want to install Linux on a Mac.",
-            owner: {
-                avatar: "http://res.cloudinary.com/dujd69tub/image/upload/v1709444868/sf25kufqpcrur6ccxgqn.jpg",
-                name: "Gaurav Mishra",
-                username: "bitwisegaurav",
-            }
-        },
-    ];
+    // const data = [
+    //     {
+    //         _id: "6230dgd09fg7w0e9rui34j",
+    //         imageURL: "http://res.cloudinary.com/dujd69tub/image/upload/v1710719793/wlzoofbw5e8wl1mbdrjt.png",
+    //         title: "Installing Linux on an iMac",
+    //         body: "Many people may like the look and feel of Linux over other Desktop Operating Systems (OS). For this reason someone may want to install Linux on a Mac.",
+    //         owner: {
+    //             avatar: "http://res.cloudinary.com/dujd69tub/image/upload/v1709444868/sf25kufqpcrur6ccxgqn.jpg",
+    //             name: "Gaurav Mishra",
+    //             username: "bitwisegaurav",
+    //         }
+    //     },
+    // ];
 
     return data;
 }
@@ -202,7 +203,9 @@ async function setCoursesData() {
         const removebtn = courseBox.querySelector('.removebtn');
         const id = courseBox.getAttribute("_id");
 
-        // editbtn.addEventListener("click", )
+        editbtn.addEventListener("click", () => {
+            window.location.href = `editCourse.html?id=${id}`;
+        })
         
         removebtn.addEventListener("click", async () => {
             const api = `/course/delete-course/${id}`;
@@ -224,7 +227,7 @@ async function setArticlesData() {
 
     middleBox.innerHTML = setDataBox([
         {
-            data: data.articlesCount || 0, 
+            data: data.length || 0, 
             label: 'Total Articles'
         },
     ]);
@@ -306,11 +309,15 @@ function setListeners() {
                 containerBox.style.display = 'flex';
 
                 if (link.id.toLowerCase() === "users") {
-                    setUsersData()
+                    setUsersData();
+                    addbtn.style.display = 'none';
                 } else if (link.id.toLowerCase() === "courses") {
                     setCoursesData()
+                    addbtn.style.display = 'block';
+                    addbtn.href = 'createCourse.html';
                 } else if (link.id.toLowerCase() === "articles") {
                     setArticlesData()
+                    addbtn.style.display = 'none';
                 }
             }
         })

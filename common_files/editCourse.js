@@ -1,22 +1,22 @@
 const form = document.querySelector("form");
 const errorBox = document.getElementById("error");
 const imageBox = form.querySelector(".imageBox");
-let articleDetail = {};
+let courseDetail = {};
 
-async function getArticle(id) {
-    const api = `/article/get-articleById/${id}`;
-    const article = await apiCall(api);
+async function getcourse(id) {
+    const api = `/course/get-courseById/${id}`;
+    const course = await apiCall(api);
 
-    // const article = {
+    // const course = {
     //     title: "Title",
-    //     body: "<h1>Body</h1>"
+    //     description: "<h1>description</h1>"
     // }
 
-    if(article) {
-        articleDetail = {...article};
+    if(course) {
+        courseDetail = course;
     }
 
-    return article;
+    return course;
 }
 
 function getId() {
@@ -27,14 +27,13 @@ function getId() {
 }
 
 function setData() {
-    form.querySelector("#title").value = articleDetail.title;
-    form.querySelector("#body").value = articleDetail.body;
-    form.querySelector(".imageBox .box img").src = articleDetail.imageURL
-    form.querySelector("#textEditorbtn").href = `./textEditor.html?content=${articleDetail.body}`;
+    form.querySelector("#title").value = courseDetail.title;
+    form.querySelector("#description").value = courseDetail.description;
+    form.querySelector(".imageBox .box img").src = courseDetail.image
 }
 
 async function changeImage(formdata, id) {
-    const api = `/article/update-article-image/${id}`;
+    const api = `/course/update-course-image/${id}`;
 
     const options = {
         method: "PATCH",
@@ -61,16 +60,16 @@ function setListeners(id) {
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
         const formData = new FormData(form);
-        const {title, body} = Object.fromEntries(formData.entries());
+        const {title, description} = Object.fromEntries(formData.entries());
 
-        if(!title.trim() && !body.trim()) {
+        if(!title.trim() && !description.trim()) {
             errorBox.innerHTML = "Please provide atleast one field";
             return;
         }
 
         const img = imageBox.querySelector(".box img").src;
 
-        if(title === articleDetail.title && body === articleDetail.body && img === articleDetail.imageURL) {
+        if(title === courseDetail.title && description === courseDetail.description && img === courseDetail.imageURL) {
             errorBox.innerHTML = "No changes made";
             return;
         }
@@ -78,11 +77,13 @@ function setListeners(id) {
         errorBox.innerHTML = "";
 
         const data = {
-            ...(title !== articleDetail.title && {title}),
-            ...(body !== articleDetail.body && {body})
+            ...(title !== courseDetail.title && {title}),
+            ...(description !== courseDetail.description && {description})
         }
 
-        if(img !== articleDetail.imageURL) {
+        // console.log(data);
+
+        if(img !== courseDetail.imageURL) {
             const image = imageBox.querySelector("#image").files[0];
             const formData = new FormData();
             formData.append("image", image);
@@ -94,19 +95,19 @@ function setListeners(id) {
         if(Object.keys(data).length === 0 && data.constructor === Object) {
 
             if(isChanged) {
-                window.location.href = "./articles.html";
+                window.location.href = "./courses.html";
             }
 
             return;
         }
 
-        const api = `/article/update-article/${id}`;
+        const api = `/course/update-course/${id}`;
 
         try {
             const response = await apiCall(api, "PATCH", data);
     
             if (response) {
-                window.location.href = "./articles.html";
+                window.location.href = "./courses.html";
             }
         } catch (error) {
             errorBox.innerHTML = error;
@@ -125,13 +126,11 @@ window.addEventListener("DOMContentLoaded", async () => {
     setHeader();
     const id = getId();
 
-    if(!id) window.location.href = "./articles.html"
+    if(!id) window.location.href = "./courses.html"
 
-    const article = await getArticle(id);
+    const course = await getcourse(id);
 
-    if(!article) window.location.href = "./login.html"
-
-    if(article) setData();
+    if(course) setData();
    
     // if(!id) {
     //     window.location.href = "./login.html";
