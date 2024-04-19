@@ -19,6 +19,15 @@ async function setHeader() {
     });
 }
 
+function setData () {
+    // get html content from url
+    const url = new URL(window.location.href);
+    const content = url.searchParams.get("content");
+
+    // Set HTML content
+    if (content.trim()) quill.clipboard.dangerouslyPasteHTML(content);
+}
+
 function setListeners() {
     copybtn.addEventListener('click', () => {
         const content = quill.root.innerHTML;
@@ -39,5 +48,6 @@ function setListeners() {
 
 window.addEventListener("DOMContentLoaded", async () => {
     setHeader();
+    setData()
     setListeners();
 })
