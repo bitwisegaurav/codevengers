@@ -137,7 +137,7 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
     height: 100%;
     width: 100%;
-    z-index: 9;
+    z-index: 1;
     display: grid;
     place-items: center;
     color: white;
@@ -151,13 +151,13 @@ body {
     margin-bottom: 20px;
 }
 
-form {
+.container form {
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 5px;
 }
 
-label {
+.container label {
     display: block;
     margin-bottom: 10px;
     color: blueviolet;
@@ -173,7 +173,13 @@ input[type="password"] {
     border-radius: 5px;
 }
 
-button[type="submit"] {
+.container form .btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.container button {
     padding: 10px 20px;
     background-color: blueviolet;
     color: #fff;
@@ -183,6 +189,103 @@ button[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover {
+.container button:hover {
     background-color: #8a2be2;
+}
+
+.imageFormContainer {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.main {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 1rem;
+}
+
+.file-upload {
+    display: block;
+    /* height: calc(100% - 3rem); */
+    height: 30rem;
+    aspect-ratio: 1;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.file-upload input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-upload .box {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: background-color 0.2s ease;
+}
+
+.file-upload .box p {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.file-upload .box img{
+    display: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.file-upload .box .wrapper {
+    position: absolute;
+    display: none;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.file-upload .box:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.file-upload .box:hover .wrapper {
+    display: grid;
+    place-items: center;
+}
+
+.imageFormContainer button[type="submit"] {
+    margin-top: 10px;
+    padding: 10px 0;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: blueviolet;
+    color: #fff;
+    cursor: pointer;
+}
+
+.imageFormContainer button[type="submit"]:hover {
+    background-color: rgb(107, 31, 179);
 }
