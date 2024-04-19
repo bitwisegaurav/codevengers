@@ -350,7 +350,7 @@ main {
 
 .articles .article a .details {
     display: flex;
-    width: calc(100% - 11rem);
+    width: calc(100% - 10rem);
     flex-direction: column;
     gap: 5px;
     justify-content: space-around;
@@ -428,40 +428,53 @@ main {
 
 .articles .article .btns {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    justify-content: space-around;
+    gap: 10px;
 }
 
 .articles .article .btns button {
     width: 100%;
     height: max-content;
-    padding: 0.3rem 1rem;
+    padding: 5px 0.8rem;
     border-radius: 5px;
     border: none;
     font-size: large;
     cursor: pointer;
-    color: red;
     background-color: transparent;
+    transition: background 0.1s ease-in-out, color 0.1s ease-in-out;
 }
 
-/* .dark .articles .article .btns button {
-    color: #ff3131;
+.articles .article .btns .remove {
+    color: red;
+}
+
+.articles .article .btns .edit {
+    transform: rotateY(180deg);
+    font-size: x-large;
+    color: #222;
+}
+
+/* .dark .articles .article .btns .remove {
+    color: rgb(255, 62, 62);
+}
+
+.dark .articles .article .btns .edit {
+    color: #eee;
 } */
 
-.articles .article .btns button:hover {
+.articles .article .btns .edit:hover {
+    color: white;
+    background-color: #555;
+}
+
+.articles .article .btns .remove:hover {
     color: white;
     background-color: rgb(255, 0, 0);
 }
 
-/* .dark .articles .article .btns button:hover {
-    background-color: #ff2727;
-} */
-
-.articles .article:hover {
-    transform: scale(1.01);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-/* .dark .articles .article:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+/* .dark .articles .article .btns .edit:hover {
+    color: #222;
+    background-color: rgba(255, 255, 255, 0.7);
 } */
