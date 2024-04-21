@@ -35,6 +35,10 @@ function setData() {
 async function changeImage(formdata, id) {
     const api = `/course/update-course-image/${id}`;
 
+    if(!formdata || Object.entries(formdata).length <= 0) {
+        throw new Error("No image provided");
+    }
+
     const options = {
         method: "PATCH",
         body: formdata,
@@ -45,6 +49,7 @@ async function changeImage(formdata, id) {
         const response = await fetch("http://127.0.0.1:8000/api/v1" + api, options)
 
         if(!response.ok) {
+            console.log(response);
             throw new Error("Something went wrong");
         }
 
@@ -68,8 +73,9 @@ function setListeners(id) {
         }
 
         const img = imageBox.querySelector(".box img").src;
+        const imageInputBox = imageBox.querySelector("#image");
 
-        if(title === courseDetail.title && description === courseDetail.description && img === courseDetail.imageURL) {
+        if(title === courseDetail.title && description === courseDetail.description && (img === courseDetail.imageURL || imageInputBox.files.length <= 0)) {
             errorBox.innerHTML = "No changes made";
             return;
         }
@@ -83,11 +89,15 @@ function setListeners(id) {
 
         // console.log(data);
 
-        if(img !== courseDetail.imageURL) {
+        if(img !== courseDetail.imageURL || imageInputBox.files.length > 0) {
             const image = imageBox.querySelector("#image").files[0];
             const formData = new FormData();
             formData.append("image", image);
-            var isChanged = await changeImage(formData, id);
+            try {
+                var isChanged = await changeImage(formData, id);
+            } catch (error) {
+                errorBox.innerHTML = error?.message || error;
+            }
         }
         // console.log(data);
 
