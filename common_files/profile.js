@@ -54,10 +54,10 @@ async function getData(username) {
         .then(data => data.data)
         // .then(data => data?.user);
         // console.log(data);
-        userDetails.isBothSame = data.isBothSame;
+        userDetails.isBothSame = data?.isBothSame || false;
         let accessinguser = localStorage.getItem('user');
         accessinguser = JSON.parse(accessinguser);
-        userDetails.isAdmin = accessinguser.isAdmin || false;
+        userDetails.isAdmin = accessinguser?.isAdmin || false;
         return data;
     } catch (error) {
         console.log(error.message);
@@ -82,13 +82,14 @@ async function followUser({data, username}) {
     }
 
     try {
-        const data = await fetch(server + api, options)
+        await fetch(server + api, options)
         .then(res => res.json())
         // .then(data => data.data);
         // console.log(data);
         window.location.reload();
     } catch (error) {
         console.log(error.message);
+        window.location.href = "./login.html";
     }
 }
 
@@ -193,7 +194,7 @@ function setData(data){
         else buttons.querySelector('#followbtn').innerHTML = "Follow";
     }
     
-    if(user.isAdmin) buttons.querySelector('#adminbtn').style.display = "block";
+    if(userDetails.isAdmin) document.querySelector('#adminroutes').style.display = "block";
 }
 
 function setCourses(courses){
@@ -379,6 +380,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     //     },
     // }
     // const data = null;
+
 
     if(!data) {
         window.location.href = "./login.html";
