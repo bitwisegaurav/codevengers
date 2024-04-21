@@ -41,7 +41,7 @@ async function getArticles() {
     return data;
 }
 
-function setData(data) {
+function setData(data, user) {
     if(!data) {
         setNoData("No Articles found");
         return;
@@ -74,9 +74,10 @@ function setData(data) {
                     </div>
                 </div>
             </a>
-            <div class="btns">
+            ${ user.username === owner.username ?
+            `<div class="btns">
                 <button type="button">&Cross;</button>
-            </div>
+            </div>` : ""}
         </div>
         `
     }).join("");
@@ -104,6 +105,8 @@ function setListeners(data) {
 
     articles.forEach(article => {
         const btn = article.querySelector('.btns button');
+
+        if(!btn) return;
 
         btn.addEventListener('click', async () => {
             const id = article.getAttribute('_id');
@@ -145,6 +148,13 @@ function setListeners(data) {
 window.addEventListener("DOMContentLoaded", async () => {
     setHeader();
 
+    const data = await checkUserLoggedIn();
+    const user = data?.user;
+
+    if(!user) {
+        window.location.href = "./login.html";
+    }
+
     const articles = await getArticles();
 
     if(!articles) window.location.href = "./login.html"
@@ -182,6 +192,6 @@ window.addEventListener("DOMContentLoaded", async () => {
     //     },
     // ]
 
-    setData(articles);
+    setData(articles, user);
     setListeners(articles);
 })
