@@ -146,3 +146,19 @@ main .container .lower .content a {
 .dark main .container .lower .content a {
     color: #b99fff;
 }
+
+main .container .lower .content * {
+    background-color: transparent !important;
+}
+
+main .container .lower .content ul, ol {
+    padding-left: 1rem;
+}
+
+.dark main .container .lower .content * {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.dark main .container .lower .content h1, h2, h3, h4, h5, h6, bold, strong {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
