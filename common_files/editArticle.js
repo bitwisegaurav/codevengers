@@ -119,6 +119,18 @@ function setListeners(id) {
         const image = imageBox.querySelector('img');
         image.src = URL.createObjectURL(file);
     })
+
+    form.querySelector("#textEditorbtn").addEventListener("click", (e) => {
+        e.preventDefault();
+        const content = articleDetail.body;
+        let editorContent = localStorage.getItem("editorContent") || "{}";
+        editorContent = JSON.parse(editorContent);
+        editorContent[id] = content;
+        localStorage.setItem("editorContent", JSON.stringify(editorContent));
+        
+        // open page in new tab
+        window.open(`textEditor.html?id=${id}`, "_blank");
+    })
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
