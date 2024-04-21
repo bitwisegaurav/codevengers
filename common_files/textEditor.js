@@ -22,10 +22,16 @@ async function setHeader() {
 function setData () {
     // get html content from url
     const url = new URL(window.location.href);
-    const content = url.searchParams.get("content");
+    const id = url.searchParams.get("id");
+
+    if(!id) return;
 
     // Set HTML content
-    if (content.trim()) quill.clipboard.dangerouslyPasteHTML(content);
+    let editorContent = localStorage.getItem("editorContent");
+    editorContent = JSON.parse(editorContent);
+    console.log(editorContent);
+    const content = editorContent[id];
+    quill.root.innerHTML = content;
 }
 
 function setListeners() {
