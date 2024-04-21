@@ -73,6 +73,12 @@ function setListeners() {
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
+    const isLoggedIn = await checkUserLoggedIn();
+
+    if(!isLoggedIn) {
+        window.location.href = "./login.html"
+    }
+
     setHeader();
     setListeners();
 })
