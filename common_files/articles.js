@@ -93,7 +93,7 @@ function search (articles) {
     const input = searchbar.value.trim().toLowerCase();
     
     const newArticles = articles.filter(article => {
-        return article.title.includes(input) || article.body.includes(input) || article.owner.username.includes(input);
+        return article.title.toLowerCase().includes(input) || article.owner.username.toLowerCase().includes(input);
     } )
 
     setData(newArticles);
