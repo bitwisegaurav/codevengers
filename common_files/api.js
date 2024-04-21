@@ -27,3 +27,42 @@ async function apiCall(api, method = "GET", data) {
         return null;
     }
 }
+
+async function getUserDataToCheck() {
+    const api = "/user/get-user";
+
+    try {
+        const user = await apiCall(api);
+        
+        return user;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function checkUserLoggedIn() {
+    let user = localStorage.getItem("user");
+    
+    if(!user) {
+        return null;
+    }
+
+    user = await getUserDataToCheck();
+
+    if(!user) {
+        return null;
+    }
+
+    return user; 
+}
+
+async function checkUserAdmin() {
+    const data = await checkUserLoggedIn();
+    const user = data?.user;
+
+    if(!user || !user.isAdmin) {
+        return false;
+    }
+    
+    return true;
+}
