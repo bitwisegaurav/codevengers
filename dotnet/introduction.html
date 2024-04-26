@@ -16,7 +16,7 @@
 
     <h2>Architecture and Components</h2>
     <p>It is considered an engine for providing runtime services using its components like Common Language Runtime (CLR) and .NET Framework Class Library (FCL).</p>
-    <div class="structimg img-center"><img src="../examples/dotnet/introduction/architecture.png" alt="architecture of .net"></div>
+    <div class="structimg img-center mt-2"><img src="../examples/dotnet/introduction/architecture.png" alt="architecture of .net"></div>
 
     <p>The main components of .NET Framework are : </p>
     <ul>
@@ -101,6 +101,155 @@
         <li>Migration of application to .NET Framework can be expensive.</li>
         <li>It is provided by Microsoft and it involves the danger of vendor lock-in.</li>
     </ul>
+
+    <h1>Introduction to VB.NET</h1>
+    <p>Visual Basic .NET (VB.NET) is an object-oriented programming language supported by .NET Framework.</p>
+    <p>The word "Visual" refers to Graphical User Interface (GUI), "Basic" refers to Beginners All Purpose Sumbolic Instruction Code and "NET" refers to network.</p>
+
+    <h2>Writing and Executing a VB.NET Program</h2>
+    <ul>
+        <li><span>Build a GUI</span>
+            <ul>
+                <li>Add controls from the Toolbox to the Form.</li>
+                <li>Customize the properties of various controls.</li>
+            </ul>
+        </li>
+        <li><span>Write Code</span>
+            <p>Write code for the relevant controls so that they can response to triggered events.</p>
+        </li>
+        <li><span>Executre or Run VB.NET Project</span></li>
+    </ul>
+
+    <h2>Introduction to Commonly Used Controls in VB.NET</h2>
+    <ul>
+        <li><span>Label : </span>It is used to display text on the form.</li>
+        <li><span>TextBox : </span>It is used to accept input from the user.</li>
+        <li><span>Button : </span>It is used to trigger an event.</li>
+        <li><span>CheckBox : </span>It is used to select or deselect an option.</li>
+        <li><span>RadioButton : </span>It is used to select one option from multiple options.</li>
+        <li><span>ComboBox : </span>It is used to select an option from a list of options.</li>
+        <li><span>ListBox : </span>It is used to select one or more options from a list of options.</li>
+        <li><span>DataGridView : </span>It is used to display data in tabular form.</li>
+        <li><span>DateTimePicker : </span>It is used to select date and time.</li>
+        <li><span>MenuStrip : </span>It is used to create a menu bar.</li>
+        <li><span>ToolStrip : </span>It is used to create a toolbar.</li>
+        <li><span>StatusStrip : </span>It is used to display status information.</li>
+        <li><span>TabControl : </span>It is used to create multiple tabs.</li>
+        <li><span>GroupBox : </span>It is used to group related controls.</li>
+        <li><span>Panel : </span>It is used to group related controls.</li>
+        <li><span>PictureBox : </span>It is used to display images.</li>
+        <li><span>Timer : </span>It is used to trigger an event at regular intervals.</li>
+    </ul>
+
+    <h2>Built in Functions for Displaying Message</h2>
+    <ul>
+        <li><span>MsgBox : </span>It is used to display a message box with a message and an OK button.
+            <p>Syntax : </p>
+            <div class="code">
+                <pre>MsgBox("Hello")</pre>
+            </div>
+        </li>
+        <li><span>MsgBox.show : </span>
+            <p>It is used to display a message box with a message and an OK button.</p>
+            <p>Syntax : </p>
+            <div class="code">
+                <pre>MsgBox.show("Hello")</pre>
+            </div>
+        </li>
+    </ul>
+
+    <h2>Close Method</h2>
+    <p>It is used to close the form.</p>
+    <p>Syntax : </p>
+    <div class="code">
+        <pre>Me.Close()</pre>
+    </div>
+
+    <h2>Simple VB.NET Project</h2>
+    <ul>
+        <li>Create a Project.</li>
+        <li>Add a Button Controller and change its text to "Click Here".</li>
+        <li>Add another Button Controller and change its text to "Exit".</li>
+        <li>Double click on the form and write code for it. 
+            <p>Example : </p>
+            <div class="code">
+                <pre>
+Public Class Form1
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        MsgBox.show("Welcome to our first vb.net project")
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Close()
+    End Sub
+End Class
+</pre>
+            </div>
+        </li>
+    </ul>
+
+    <h2>Developing console applications</h2>
+    <p>To develop console applications some commonly used methods are : </p>
+    <ul>
+        <li><span>Console.Write : </span>This method writes string to standard output</li>
+        <li><span>Console.WriteLine : </span>This method writes string to standard output followed by a newline character</li>
+        <li><span>Console.ReadKey : </span>It is used to read a key from the standard input stream</li>
+        <li><span>Console.Clear : </span>It is used to clear the console buffer and corresponding console window of display information</li>
+        <li><span>Console.Title : </span>It is used to get or set the title of the console window</li>
+        <li><span>Console.Read : </span>This method reads next character from standard input</li>
+        <li><span>Console.ReadLine : </span>It is used to read input from the console.</li>
+    </ul>
+
+    <h2>Steps to develop and Execute a console application</h2>
+    <ul>
+        <li>Go to File menu in the VS.NET IDE</li>
+        <li>Select new project</li>
+        <li>Select Template</li>
+        <li>Select Visual Basic</li>
+        <li>Select Console Application</li>
+        <li>Give name to console application</li>
+        <li>Click button Ok</li>
+        <li>A blanck module with name "Module1" and extension ".VB" will appear which has one procedure Main() </li>
+        <li>Write code in sub Main()</li>
+        <li>Execute the application by clicking the start button</li>
+    </ul>
+
+    <p>Example of a console application to read two numbers and display their addition : </p>
+    <div class="code">
+        <pre>
+Module Module1
+    Sub Main()
+        Console.WriteLine("Hello, World!")
+        Console.Write("Enter first number : ")
+        Dim no1 = Console.ReadLine()
+        Console.Write("Enter second number : ")
+        Dim no2 = Console.ReadLine()
+        Dim sum = CInt(no1) + CInt(no2)
+        Console.WriteLine("Sum of two numbers is : " & sum)
+        Console.ReadKey()
+    End Sub
+End Module
+</pre>
+    </div>
+
+    <p class="note note-normal">
+        <span>CInt() : </span>It is used to convert the string to integer.<br>
+        <span>Dim : </span>It is used to declare a variable.<br>
+        <span>Module : </span>It is a container for the procedures and functions.<br>
+        <span>Sub : </span>It is used to define a procedure.<br>
+    </p>
+
+    <h2>Importing Namespaces</h2>
+    <p>Namespaces are used to organize the classes and interfaces in .NET. It is a collection of classes, interfaces, structures, enumerations and delegates. It is used to avoid name conflicts and to make the code more readable and maintainable.</p>
+    <p>Import statements are used at source file level and cannot be used within namespace, class, structure, module, interface, procedure or block.</p>
+    <p>Syntax : </p>
+    <div class="code">
+        <pre>Imports [name of namespace]</pre>
+    </div>
+    <p>Example : </p>
+    <div class="code">
+        <pre>Imports System.Data.OLEDB</pre>
+    </div>
 
 </body>
 <script src="../common_files/innerTheme.js"></script>
