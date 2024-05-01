@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common_files/inner.css">
+    <title>Fundamentals of VB.Net</title>
+</head>
+<body>
+    <h1>Fundamentals of VB.NET</h1>
+
+    <h2>Keywords</h2>
+    <p><span>Keywords</span> are reserved words that have special meaning in the language. They are used to define the <span>syntax</span> and <span>structure</span> of the language.</p>
+
+    <h3>Reserved Keywords</h3>
+    <p><span>Reserved Keywords</span> cannot be used as <span>identifiers</span>. However, this restriction can be overlooked by enclosing reserved keywords in <span>square brackets [].</span></p>
+    <p>Some of the keywords in VB.NET are: </p>
+    <ul>
+        <li>Dim</li>
+        <li>Class</li>
+        <li>Double</li>
+        <li>Call</li>
+        <li>ByVal</li>
+        <li>Continue</li>
+    </ul>
+
+    <h3>Unreseved Keywords</h3>
+    <p><span>Unreserved Keywords</span> can be used as <span>identifiers</span> but this should be avoided for better programming practices. Some of the unreserved keywords in VB.NET are: </p>
+    <ul>
+        <li>Aggregate</li>
+        <li>Custom</li>
+        <li>Into</li>
+        <li>Equals</li>
+        <li>isTrue</li>
+        <li>Text</li>
+    </ul>
+
+    <h2>Identifiers</h2>
+    <p><span>Identifiers</span> are names given to <span>variables</span>, <span>methods</span>, <span>classes</span>, etc. in a program. Identifiers are case-insensitive in VB.NET.</p>
+
+    <h3>Rules for Identifiers</h3>
+    <ul>
+        <li>Identifiers must begin with an <span>alphabet</span> or an <span>underscore</span>.</li>
+        <li>Identifiers can contain <span>alphabets</span>, <span>digits</span>, and <span>underscores</span>.</li>
+        <li>Identifiers cannot contain <span>spaces</span> or <span>special characters</span> except for underscores.</li>
+        <li>Identifiers cannot be <span>reserved keywords</span>.</li>
+        <li>Identifiers are <span>case-insensitive</span>.</li>
+    </ul>
+
+    <h2>Data types</h2>
+    <p><span>Data types</span> are used to define the type of data that a variable can store.</p>
+
+    <h3>Numeric Data Types</h3>
+    <ul>
+        <li><span>Integer : </span>It stores whole numbers without fractional parts. It can be signed (can store both positive and negative values) or unsigned (store only positive values).
+            <ul>
+                <li>Byte : 1 byte</li>
+                <li>Short : 2 bytes</li>
+                <li>Integer : 4 bytes</li>
+                <li>Long : 8 bytes</li>
+            </ul>
+        </li>
+        <li><span>Floating point : </span>It can store numbers with fractional parts. Single (provide 6 digits of accuracy) and Double (provide 14 digits of accuracy) are used for high precision calculation.
+            <ul>
+                <li>Single : 4 bytes</li>
+                <li>Double : 8 bytes</li>
+            </ul>
+        </li>
+        <li><span>Decimal : </span>It holds a binary integer value, together with a sign bit and an integer caling factor that is used to specify the portion of the value as a decimal fraction.
+            <ul>
+                <li>Decimal : 16 bytes</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Non-Numeric Data Types</h3>
+    <!-- char, date, boolean, object, string, user-defined -->
+    <p>Char, String, Date, Boolean, User-defined and Object are data types are used in this type.</p>
+    <p>Char, Boolean, User-defined and Date are of value type while String and Object are of reference type.</p>
+    <ul>
+        <li><span>Char : </span>It stores a single character.</li>
+        <li><span>String : </span>It stores a sequence of characters.</li>
+        <li><span>Date : </span>It stores date and time values.</li>
+        <li><span>Boolean : </span>It stores true or false values.</li>
+        <li><span>User-defined : </span>It is a custom data type created by the user.</li>
+        <li><span>Object : </span>It is a reference type that can store any type of data.</li>
+    </ul>
+
+    <h2>Variables</h2>
+    <p><span>Variables</span> are used to store data in a program. They are used to store <span>values</span> that can be used later in the program.</p>
+
+    <h3>Declaring a Variable</h3>
+    <p>It is done using the <span>Dim</span> keyword. A declaration statement of a variable describles name, data type and scope of variable.</p>
+    <p><span>Syntax : </span></p>
+    <div class="code">
+        <pre>Dim variable_name As data_type</pre>
+    </div>
+    <p><span>Example : </span></p>
+    <div class="code">
+        <pre>Dim Age As Integer</pre>
+    </div>
+
+    <h3>Assigning Value</h3>
+    <p>It is done using the <span>=</span> operator. It is used to assign a value to a variable.</p>
+    <p><span>Syntax : </span></p>
+    <div class="code">
+        <pre>variable_name = value</pre>
+    </div>
+    <p><span>Example : </span></p>
+    <div class="code">
+        <pre>Age = 10</pre>
+    </div>
+
+    <h3>Check Data Type of Variable</h3>
+    <p>It is done using the <span>GetType</span> method. It is used to check the data type of a variable.</p>
+    <p><span>Syntax : </span></p>
+    <div class="code">
+        <pre>variable_name.GetType()</pre>
+    </div>
+    <p><span>Example : </span></p>
+    <div class="code">
+        <pre>MessageBox(Age.GetType().ToString())</pre>
+    </div>
+
+    <h3>Option Explicit Statement</h3>
+    <p><span>Option Explicit On</span> statement is used to force the declaration of variables before using them in a program. It is used to avoid the use of undeclared variables.</p>
+    <p><span>Syntax : </span></p>
+    <div class="code">
+        <pre>Option Explicit On</pre>
+    </div>
+
+    <h3>Option Strict Statement</h3>
+    <p><span>Option Strict On</span> imples that type checking switch is on.</p>
+
+    <h2>Literals</h2>
+    <p><span>Literals</span> are constant values that are used in a program. They are used to represent fixed values in a program.</p>
+    <p>For exmaple : </p>
+    <div class="code">
+        <pre>
+Dim integerLiteral As Integer = 10
+
+Dim floatingPointLiteral As Double = 3.14
+
+Dim stringLiteral As String = "Hello, world!"
+
+Dim charLiteral As Char = "A"c
+
+Dim booleanLiteral As Boolean = True
+
+Dim dateLiteral As Date = #12/31/2021#</pre>
+    </div>
+    <p>Here 10, 3.14, "Hello, world!", "A"c, True and #12/31/2021# are <span>literals</span> where integerLiteral, floatingPointLiteral, stringLiteral, charLiteral, booleanLiteral and dateLiteral are <span>variables</span></p>
+    <ul>
+        <li><span>Integer Literal : </span>It is used to store integer values.</li>
+        <li><span>Floating Point Literal : </span>It is used to store floating-point values.</li>
+        <li><span>String Literal : </span>It is used to store string values.</li>
+        <li><span>Char Literal : </span>It is used to store character values.</li>
+        <li><span>Boolean Literal : </span>It is used to store boolean values.</li>
+        <li><span>Date Literal : </span>It is used to store date values.</li>
+    </ul>
+
+    <h2>Constants or Enumerations</h2>
+    <p><span>Constants</span> are used to store fixed values that do not change during the execution of a program. Constants are declared using the <span>Const</span> keyword.</p>
+
+    <h3>User defined Constants</h3>
+    <p>It is done using the <span>Const</span> keyword. It is used to declare a constant.</p>
+    <p><span>Syntax : </span></p>
+    <div class="code">
+        <pre>Modifier Const constant_name As data_type</pre>
+    </div>
+    <p><span>Example : </span></p>
+    <div class="code">
+        <pre>Const pi As Double = 3.14</pre>
+    </div>
+    <p class="note note-normal">
+        <span>Modifier</span> is optional and can be <span>Public</span>, <span>Private</span>, <span>Protected</span>, <span>Friend</span>, <span>Protected Friend</span>, <span>Private Protected</span> or <span>Protected Friend</span>.
+    </p>
+
+    <h3>User Defined Enumerations</h3>
+    <p><span>Enumerations</span> are used to create a group of named constants. Enumerations are declared using the <span>Enum</span> keyword.</p>
+    <p><span>Syntax : </span></p>
+    <div class="code">
+        <pre>Enum enum_name
+    enum_value1
+    enum_value2
+    ...
+    enum_valueN
+End Enum</pre>
+    </div>
+
+    <h3>Instrinsic constants</h3>
+    <p>Instrinsic constants are system defined constants which are built in the environment and need not to be defined explicitly.</p>
+
+    <p><span>Some expamples are : </span></p>
+    <ul>
+        <li><span>vbCr : </span>carriage return character.</li>
+        <li><span>vbLf : </span>linefeed character.</li>
+        <li><span>vbCrLf : </span>carriage return and line feed character.</li>
+        <li><span>vbNewLine : </span>newline character.</li>
+        <li><span>vbNullChar : </span>null character.</li>
+    </ul>
+
+    <h2>Scope of Variable</h2>
+    <!-- namespace level, module level, procedure level, block level -->
+    <p>The scope of a variable determines its visibility or accessibility from different parts of your program. In VB.NET, variables can have different levels of scope: </p>
+    <ul>
+        <li><span><strong>Namespace Level : </strong></span> Variables declared outside any procedure or block but within a namespace. These variables are accessible from any code in the same namespace.</li>
+        <li><span><strong>Module Level : </strong></span> Variables declared outside any procedure but inside a module, class, or structure. These variables are accessible from any code in the same module, class, or structure.</li>
+        <li><span><strong>Procedure Level : </strong></span> Variables declared inside a procedure. These variables are only accessible from within the same procedure.</li>
+        <li><span><strong>Block Level : </strong></span> Variables declared inside a block of code, such as within a loop or conditional statement. These variables are only accessible from within the same block.</li>
+    </ul>
+    <p>Choosing the right scope for your variables is important for maintaining clean, understandable code and avoiding naming conflicts and unexpected behavior.</p>
+
+    <h2>Operators</h2>
+    <p>An <span>operator</span> is symbol that tells the computer to perform certain manipulations on operands.</p>
+
+    <h3>Types of operator</h3> 
+
+    <h4>Arithmetic Operators</h4>
+    <p><span>Arithmetic operators</span> are used to perform mathematical operations on numeric operands. The following are the arithmetic operators in VB.NET: </p>
+    <ul>
+        <li><span>Addition (+) : </span>Performs the addition of two operands.</li>
+        <li><span>Subtraction (-) : </span>Performs the subtraction of two operands.</li>
+        <li><span>Multiplication (*) : </span>Performs the multiplication of two operands.</li>
+        <li><span>Division (/) : </span>Performs the division of two operands.</li>
+        <li><span>Exponentiation (^) : </span>Raises the first operand to the power of the second operand.</li>
+        <li><span>Integer Division (\) : </span>Performs the division of two operands and returns the integer quotient.</li>
+        <li><span>Modulus (%) : </span>Returns the remainder of the division of two operands.</li>
+    </ul>
+
+    <p><span>Example : </span></p>
+    <div class="code">
+        <pre>
+Dim a As Integer = 10
+Dim b As Integer = 5
+Dim c As Integer = a + b
+Dim d As Integer = a - b
+Dim e As Integer = a * b
+Dim f As Integer = a / b
+Dim g As Integer = a ^ b
+Dim h As Integer = a \ b
+Dim i As Integer = a Mod b
+
+MessageBox("Addition : " & c)
+MessageBox("Subtraction : " & d)
+MessageBox("Multiplication : " & e)
+MessageBox("Division : " & f)
+MessageBox("Exponentiation : " & g)
+MessageBox("Integer Division : " & h)
+MessageBox("Modulus : " & i)</pre>
+    </div>
+
+    <h4>Relational Operators</h4>
+    <p><span>Relational operators</span> are used to compare two operands. The following are the relational operators in VB.NET: </p>
+    <ul>
+        <li><span>Equal to (=) : </span> Checks if the values of two operands are equal.</li>
+        <li><span>Not equal to (<>) : </span> Checks if the values of two operands are not equal.</li>
+        <li><span>Greater than (>) : </span> Checks if the value of the left operand is greater than the value of the right operand.</li>
+        <li><span>Less than (<) : </span> Checks if the value of the left operand is less than the value of the right operand.</li>
+        <li><span>Greater than or equal to (>=) : </span> Checks if the value of the left operand is greater than or equal to the value of the right operand.</li>
+        <li><span>Less than or equal to (<=) : </span> Checks if the value of the left operand is less than or equal to the value of the right operand.</li>
+    </ul>
+
+    <p><span>Example : </span></p>
+    <div class="code"><pre>
+Dim a As Integer = 10
+Dim b As Integer = 5
+
+MessageBox("Equal to : " & (a = b))
+MessageBox("Not equal to : " & (a <> b))
+MessageBox("Greater than : " & (a > b))
+MessageBox("Less than : " & (a < b))
+MessageBox("Greater than or equal to : " & (a >= b))
+MessageBox("Less than or equal to : " & (a <= b))</pre>
+    </div>
+
+    <h4>Logical Operators</h4>
+    <p><span>Logical operators</span> are used to combine two or more conditions. The following are the logical operators in VB.NET: </p>
+    <ul>
+        <li><span>And : </span> Returns True if both conditions are True.</li>
+        <li><span>Or : </span> Returns True if at least one of the conditions is True.</li>
+        <li><span>Not : </span> Returns the inverse of a condition.</li>
+    </ul>
+
+    <p><span>Example : </span></p>
+    <div class="code"><pre>
+Dim a As Boolean = True
+Dim b As Boolean = False
+
+MessageBox("And : " & (a And b))
+MessageBox("Or : " & (a Or b))
+MessageBox("Not : " & Not a)</pre>
+    </div>
+
+    <h4>Assignment Operators</h4>
+    <p><span>Assignment operators</span> are used to assign values to variables. The following are the assignment operators in VB.NET: </p>
+    <ul>
+        <li><span>Simple assignment (=) : </span> Assigns the value of the right operand to the left operand.</li>
+        <li><span>Add and assign (+=) : </span> Adds the right operand to the left operand and assigns the result to the left operand.</li>
+        <li><span>Subtract and assign (-=) : </span> Subtracts the right operand from the left operand and assigns the result to the left operand.</li>
+        <li><span>Multiply and assign (*=) : </span> Multiplies the right operand by the left operand and assigns the result to the left operand.</li>
+        <li><span>Divide and assign (/=) : </span> Divides the left operand by the right operand and assigns the result to the left operand.</li>
+    </ul>
+
+    <p><span>Example : </span></p>
+    <div class="code"><pre>
+Dim a As Integer = 10
+Dim b As Integer = 5
+
+a += b
+MessageBox("Add and assign : " & a)
+
+a -= b
+MessageBox("Subtract and assign : " & a)
+
+a *= b
+MessageBox("Multiply and assign : " & a)
+
+a /= b
+MessageBox("Divide and assign : " & a)</pre>
+    </div>
+
+    <h4>Bitwise Operators</h4>
+    <p><span>Bitwise operators</span> are used to perform operations on binary representations of numeric operands. The following are the bitwise operators in VB.NET: </p>
+    <ul>
+        <li><span>Bitwise And (&) : </span> Performs a bitwise AND operation on the operands.</li>
+        <li><span>Bitwise Or (|) : </span> Performs a bitwise OR operation on the operands.</li>
+        <li><span>Bitwise Not (~) : </span> Performs a bitwise NOT operation on the operand.</li>
+        <li><span>Bitwise Xor (^) : </span> Performs a bitwise XOR operation on the operands.</li>
+        <li><span>Bitwise shift left (<<) : </span> Shifts the bits of the left operand to the left by the number of positions specified by the right operand.</li>
+        <li><span>Bitwise shift right (>>) : </span> Shifts the bits of the left operand to the right by the number of positions specified by the right operand.</li>
+    </ul>
+
+    <p><span>Example : </span></p>
+    <div class="code"><pre>
+Dim a As Integer = 10 ' Binary: 1010
+Dim b As Integer = 5  ' Binary: 0101
+
+MessageBox("Bitwise And : " & (a And b))
+MessageBox("Bitwise Or : " & (a Or b))
+MessageBox("Bitwise Not : " & Not a)
+MessageBox("Bitwise Xor : " & (a Xor b))
+MessageBox("Bitwise shift left : " & (a << 1))
+MessageBox("Bitwise shift right : " & (a >> 1))</pre>
+    </div>
+
+    <h2>Concatenating Strings</h2>
+    <p><span>Concatenation</span> is the process of combining two or more strings into a single string. In VB.NET, you can concatenate strings using the <span>&</span> or <span>+</span> operator or the <span>String.Concat</span> method.</p>
+
+    <p><span>Example : </span></p>
+    <div class="code"><pre>
+Dim firstName As String = "John"
+Dim lastName As String = "Doe"
+
+MessageBox(firstName & " " & lastName)
+MessageBox(firstName + " " + lastName)
+MessageBox(String.Concat(firstName, " ", lastName))</pre>
+    </div>
+</pre>
+
+</body>
+<script src="../common_files/innerTheme.js"></script>
+<script src="../common_files/jsPrograms-inner.js"></script>
+</html>
