@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common_files/inner.css">
+    <title>Commonly used Controls in VB.Net</title>
+</head>
+<body>
+    <h1>Commonly used Controls in VB.Net</h1>
+    <!-- form, label, textbox, button, checkbox, radiobutton, groupbox, picture box, timer, progressbar, listbox, combo box, datetimepicker, line and shape contorls -->
+    <p>Controls are the building blocks of a Windows Forms application. The controls are used to create the user interface of the application. The commonly used controls in VB.Net are : </p>
+
+    <ul>
+        <li>Form</li>
+        <li>Label</li>
+        <li>TextBox</li>
+        <li>Button</li>
+        <li>CheckBox</li>
+        <li>RadioButton</li>
+        <li>GroupBox</li>
+        <li>PictureBox</li>
+        <li>Timer</li>
+        <li>ProgressBar</li>
+        <li>ListBox</li>
+        <li>ComboBox</li>
+        <li>DateTimePicker</li>
+        <li>Line and Shape Controls</li>
+    </ul>
+
+    <h2>Form</h2>
+    <p>
+        The <span>Form</span> control is used to create a window that contains other controls. The form is the main window of the application. The form is the container of all the controls.
+    </p>
+
+    <p>A <span>Form</span> can be developed using <span>System.Windows.Forms.Form</span> class which is available in <span>System Namespace</span>.</p>
+
+    <h3>Properties of Form Control</h3>
+    <ul>
+        <li><span>BackColor : </span> Sets the background color of the form. Example: 
+            <div class="code"><pre>Form1.BackColor = Color.Red</pre></div>
+        </li>
+        <li><span>BackgroundImage : </span> Sets the background image of the form. Example: 
+            <div class="code"><pre>Form1.BackgroundImage = Image.FromFile("C:\background.jpg")</pre></div>
+        </li>
+        <li><span>BorderStyle : </span> Sets the border style of the form. Example: 
+            <div class="code"><pre>Form1.FormBorderStyle = FormBorderStyle.Fixed3D</pre></div>
+        </li>
+        <li><span>Text : </span> Sets the text of the form's title bar. Example: 
+            <div class="code"><pre>Form1.Text = "Hello World"</pre></div>
+        </li>
+        <li><span>Size : </span> Sets the size of the form. Example: 
+            <div class="code"><pre>Form1.Size = New Size(300, 200)</pre></div>
+        </li>
+        <li><span>StartPosition : </span> Sets the starting position of the form. Example: 
+            <div class="code"><pre>Form1.StartPosition = FormStartPosition.CenterScreen</pre></div>
+        </li>
+        <li><span>WindowState : </span> Sets the window state of the form. Example: 
+            <div class="code"><pre>Form1.WindowState = FormWindowState.Maximized</pre></div>
+        </li>
+        <li><span>MaximizeBox : </span> Determines whether the Maximize box is displayed. Example: 
+            <div class="code"><pre>Form1.MaximizeBox = False</pre></div>
+        </li>
+        <li><span>MinimizeBox : </span> Determines whether the Minimize box is displayed. Example: 
+            <div class="code"><pre>Form1.MinimizeBox = False</pre></div>
+        </li>
+        <li><span>Icon : </span> Sets the icon for the form. Example: 
+            <div class="code"><pre>Form1.Icon = New Icon("C:\icon.ico")</pre></div>
+        </li>
+        <li><span>Opacity : </span> Sets the opacity level of the form. Example: 
+            <div class="code"><pre>Form1.Opacity = 0.5</pre></div>
+        </li>
+        <li><span>TopMost : </span> Sets whether the form should be displayed on top of all other windows. Example: 
+            <div class="code"><pre>Form1.TopMost = True</pre></div>
+        </li>
+        <li><span>TransparencyKey : </span> Sets a color to be transparent in the form. Example: 
+            <div class="code"><pre>Form1.TransparencyKey = Color.White</pre></div>
+        </li>
+    </ul>
+
+    <h3>Methods of Form Control</h3>
+    <ul>
+        <li><span>Show() : </span> Displays the form. Example: 
+            <div class="code"><pre>Form1.Show()</pre></div>
+        </li>
+        <li><span>ShowDialog() : </span> Displays the form as a modal dialog box. Example: 
+            <div class="code"><pre>Form1.ShowDialog()</pre></div>
+        </li>
+        <li><span>Hide() : </span> Hides the form. Example: 
+            <div class="code"><pre>Form1.Hide()</pre></div>
+        </li>
+        <li><span>Close() : </span> Closes the form. Example: 
+            <div class="code"><pre>Form1.Close()</pre></div>
+        </li>
+        <li><span>Activate() : </span> Activates the form. Example: 
+            <div class="code"><pre>Form1.Activate()</pre></div>
+        </li>
+        <li><span>Deactivate() : </span> Deactivates the form. Example: 
+            <div class="code"><pre>Form1.Deactivate()</pre></div>
+        </li>
+        <li><span>Focus() : </span> Sets input focus to the form. Example: 
+            <div class="code"><pre>Form1.Focus()</pre></div>
+        </li>
+        <li><span>Refresh() : </span> Forces the form to invalidate its client area and immediately redraw itself. Example: 
+            <div class="code"><pre>Form1.Refresh()</pre></div>
+        </li>
+        <li><span>Update() : </span> Causes the form to redraw the invalidated regions within its client area. Example: 
+            <div class="code"><pre>Form1.Update()</pre></div>
+        </li>
+        <li><span>Invalidate() : </span> Invalidates a specific region of the form and causes a paint message to be sent to the form. Example: 
+            <div class="code"><pre>Form1.Invalidate()</pre></div>
+        </li>
+        <li><span>PerformLayout() : </span> Forces the form to apply layout logic to all its child controls. Example: 
+            <div class="code"><pre>Form1.PerformLayout()</pre></div>
+        </li>
+    </ul>
+
+    <h3>Events of Form Control</h3>
+    <ul>
+        <li><span>Load : </span> Occurs before a form is displayed for the first time. Example: 
+            <div class="code"><pre>Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load</pre></div>
+        </li>
+        <li><span>Activated : </span> Occurs when the form is activated in code or by the user. Example: 
+            <div class="code"><pre>Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated</pre></div>
+        </li>
+        <li><span>Closed : </span> Occurs when the form is closing. Example: 
+            <div class="code"><pre>Private Sub Form1_Closed(sender As Object, e As EventArgs) Handles MyBase.Closed</pre></div>
+        </li>
+        <li><span>Closing : </span> Occurs when the form is about to close. Example: 
+            <div class="code"><pre>Private Sub Form1_Closing(sender As Object, e As CancelEventArgs) Handles MyBase.Closing</pre></div>
+        </li>
+        <li><span>Deactivate : </span> Occurs when the form loses focus and is no longer the active form. Example: 
+            <div class="code"><pre>Private Sub Form1_Deactivate(sender As Object, e As EventArgs) Handles MyBase.Deactivate</pre></div>
+        </li>
+        <li><span>FormClosed : </span> Occurs after the form is closed. Example: 
+            <div class="code"><pre>Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed</pre></div>
+        </li>
+        <li><span>FormClosing : </span> Occurs as the form is being closed. Example: 
+            <div class="code"><pre>Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing</pre></div>
+        </li>
+        <li><span>GotFocus : </span> Occurs when the form receives focus. Example: 
+            <div class="code"><pre>Private Sub Form1_GotFocus(sender As Object, e As EventArgs) Handles MyBase.GotFocus</pre></div>
+        </li>
+        <li><span>LostFocus : </span> Occurs when the form loses focus. Example: 
+            <div class="code"><pre>Private Sub Form1_LostFocus(sender As Object, e As EventArgs) Handles MyBase.LostFocus</pre></div>
+        </li>
+        <li><span>Shown : </span> Occurs whenever the form is first displayed. Example: 
+            <div class="code"><pre>Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown</pre></div>
+        </li>
+        <li><span>VisibleChanged : </span> Occurs when the Visible property value changes. Example: 
+            <div class="code"><pre>Private Sub Form1_VisibleChanged(sender As Object, e As EventArgs) Handles MyBase.VisibleChanged</pre></div>
+        </li>
+    </ul>
+
+    <h2>Label</h2>
+    <p>
+        The <span>Label</span> control is used to display text on the form. The label control is used to provide information to the user. The label control is a non-editable text control.
+    </p>
+
+    <h3>Properties of Label</h3>
+    <ul>
+        <li><span>Text : </span> Sets the text of the label. Example: 
+            <div class="code"><pre>Label1.Text = "Hello World"</pre></div>
+        </li>
+        <li><span>Font : </span> Sets the font of the label. Example: 
+            <div class="code"><pre>Label1.Font = New Font("Arial", 12, FontStyle.Bold)</pre></div>
+        </li>
+        <li><span>ForeColor : </span> Sets the foreground color of the label. Example: 
+            <div class="code"><pre>Label1.ForeColor = Color.Red</pre></div>
+        </li>
+        <li><span>BackColor : </span> Sets the background color of the label. Example: 
+            <div class="code"><pre>Label1.BackColor = Color.Yellow</pre></div>
+        </li>
+        <li><span>AutoSize : </span> Determines whether the label resizes itself to fit its contents. Example: 
+            <div class="code"><pre>Label1.AutoSize = True</pre></div>
+        </li>
+        <li><span>BorderStyle : </span> Sets the border style of the label. Example: 
+            <div class="code"><pre>Label1.BorderStyle = BorderStyle.FixedSingle</pre></div>
+        </li>
+        <li><span>TextAlign : </span> Sets the alignment of the text in the label. Example: 
+            <div class="code"><pre>Label1.TextAlign = ContentAlignment.MiddleCenter</pre></div>
+        </li>
+        <li><span>Image : </span> Sets the image to be displayed in the label. Example: 
+            <div class="code"><pre>Label1.Image = Image.FromFile("C:\image.jpg")</pre></div>
+        </li>
+        <li><span>ImageAlign : </span> Sets the alignment of the image in the label. Example: 
+            <div class="code"><pre>Label1.ImageAlign = ContentAlignment.MiddleLeft</pre></div>
+        </li>
+        <li><span>ImageIndex : </span> Sets the index of the image in the image list control. Example: 
+            <div class="code"><pre>Label1.ImageIndex = 0</pre></div>
+        </li>
+        <li><span>ImageKey : </span> Sets the key of the image in the image list control. Example: 
+            <div class="code"><pre>Label1.ImageKey = "image1"</pre></div>
+        </li>
+        <li><span>ImageList : </span> Sets the image list control that contains the image to be displayed in the label. Example: 
+            <div class="code"><pre>Label1.ImageList = ImageList1</pre></div>
+        </li>
+    </ul>
+</body>
+<script src="../common_files/innerTheme.js"></script>
+<script src="../common_files/jsPrograms-inner.js"></script>
+</html>
