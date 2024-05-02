@@ -8,14 +8,16 @@
             "file": "introduction"
         },
         {
-            "name": "Fundamentals of VB.NET"
+            "name": "Fundamentals of VB.NET",
+            "file": "fundamentals"
         },
         {
             "name": "Control Structures",
-            "file": "web"
+            "file": "control"
         },
         {
-            "name": "Commonly used controls"
+            "name": "Commonly used controls",
+            "file": "common_controls"
         },
         {
             "name": "Built in Functions"
