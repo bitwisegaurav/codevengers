@@ -20,7 +20,7 @@
 
     <h2>E-Payment Process</h2>
     <p>It involves a buyer and a seller. Buyer who makes a payment. A seller who receives a payment. And the process to transfer monetary value from the buyer to the seller is known as <span>E-Payment</span>.</p>
-    <div class="structimg img-center mt-2 "><img src="../examples/eCommerce/ePayment/process.png" alt="E payment process image"></div>
+    <div class="structimg img-center mt-2 mb-2"><img src="../examples/eCommerce/ePayment/process.png" alt="E payment process image"></div>
     <p>An e payment process involves following steps : </p>
     <ul>
         <li>The buyer and seller set yp accounts in financial institutions (or banks) that allow them to make or accept payments.</li>
@@ -79,7 +79,45 @@
     </ul>
 
     <h2>Online third party verified payment system</h2>
-    <p class="note note-mostimp">Content for this topic will be coming soon...</p>
+    <p>Third party services act like a warrantor who ensures the resolve of any online transaction disputes if occurs, satisfy both buyers and sellers.</p>
+    <p>Both buyer and seller registers on third party service. Buyer get their account number. It provides merchant services to merchant/seller. Merchant accounts authorize suppliers to accept credit or debit cards payments online.</p>
+    
+    <h4>Working</h4>
+    <ul>
+        <li>Buyer requests for a product online and authorizes the supplier to access the account number and bill.</li>
+        <li>Supplier contacts the third party payment processor with buyers account number.</li>
+        <li>Third party payment processor work in the background to verify the account number, checks for adequate funds availability and bill the buyer's account.</li>
+        <li>Third party payment servre sends an eletronic message to buyer and buyer responds by agreeing or not agreeing.</li>
+        <li>If server gets acceptance, the supplier is informed.</li>
+        <li>Once the process gets approval, the payment processors take the money from buyers bank account and deliver it to the suppliers bank account.</li>
+    </ul>
+
+    <h2>Payment Gateways</h2>
+    <p>A <span>payment gateway</span> is a service that <span>authorizes</span> payments for e-commerce websites. Payment gateways <span>encrypt payment information</span> to ensure that it is transmitted securely over the internet.</p>
+    <p>Payment gateways are a type of <span>third-party payment system</span>.</p>
+
+    <h4>Working</h4>
+    <div class="structimg img-center mt-2 mb-2"><img src="../examples/eCommerce/ePayment/payment_gateway.png" alt="Payment gateway working image"></div>
+    <ul>
+        <li>Visitor places the order.</li>
+        <li>THe customers browser encrypts (usually done via SSL/Secure Socket Layer) the information and send to merchants web server.</li>
+        <li>Merchants server forwards the transactiond details to payment gateway.</li>
+        <li>Payment gateway forwards the transaction information to the payment processor used by the merchants acquiring bank.</li>
+        <li>Merchants acquiring bank then forwards the transaction information to the issuing bank.</li>
+        <li>Issuing bak sends a response (whether the payment has been approved or declined with reason) back to the Payment Gateway.</li>
+        <li>Response is then forwarded by Payment Gateway to merchants server.</li>
+        <li>At merchants server the response is encrypted again and is relayed back to the cusotmer.</li>
+    </ul>
+
+    <h4>Benefits</h4>
+    <ul>
+        <li><span>Secure Transactions : </span>Payment gateways encrypt payment information to ensure that it is transmitted securely over the internet.</li>
+        <li><span>Convenient Payments : </span>Payment gateways allow customers to make payments online using a variety of payment methods like credit cards, debit cards, and e-wallets.</li>
+        <li><span>Real-Time Processing : </span>Payment gateways process payments in real-time, allowing customers to receive instant confirmation of their transactions.</li>
+        <li><span>Global Reach : </span>Payment gateways allow businesses to accept payments from customers around the world, increasing their reach and revenue.</li>
+        <li><span>Integration : </span>Payment gateways can be easily integrated with e-commerce platforms, making it easy for businesses to accept online payments.</li>
+        <li><span>Cost-Effective : </span>Payment gateways are cost-effective, as they eliminate the need for physical infrastructure like bank branches and reduce the cost of handling cash or cheques.</li>
+    </ul>
 
     <p class="note note-imp">Complete chapter will be coming soon...</p>
 </body>
