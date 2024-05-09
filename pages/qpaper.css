@@ -10,6 +10,10 @@ body {
     height: 100vh;
 }
 
+.dark {
+    background-color: #2e2b52;
+}
+
 nav {
     height: 5rem;
     background-color: rgb(109, 82, 158);
@@ -32,6 +36,10 @@ main h1 {
     font-size: 2rem;
     font-weight: 600;
     color: rgb(85, 65, 122);
+}
+
+.dark main h1 {
+    color: #e5e3ff;
 }
 
 .container {
