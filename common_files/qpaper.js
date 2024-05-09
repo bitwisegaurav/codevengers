@@ -5,6 +5,7 @@ async function getHeader() {
     const navbar = document.querySelector('nav');
     navbar.innerHTML = data;
 
+    setOptions("", "../");
     setTheme();
     setListenersTheme();
 }
