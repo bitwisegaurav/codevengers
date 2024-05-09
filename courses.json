@@ -59,5 +59,11 @@
         "name": "roadmaps",
         "url": "languages/roadmaps.html",
         "image": "roadmaps.png"
+    },
+    {
+        "name": "qpapers",
+        "title": "Question Papers",
+        "url": "pages/qpcourse.html",
+        "image": "qpapers.webp"
     }
 ]
