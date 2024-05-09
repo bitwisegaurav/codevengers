@@ -90,13 +90,16 @@ main section .container .scrollcontainer {
 }
 
 main section .scrollcontainer .innercontainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+    /* display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr)); */
+    display: flex;
+    align-items: flex-start;
     /* justify-items: center; */
     height: 100%;
     width: 100%;
     padding: 2rem;
     gap: 2rem;
+    flex-wrap: wrap;
     overflow: auto;
     /* border: 2px solid green; */
 }
@@ -119,6 +122,10 @@ main section .scrollcontainer .innercontainer button:hover {
 
 /* media queries */
 @media screen and (max-width: 768px) {
+    main section {
+        width: 95%;
+    }
+
     main section .top {
         gap: 1rem;
     }
