@@ -19,16 +19,16 @@ function themeTest () {
     document.body.classList.add(theme);
     themeBtn.innerHTML = theme === "light" ? "🌙" : "☀️";
     const frame = document.body.querySelector('iframe');
-    frame.contentWindow.postMessage({msg: "toggleTheme", theme}, "*");
+    if(frame) frame.contentWindow.postMessage({msg: "toggleTheme", theme}, "*");
 }
 
 function setListenersTheme () {
     let themeBtn = document.querySelector('#theme');
-    console.log("setListenersTheme", themeBtn);
+    // console.log("setListenersTheme", themeBtn);
     if(themeBtn)
       themeBtn.addEventListener("click", ()=>{
           themeTest();
-          console.log("clicked");
+          // console.log("clicked");
           themeBtn.innerHTML = theme === "light" ? "🌙" : "☀️";
       });
 }
