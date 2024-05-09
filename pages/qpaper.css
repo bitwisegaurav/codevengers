@@ -61,3 +61,16 @@ main h1 {
     width: 100%;
     height: 100%;
 }
+
+/* media queries */
+@media screen and (max-width: 768px) {
+    main h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    main h1 {
+        font-size: 1.2rem;
+    }
+}
