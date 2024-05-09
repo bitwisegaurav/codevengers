@@ -4,27 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../images/icon1.png" type="image/x-icon">
+    <link rel="stylesheet" href="qpcourse.css">
     <title>Question Papers - Codevengers</title>
 </head>
 <body>
+    <nav></nav>
     <main>
-        <div class="container">
-            <div class="courses">
-                <button type="button" class="course">BCA</button>
-                <button type="button" class="course">BCom</button>
-                <button type="button" class="course">BBA</button>
-                <button type="button" class="course">BTech</button>
+        <section>
+            <div class="top">
+                <button type="button" class="backbtn" disabled>Back</button>
+                <h1>Select <selection>Course</selection></h1>
+                <button type="button" class="nextbtn">Next</button>
             </div>
-            <div class="subjects"></div>
-            <div class="years"></div>
-        </div>
+            <div class="container">
+                <div class="scrollcontainer">
+                    <div class="innercontainer" id="courses" count="1"></div>
+                    <div class="innercontainer" id="subjects" count="2"></div>
+                    <div class="innercontainer" id="years" count="3"></div>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 <script>
-    const coursesBox = document.querySelector('.courses');
-    const subjectsBox = document.querySelector('.subjects');
-    const yearsBox = document.querySelector('.years');
-    let course = null, subject = null, year = 0;
+    const coursesBox = document.querySelector('#courses');
+    const subjectsBox = document.querySelector('#subjects');
+    const yearsBox = document.querySelector('#years');
+    const scrollcontainer = document.querySelector('.scrollcontainer');
+    const topDiv = document.querySelector('.top');
+    const backBtn = topDiv.querySelector('.backbtn');
+    const nextBtn = topDiv.querySelector('.nextbtn');
+    const selectiondiv = topDiv.querySelector('selection');
+    let course = null, subject = null, year = 0, scrollCount = 1, noOfOptions = 3;
 
     async function getData() {
         const responses = await fetch('json/qpcourse.json');
@@ -33,6 +44,26 @@
         if(!data) return {};
 
         return data;
+    }
+
+    function setScroll() {
+        scrollcontainer.style.left = `-${(scrollCount - 1)*100}%`;
+
+        let text = ["Course", "Subject", "Year"];
+
+        selectiondiv.innerHTML = text[scrollCount - 1];
+
+        if(scrollCount === 1) {
+            backBtn.setAttribute("disabled", true);
+        } else {
+            backBtn.removeAttribute("disabled");
+        }
+
+        if(scrollCount === noOfOptions) {
+            nextBtn.setAttribute("disabled", true);
+        } else {
+            nextBtn.removeAttribute("disabled");
+        }
     }
 
     function setCourseData (data) {
@@ -69,7 +100,9 @@
         courseBtns.forEach((btn) => {
             btn.addEventListener('click', async (e) => {
                 course = e.target.textContent.toLowerCase();
-                setSubjectData(data[course])
+                setSubjectData(data[course]);
+                scrollCount = 2;
+                setScroll();
             })
         })
     }
@@ -80,6 +113,8 @@
             btn.addEventListener('click', async (e) => {
                 subject = e.target.textContent.toLowerCase();
                 setYearData(data[subject]);
+                scrollCount = 3;
+                setScroll();
             })
         })
     }
@@ -94,11 +129,24 @@
         })
     }
 
+    function setListeners () {
+        backBtn.addEventListener('click', () => {
+            scrollCount--;
+            setScroll();
+        })
+
+        nextBtn.addEventListener('click', () => {
+            scrollCount++;
+            setScroll();
+        })
+    }
+
     window.addEventListener("DOMContentLoaded", async () => {
         const data = await getData();
         // console.log(data);
         setCourseData(data);
-        setCourseListeners(data)
+        setCourseListeners(data);
+        setListeners();
     })
 </script>
 </html>
