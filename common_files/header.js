@@ -14,16 +14,12 @@ async function setOptions(optionsPrePath, prePath) {
     const options = document.querySelector('.options');
     let content = "";
 
-    console.log(data);
-
     data.forEach(course => {
         let name = course.name;
         // make the first character bigger
         name = name.charAt(0).toUpperCase() + name.slice(1);
 
-        console.log(course.url ? course.url : "something");
-
-        content += `<a href="${course.link ? course.link : course.url ? "/" + course.url : `${optionsPrePath}outer.html?lang=${course.name}`}" lang="${course.name}">${course.title ?course.title : name}</a>`
+        content += `<a href="${course.link ? course.link : course.url ? "/" + course.url : `/languages/${optionsPrePath}outer.html?lang=${course.name}`}" lang="${course.name}">${course.title ?course.title : name}</a>`
     })
     options.innerHTML = content;
 }
