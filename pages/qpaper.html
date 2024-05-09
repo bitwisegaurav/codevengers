@@ -4,75 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../images/icon1.png" type="image/x-icon">
+    <link rel="stylesheet" href="qpaper.css">
     <title>Question Paper - Codevengers</title>
-    <style>
-        /* Resetting default margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    height: 100%;
-}
-
-/* Navigation styling */
-nav {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Main content styling */
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-}
-
-/* Container styling */
-.container {
-    background-color: #fff;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    height: 100%;
-    width: 100%;
-}
-
-/* PDF viewer styling */
-embed {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-    </style>
 </head>
 <body>
     <nav></nav>
     <main>
+        <h1><subject>Computer Graphics</subject> <year>2019</year> Question Paper</h1>
         <div class="container">
-            <embed src="E-Commerce(6th)May2021.pdf" type="application/pdf" width="100%"/>
+            <embed src="E-Commerce(6th)May2021.pdf" type="application/pdf" width="100%" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" class="embed-pdf"/>
         </div>
     </main>
 </body>
 <script>
+
     function getUrlValues() {
         const url = new URL(window.location.href);
-        console.log(url.searchParams);
         const course = url.searchParams.get("course");
+        const subject = url.searchParams.get("subject");
         const year = Number(url.searchParams.get("year"));
-        console.log(course, year);
+
+        return {course, subject, year};
     }
+
+    function setValues (data) {
+        const subject = document.querySelector('subject');
+        const year = document.querySelector('year');
+
+        subject.innerHTML = data.subject.toUpperCase() || "No Subject";
+        year.innerHTML = data.year || "without year";
+
+        const embedpdf = document.querySelector('.embed-pdf');
+        embedpdf.setAttribute("src", `../question-papers/${data.course.toLowerCase()}/${data.year}/${data.subject.toLowerCase()}.pdf`);
+    }
+
+
     window.addEventListener("DOMContentLoaded", async () => {
-        getUrlValues();
+        const data = getUrlValues();
+        setValues(data);
     })
 </script>
 </html>
