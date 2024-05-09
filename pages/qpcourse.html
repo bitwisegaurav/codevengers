@@ -53,13 +53,15 @@
 
         selectiondiv.innerHTML = text[scrollCount - 1];
 
+        const element = document.querySelector(`#${text[scrollCount].toLowerCase()}s`)
+
         if(scrollCount === 1) {
             backBtn.setAttribute("disabled", true);
         } else {
             backBtn.removeAttribute("disabled");
         }
 
-        if(scrollCount === noOfOptions) {
+        if(scrollCount === noOfOptions || !element || (element && element.childElementCount < 1)) {
             nextBtn.setAttribute("disabled", true);
         } else {
             nextBtn.removeAttribute("disabled");
@@ -147,6 +149,7 @@
         setCourseData(data);
         setCourseListeners(data);
         setListeners();
+        setScroll();
     })
 </script>
 </html>
