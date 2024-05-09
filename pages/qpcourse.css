@@ -77,7 +77,7 @@ main section .container {
     display: grid;
     height: 100%;
     /* border: 2px solid blue; */
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 main section .container .scrollcontainer {
@@ -90,12 +90,14 @@ main section .container .scrollcontainer {
 }
 
 main section .scrollcontainer .innercontainer {
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+    /* justify-items: center; */
     height: 100%;
     width: 100%;
     padding: 2rem;
     gap: 2rem;
+    overflow: auto;
     /* border: 2px solid green; */
 }
 
@@ -103,6 +105,7 @@ main section .scrollcontainer .innercontainer button {
     padding: 0.6rem 1.2rem;
     background-color: rgb(109 82 158);
     color: white;
+    height: max-content;
     border: none;
     border-radius: 10px;
     font-size: 1rem;
@@ -112,4 +115,30 @@ main section .scrollcontainer .innercontainer button {
 
 main section .scrollcontainer .innercontainer button:hover {
     background-color: rgb(88, 67, 126);
+}
+
+/* media queries */
+@media screen and (max-width: 768px) {
+    main section .top {
+        gap: 1rem;
+    }
+
+    main section .top h1 {
+        font-size: 1.5rem;
+    }
+
+    main section .top button {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    main section .container .scrollcontainer .innercontainer {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    main section .scrollcontainer .innercontainer button {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
 }
