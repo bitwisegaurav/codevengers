@@ -10,6 +10,10 @@ body{
     height: 100vh;
 }
 
+.dark {
+    background-color: #2e2b52;
+}
+
 nav{
     height: 5rem;
     background-color: rgb(109 82 158);
@@ -38,6 +42,10 @@ main section {
     /* overflow: hidden; */
 }
 
+.dark main section {
+    background-color: #4b4875;
+}
+
 main section .top {
     display: flex;
     justify-content: space-between;
@@ -53,6 +61,10 @@ main section .top h1 {
     color: rgb(79, 59, 117);
 }
 
+.dark main section .top h1 {
+    color: #e5e3ff;
+}
+
 main section .top button {
     padding: 0.5rem 1rem;
     background-color: rgb(109 82 158);
@@ -62,11 +74,25 @@ main section .top button {
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+
+.dark main section .top button {
+    background-color: #2e2b52;
+    color: #e5e3ff;
+}
+
+.dark main section .top button:hover {
+    background-color: #3a375f;
 }
 
 main section .top button:disabled {
     background-color: rgb(162, 137, 207) !important;
     cursor: not-allowed;
+}
+
+.dark main section .top button:disabled {
+    background-color: #706d92 !important;
 }
 
 main section .top button:hover {
@@ -114,10 +140,19 @@ main section .scrollcontainer .innercontainer button {
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+
+.dark main section .scrollcontainer .innercontainer button {
+    background-color: rgb(56, 52, 95);
 }
 
 main section .scrollcontainer .innercontainer button:hover {
     background-color: rgb(88, 67, 126);
+}
+
+.dark main section .scrollcontainer .innercontainer button:hover {
+    background-color: rgb(46, 43, 78);
 }
 
 /* media queries */
