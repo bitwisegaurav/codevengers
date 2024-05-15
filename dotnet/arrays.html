@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common_files/inner.css">
+    <title>Arrays in VB.Net</title>
+</head>
+<body>
+    <h1>Arrays</h1>
+    <p>Arrays are used to manage large number of values of same data type.</p>
+
+    <h2>1D Array</h2>
+    <p>1D array is a collection of variables of same data type.</p>
+    
+    <h3>Initializing an Array</h3>
+    <h4>Syntax</h4>
+    <br>
+    <div class="code">
+        <pre>
+Dim arrayName(size) As DataType = New DataType(n)
+<p class="text-center">or</p>Dim arrayName() As DataType
+arrayName = New DataType(n)</pre>
+    </div>
+    <h4>Example</h4>
+    <br>
+    <div class="code"><pre>
+Dim numbers(5) As Integer = {10, 20, 30, 40, 50}</pre>
+    </div>
+
+    <h3>Accessing Elements</h3>
+    <p>Array elements are accessed using the index number. Index number starts from 0.</p>
+    <h4>Example</h4>
+    <br>
+    <div class="code"><pre>
+Dim numbers(5) As Integer = {10, 20, 30, 40, 50}
+Console.WriteLine(numbers(0))
+
+`looping through elements
+For i As Integer = 0 To numbers.Length - 1
+    Console.WriteLine(numbers(i))</pre>
+    </div>
+
+    <h3>Resizing Array</h3>
+    <p>Array can be resized using the <span>ReDim</span> statement or <span>Resize</span> method.</p>
+    <h4>Syntax</h4>
+    <br>
+    <div class="code"><pre>
+ReDim arrayName(size)
+<p class="text-center">or</p>Array.Resize(arrayName, size)</pre>
+    </div>
+    <h4>Example</h4>
+    <br>
+    <div class="code"><pre>
+Dim numbers(5) As Integer
+ReDim numbers(10)
+<p class="text-center">or</p>Array.Resize(numbers, 10)</pre></div>
+
+    <h2>Array Functions and Properties</h2>
+    <p>VB.Net provides a number of built-in functions and properties that can be used to work with arrays.</p>
+    <ul>
+        <li><span>Min():</span> This function returns the minimum value in an array.
+            <div class="code">
+                <pre>ArrayName.Min()</pre>
+            </div>
+        </li>
+        <li><span>Max():</span> This function returns the maximum value in an array.
+            <div class="code">
+                <pre>ArrayName.Max()</pre>
+            </div>
+        </li>
+        <li><span>Length:</span> This property returns the number of elements in an array.
+            <div class="code">
+                <pre>ArrayName.length</pre>
+            </div>
+        </li>
+        <li><span>Reverse():</span> This function reverses the order of the elements in an array.
+            <div class="code">
+                <pre>ArrayName.reverse()</pre>
+            </div>
+        </li>
+        <li><span>Clone():</span> This function creates a copy of the array.
+            <div class="code">
+                <pre>ArrayName.clone()</pre>
+            </div>
+        </li>
+        <li><span>Sort():</span> This function sorts the elements of an array in place and returns the array.
+            <div class="code">
+                <pre>ArrayName.sort()</pre>
+            </div>
+        </li>
+        <li><span>Resize():</span> This function changes the size of an array.
+            <div class="code">
+                <pre>ArrayName.resize(newSize)</pre>
+            </div>
+        </li>
+    </ul>
+
+    <h2>2D Array</h2>
+    <p>2D array is a collection of variables of same data type arranged in rows and columns.</p>
+
+    <h3>Initializing a 2D Array</h3>
+    <h4>Syntax</h4>
+    <br>
+    <div class="code"><pre>
+Dim arrayName(row, column) As DataType = New DataType(row, column)
+<p class="text-center">or</p>Dim arrayName(,) As DataType
+arrayName = New DataType(row, column)</pre>
+    </div>
+    <h4>Example</h4>
+    <br>
+    <div class="code"><pre>
+Dim numbers(,) As Integer = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}</pre>
+    </div>
+
+    <h3>Accessing Elements</h3>
+    <p>Array elements are accessed using the row and column index number.</p>
+    <h4>Example</h4>
+    <br>
+    <div class="code"><pre>
+Dim numbers(,) As Integer = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
+Console.WriteLine(numbers(0, 0))
+
+` looping through elements
+For i As Integer = 0 To numbers.GetLength(0) - 1
+    For j As Integer = 0 To numbers.GetLength(1) - 1
+        Console.WriteLine(numbers(i, j))</pre>
+    </div>
+
+    <h3>Resizing 2D Array</h3>
+    <p>2D array can be resized using the <span>ReDim</span> statement or <span>Resize</span> method.</p>
+    <h4>Syntax</h4>
+    <br>
+    <div class="code"><pre>
+ReDim arrayName(row, column)
+<p class="text-center">or</p>Array.Resize(arrayName, row, column)</pre>
+    </div>
+    <h4>Example</h4>
+    <br>
+    <div class="code"><pre>
+Dim numbers(,) As Integer
+ReDim numbers(10, 10)
+<p class="text-center">or</p>Array.Resize(numbers, 10, 10)</pre>
+    </div>
+
+    <h2>Jagged Array</h2>
+    <p>Jagged array is an array of arrays or multidimensional array. Each element of the array is an array.</p>
+
+    <h3>Initializing a Jagged Array</h3>
+    <h4>Syntax</h4>
+    <br>
+    <div class="code"><pre>
+Dim arrayName()() As DataType
+arrayName = New DataType(n)() {New DataType(n) {}, New DataType(n) {}, New DataType(n) {}}</pre>
+    </div>
+    <h4>Example</h4>
+    <br>
+    <div class="code"><pre>
+Dim numbers()() As Integer = {New Integer() {1, 2, 3}, New Integer() {4, 5, 6}, New Integer() {7, 8, 9}}</pre>
+    </div>
+    
+    <p class="note note-normal">Accessing and Resizing of jagged array is same as normal array.</p>
+
+    <h2>Passing Array</h2>
+    <p>When different number of parameters is to be passed each time a procedure or function is called then we can use an parameter array to pass parameter.</p>
+    <h3>Syntax</h3>
+    <br>
+    <div class="code">
+        <pre>
+Sub ProcedureName(ParamArray arrayName() As DataType)</pre>
+    </div>
+
+    <h3>Example</h3>
+    <br>
+    <div class="code">
+        <pre>
+Sub DisplayNumbers(ParamArray numbers() As Integer)
+    `Statements
+End Sub</pre>
+    </div>
+
+    <h2>Array Class</h2>
+    <p>VB.Net provides a number of built-in classes that can be used to work with arrays.</p>
+    <ul>
+        <li><span>Array:</span> This class provides a number of static methods and properties that can be used to work with arrays.</li>
+        <li><span>ArrayList:</span> This class provides a number of methods and properties that can be used to work with arrays.</li>
+        <li><span>SortedList:</span> This class provides a number of methods and properties that can be used to work with arrays.</li>
+        <li><span>HashTable:</span> This class provides a number of methods and properties that can be used to work with arrays.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>Arrays are used to manage large number of values of same data type. VB.Net provides a number of built-in functions and classes that can be used to work with arrays.</p>
+
+</body>
+<script src="../common_files/innerTheme.js"></script>
+<script src="../common_files/jsPrograms-inner.js"></script>
+</html>
