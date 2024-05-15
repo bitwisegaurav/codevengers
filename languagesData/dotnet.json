@@ -23,7 +23,8 @@
             "name": "Built in Functions"
         },
         {
-            "name": "User defined procedures and functions"
+            "name": "Procedures and Functions",
+            "file": "functions"
         },
         {
             "name": "Arrays"
