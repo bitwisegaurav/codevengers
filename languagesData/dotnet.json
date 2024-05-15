@@ -27,7 +27,8 @@
             "file": "functions"
         },
         {
-            "name": "Arrays"
+            "name": "Arrays",
+            "file": "arrays"
         },
         {
             "name": "Classes and Exception Handling"
