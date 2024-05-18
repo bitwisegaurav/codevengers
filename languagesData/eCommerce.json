@@ -20,11 +20,8 @@
             "file": "epayment"
         },
         {
-            "name": "M-Commerce",
+            "name": "Applications of E-Commerce",
             "file": "mCommerce"
-        },
-        {
-            "name": "Applications of E-Commerce"
         }
     ]
 }
