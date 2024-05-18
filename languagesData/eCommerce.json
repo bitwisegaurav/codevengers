@@ -16,7 +16,12 @@
             "file": "web"
         },
         {
-            "name": "Electronic Payment System"
+            "name": "Electronic Payment System",
+            "file": "epayment"
+        },
+        {
+            "name": "M-Commerce",
+            "file": "mCommerce"
         },
         {
             "name": "Applications of E-Commerce"
