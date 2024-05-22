@@ -8,16 +8,20 @@
             "file": "introduction"
         },
         {
-            "name": "EDI"
+            "name": "EDI",
+            "file": "edi"
         },
         {
-            "name": "Web Based E-Commerce"
+            "name": "Web Based E-Commerce",
+            "file": "web"
         },
         {
-            "name": "Electronic Payment System"
+            "name": "Electronic Payment System",
+            "file": "epayment"
         },
         {
-            "name": "Applications of E-Commerce"
+            "name": "Applications of E-Commerce",
+            "file": "mCommerce"
         }
     ]
 }

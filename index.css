@@ -328,7 +328,7 @@ section{
     height: 100%;
     max-width: 100%;
 }
-#java .langlogo img, #cpp .langlogo img,  #css .langlogo img,  #discrete .langlogo img, #roadmaps .langlogo img
+#java .langlogo img, #cpp .langlogo img,  #css .langlogo img,  #discrete .langlogo img, #roadmaps .langlogo img, #dotnet .langlogo img
 {
     height: 80% !important;
 }
@@ -346,7 +346,7 @@ section{
     /* filter: ; */
 }
 
-#discrete .langname, #cn .langname, #networks .langname {
+#discrete .langname, #cn .langname, #networks .langname, #cg .langname {
     font-size: 1.1rem !important;
 }
 #courseSection .courseCont .boxes .box #startbtn{

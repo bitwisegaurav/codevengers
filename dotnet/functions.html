@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common_files/inner.css">
+    <title>Functions and Procedures in VB.Net</title>
+</head>
+<body>
+    <h1>Functions and Procedures</h1>
+
+    <h2>Procedures</h2>
+    <p>Procedures are a block of code that performs a specific task. It's a self-contained block of statements that can be called from other parts of the code. The procedure does not return a value to the calling code.</p>
+
+    <h2>Functions</h2>
+    <p>Functions are procedures that perform a specific task and return a value to the calling code.</p>
+
+    <h2>Built in Functions in VB.NET</h2>
+    <p>VB.Net provides a large number of built-in functions that can be used to perform a specific task. Some of the built-in functions are:</p>
+    <ul>
+        <li>Mathematical Functions</li>
+        <li>String Functions</li>
+        <li>Date and Time Functions</li>
+        <li>Type Conversion Functions</li>
+        <li>Format Functions</li>
+        <li>User Input Functions</li>
+    </ul>
+
+    <h3>Creating a Function</h3>
+    <p></p>
+    <div class="code">
+        <pre>
+[Modifiers] Function FunctionName([Parameter List]) As ReturnType
+    'Statements
+End Function</pre>
+    </div>
+
+    <h3>Calling a Function</h3>
+    <p></p>
+    <div class="code"><pre>
+Dim result As ReturnType
+result = FunctionName([Arguments])</pre></div>
+
+    <h2>Sub Procedures</h2>
+    <p>A sub-procedure is a procedure that's called from another procedure or function. It's a way of breaking down a larger procedure into smaller, more manageable parts Sub procedures are defined using the <span>Sub</span> keyword.</p>
+
+    <h3>Syntax</h3>
+    <p></p>
+    <div class="code"><pre>
+[Modifiers] Sub ProcedureName([Parameter List])
+    'Statements
+End Sub</pre>
+    </div>
+
+    <h2>Parameters and Arguments</h2>
+    <p>Parameters are variables that are used to pass values to a procedure or function. Arguments are the actual values that are passed to the procedure or function.</p>
+
+    <h3>Passing Parameters by Value</h3>
+    <p>When you pass a parameter by value, a copy of the value is passed to the procedure or function. Any changes made to the parameter inside the procedure or function will not affect the original value.</p>
+    
+    <h3>Passing Parameters by Reference</h3>
+    <p>When you pass a parameter by reference, the reference of the actual value is passed which make all the changes to the original value.</p>
+    
+    <h3>Syntax</h3>
+    <p></p>
+    <div class="code"><pre>
+Sub AddNumbers(ByVal num1 As Integer, ByVal num2 As Integer)
+Dim result As Integer
+result = num1 + num2
+Console.WriteLine("The sum of {0} and {1} is {2}", num1, num2, result)
+End Sub</pre>
+    </div>
+
+    <h2>Conclusion</h2>
+    <p>Functions and Procedures are the building blocks of any programming language. They help in breaking down a large program into smaller, more manageable parts. They also help in reusing the code and making the program more modular and efficient.</p>
+
+</body>
+<script src="../common_files/innerTheme.js"></script>
+<script src="../common_files/jsPrograms-inner.js"></script>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common_files/inner.css">
+    <title>Control Structures in VB.Net</title>
+</head>
+<body>
+    <h1>Control Structures in VB.Net</h1>
+    <p>Control structures are used to control the flow of execution of the program. In VB.Net, the control structures are categorized into three types:</p>
+
+    <ul>
+        <li>Decision Making Structures/Selection Statements</li>
+        <li>Looping Structures</li>
+        <li>Jump Statements</li>
+        <li>Branching Statements</li>
+    </ul>
+
+    <h2>Decision Making Structures/Selection Statements</h2>
+    <p>Decision making structures are used to execute a block of code based on the result of an expression. The decision making structures in VB.Net are:</p>
+    <ul>
+        <li>If Then End If</li>
+        <li>If Then Else End If</li>
+        <li>If Then ElseIf End If</li>
+        <li>Select Case</li>
+        <li>Immediate if (IIF)</li>
+    </ul>
+
+    <h3>If then End if</h3>
+    <p>
+        The <span>If Then End If</span> statement is used to execute a block of code if the condition is true. If the condition is false, the code block will not be executed.
+    </p>
+
+    <p><span>Syntax : </span></p>
+    <div class="code"><pre>
+If condition Then
+    'Statements
+End If</pre>
+    </div>
+
+    <p><span>Example : </span></p>
+    <div class="code"><pre>
+Dim a As Integer = 10
+If a > 5 Then
+    Console.WriteLine("a is greater than 5")
+End If</pre>
+    </div>
+
+    <h3>If Then Else End If</h3>
+    <p>
+        The <span>If Then Else End If</span> statement is used to execute one block of code if a specified condition is true, and another block of code if the condition is false.
+    </p>
+    <div class="code">
+        <pre>
+Dim a As Integer = 10
+If a > 5 Then
+    MessageBox("a is greater than 5")
+Else
+    MessageBox("a is not greater than 5")
+End If</pre>
+    </div>
+
+    <h3>If Then ElseIf End If</h3>
+    <p>
+        The <span>If Then ElseIf End If</span> statement is used to select one of many blocks of code to be executed.
+    </p>
+    <div class="code">
+        <pre>
+Dim a As Integer = 10
+If a > 10 Then
+    MessageBox("a is greater than 10")
+ElseIf a = 10 Then
+    MessageBox("a is equal to 10")
+Else
+    MessageBox("a is less than 10")
+End If</pre>
+    </div>
+
+    <h3>Select Case</h3>
+    <p>
+        The <span>Select Case</span> statement is used to select one of many blocks of code to be executed.
+    </p>
+    <div class="code">
+        <pre>
+Dim a As Integer = 10
+Select Case a
+    Case 1
+        MessageBox("a is 1")
+    Case 2
+        MessageBox("a is 2")
+    Case 10
+        MessageBox("a is 10")
+    Case Else
+        MessageBox("a is not 1, 2, or 10")
+End Select</pre>
+    </div>
+
+    <h3>Immediate if (IIF)</h3>
+    <p>
+        The <span>Immediate if (IIF)</span> function returns one of two values depending on the evaluation of an expression.
+    </p>
+    <div class="code">
+        <pre>
+Dim a As Integer = 10
+Dim result As String = IIf(a > 5, "a is greater than 5", "a is not greater than 5")
+MessageBox(result)</pre>
+    </div>
+
+    <h2>Looping Structures</h2>
+    <p>Looping structures are used to execute a block of code multiple times. The looping structures in VB.Net are:</p>
+    <ul>
+        <li>For Next</li>
+        <li>For Each Next</li>
+        <li>Do While Loop</li>
+        <li>Do Until Loop</li>
+        <li>While End While</li>
+    </ul>
+
+    <h3>For Next</h3>
+    <p>The <span>For Next</span> loop is used to execute a block of code a specified number of times.</p>
+    <div class="code">
+        <pre>
+For i As Integer = 1 To 5
+    MessageBox("This is loop number " & i)
+Next</pre>
+    </div>
+
+    <h3>For Each Next</h3>
+    <p>The <span>For Each Next</span> loop is used to execute a block of code for each element in a collection.</p>
+    <div class="code">
+        <pre>
+Dim numbers As Integer() = {1, 2, 3, 4, 5}
+For Each num In numbers
+    MessageBox("The current number is " & num)
+Next</pre>
+    </div>
+
+    <h3>Do While Loop</h3>
+    <p>The <span>Do While Loop</span> is used to execute a block of code as long as a specified condition is true.</p>
+    <div class="code">
+        <pre>
+Dim i As Integer = 1
+Do While i <= 5
+    MessageBox("This is loop number " & i)
+    i += 1
+Loop</pre>
+    </div>
+
+    <h3>Do Until Loop</h3>
+    <p>The <span>Do Until Loop</span> is used to execute a block of code until a specified condition is true.</p>
+    <div class="code">
+        <pre>
+Dim i As Integer = 1
+Do Until i > 5
+    MessageBox("This is loop number " & i)
+    i += 1
+Loop</pre>
+    </div>
+
+    <h3>While End While</h3>
+    <p>The <span>While End While</span> loop is used to execute a block of code as long as a specified condition is true.</p>
+    <div class="code">
+        <pre>
+Dim i As Integer = 1
+While i <= 5
+    MessageBox("This is loop number " & i)
+    i += 1
+End While</pre>
+    </div>
+
+    <h2>Jump Statements</h2>
+    <p>Jump statements are used to transfer control to another part of the program. The jump statements in VB.Net are:</p>
+    <ul>
+        <li>GoTo</li>
+        <li>Return</li>
+        <li>Stop</li>
+        <li>End</li>
+    </ul>
+
+    <h3>GoTo</h3>
+    <p>The <span>GoTo</span> statement transfers control to the labeled statement in the same procedure.</p>
+    <div class="code">
+        <pre>
+Dim number As Integer = 1
+Start:
+If number <= 5 Then
+    MessageBox("Number is " & number)
+    number += 1
+    GoTo Start
+End If</pre>
+    </div>
+
+    <h3>Return</h3>
+    <p>The <span>Return</span> statement terminates the execution of the function and returns control to the calling code.</p>
+    <div class="code">
+        <pre>
+Function Add(a As Integer, b As Integer) As Integer
+    Return a + b
+End Function
+
+Dim result As Integer = Add(5, 10)
+MessageBox("Th result is " & result)
+        </pre>
+    </div>
+
+    <h3>Stop</h3>
+    <p>The <span>Stop</span> statement suspends execution, but unlike End, program execution can be resumed.</p>
+    <div class="code">
+        <pre>
+For i As Integer = 1 To 10
+    If i = 5 Then
+        Stop
+    End If
+    MessageBox("Number is " & i)
+Next</pre>
+    </div>
+
+    <h3>End</h3>
+    <p>The <span>End</span> statement stops code execution abruptly, and starts the tear-down process for the .NET runtime.</p>
+    <div class="code">
+        <pre>
+For i As Integer = 1 To 10
+    If i = 5 Then
+        End
+    End If
+    MessageBox("Number is " & i)
+Next</pre>
+    </div>
+
+    <h2>Branching Statements</h2>
+    <p>Branching statements are used to transfer control to another part of the program based on the result of an expression. The branching statements in VB.Net are:</p>
+    <ul>
+        <li>Exit</li>
+        <li>Continue</li>
+    </ul>
+
+    <h3>Exit</h3>
+    <p>The <span>Exit</span> statement is used to exit a procedure or block of code immediately.</p>
+    <div class="code">
+        <pre>
+    For i As Integer = 1 To 10
+        If i = 5 Then
+            Exit For
+        End If
+        MessageBox("Number is " & i)
+    Next
+        </pre>
+    </div>
+
+    <h3>Continue</h3>
+    <p>The <span>Continue</span> statement is used to skip the rest of the current loop iteration and continue with the next iteration.</p>
+    <div class="code">
+        <pre>
+    For i As Integer = 1 To 10
+        If i = 5 Then
+            Continue For
+        End If
+        MessageBox("Number is " & i)
+    Next
+        </pre>
+    </div>
+
+    <h2>Conclusion</h2>
+    <p>In this tutorial, we have covered the various control structures in VB.Net, including decision-making structures, looping structures, jump statements, and branching statements. Understanding these structures is fundamental to programming in VB.Net as they allow you to control how your code is executed based on conditions and loops.</p>
+
+</body>
+<script src="../common_files/innerTheme.js"></script>
+<script src="../common_files/jsPrograms-inner.js"></script>
+</html>

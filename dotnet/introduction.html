@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common_files/inner.css">
+    <title>Overview of .Net</title>
+</head>
+<body>
+    <h1>Introduction to .NET Framework</h1>
+    <p>The .NET Framework is a software development platform developed by Microsoft. It provides a programming model, a comprehensive set of libraries, and a runtime environment for creating and running applications.</p>
+    <p>With .NET, developers can build a wide range of applications, including web applications, desktop applications, mobile apps, gaming applications, and more.</p>
+    <p>One of the key features of .NET is its language independence. It supports multiple programming languages such as C#, VB.NET, F#, and more, allowing developers to choose the language they are most comfortable with. These languages are called .NET compliant languages.</p>
+    <p>.NET also includes a rich set of libraries and frameworks, such as ASP.NET for web development, Windows Forms and WPF for desktop applications, and Xamarin for cross-platform mobile app development.</p>
+    <p>Overall, .NET provides a powerful and versatile platform for building modern, scalable, and secure applications.</p>
+
+    <h2>Architecture and Components</h2>
+    <p>It is considered an engine for providing runtime services using its components like Common Language Runtime (CLR) and .NET Framework Class Library (FCL).</p>
+    <div class="structimg img-center mt-2"><img src="../examples/dotnet/introduction/architecture.png" alt="architecture of .net"></div>
+
+    <p>The main components of .NET Framework are : </p>
+    <ul>
+        <li>CLR</li>
+        <li>FCL</li>
+    </ul>
+
+    <h2>Common Language Runtime (CLR)</h2>
+    <p>CLR is the virtual machine which provides runtime environment for all types of .NET applications.</p>
+    <p>The source code is compiled by that language's compiler into CLR's intermediate language called MSIL (MicroSoft Intermediate Language).</p>
+    <p>CLR also manages memory, threads, exceptions, code exection, code safety, verification and compilation.</p>
+
+    <h3>MSIL (MicroSoft Intermediate Language) or IL (Intermediate Language)</h3>
+    <p>MSIL is a low-level, platform-independent representation of the code that can be executed by the CLR. It is comparable to bytecode in Java.</p>
+
+    <h3>Working of CLR</h3>
+    <ul>
+        <li>When a .NET application is executed, the .NET Language Compiler compiles it to MSIL.</li>
+        <li>Then JIT (Just In Time) compiler component of CLR converts MSIL code into native code of machine.</li>
+    </ul>
+
+    <h3>Components of CLR</h3>
+    <ul>
+        <li>Common Type System (CTS)</li>
+        <li>Common Language Specification (CLS)</li>
+        <li>Garbage Collector (GC)</li>
+        <li>Just in time compiler (JIT)</li>
+        <li>Metadata and Assemblies</li>
+    </ul>
+
+    <h3>Common Type System (CTS)</h3>
+    <p>It provides guidelines for declaring, using and managing data types at runtime. It offers cross language communication. It provides two categories of types : </p>
+    <ul>
+        <li><span>Value Types : </span>It stores the data in memory allocated on stack or inline in a structure. It holds data directly and two variables store data independent after copy data.</li>
+        <li><span>Reference Types : </span>It stores the reference/address to the value of memory address and is allocated on heap.</li>
+    </ul>
+
+    <h3>Common Language Specification (CLS)</h3>
+    <p>It is a subset of CTS which all .NET languages are expected to follow. It is a set of rules that needs to be followed while writing code in any .NET language to ensure that the code can be used by any other .NET language.</p>
+
+    <h3>Garbage Collector (GC)</h3>
+    <p>It is a CLR component which automatically manages memory. It is responsible for allocating and freeing memory for objects. It runs in the background and keeps track of objects that are no longer being used by the application.</p>
+
+    <h3>Just in time compiler (JIT)</h3>
+    <p>It is a CLR component which converts MSIL code into native code that can be executed by the CPU. It compiles the MSIL code into native code on demand at runtime.</p>
+    <p>There are three types of JIT compilers : </p>
+    <ul>
+        <li><span>Economical JIT : </span>It compiles only those methods which are called at runtime.</li>
+        <li><span>Normal JIT : </span>It also compiles only those methods which are required at runtime but places them in cache for future use.</li>
+        <li><span>Pre-JIT : </span>It compiles all methods at compile time.</li>
+    </ul>
+
+    <h3>Metadata and Assemblies</h3>
+    <p>Metadata is the data about the data. It is binary information stored in .NET assemblies. It contains information about the types, members, and references in the code. It is used by the CLR for type safety, security, and interoperability.</p>
+
+    <h2>.NET Framework Class Library (FCL)</h2>
+    <p>It is comparable to Java Foundatoin Classes. This library contains numerous pre written and resuable types such as classes, interfaces, structures and enumerated values. Its types are grouped into namespace so that they can be accessed easily.</p>
+
+    <h2>Managed and Unmanaged Code</h2>
+    <ul>
+        <li><span>Managed Code : </span>The code created by compiler of any of the .NET Framework languages is called managed code. It is in MSIL so cannot be run directly, but runs under CLR.</li>
+        <li><span>Unmanaged Code : </span>It is the code that is executed outside the CLR. It is compiled to machine code and runs under process of Operating System.</li>
+    </ul>
+
+    <h2>Advantages of .NET Framework</h2>
+    <ul>
+        <li><span>Object Oriented : </span>A programming paradigm that organizes data and behavior into reusable structures called objects.</li>
+        <li><span>Cross Languages Interoperability : </span>The ability of different programming languages to seamlessly work together within the .NET Framework.</li>
+        <li><span>Developer Productivity : </span>The efficiency and effectiveness of developers in creating software using the .NET Framework.</li>
+        <li><span>Performance : </span>The speed and efficiency at which software applications built with the .NET Framework execute.</li>
+        <li><span>Multiple Application Development : </span>The capability of the .NET Framework to support the development of various types of applications.</li>
+        <li><span>Security : </span>The measures and features provided by the .NET Framework to protect software applications from unauthorized access and attacks.</li>
+        <li><span>Code Robustness : </span>The ability of software applications built with the .NET Framework to handle errors and exceptions gracefully.</li>
+        <li><span>Backward Compatibility : </span>The ability of newer versions of the .NET Framework to run applications built with older versions without requiring major modifications.</li>
+        <li><span>Huge Library of Code : </span>The extensive collection of pre-built code and libraries available in the .NET Framework for developers to use and leverage.</li>
+        <li><span>Intellisense : </span>An intelligent code completion feature in integrated development environments (IDEs) that provides suggestions and auto-completion for code.</li>
+    </ul>
+
+    <h2>Disadvantages of .NET Framework</h2>
+    <ul>
+        <li>Managed code may be slwoer than native code.</li>
+        <li>Migration of application to .NET Framework can be expensive.</li>
+        <li>It is provided by Microsoft and it involves the danger of vendor lock-in.</li>
+    </ul>
+
+    <h1>Introduction to VB.NET</h1>
+    <p>Visual Basic .NET (VB.NET) is an object-oriented programming language supported by .NET Framework.</p>
+    <p>The word "Visual" refers to Graphical User Interface (GUI), "Basic" refers to Beginners All Purpose Sumbolic Instruction Code and "NET" refers to network.</p>
+
+    <h2>Writing and Executing a VB.NET Program</h2>
+    <ul>
+        <li><span>Build a GUI</span>
+            <ul>
+                <li>Add controls from the Toolbox to the Form.</li>
+                <li>Customize the properties of various controls.</li>
+            </ul>
+        </li>
+        <li><span>Write Code</span>
+            <p>Write code for the relevant controls so that they can response to triggered events.</p>
+        </li>
+        <li><span>Executre or Run VB.NET Project</span></li>
+    </ul>
+
+    <h2>Introduction to Commonly Used Controls in VB.NET</h2>
+    <ul>
+        <li><span>Label : </span>It is used to display text on the form.</li>
+        <li><span>TextBox : </span>It is used to accept input from the user.</li>
+        <li><span>Button : </span>It is used to trigger an event.</li>
+        <li><span>CheckBox : </span>It is used to select or deselect an option.</li>
+        <li><span>RadioButton : </span>It is used to select one option from multiple options.</li>
+        <li><span>ComboBox : </span>It is used to select an option from a list of options.</li>
+        <li><span>ListBox : </span>It is used to select one or more options from a list of options.</li>
+        <li><span>DataGridView : </span>It is used to display data in tabular form.</li>
+        <li><span>DateTimePicker : </span>It is used to select date and time.</li>
+        <li><span>MenuStrip : </span>It is used to create a menu bar.</li>
+        <li><span>ToolStrip : </span>It is used to create a toolbar.</li>
+        <li><span>StatusStrip : </span>It is used to display status information.</li>
+        <li><span>TabControl : </span>It is used to create multiple tabs.</li>
+        <li><span>GroupBox : </span>It is used to group related controls.</li>
+        <li><span>Panel : </span>It is used to group related controls.</li>
+        <li><span>PictureBox : </span>It is used to display images.</li>
+        <li><span>Timer : </span>It is used to trigger an event at regular intervals.</li>
+    </ul>
+
+    <h2>Built in Functions for Displaying Message</h2>
+    <ul>
+        <li><span>MsgBox : </span>It is used to display a message box with a message and an OK button.
+            <p>Syntax : </p>
+            <div class="code">
+                <pre>MsgBox("Hello")</pre>
+            </div>
+        </li>
+        <li><span>MsgBox.show : </span>
+            <p>It is used to display a message box with a message and an OK button.</p>
+            <p>Syntax : </p>
+            <div class="code">
+                <pre>MsgBox.show("Hello")</pre>
+            </div>
+        </li>
+    </ul>
+
+    <h2>Close Method</h2>
+    <p>It is used to close the form.</p>
+    <p>Syntax : </p>
+    <div class="code">
+        <pre>Me.Close()</pre>
+    </div>
+
+    <h2>Simple VB.NET Project</h2>
+    <ul>
+        <li>Create a Project.</li>
+        <li>Add a Button Controller and change its text to "Click Here".</li>
+        <li>Add another Button Controller and change its text to "Exit".</li>
+        <li>Double click on the form and write code for it. 
+            <p>Example : </p>
+            <div class="code">
+                <pre>
+Public Class Form1
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        MsgBox.show("Welcome to our first vb.net project")
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Close()
+    End Sub
+End Class
+</pre>
+            </div>
+        </li>
+    </ul>
+
+    <h2>Developing console applications</h2>
+    <p>To develop console applications some commonly used methods are : </p>
+    <ul>
+        <li><span>Console.Write : </span>This method writes string to standard output</li>
+        <li><span>Console.WriteLine : </span>This method writes string to standard output followed by a newline character</li>
+        <li><span>Console.ReadKey : </span>It is used to read a key from the standard input stream</li>
+        <li><span>Console.Clear : </span>It is used to clear the console buffer and corresponding console window of display information</li>
+        <li><span>Console.Title : </span>It is used to get or set the title of the console window</li>
+        <li><span>Console.Read : </span>This method reads next character from standard input</li>
+        <li><span>Console.ReadLine : </span>It is used to read input from the console.</li>
+    </ul>
+
+    <h2>Steps to develop and Execute a console application</h2>
+    <ul>
+        <li>Go to File menu in the VS.NET IDE</li>
+        <li>Select new project</li>
+        <li>Select Template</li>
+        <li>Select Visual Basic</li>
+        <li>Select Console Application</li>
+        <li>Give name to console application</li>
+        <li>Click button Ok</li>
+        <li>A blanck module with name "Module1" and extension ".VB" will appear which has one procedure Main() </li>
+        <li>Write code in sub Main()</li>
+        <li>Execute the application by clicking the start button</li>
+    </ul>
+
+    <p>Example of a console application to read two numbers and display their addition : </p>
+    <div class="code">
+        <pre>
+Module Module1
+    Sub Main()
+        Console.WriteLine("Hello, World!")
+        Console.Write("Enter first number : ")
+        Dim no1 = Console.ReadLine()
+        Console.Write("Enter second number : ")
+        Dim no2 = Console.ReadLine()
+        Dim sum = CInt(no1) + CInt(no2)
+        Console.WriteLine("Sum of two numbers is : " & sum)
+        Console.ReadKey()
+    End Sub
+End Module
+</pre>
+    </div>
+
+    <p class="note note-normal">
+        <span>CInt() : </span>It is used to convert the string to integer.<br>
+        <span>Dim : </span>It is used to declare a variable.<br>
+        <span>Module : </span>It is a container for the procedures and functions.<br>
+        <span>Sub : </span>It is used to define a procedure.<br>
+    </p>
+
+    <h2>Importing Namespaces</h2>
+    <p>Namespaces are used to organize the classes and interfaces in .NET. It is a collection of classes, interfaces, structures, enumerations and delegates. It is used to avoid name conflicts and to make the code more readable and maintainable.</p>
+    <p>Import statements are used at source file level and cannot be used within namespace, class, structure, module, interface, procedure or block.</p>
+    <p>Syntax : </p>
+    <div class="code">
+        <pre>Imports [name of namespace]</pre>
+    </div>
+    <p>Example : </p>
+    <div class="code">
+        <pre>Imports System.Data.OLEDB</pre>
+    </div>
+
+</body>
+<script src="../common_files/innerTheme.js"></script>
+<script src="../common_files/jsPrograms-inner.js"></script>
+</html>

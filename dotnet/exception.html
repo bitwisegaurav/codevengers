@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common_files/inner.css">
+    <title>Exception Handling</title>
+</head>
+<body>
+    <h1>Exception Handling in VB.NET</h1>
+
+    <h2>Types of Errors</h2>
+    <p>There are three types of errors in VB.NET : </p>
+    <ul>
+        <li><span>Compile-time errors : </span> These errors occur at the time of compilation of the code. For example, syntax errors.</li>
+        <li><span>Runtime errors : </span> These errors occur at the time of execution of the code. For example, division by zero, array index out of bound, etc.</li>
+        <li><span>Logical errors : </span> These errors occur when the logic of the code is not as per the requirement. It is also known as a bug.</li>
+    </ul>
+
+    <h2>Exception Handling</h2>
+    <p>Exception handling is a mechanism to handle runtime errors. It is mainly used to handle the checked exceptions. If an exception occurs in the code, the rest of the code will not execute. So, it is recommended to handle the exception.</p>
+    <p>In VB.NET, exceptions are handled using try catch block</p>
+    <p>These blocks are : </p>
+    <ul>
+        <li><span>Try : </span> It contains the code that may throw an exception.</li>
+        <li><span>Catch : </span> It contains the code that will execute if an exception occurs in the try block.</li>
+        <li><span>Finally : </span> It contains the code that will execute whether an exception occurs or not.</li>
+    </ul>
+    <p>Syntax : </p>
+    <div class="code">
+        <pre>
+Try
+    'Code that may throw an exception
+Catch ex As [Exception]
+    'Code to handle the exception
+Finally
+    'Code that will execute whether an exception occurs or not
+End Try</pre>
+    </div>
+
+    <h2>Exception Class</h2>
+    <p>Exception class is the base class for all exceptions in VB.NET. It is present in the System namespace. It has the following properties and methods : </p>
+    <ul>
+        <li><span>Message : </span> It contains the message of the exception.</li>
+        <li><span>StackTrace : </span> It contains the stack trace of the exception.</li>
+        <li><span>InnerException : </span> It contains the inner exception of the exception.</li>
+        <li><span>ToString : </span>This method converts the exception name, description and current stack dump into a single string.</li>
+    </ul>
+
+    <h2>Some common exceptions</h2>
+    <ul>
+        <li><span>System.Exception : </span> It is the base class for all exceptions.</li>
+        <li><span>System.ApplicationException : </span> It is the base class for all application-specific exceptions.</li>
+        <li><span>System.SystemException : </span> It is the base class for all system exceptions.</li>
+        <li><span>System.IndexOutOfRangeException : </span> It is thrown when an array is indexed with a value less than zero or greater than the length of the array.</li>
+        <li><span>System.NullReferenceException : </span> It is thrown when an object is not initialized.</li>
+        <li><span>System.DivideByZeroException : </span> It is thrown when a number is divided by zero.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>Exception handling is a mechanism to handle runtime errors. It is mainly used to handle the checked exceptions. In VB.NET, exceptions are handled using try catch block. The exception class is the base class for all exceptions in VB.NET. It has the properties and methods to handle the exception.</p>
+</body>
+<script src="../common_files/innerTheme.js"></script>
+<script src="../common_files/jsPrograms-inner.js"></script>
+</html>
