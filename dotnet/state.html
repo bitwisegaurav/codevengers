@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common_files/inner.css">
+    <title>State Management in ASP.NET</title>
+</head>
+<body>
+    <h1>State Management in ASP.NET</h1>
+    <p>State Management in ASP.NET is the process of maintaining the state and page information of a web application over multiple requests. It is important because the HTTP protocol is stateless by nature. That is, it can't hold client information on page. ASP.NET provides several ways for maintaining state, which are divided into two categories: Client-Side and Server-Side.</p>
+
+    <h2>Client-Side State Management</h2>
+    <p>Client-side state management involves storing information on the client's computer. The methods include:</p>
+    <ul>
+        <li><span>View State:</span> Stores the value of page and controls between round trips.</li>
+        <li><span>Control State:</span> Similar to view state but used for custom controls.</li>
+        <li><span>Hidden Fields:</span> Stores a small amount of data in hidden fields in the form.</li>
+        <li><span>Cookies:</span> Stores data on client machines and sends it back to the server with each request.</li>
+        <li><span>Query Strings:</span> Stores data in the URL that is visible to users.</li>
+    </ul>
+
+    <h2>Server-Side State Management</h2>
+    <p>Server-side state management involves storing information on the server. The methods include:</p>
+    <ul>
+        <li><span>Session State:</span> Stores data related to a user session.</li>
+        <li><span>Application State:</span> Stores data that is shared across users.</li>
+        <li><span>Caching:</span> Stores pages or data across HTTP requests and reuses them from the cache to improve performance.</li>
+        <li><span>Database:</span> Stores data in a database which can be retrieved and used whenever required.</li>
+    </ul>
+
+    <h2>View State</h2>
+    <p>View State is a client-side state management technique that stores the state of a page and its controls between round trips. It is used to maintain the state of controls on a page when the page is posted back to the server. View State is enabled by default in ASP.NET and can be disabled for specific controls or pages.</p>
+    <p><span>Syntax : </span></p>
+    <div class="code">
+        <pre>
+&lt;asp:TextBox ID="txtName" runat="server"&gt;&lt;/asp:TextBox&gt;
+&lt;asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" /&gt;</pre>
+    </div>
+
+    <h2>Control State</h2>
+    <p>Control State is similar to View State but is used for custom controls. It allows developers to store control-specific information that should not be disabled by the user. Control State is enabled by default for custom controls and can be disabled if necessary.</p>
+
+    <h2>Hidden Fields</h2>
+    <p>Hidden Fields are used to store a small amount of data in the form that is sent to the server when the form is submitted. Hidden Fields are rendered as HTML input elements with the type attribute set to "hidden". They are useful for storing data that should not be visible to the user but needs to be sent to the server.</p>
+    <p><span>Syntax : </span></p>
+    <div class="code">
+        <pre>
+&lt;input type="hidden" id="hdnName" name="hdnName" value="John" /&gt;</pre>
+    </div>
+    
+    <h2>Query Strings</h2>
+    <p>Query Strings are used to store data in the URL that is visible to users. They are appended to the URL as key-value pairs and can be accessed by the server to retrieve data. Query Strings are commonly used to pass data between pages in a web application.</p>
+    <p><span>Syntax : </span></p>
+    <div class="code">
+        <pre>
+' Link = http://www.example.com/page.aspx?name=John
+Dim name As String = Request.QueryString("name")</pre>
+    </div>
+
+    <h2>Cookies</h2>
+    <p>Cookies are small text files that are stored on the client's machine. They are used to maintain the state of a user and track their activities on a website. In ASP.NET, cookies can be used for a variety of purposes, such as authentication, personalization, and tracking user preferences.</p>
+
+    <h3>Types of Cookies</h3>
+    <ul>
+        <li><span>Persistent Cookies:</span> These cookies are stored on the user's computer and are not deleted when the browser is closed. They can be used to remember information between visits to a website.</li>
+        <li><span>Session Cookies:</span> These cookies are deleted as soon as the user closes their browser. They are used to store temporary information during a single visit to a website.</li>
+    </ul>
+
+    <h3>Creating Cookies</h3>
+    <p>In ASP.NET, you can create a cookie using the `HttpCookie` class. Here's an example:</p>
+    <div class="code">
+    <pre>
+Dim cookie As New HttpCookie("User")
+cookie.Value = "John Doe"
+Response.Cookies.Add(cookie)
+</pre>
+</div>
+
+    <h3>Reading Cookies</h3>
+    <p>You can read the value of a cookie like this:</p>
+    <div class="code">
+    <pre>
+Dim user As String
+If Request.Cookies("User") IsNot Nothing Then
+    user = Request.Cookies("User").Value
+End If
+</pre>
+</div>
+
+    <h3>Deleting Cookies</h3>
+    <p>To delete a cookie, you can set its expiry date to a time in the past:</p>
+    <div class="code">
+    <pre>
+If Request.Cookies("User") IsNot Nothing Then
+    Dim myCookie As HttpCookie = New HttpCookie("User")
+    myCookie.Expires = DateTime.Now.AddDays(-1D)
+    Response.Cookies.Add(myCookie)
+End If
+</pre>
+</div>
+
+    <p class="note note-normal">Cookies can be disabled by the user in their browser settings. Therefore, you should not rely on cookies for critical functionality of your website.</p>
+
+    <h2>Session in ASP.NET</h2>
+    <p>Session is a state management technique in ASP.NET that is used to store user-specific data on the server. The data is stored on a per-session basis, meaning it's available for the duration of the user's session on the website. When the session ends, either due to inactivity or explicitly being abandoned, the data is lost.</p>
+
+    <h3>Creating Session Variables</h3>
+    <p>You can create a session variable and store a value in it like this:</p>
+    <div class="code">
+    <pre>Session("UserName") = "John Doe"</pre>
+    </div>
+
+    <h3>Reading Session Variables</h3>
+    <p>You can read the value of a session variable like this:</p>
+    <div class="code">
+    <pre>
+Dim userName As String
+If Session("UserName") IsNot Nothing Then
+    userName = Session("UserName").ToString()
+End If</pre>
+    </div>
+
+    <h3>Deleting Session Variables</h3>
+    <p>To delete a session variable, you can use the Remove method:</p>
+    <div class="code">
+    <pre>Session.Remove("UserName")</pre>
+    </div>
+
+    <h3>Ending a Session</h3>
+    <p>You can end a user's session using the Abandon method. This will delete all session variables and fire the Session_End event:</p>
+    <div class="code">
+        <pre>
+Session.RemoveAll()
+<p class="text-center">or</p>
+Session.Clear()</pre>
+    </div>
+    <p>Or if you want to abandon the session then : </p>
+    <div class="code">
+    <pre>Session.Abandon()</pre>
+    </div>
+
+    <p>Note: Session data is stored on the server, which can lead to high memory usage if a large amount of data is stored. Therefore, it's recommended to use session state sparingly, especially on high-traffic websites.</p>
+
+
+    <h2>Conclusion</h2>
+    <p>State management is an important aspect of web development, and ASP.NET provides a variety of options for managing state on both the client and server side. By choosing the appropriate method for your application, you can ensure that user data is maintained and accessible throughout the user's session.</p>
+
+</body>
+<script src="../common_files/innerTheme.js"></script>
+<script src="../common_files/jsPrograms-inner.js"></script>
+</html>
