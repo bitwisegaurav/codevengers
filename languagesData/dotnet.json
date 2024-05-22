@@ -38,7 +38,8 @@
             "name": "Managing Data with MS Access"
         },
         {
-            "name": "ADO.NET"
+            "name": "ADO.NET",
+            "file": "ado"
         },
         {
             "name": "Data GridView Control"
