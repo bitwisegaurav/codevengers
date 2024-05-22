@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common_files/inner.css">
+    <title>ADO.NET</title>
+</head>
+<body>
+    <h1>ADO.NET</h1>
+    <p>ADO.NET is a set of computer software components that provides data access services that can be used by programmers to connect and interact with relational databases. It is a part of the base class library that is included with the Microsoft .NET Framework. It is commonly used by programmers to access and modify data stored in relational database systems, though it can also access data in non-relational sources.</p>
+
+    <h2>Connected and Disconnected Architecture</h2>
+    <p>ADO.NET supports two types of architecture : </p>
+    <ul>
+        <li><span>Connected Architecture : </span> In this architecture, the connection between the application and the database remains open until the connection is explicitly closed. It is used when the application needs to interact with the database continuously.</li>
+        <li><span>Disconnected Architecture : </span> In this architecture, the connection between the application and the database is closed as soon as the data is retrieved from the database. It is used when the application needs to interact with the database occasionally.</li>
+    </ul>
+
+    <h2>Components of ADO.NET Architecture</h2>
+    <p>ADO.NET architecture consists of the following components : </p>
+    <div class="structimg img-center mb-2">
+        <img src="../examples/dotnet/ado/ado_architecture.png" alt="ado.net architecture">
+    </div>
+    <ul>
+        <li><span>Connection : </span> It is used to establish a connection with the database.</li>
+        <li><span>Command : </span> It is used to execute a command against the database.</li>
+        <li><span>DataReader : </span> It is used to read the data from the database.</li>
+        <li><span>DataAdapter : </span> It is used to retrieve and save data from and to the database.</li>
+        <li><span>DataSet : </span> It is used to store the data in the form of tables.</li>
+        <li><span>DataTable : </span> It is used to store the data in the form of rows and columns.</li>
+        <li><span>DataProvider : </span> It is used to connect the application to the database. It is a set of classes that provide the data access services.</li>
+    </ul>
+
+    <h2>Connection Object</h2>
+    <p>The Connection object is used to establish a connection with the database. It is present in the System.Data.SqlClient namespace. It has the following properties and methods : </p>
+    <ul>
+        <li><span>ConnectionString : </span> It is used to set the connection string that contains the information about the database server, database name, user id, and password.</li>
+        <li><span>Open() : </span> It is used to open the connection with the database.</li>
+        <li><span>Close() : </span> It is used to close the connection with the database.</li>
+        <li><span>Dispose() : </span> It is used to release the resources used by the connection object.</li>
+    </ul>
+    <p><span>Example : </span></p>
+    <div class="code">
+        <pre>
+Dim con As New SqlConnection("Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password")
+con.Open()
+
+'Statements
+
+con.Close()
+con.Dispose()</pre></div>
+
+    <h2>DataProvider</h2>
+    <p>The <code>DataProvider</code> in ADO.NET is a set of components including the Connection, Command, DataReader, and DataAdapter objects that are used to connect to a database, execute commands, and retrieve results. It provides a bridge between an application and a data source for retrieving and saving data.</p>
+
+    <h3>Key Features of DataProvider</h3>
+    <ul>
+        <li><span>Connection Object:</span> Establishes a connection to a specific data source.</li>
+        <li><span>Command Object:</span> Executes a command against a data source.</li>
+        <li><span>DataReader Object:</span> Reads a forward-only, read-only stream of data from a data source.</li>
+        <li><span>DataAdapter Object:</span> Populates a DataSet and resolves updates with the data source.</li>
+    </ul>
+
+    <p><span>Example : </span></p>
+    <div class="code">
+    <pre>
+using(SqlConnection conn = new SqlConnection(connString)) {
+    conn.Open();
+    using(SqlCommand cmd = new SqlCommand("SELECT * FROM Employees", conn)) {
+        using(SqlDataReader reader = cmd.ExecuteReader()) {
+            while(reader.Read()) {
+                Console.WriteLine("{0} {1}", reader["FirstName"], reader["LastName"]);
+            }
+        }
+    }
+}</pre>
+</div>
+
+
+    <h2>Command Object</h2>
+    <p>The Command object is used to execute a command against the database. It is present in the System.Data.SqlClient namespace. It has the following properties and methods : </p>
+    <ul>
+        <li><span>CommandText : </span> It is used to set the SQL query or stored procedure to be executed.</li>
+        <li><span>ExecuteNonQuery() : </span> It is used to execute the command that does not return any data.</li>
+        <li><span>ExecuteReader() : </span> It is used to execute the command that returns a DataReader object.</li>
+        <li><span>ExecuteScalar() : </span> It is used to execute the command that returns a single value.</li>
+    </ul>
+    <p><span>Example : </span></p>
+    <div class="code">
+        <pre>
+Dim cmd As New SqlCommand("SELECT * FROM Employee", con)
+Dim dr As SqlDataReader = cmd.ExecuteReader()
+While dr.Read()
+    'Statements
+End While
+dr.Close()</pre></div>
+
+    <h2>DataReader</h2>
+    <p>The <code>DataReader</code> in ADO.NET is a forward-only, read-only cursor that provides a high-performance way to read data from a database. It's used to retrieve a read-only, forward-only stream of data from a database. This makes the <code>DataReader</code> a good choice for retrieving large amounts of data efficiently.</p>
+
+    <h3>Key Features of DataReader</h3>
+    <ul>
+        <li><span>Performance:</span> The <code>DataReader</code> provides a high-performance way to read data, as it retrieves data as soon as it becomes available, rather than waiting for the entire results of the query to be returned.</li>
+        <li><span>Forward-Only:</span> The <code>DataReader</code> can only move forward through the results of a query, not backward. Once a row has been read, it cannot be read again.</li>
+        <li><span>Read-Only:</span> The <code>DataReader</code> cannot be used to update data in the database. It's only used for reading data.</li>
+        <li><span>Connection-Oriented:</span> The <code>DataReader</code> keeps the connection to the database open while it's being used, which means that you can't use the same connection to perform other tasks until you've finished with the <code>DataReader</code>.</li>
+    </ul>
+
+    <p><span>Example : </span></p>
+    <div class="code">
+    <pre>
+using(SqlConnection conn = new SqlConnection(connString)) {
+    conn.Open();
+    using(SqlCommand cmd = new SqlCommand("SELECT * FROM Employees", conn)) {
+        using(SqlDataReader reader = cmd.ExecuteReader()) {
+            while(reader.Read()) {
+                Console.WriteLine("{0} {1}", reader["FirstName"], reader["LastName"]);
+            }
+        }
+    }
+}</pre>
+</div>
+
+    <h2>DataAdapter</h2>
+    <p>The DataAdapter is a part of the ADO.NET data provider that acts as a bridge between a DataSet and a data source for retrieving and saving data. It is used to retrieve data from a data source and populate a DataSet with the data, and to update the data source with changes made to the DataSet.</p>
+    <p>The DataAdapter has the following properties and methods : </p>
+    <ul>
+        <li><span>SelectCommand : </span> It is used to set the SQL query or stored procedure to retrieve data from the database.</li>
+        <li><span>InsertCommand : </span> It is used to set the SQL query or stored procedure to insert data into the database.</li>
+        <li><span>UpdateCommand : </span> It is used to set the SQL query or stored procedure to update data in the database.</li>
+        <li><span>DeleteCommand : </span> It is used to set the SQL query or stored procedure to delete data from the database.</li>
+        <li><span>Fill() : </span> It is used to populate a DataSet with data from the database.</li>
+        <li><span>Update() : </span> It is used to update the data source with changes made to the DataSet.</li>
+    </ul>
+
+    <h2>DataSet</h2>
+    <p>The DataSet is a disconnected, in-memory representation of data that is retrieved from a data source. It is used to store data in the form of tables, rows, and columns. The DataSet can hold multiple tables, relationships between tables, and constraints on the data. It is used to work with data in a disconnected environment, where the connection to the database is closed after the data is retrieved.</p>
+
+    <h2>Conclusion</h2>
+    <p>ADO.NET is a powerful tool for data access in .NET applications. It provides a rich set of classes and components that can be used to interact with relational databases. By using ADO.NET, developers can easily connect to databases, execute commands, and retrieve and manipulate data. It is a versatile and flexible data access technology that can be used to build a wide range of database-driven applications.</p>
+
+</body>
+<script src="../common_files/innerTheme.js"></script>
+<script src="../common_files/jsPrograms-inner.js"></script>
+</html>
