@@ -31,7 +31,8 @@
             "file": "arrays"
         },
         {
-            "name": "Classes and Exception Handling"
+            "name": "Exception Handling",
+            "file": "exception"
         },
         {
             "name": "Managing Data with MS Access"
