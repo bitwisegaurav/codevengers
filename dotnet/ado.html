@@ -65,16 +65,35 @@ con.Dispose()</pre></div>
     <p><span>Example : </span></p>
     <div class="code">
     <pre>
-using(SqlConnection conn = new SqlConnection(connString)) {
-    conn.Open();
-    using(SqlCommand cmd = new SqlCommand("SELECT * FROM Employees", conn)) {
-        using(SqlDataReader reader = cmd.ExecuteReader()) {
-            while(reader.Read()) {
-                Console.WriteLine("{0} {1}", reader["FirstName"], reader["LastName"]);
-            }
-        }
-    }
-}</pre>
+Imports System.Data.SqlClient
+
+Module Program
+    Sub Main()
+        ' Connection string specifying the database connection details
+        Dim connString As String = "Data Source=myServerAddress;Initial Catalog=myDatabase;User Id=myUsername;Password=myPassword;"
+
+        ' Create a SqlConnection object with the connection string
+        Using conn As New SqlConnection(connString)
+            ' Open the connection
+            conn.Open()
+
+            ' SQL query to execute
+            Dim sqlQuery As String = "SELECT * FROM Employees"
+
+            ' Create a SqlCommand object with the query and connection
+            Using cmd As New SqlCommand(sqlQuery, conn)
+                ' Execute the query and retrieve data using SqlDataReader
+                Using reader As SqlDataReader = cmd.ExecuteReader()
+                    ' Process the results
+                    While reader.Read()
+                        ' Output data to console
+                        Console.WriteLine("{0} {1}", reader("FirstName"), reader("LastName"))
+                    End While
+                End Using
+            End Using
+        End Using
+    End Sub
+End Module</pre>
 </div>
 
 
@@ -110,16 +129,35 @@ dr.Close()</pre></div>
     <p><span>Example : </span></p>
     <div class="code">
     <pre>
-using(SqlConnection conn = new SqlConnection(connString)) {
-    conn.Open();
-    using(SqlCommand cmd = new SqlCommand("SELECT * FROM Employees", conn)) {
-        using(SqlDataReader reader = cmd.ExecuteReader()) {
-            while(reader.Read()) {
-                Console.WriteLine("{0} {1}", reader["FirstName"], reader["LastName"]);
-            }
-        }
-    }
-}</pre>
+Imports System.Data.SqlClient
+
+Module Program
+    Sub Main()
+        ' Connection string specifying the database connection details
+        Dim connString As String = "Data Source=myServerAddress;Initial Catalog=myDatabase;User Id=myUsername;Password=myPassword;"
+
+        ' Create a SqlConnection object with the connection string
+        Using conn As New SqlConnection(connString)
+            ' Open the connection
+            conn.Open()
+
+            ' SQL query to execute
+            Dim sqlQuery As String = "SELECT * FROM Employees"
+
+            ' Create a SqlCommand object with the query and connection
+            Using cmd As New SqlCommand(sqlQuery, conn)
+                ' Execute the query and retrieve data using SqlDataReader
+                Using reader As SqlDataReader = cmd.ExecuteReader()
+                    ' Process the results
+                    While reader.Read()
+                        ' Output data to console
+                        Console.WriteLine("{0} {1}", reader("FirstName"), reader("LastName"))
+                    End While
+                End Using
+            End Using
+        End Using
+    End Sub
+End Module</pre>
 </div>
 
     <h2>DataAdapter</h2>
