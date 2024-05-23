@@ -6,6 +6,14 @@ async function getHeader() {
     navbar.innerHTML = data;
 
     setOptions("", "../");
+
+    const prePath = "../";
+
+    const homelinks = document.getElementsByClassName('homelinks');
+    for (let i = 0; i < homelinks.length; i++) {
+        homelinks[i].href = prePath + "index.html";
+    }
+
     setTheme();
     setListenersTheme();
 }

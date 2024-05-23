@@ -3,6 +3,11 @@ async function getHeader(optionsPrePath = "", prePath = "../") {
     const header = await res.text();
     document.querySelector('nav').innerHTML = header;
     setOptions(optionsPrePath, prePath);
+
+    const homelinks = document.getElementsByClassName('homelinks');
+    for (let i = 0; i < homelinks.length; i++) {
+        homelinks[i].href = prePath + "index.html";
+    }
 }
 
 async function setOptions(optionsPrePath, prePath) {
@@ -19,7 +24,7 @@ async function setOptions(optionsPrePath, prePath) {
         // make the first character bigger
         name = name.charAt(0).toUpperCase() + name.slice(1);
 
-        content += `<a href="${course.link ? course.link : "/codevengers" + (course.url ? "/" + course.url : `/languages/${optionsPrePath}outer.html?lang=${course.name}`)}" lang="${course.name}">${course.title ?course.title : name}</a>`
+        content += `<a href="${course.link ? course.link : prePath + (course.url ? course.url : `languages/${optionsPrePath}outer.html?lang=${course.name}`)}" lang="${course.name}">${course.title ?course.title : name}</a>`
     })
     options.innerHTML = content;
 }

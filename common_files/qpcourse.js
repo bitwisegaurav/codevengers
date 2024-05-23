@@ -29,6 +29,14 @@ async function getHeader() {
     navbar.innerHTML = data;
 
     setOptions("", "../");
+
+    const prePath = "../";
+
+    const homelinks = document.getElementsByClassName('homelinks');
+    for (let i = 0; i < homelinks.length; i++) {
+        homelinks[i].href = prePath + "index.html";
+    }
+
     setTheme();
     setListenersTheme();
 }
@@ -41,7 +49,7 @@ function setScroll() {
     selectiondiv.innerHTML = text[scrollCount - 1];
 
     const element = document.querySelector(
-        `#${text[scrollCount].toLowerCase()}s`
+        `#${text[scrollCount]?.toLowerCase()}s`
     );
 
     if (scrollCount === 1) {
