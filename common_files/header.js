@@ -19,7 +19,7 @@ async function setOptions(optionsPrePath, prePath) {
         // make the first character bigger
         name = name.charAt(0).toUpperCase() + name.slice(1);
 
-        content += `<a href="${course.link ? course.link : course.url ? "/" + course.url : `/languages/${optionsPrePath}outer.html?lang=${course.name}`}" lang="${course.name}">${course.title ?course.title : name}</a>`
+        content += `<a href="${course.link ? course.link : "/codevengers" + (course.url ? "/" + course.url : `/languages/${optionsPrePath}outer.html?lang=${course.name}`)}" lang="${course.name}">${course.title ?course.title : name}</a>`
     })
     options.innerHTML = content;
 }
